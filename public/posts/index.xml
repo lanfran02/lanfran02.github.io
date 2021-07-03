@@ -10,9 +10,48 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Lanfran02</copyright>
+    <lastBuildDate>Sat, 03 Jul 2021 16:56:05 +0200</lastBuildDate>
     
 	<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Cat Pictures - Write Up</title>
+      <link>/posts/cat-pictures/</link>
+      <pubDate>Sat, 03 Jul 2021 16:56:05 +0200</pubDate>
+      
+      <guid>/posts/cat-pictures/</guid>
+      <description>
+        
+          &lt;img src=&#34;/posts/cat-pictures/cover.jpeg&#34;/&gt;
+          
+        
+        
+        
+          TryHackMe&#39;s easy level machine.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Brooklynninenine - Write Up</title>
+      <link>/posts/brooklynninenine/</link>
+      <pubDate>Sat, 03 Jul 2021 16:53:59 +0200</pubDate>
+      
+      <guid>/posts/brooklynninenine/</guid>
+      <description>
+        
+          &lt;img src=&#34;/posts/brooklynninenine/cover.jpeg&#34;/&gt;
+          
+        
+        
+        
+          TryHackMe&#39;s easy level machine.
+          
+        
+        </description>
+    </item>
     
     <item>
       <title>Git and Crumpets - Write Up</title>
@@ -22,13 +61,12 @@
       <guid>/posts/gitandcrumpets/</guid>
       <description>
         
-          
-          
+          &lt;img src=&#34;/posts/gitandcrumpets/cover.jpg&#34;/&gt;
           
         
         
         
-          TryHackMe&#39;s medium level machine
+          TryHackMe&#39;s medium level machine.
           
         
         </description>
