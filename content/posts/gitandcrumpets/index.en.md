@@ -70,7 +70,7 @@ So let's use the repo cant-touch-this to exploit it!
 
 Unluckily we can't get a rev shell straight forward. But we can put our ssh key in the authorized_keys of the user "git". Even we can read the user's flag from here.
 
-![User](user.png)
+![User](user.png){.callout}
 
 Adding that part, we need to clone the repo to our local machine,and make a new commit.
 
