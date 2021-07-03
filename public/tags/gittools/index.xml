@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gittools on Lanfran02 - Blog</title>
+    
+    
+    
+    <link>/tags/gittools/</link>
+    <description>Recent content in gittools on Lanfran02 - Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Lanfran02</copyright>
+    
+	<atom:link href="/tags/gittools/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Git and Crumpets - Write Up</title>
+      <link>/posts/gitandcrumpets/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/gitandcrumpets/</guid>
+      <description>
+        
+          &lt;img src=&#34;/posts/gitandcrumpets/cover.png&#34;/&gt;
+          
+        
+        
+        
+          TryHackMe&#39;s medium level machine.
+          
+        
+        </description>
+    </item>
+    
+  </channel>
+</rss>

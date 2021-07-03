@@ -24,7 +24,7 @@
   
   <url>
     <loc>/about/</loc>
-    <lastmod>2019-01-25T00:00:00+00:00</lastmod>
+    <lastmod>2021-02-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -41,11 +41,31 @@
   </url>
   
   <url>
+    <loc>/tags/git/</loc>
+  </url>
+  
+  <url>
     <loc>/posts/gitandcrumpets/</loc>
   </url>
   
   <url>
+    <loc>/tags/gitea/</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/gittools/</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/ssh/</loc>
+  </url>
+  
+  <url>
     <loc>/tags/</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/tryhackme/</loc>
   </url>
   
 </urlset>
