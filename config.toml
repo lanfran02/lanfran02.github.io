@@ -57,6 +57,6 @@ paginate = 5
         name = "About"
         url = "/about"
       [[languages.en.menu.main]]
-        identifier = "showcase"
-        name = "Showcase"
-        url = "/showcase"
+        identifier = "write-ups"
+        name = "Write Ups"
+        url = "/write-ups"
