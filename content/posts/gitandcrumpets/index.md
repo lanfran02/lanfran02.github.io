@@ -1,12 +1,12 @@
 ---
 title : "Git and Crumpets - Write Up"
-date : "03/07/2021"
+date : "2021-07-03"
 author : "Lanfran02"
 cover : "cover.png"
 useRelativeCover : true
 description : "TryHackMe's medium level machine."
 tags : ["gittools", "git", "gitea", "ssh", "TryHackMe"]
-publishdate : "05/07/2021" 
+publishDate : "2021-07-05"
 ---
 
 | Link | Level | Creator |
