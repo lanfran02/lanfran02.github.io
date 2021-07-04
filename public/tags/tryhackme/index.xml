@@ -1,37 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>TryHackMe on Lanfran02 - Blog</title>
-    
-    
-    
-    <link>/tags/tryhackme/</link>
-    <description>Recent content in TryHackMe on Lanfran02 - Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>Lanfran02</copyright>
-    
-	<atom:link href="/tags/tryhackme/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Git and Crumpets - Write Up</title>
-      <link>/posts/gitandcrumpets/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/gitandcrumpets/</guid>
-      <description>
-        
-          &lt;img src=&#34;/posts/gitandcrumpets/cover.png&#34;/&gt;
-          
-        
-        
-        
-          TryHackMe&#39;s medium level machine.
-          
-        
-        </description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>TryHackMe on Lanfran02 - Blog</title><link>/tags/tryhackme/</link><description>Recent content in TryHackMe on Lanfran02 - Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>Lanfran02</copyright><lastBuildDate>Sun, 04 Jul 2021 14:31:31 +0200</lastBuildDate><atom:link href="/tags/tryhackme/index.xml" rel="self" type="application/rss+xml"/><item><title>Jack of All Trades - Write Up</title><link>/posts/jack-of-all-trades/</link><pubDate>Sun, 04 Jul 2021 14:31:31 +0200</pubDate><guid>/posts/jack-of-all-trades/</guid><description>
+&lt;img src="/posts/jack-of-all-trades/cover.jpeg"/>
+TryHackMe's easy level machine.</description></item><item><title>Library - Write Up</title><link>/posts/library/</link><pubDate>Sun, 04 Jul 2021 14:07:30 +0200</pubDate><guid>/posts/library/</guid><description>
+&lt;img src="/posts/library/cover.jpeg"/>
+TryHackMe's easy level machine.</description></item><item><title>Thompson - Write Up</title><link>/posts/thompson/</link><pubDate>Sun, 04 Jul 2021 13:39:34 +0200</pubDate><guid>/posts/thompson/</guid><description>
+&lt;img src="/posts/thompson/cover.png"/>
+TryHackMe's easy level machine.</description></item><item><title>Cat Pictures - Write Up</title><link>/posts/cat-pictures/</link><pubDate>Sat, 03 Jul 2021 16:56:05 +0200</pubDate><guid>/posts/cat-pictures/</guid><description>
+&lt;img src="/posts/cat-pictures/cover.jpeg"/>
+TryHackMe's easy level machine.</description></item><item><title>Brooklyn Nine Nine - Write Up</title><link>/posts/brooklynninenine/</link><pubDate>Sat, 03 Jul 2021 16:53:59 +0200</pubDate><guid>/posts/brooklynninenine/</guid><description>
+&lt;img src="/posts/brooklynninenine/cover.jpeg"/>
+TryHackMe's easy level machine.</description></item></channel></rss>
