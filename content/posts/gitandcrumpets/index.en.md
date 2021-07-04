@@ -70,7 +70,7 @@ So let's use the repo cant-touch-this to exploit it!
 
 Unluckily we can't get a rev shell straight forward. But we can put our ssh key in the authorized_keys of the user "git". Even we can read the user's flag from here.
 
-![User](user.png){.callout}
+![User](user.png)
 
 Adding that part, we need to clone the repo to our local machine,and make a new commit.
 
@@ -138,7 +138,7 @@ I found the ssh private key of root!!
 ─ lanfran@parrot ❯ git diff 0b23539d97978fc83b763ef8a4b3882d16e71d32 c242a466aa5d4ae0bb8206ef5d05351d3fd6aff9 > dumped_data
 ```
 
-Inside dumped_data we have the ssh key and where the key was stored, among with the file's name.
+Inside dumped_data we have the ssh key and where the key was stored, along with the file's name.
 
 I tried to ssh with root to the machine, but it was protected. So I ran hydra against it...
 
