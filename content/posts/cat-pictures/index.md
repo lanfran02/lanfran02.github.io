@@ -6,7 +6,6 @@ cover : "cover.jpeg"
 useRelativeCover : true
 description : "TryHackMe's easy level machine."
 tags : ["nc","strings","knock","docker","TryHackMe"]
-draft: true
 ---
 
 | Link | Level | Creator |
