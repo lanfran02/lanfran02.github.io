@@ -6,7 +6,6 @@ cover : "cover.jpeg"
 useRelativeCover : true
 description : "TryHackMe's medium level machine."
 tags : ["TryHackMe"]
-draft: true
 ---
 
 | Link | Level | Creator |

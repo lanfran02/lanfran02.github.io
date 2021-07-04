@@ -6,7 +6,7 @@ author = "Lanfran"
 
 # Hi there
 
-My name is Lanfran and I'm the author of this theme. I made it to help you hack your way to learn!
+My name is Lanfran and I'm the author of this blog. I made it to help you hack your way to learn!
 
 We all know how hard is to start in capture the flag. You need to prepare a bunch of stuff, know how things works and read, _A LOT_
 

@@ -29,7 +29,7 @@ googleAnalytics = "G-3T7DYCWC0W"
 [languages]
   [languages.en]
     title = "Lanfran02 - Blog"
-    subtitle = "A place to look for write-ups."
+    subtitle = "Where write-ups are made."
     keywords = "CTF, Writeup, Hacking"
     copyright = "Lanfran02"
     menuMore = "Show more"
@@ -61,6 +61,10 @@ googleAnalytics = "G-3T7DYCWC0W"
         identifier = "THM"
         name = "THM"
         url = "/tags/tryhackme/"
+      [[languages.en.menu.main]]
+        identifier = "HTB"
+        name = "HTB"
+        url = "/tags/hackthebox/"
   [languages.es]
     title = "Lanfran02 - Blog"
     subtitle = "Hackeando tu forma de aprender."
@@ -95,3 +99,7 @@ googleAnalytics = "G-3T7DYCWC0W"
         identifier = "THM"
         name = "THM"
         url = "/tags/tryhackme/"
+      [[languages.es.menu.main]]
+        identifier = "HTB"
+        name = "HTB"
+        url = "/tags/hackthebox/"
