@@ -6,7 +6,6 @@ cover : "cover.png"
 useRelativeCover : true
 description : "TryHackMe's medium level machine."
 tags : ["gittools", "git", "gitea", "ssh", "TryHackMe"]
-publishDate : "2021-07-05"
 ---
 
 | Link | Level | Creator |

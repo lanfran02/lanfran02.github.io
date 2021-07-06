@@ -1,26 +1,25 @@
 ---
-title : "Git and Crumpets - Write Up"
+title : "Git and Crumpets - Write Up - Español"
 date : "2021-07-03"
 author : "Lanfran02"
 cover : "cover.png"
 useRelativeCover : true
 description : "TryHackMe's medium level machine."
 tags : ["gittools", "git", "gitea", "ssh", "TryHackMe"]
-publishDate : "2021-07-05"
 ---
 
-| Link | Level | Creator |
+| Link | Nivel | Creadot |
 |------|-------|---------|
-| [Here](https://tryhackme.com/room/gitandcrumpets)  | Medium  |  [hydragyrum](https://tryhackme.com/p/hydragyrum)  |
+| [Aquí](https://tryhackme.com/room/gitandcrumpets)  | Medio  |  [hydragyrum](https://tryhackme.com/p/hydragyrum)  |
 
-## Reconn
+## Reconocimiento
 
-In the description of this room we can find that "_the developers included a few countermeasures..._"
+En la descripción de esta sala podemos encontrar que "_the developers included a few countermeasures..._"("_los desarrolladores incluyeron algunas contramedidas ..._").
 
-It's very hard to use nmap because the server starts blocking our requests.
-We practically can not scan the machine, we just have the IP and using the browser we get redirected to a youtube video.
+Es muy difícil usar `nmap` porque el servidor comienza a bloquear nuestras solicitudes.
+Prácticamente no podemos escanear la máquina, solo tenemos la IP y usando el navegador nos redirige a un video de Youtube.
 
-But we can use curl to get the source code of the page.
+Pero podemos usar `curl` para obtener el código fuente de la página.
 
 ```bash
 ╰─ lanfran@parrot ❯ curl 10.10.197.95                                                                                              ─╯
@@ -29,53 +28,53 @@ But we can use curl to get the source code of the page.
       <h2>Notice:</h2>
       <p> 
         Hey guys,
-           I set up the dev repos at [REDACTED].git-and-crumpets.thm, but I haven't gotten around to setting up the DNS yet. 
+           I set up the dev repos at [REDACTADO].git-and-crumpets.thm, but I haven't gotten around to setting up the DNS yet. 
            In the meantime, here's a fun video I found!
         Hydra
       </p>
       <pre>
 [...]
 ```
+Agreguemos el nuevo subdominio encontrado a nuestro archivo `/etc/hosts` y naveguemos hasta él.
 
-Let's add the new subdomain found to our /etc/hosts file, and browse to it.
+Es una página de Gitea.
 
-It's a Gitea page.
+## Acceso inicial - Usuario
 
-## FootHold - User
+Busqué en la página y no encontré nada. Así que registré una nueva cuenta.
 
-I digged into the page, and didn't find anything. So I registered a new account.
+Navegando a través de los repositorios, encontré 2 usuarios, ***scones*** y ***hydra*** con algunos repositorios propios.
 
-Browsing through the repos, I found 2 users, ***scones*** and ***hydra*** with some own repositories.
+El usuario _scones_, disponía de un repositorio donde realizó algunos cambios.
 
-The user scones, had a repository where he commited some changes.
+Leyendo los comentarios del commit _"I kept the password in my avatar to be more secure."_(_"Guardé la contraseña en mi avatar para estar más seguro"_) sabemos donde este usuario almacena su contraseña.
 
-Reading the comments of the commit _"I kept the password in my avatar to be more secure."_ we know where this user stores his password.
-
-So I downloaded the file, and used exiftool to see if it has something interesting.
+Así que descargué el archivo y usé `exiftool` para ver si tenía algo interesante.
 
 ```bash
 ╰─ lanfran@parrot ❯ exiftool cant-touch-this/photo.jpg                                                                            
 [...]
 Interlace                       : Noninterlaced
-Description                     : My [REDACTED] guess
+Description                     : My [REDACTADO] guess
 [...]
 ```
-Cool!
 
-We now can login to the page with the user scones and his password!
+¡Cool!
 
-Looking online, Gitea has an exploit where you can use webhooks for RCE.
+¡Ahora podemos iniciar sesión en la página con el usuario `scones` y su contraseña!
 
-So let's use the repo cant-touch-this to exploit it!
+Buscando en Google, Gitea tiene un exploit en el que puede usar webhooks para RCE/ECR.(Remote Code Execution / Ejecución de Código Remoto).
 
-Unluckily we can't get a rev shell straight forward. But we can put our ssh key in the authorized_keys of the user "git". Even we can read the user's flag from here.
+¡Así que usemos el repositorio `cant-touch-this` para explotarlo!
 
-![User](user.png){.callout}
+Desafortunadamente, no podemos obtener una shell reversa directamente. Pero podemos poner nuestra clave `SSH` en las `authorized_keys` del usuario "git". Incluso podemos leer la Flag del usuario desde aquí.
 
-Adding that part, we need to clone the repo to our local machine,and make a new commit.
+![User](user.png)
+
+Luego de agregar esa parte al webhook, clonamos el repositorio a nuestra maquina local y realizamos un nuevo commit.
 
 ```bash
-git clone http://[REDACTED].git-and-crumpets.thm/scones/cant-touch-this.git
+git clone http://[REDACTADO].git-and-crumpets.thm/scones/cant-touch-this.git
 [...]
 
 ╰─ lanfran@parrot ❯ git add hello.php && git commit -m "Exploiting" && git push -u origin master                                   ─╯
@@ -84,8 +83,8 @@ git clone http://[REDACTED].git-and-crumpets.thm/scones/cant-touch-this.git
 [...]
  1 file changed, 0 insertions(+), 0 deletions(-)
  create mode 100644 hello.php
-Username for 'http://[REDACTED].git-and-crumpets.thm': scones
-Password for 'http://scones@[REDACTED].git-and-crumpets.thm': 
+Username for 'http://[REDACTADO].git-and-crumpets.thm': scones
+Password for 'http://scones@[REDACTADO].git-and-crumpets.thm': 
 Enumerating objects: 3, done.
 Counting objects: 100% (3/3), done.
 Delta compression using up to 4 threads
@@ -94,13 +93,13 @@ Writing objects: 100% (2/2), 276 bytes | 276.00 KiB/s, done.
 Total 2 (delta 0), reused 0 (delta 0), pack-reused 0
 remote: . Processing 1 references
 remote: Processed 1 references in total
-remote: dGhte2ZkN2Fi[REDACTED]ZhYTE2fQ== <--- ****USER FLAG****
-To http://[REDACTED].git-and-crumpets.thm/scones/cant-touch-this.git
+remote: dGhte2ZkN2Fi[REDACTADO]ZhYTE2fQ== <--- ****USER FLAG****
+To http://[REDACTADO].git-and-crumpets.thm/scones/cant-touch-this.git
    9ae06d7..6233b49  master -> master
 Branch 'master' set up to track remote branch 'master' from 'origin'.
 ```
 
-If everithing it's okay, we can now ssh to the machine with _git_.
+Si todo salió bien, podremos loguearnos por SSH con el usuario _git_.
 
 ```bash
 ─ lanfran@parrot ❯ ssh git@git-and-crumpets.thm -i id_rsa                                                                     ─╯
@@ -113,7 +112,8 @@ user.txt
 ```
 ## Root
 
-Looking inside the machine, I found an interesting folder from root's repository.
+Investigando la máquina, encontré una carpeta interesante dentro del repositorio de Gitea de `root`.
+
 ```bash
 [git@git-and-crumpets ~]$ ls -la /var/lib/gitea/data/gitea-repositories/root
 total 0
@@ -121,28 +121,26 @@ drwxr-xr-x. 3 git git  24 Apr 15 15:25 .
 drwxr-xr-x. 5 git git  45 Apr 15 15:50 ..
 drwxr-xr-x. 7 git git 119 Apr 15 15:25 backup.git
 ```
-
-I downloaded the entire folder and used GitTools's extractor to extract all the commits.
+Descargué la carpeta entera y utilizé el `extractor de GitTools` para extraer todos los commits.
 
 ```bash
 /THM/tools/GitTools/Extractor/extractor.sh ~/THM/gitandcrumpets/root/ .
 ```
 
-After that, used git log to check what the user did. 
+Después de eso, usé `git log` para verificar lo que hizo el usuario.
 
-Checked the hashes of the commits and made a diff of all of them.
+Verifiqué los hashes de los commits e realizé un `git diff` de todos ellos.
 
-I found the ssh private key of root!!
+¡Encontré la clave privada SSH de root!
 
 ```bash
 ─ lanfran@parrot ❯ git diff 0b23539d97978fc83b763ef8a4b3882d16e71d32 c242a466aa5d4ae0bb8206ef5d05351d3fd6aff9 > dumped_data
 ```
+Dentro de `dumped_data` tenemos la clave SSH y dónde se almacenó la clave, junto con el nombre del archivo.
 
-Inside dumped_data we have the ssh key and where the key was stored, among with the file's name.
+Intenté loguearme por SSH con root a la máquina, pero estaba protegido. Así que corrí Hydra para crackearlo ...
 
-I tried to ssh with root to the machine, but it was protected. So I ran hydra against it...
-
-BUT, it was taking too much time, so I tried with the key's name itself "Su[REDACTED]r3". How did I get this? iniside the dumped file :)
+PERO, estaba tomando demasiado tiempo, asi que probé con el nombre del archivo de la clave SSH: "Su[REDACTADO]r3". ¿Cómo conseguí esto? dentro del archivo `dumped_data` :)
 
 ```bash
 ╰─ lanfran@parrot ❯ ssh root@git-and-crumpets.thm -i id_rsa_root                                                                  ─╯
@@ -154,6 +152,6 @@ uid=0(root) gid=0(root) groups=0(root) context=unconfined_u:unconfined_r:unconfi
 anaconda-ks.cfg  root.txt
 ```
 
-And we rooted the machine!
+¡Y hemos rooteado la máquina!
 
-That's all from my side, hope you find this helpful!
+Eso es todo de mi parte, ¡espero que lo encuentre útil!
