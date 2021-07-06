@@ -10,6 +10,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Lanfran02</copyright>
+    <lastBuildDate>Sat, 03 Jul 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
     
@@ -17,7 +18,7 @@
     <item>
       <title>Git and Crumpets - Write Up</title>
       <link>/posts/gitandcrumpets/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 03 Jul 2021 00:00:00 +0000</pubDate>
       
       <guid>/posts/gitandcrumpets/</guid>
       <description>

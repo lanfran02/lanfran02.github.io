@@ -12,6 +12,17 @@ tags : ["TryHackMe"]
 |------|-------|---------|
 | [Here](https://tryhackme.com/room/)  | Medium  |  [user](https://tryhackme.com/p/)  |
 
+<!--
+description : "Maquina de nivel medio en TryHackMe."
+
+| Link | Nivel | Creador |
+|------|-------|---------|
+| [Here](https://tryhackme.com/room/)  | Medio  |  [user](https://tryhackme.com/p/)  |
+
+## Reconocimiento
+## Acceso inicial - Usuario
+-->
+
 ## Reconn
 
 ```bash

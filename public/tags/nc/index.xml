@@ -1,3 +1,76 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>nc on Lanfran02 - Blog</title><link>/tags/nc/</link><description>Recent content in nc on Lanfran02 - Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>Lanfran02</copyright><lastBuildDate>Sat, 03 Jul 2021 16:56:05 +0200</lastBuildDate><atom:link href="/tags/nc/index.xml" rel="self" type="application/rss+xml"/><item><title>Cat Pictures - Write Up</title><link>/posts/cat-pictures/</link><pubDate>Sat, 03 Jul 2021 16:56:05 +0200</pubDate><guid>/posts/cat-pictures/</guid><description>
-&lt;img src="/posts/cat-pictures/cover.jpeg"/>
-TryHackMe's easy level machine.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>nc on Lanfran02 - Blog</title>
+    
+    
+    
+    <link>/tags/nc/</link>
+    <description>Recent content in nc on Lanfran02 - Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Lanfran02</copyright>
+    <lastBuildDate>Tue, 06 Jul 2021 12:52:17 +0200</lastBuildDate>
+    
+	<atom:link href="/tags/nc/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>StuxCTF - Write Up</title>
+      <link>/posts/stuxctf/</link>
+      <pubDate>Tue, 06 Jul 2021 12:52:17 +0200</pubDate>
+      
+      <guid>/posts/stuxctf/</guid>
+      <description>
+        
+          &lt;img src=&#34;/posts/stuxctf/cover.png&#34;/&gt;
+          
+        
+        
+        
+          TryHackMe&#39;s medium level machine.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Develpy - Write Up</title>
+      <link>/posts/develpy/</link>
+      <pubDate>Sun, 04 Jul 2021 17:29:57 +0200</pubDate>
+      
+      <guid>/posts/develpy/</guid>
+      <description>
+        
+          &lt;img src=&#34;/posts/develpy/cover.png&#34;/&gt;
+          
+        
+        
+        
+          TryHackMe&#39;s medium level machine.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Cat Pictures - Write Up</title>
+      <link>/posts/cat-pictures/</link>
+      <pubDate>Sat, 03 Jul 2021 16:56:05 +0200</pubDate>
+      
+      <guid>/posts/cat-pictures/</guid>
+      <description>
+        
+          &lt;img src=&#34;/posts/cat-pictures/cover.jpeg&#34;/&gt;
+          
+        
+        
+        
+          TryHackMe&#39;s easy level machine.
+          
+        
+        </description>
+    </item>
+    
+  </channel>
+</rss>

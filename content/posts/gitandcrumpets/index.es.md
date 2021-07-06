@@ -4,11 +4,11 @@ date : "2021-07-03"
 author : "Lanfran02"
 cover : "cover.png"
 useRelativeCover : true
-description : "TryHackMe's medium level machine."
+description : "Máquina de nivel medio en TryHackMe."
 tags : ["gittools", "git", "gitea", "ssh", "TryHackMe"]
 ---
 
-| Link | Nivel | Creadot |
+| Link | Nivel | Creador |
 |------|-------|---------|
 | [Aquí](https://tryhackme.com/room/gitandcrumpets)  | Medio  |  [hydragyrum](https://tryhackme.com/p/hydragyrum)  |
 

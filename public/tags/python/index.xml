@@ -1,3 +1,57 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>python on Lanfran02 - Blog</title><link>/tags/python/</link><description>Recent content in python on Lanfran02 - Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>Lanfran02</copyright><lastBuildDate>Sun, 04 Jul 2021 14:07:30 +0200</lastBuildDate><atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml"/><item><title>Library - Write Up</title><link>/posts/library/</link><pubDate>Sun, 04 Jul 2021 14:07:30 +0200</pubDate><guid>/posts/library/</guid><description>
-&lt;img src="/posts/library/cover.jpeg"/>
-TryHackMe's easy level machine.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>python on Lanfran02 - Blog</title>
+    
+    
+    
+    <link>/tags/python/</link>
+    <description>Recent content in python on Lanfran02 - Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Lanfran02</copyright>
+    <lastBuildDate>Sun, 04 Jul 2021 17:29:57 +0200</lastBuildDate>
+    
+	<atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Develpy - Write Up</title>
+      <link>/posts/develpy/</link>
+      <pubDate>Sun, 04 Jul 2021 17:29:57 +0200</pubDate>
+      
+      <guid>/posts/develpy/</guid>
+      <description>
+        
+          &lt;img src=&#34;/posts/develpy/cover.png&#34;/&gt;
+          
+        
+        
+        
+          TryHackMe&#39;s medium level machine.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Library - Write Up</title>
+      <link>/posts/library/</link>
+      <pubDate>Sun, 04 Jul 2021 14:07:30 +0200</pubDate>
+      
+      <guid>/posts/library/</guid>
+      <description>
+        
+          &lt;img src=&#34;/posts/library/cover.jpeg&#34;/&gt;
+          
+        
+        
+        
+          TryHackMe&#39;s easy level machine.
+          
+        
+        </description>
+    </item>
+    
+  </channel>
+</rss>

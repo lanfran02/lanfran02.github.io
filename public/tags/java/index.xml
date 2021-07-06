@@ -1,3 +1,38 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>java on Lanfran02 - Blog</title><link>/tags/java/</link><description>Recent content in java on Lanfran02 - Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>Lanfran02</copyright><lastBuildDate>Sun, 04 Jul 2021 13:39:34 +0200</lastBuildDate><atom:link href="/tags/java/index.xml" rel="self" type="application/rss+xml"/><item><title>Thompson - Write Up</title><link>/posts/thompson/</link><pubDate>Sun, 04 Jul 2021 13:39:34 +0200</pubDate><guid>/posts/thompson/</guid><description>
-&lt;img src="/posts/thompson/cover.png"/>
-TryHackMe's easy level machine.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>java on Lanfran02 - Blog</title>
+    
+    
+    
+    <link>/tags/java/</link>
+    <description>Recent content in java on Lanfran02 - Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Lanfran02</copyright>
+    <lastBuildDate>Sun, 04 Jul 2021 13:39:34 +0200</lastBuildDate>
+    
+	<atom:link href="/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Thompson - Write Up</title>
+      <link>/posts/thompson/</link>
+      <pubDate>Sun, 04 Jul 2021 13:39:34 +0200</pubDate>
+      
+      <guid>/posts/thompson/</guid>
+      <description>
+        
+          &lt;img src=&#34;/posts/thompson/cover.png&#34;/&gt;
+          
+        
+        
+        
+          TryHackMe&#39;s easy level machine.
+          
+        
+        </description>
+    </item>
+    
+  </channel>
+</rss>

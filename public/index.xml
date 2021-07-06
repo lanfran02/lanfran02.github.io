@@ -1,15 +1,233 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Lanfran02 - Blog</title><link>/</link><description>Recent content on Lanfran02 - Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>Lanfran02</copyright><lastBuildDate>Sun, 04 Jul 2021 14:31:31 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Jack of All Trades - Write Up</title><link>/posts/jack-of-all-trades/</link><pubDate>Sun, 04 Jul 2021 14:31:31 +0200</pubDate><guid>/posts/jack-of-all-trades/</guid><description>
-&lt;img src="/posts/jack-of-all-trades/cover.jpeg"/>
-TryHackMe's easy level machine.</description></item><item><title>Library - Write Up</title><link>/posts/library/</link><pubDate>Sun, 04 Jul 2021 14:07:30 +0200</pubDate><guid>/posts/library/</guid><description>
-&lt;img src="/posts/library/cover.jpeg"/>
-TryHackMe's easy level machine.</description></item><item><title>Thompson - Write Up</title><link>/posts/thompson/</link><pubDate>Sun, 04 Jul 2021 13:39:34 +0200</pubDate><guid>/posts/thompson/</guid><description>
-&lt;img src="/posts/thompson/cover.png"/>
-TryHackMe's easy level machine.</description></item><item><title>Cat Pictures - Write Up</title><link>/posts/cat-pictures/</link><pubDate>Sat, 03 Jul 2021 16:56:05 +0200</pubDate><guid>/posts/cat-pictures/</guid><description>
-&lt;img src="/posts/cat-pictures/cover.jpeg"/>
-TryHackMe's easy level machine.</description></item><item><title>Brooklyn Nine Nine - Write Up</title><link>/posts/brooklynninenine/</link><pubDate>Sat, 03 Jul 2021 16:53:59 +0200</pubDate><guid>/posts/brooklynninenine/</guid><description>
-&lt;img src="/posts/brooklynninenine/cover.jpeg"/>
-TryHackMe's easy level machine.</description></item><item><title>About</title><link>/about/</link><pubDate>Wed, 10 Feb 2021 00:00:00 +0000</pubDate><guid>/about/</guid><description>
-Hi there My name is Lanfran and I&amp;rsquo;m the author of this theme. I made it to help you hack your way to learn!
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lanfran02 - Blog</title>
+    
+    
+    
+    <link>/</link>
+    <description>Recent content on Lanfran02 - Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Lanfran02</copyright>
+    <lastBuildDate>Tue, 06 Jul 2021 12:52:17 +0200</lastBuildDate>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>StuxCTF - Write Up</title>
+      <link>/posts/stuxctf/</link>
+      <pubDate>Tue, 06 Jul 2021 12:52:17 +0200</pubDate>
+      
+      <guid>/posts/stuxctf/</guid>
+      <description>
+        
+          &lt;img src=&#34;/posts/stuxctf/cover.png&#34;/&gt;
+          
+        
+        
+        
+          TryHackMe&#39;s medium level machine.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Develpy - Write Up</title>
+      <link>/posts/develpy/</link>
+      <pubDate>Sun, 04 Jul 2021 17:29:57 +0200</pubDate>
+      
+      <guid>/posts/develpy/</guid>
+      <description>
+        
+          &lt;img src=&#34;/posts/develpy/cover.png&#34;/&gt;
+          
+        
+        
+        
+          TryHackMe&#39;s medium level machine.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Jack of All Trades - Write Up</title>
+      <link>/posts/jack-of-all-trades/</link>
+      <pubDate>Sun, 04 Jul 2021 14:31:31 +0200</pubDate>
+      
+      <guid>/posts/jack-of-all-trades/</guid>
+      <description>
+        
+          &lt;img src=&#34;/posts/jack-of-all-trades/cover.jpeg&#34;/&gt;
+          
+        
+        
+        
+          TryHackMe&#39;s easy level machine.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Library - Write Up</title>
+      <link>/posts/library/</link>
+      <pubDate>Sun, 04 Jul 2021 14:07:30 +0200</pubDate>
+      
+      <guid>/posts/library/</guid>
+      <description>
+        
+          &lt;img src=&#34;/posts/library/cover.jpeg&#34;/&gt;
+          
+        
+        
+        
+          TryHackMe&#39;s easy level machine.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Thompson - Write Up</title>
+      <link>/posts/thompson/</link>
+      <pubDate>Sun, 04 Jul 2021 13:39:34 +0200</pubDate>
+      
+      <guid>/posts/thompson/</guid>
+      <description>
+        
+          &lt;img src=&#34;/posts/thompson/cover.png&#34;/&gt;
+          
+        
+        
+        
+          TryHackMe&#39;s easy level machine.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Cat Pictures - Write Up</title>
+      <link>/posts/cat-pictures/</link>
+      <pubDate>Sat, 03 Jul 2021 16:56:05 +0200</pubDate>
+      
+      <guid>/posts/cat-pictures/</guid>
+      <description>
+        
+          &lt;img src=&#34;/posts/cat-pictures/cover.jpeg&#34;/&gt;
+          
+        
+        
+        
+          TryHackMe&#39;s easy level machine.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Brooklyn Nine Nine - Write Up</title>
+      <link>/posts/brooklynninenine/</link>
+      <pubDate>Sat, 03 Jul 2021 16:53:59 +0200</pubDate>
+      
+      <guid>/posts/brooklynninenine/</guid>
+      <description>
+        
+          &lt;img src=&#34;/posts/brooklynninenine/cover.jpeg&#34;/&gt;
+          
+        
+        
+        
+          TryHackMe&#39;s easy level machine.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Git and Crumpets - Write Up</title>
+      <link>/posts/gitandcrumpets/</link>
+      <pubDate>Sat, 03 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/gitandcrumpets/</guid>
+      <description>
+        
+          &lt;img src=&#34;/posts/gitandcrumpets/cover.png&#34;/&gt;
+          
+        
+        
+        
+          TryHackMe&#39;s medium level machine.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>/about/about/</link>
+      <pubDate>Wed, 10 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/about/about/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Hi there! My name is Lanfran and I&amp;rsquo;m the author of this blog. I made it to help you hack your way to learn!
 We all know how hard is to start in capture the flag. You need to prepare a bunch of stuff, know how things works and read, A LOT
-This blog is pretty basic and covers some of the rooms in CTFs platforms. All you have to do is start hacking!</description></item><item><title>Showcase</title><link>/showcase/</link><pubDate>Fri, 18 Jan 2019 00:00:00 +0000</pubDate><guid>/showcase/</guid><description>
-Header 2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec interdum metus. Aenean rutrum ligula sodales ex auctor, sed tempus dui mollis. Curabitur ipsum dui, aliquet nec commodo at, tristique eget ante. Donec quis dolor nec nunc mollis interdum vel in purus. Sed vitae leo scelerisque, sollicitudin elit sed, congue ante. In augue nisl, vestibulum commodo est a, tristique porttitor est. Proin laoreet iaculis ornare. Nullam ut neque quam.</description></item><item><title>Archive</title><link>/archive/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/archive/</guid><description/></item></channel></rss>
+This blog is pretty basic and covers some of the rooms in CTFs platforms. All you have to do is start hacking!
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Showcase</title>
+      <link>/showcase/</link>
+      <pubDate>Fri, 18 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/showcase/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Header 2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec interdum metus. Aenean rutrum ligula sodales ex auctor, sed tempus dui mollis. Curabitur ipsum dui, aliquet nec commodo at, tristique eget ante. Donec quis dolor nec nunc mollis interdum vel in purus. Sed vitae leo scelerisque, sollicitudin elit sed, congue ante. In augue nisl, vestibulum commodo est a, tristique porttitor est. Proin laoreet iaculis ornare. Nullam ut neque quam.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Archive</title>
+      <link>/archive/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/archive/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+  </channel>
+</rss>

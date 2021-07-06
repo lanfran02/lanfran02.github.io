@@ -4,7 +4,7 @@
     
       <title>
         Git and Crumpets - Write Up ::
-        Lanfran02 - Blog — A place to look for write-ups.
+        Lanfran02 - Blog — Where write-ups are made.
       </title>
     
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -59,11 +59,36 @@ But we can use curl to get the source code of the page."
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/gitandcrumpets/" />
 <meta property="og:image" content="/posts/gitandcrumpets/cover.png"/>
-<meta property="og:site_name" content="Lanfran02 - Blog" />
+<meta property="article:published_time" content="2021-07-03T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-07-03T00:00:00+00:00" /><meta property="og:site_name" content="Lanfran02 - Blog" />
 
 
 
+ 
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-3T7DYCWC0W', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
 
+ 
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-3T7DYCWC0W', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
   </head>
@@ -99,9 +124,32 @@ But we can use curl to get the source code of the page."
         
       
         
-          <li><a href="/write-ups">Write Ups</a></li>
+          <li><a href="/es/">Español</a></li>
         
       
+      
+        <ul class="menu__sub-inner">
+          <li class="menu__sub-inner-more-trigger">
+            Write Ups
+            <span class="menu__sub-inner-more-trigger-icon"
+              ><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span
+            >
+          </li>
+          <ul class="menu__sub-inner-more hidden">
+            
+              
+                <li><a href="/tags/hackthebox/">HTB</a></li>
+              
+            
+              
+                <li><a href="/tags/tryhackme/">THM</a></li>
+              
+            
+          </ul>
+        </ul>
       
       
   </ul>
@@ -113,7 +161,15 @@ But we can use curl to get the source code of the page."
       
     
       
-        <li><a href="/write-ups">Write Ups</a></li>
+        <li><a href="/es/">Español</a></li>
+      
+    
+      
+        <li><a href="/tags/hackthebox/">HTB</a></li>
+      
+    
+      
+        <li><a href="/tags/tryhackme/">THM</a></li>
       
     
   </ul>
@@ -156,6 +212,14 @@ But we can use curl to get the source code of the page."
   <div class="post">
     <h1 class="post-title">Git and Crumpets - Write Up</h1>
     <div class="post-meta">
+      
+        <span class="post-date">
+          2021-07-03
+        </span>
+
+        
+          
+        
       
 
       
@@ -307,7 +371,7 @@ drwxr-xr-x. <span style="color:#ae81ff">7</span> git git <span style="color:#ae8
 <p>Checked the hashes of the commits and made a diff of all of them.</p>
 <p>I found the ssh private key of root!!</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">─ lanfran@parrot ❯ git diff 0b23539d97978fc83b763ef8a4b3882d16e71d32 c242a466aa5d4ae0bb8206ef5d05351d3fd6aff9 &gt; dumped_data
-</code></pre></div><p>Inside dumped_data we have the ssh key and where the key was stored, among with the file&rsquo;s name.</p>
+</code></pre></div><p>Inside dumped_data we have the ssh key and where the key was stored, along with the file&rsquo;s name.</p>
 <p>I tried to ssh with root to the machine, but it was protected. So I ran hydra against it&hellip;</p>
 <p>BUT, it was taking too much time, so I tried with the key&rsquo;s name itself &ldquo;Su[REDACTED]r3&rdquo;. How did I get this? iniside the dumped file :)</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">╰─ lanfran@parrot ❯ ssh root@git-and-crumpets.thm -i id_rsa_root                                                                  ─╯
@@ -335,7 +399,7 @@ anaconda-ks.cfg  root.txt
               <span class="button previous">
                 <a href="/posts/brooklynninenine/">
                   <span class="button__icon">←</span>
-                  <span class="button__text">Brooklynninenine - Write Up</span>
+                  <span class="button__text">Brooklyn Nine Nine - Write Up</span>
                 </a>
               </span>
             
@@ -370,6 +434,21 @@ anaconda-ks.cfg  root.txt
 
       
     </div>
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-3T7DYCWC0W', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
 
     
   </body>

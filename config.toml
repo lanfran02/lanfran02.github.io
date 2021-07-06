@@ -13,7 +13,7 @@ googleAnalytics = "G-3T7DYCWC0W"
   defaultTheme = "dark"
 
   # if you set this to 0, only submenu trigger will be visible
-  showMenuItems = 3
+  showMenuItems = 2
 
   # Show reading time in minutes for posts
   showReadingTime = true
@@ -32,7 +32,7 @@ googleAnalytics = "G-3T7DYCWC0W"
     subtitle = "Where write-ups are made."
     keywords = "CTF, Writeup, Hacking"
     copyright = "Lanfran02"
-    menuMore = "Show more"
+    menuMore = "Write Ups"
     writtenBy = "Written by"
     readMore = "Read more"
     readOtherPosts = "Read other posts"
@@ -65,18 +65,22 @@ googleAnalytics = "G-3T7DYCWC0W"
         identifier = "HTB"
         name = "HTB"
         url = "/tags/hackthebox/"
+      [[languages.en.menu.main]]
+        identifier = "Español"
+        name = "Español"
+        url = "/es/"
   [languages.es]
     title = "Lanfran02 - Blog"
     subtitle = "Hackeando tu forma de aprender."
     keywords = "CTF, Writeup, Hacking"
     copyright = "Lanfran02"
-    menuMore = "Ver más"
+    menuMore = "Write Ups"
     writtenBy = "Escrito por"
     readMore = "Continuar leyendo"
     readOtherPosts = "Leer otros posts"
     newerPosts = "Posts recientes"
     olderPosts = "Posts antiguos"
-    minuteReadingTime = "min lectura"
+    minuteReadingTime = "mins lectura"
     dateFormatSingle = "2006-01-02"
     dateFormatList = "2006-01-02"
     # leave empty to disable, enter display text to enable
@@ -84,7 +88,7 @@ googleAnalytics = "G-3T7DYCWC0W"
 
     [languages.es.params.logo]
       logoText = "Lanfran02"
-      logoHomeLink = "/"
+      logoHomeLink = "/es/"
     # or
     #
     # path = "/img/your-example-logo.svg"
@@ -94,12 +98,16 @@ googleAnalytics = "G-3T7DYCWC0W"
       [[languages.es.menu.main]]
         identifier = "about"
         name = "Acerca de mí"
-        url = "/about"
+        url = "/es/about"
       [[languages.es.menu.main]]
         identifier = "THM"
         name = "THM"
-        url = "/tags/tryhackme/"
+        url = "/es/tags/tryhackme/"
       [[languages.es.menu.main]]
         identifier = "HTB"
         name = "HTB"
-        url = "/tags/hackthebox/"
+        url = "/es/tags/hackthebox/"
+      [[languages.es.menu.main]]
+        identifier = "English"
+        name = "English"
+        url = "/"
