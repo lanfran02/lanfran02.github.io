@@ -1,5 +1,5 @@
 ---
-title : "Develpy - Write Up"
+title : "Develpy - Write Up - Español"
 date : 2021-07-04T17:29:57+02:00
 author : "Lanfran02"
 cover : "cover.png"

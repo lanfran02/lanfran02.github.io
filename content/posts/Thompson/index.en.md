@@ -1,20 +1,20 @@
 ---
-title : "Thompson - Write Up"
+title : "Thompson - Write Up - Español"
 date : 2021-07-04T13:39:34+02:00
 author : "Lanfran02"
 cover : "cover.png"
 useRelativeCover : true
-description : "TryHackMe's easy level machine."
+description : "Máquina de nivel fácil en TryHackMe."
 tags : ["tomcat","misconfigured","msfconsole","java","TryHackMe"]
 ---
 
-| Link | Level | Creator |
+| Link | Nivel | Creador |
 |------|-------|---------|
-| [Here](https://tryhackme.com/room/bsidesgtthompson)  | Easy  |  [stuxnet](https://tryhackme.com/p/stuxnet)  |
+| [Aquí](https://tryhackme.com/room/bsidesgtthompson)  | Fácil  |  [stuxnet](https://tryhackme.com/p/stuxnet)  |
 
-## Reconn
+## Reconocimiento
 
-As always, let's run `nmap` to see what ports are open.
+Como siempre, ejecutemos `nmap` para ver qué puertos están abiertos.
 ```bash
 ╰─ lanfran@parrot ❯ map 10.10.128.244                                                                                              ─╯
 [sudo] password for lanfran: 
@@ -40,7 +40,7 @@ Nmap done: 1 IP address (1 host up) scanned in 35.03 seconds
 ```
 As the name and cover picture of the room indicate, the machine is running an Apache Tomcat server on port 8080.
 
-## Foothold - User
+## Acceso inicial - Usuario
 
 We get the default Tomcat page, and also we can go to `Manager App` tab.
 
@@ -143,6 +143,6 @@ tomcat@ubuntu:/home/jack$ cat test.txt
 d[REDACTED]a
 ```
 
-And we "rooted" the machine!
+¡Y hemos "rooteado" la máquina!
 
-That's all from my side, hope you find this helpful!
+Eso es todo de mi parte, ¡espero que lo encuentre útil!

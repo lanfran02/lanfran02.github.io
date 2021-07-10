@@ -1,5 +1,5 @@
 ---
-title : "StuxCTF - Write Up"
+title : "StuxCTF - Write Up - Español"
 date : 2021-07-06T12:52:17+02:00
 author : "Lanfran02"
 cover : "cover.png"

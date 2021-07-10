@@ -13,7 +13,7 @@ tags : ["TryHackMe"]
 | [Here](https://tryhackme.com/room/)  | Medium  |  [user](https://tryhackme.com/p/)  |
 
 <!--
-description : "Maquina de nivel medio en TryHackMe."
+description : "Máquina de nivel medio en TryHackMe."
 
 | Link | Nivel | Creador |
 |------|-------|---------|
