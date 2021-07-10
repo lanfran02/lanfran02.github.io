@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Lanfran02 - Blog</title><link>/posts/</link><description>Recent content in Posts on Lanfran02 - Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>Lanfran02</copyright><lastBuildDate>Sat, 10 Jul 2021 17:40:55 +0200</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Cold_VVars - Write Up</title><link>/posts/cold_vvars/</link><pubDate>Sat, 10 Jul 2021 17:40:55 +0200</pubDate><guid>/posts/cold_vvars/</guid><description>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Lanfran02 - Blog</title><link>/posts/</link><description>Recent content in Posts on Lanfran02 - Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>Lanfran02</copyright><lastBuildDate>Sat, 10 Jul 2021 17:40:55 +0200</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Cold VVars - Write Up</title><link>/posts/cold_vvars/</link><pubDate>Sat, 10 Jul 2021 17:40:55 +0200</pubDate><guid>/posts/cold_vvars/</guid><description>
 &lt;img src="/posts/cold_vvars/cover.jpeg"/>
 TryHackMe's medium level machine.</description></item><item><title>Blueprint - Write Up</title><link>/posts/blueprint/</link><pubDate>Fri, 09 Jul 2021 12:14:38 +0200</pubDate><guid>/posts/blueprint/</guid><description>
 &lt;img src="/posts/blueprint/cover.jpeg"/>
-TryHackMe's medium level machine.</description></item><item><title>Internal - Write Up</title><link>/posts/internal/</link><pubDate>Fri, 09 Jul 2021 10:52:31 +0200</pubDate><guid>/posts/internal/</guid><description>
+TryHackMe's easy level machine.</description></item><item><title>Internal - Write Up</title><link>/posts/internal/</link><pubDate>Fri, 09 Jul 2021 10:52:31 +0200</pubDate><guid>/posts/internal/</guid><description>
 &lt;img src="/posts/internal/cover.jpeg"/>
-TryHackMe's medium level machine.</description></item><item><title>Hack Your Way To Learn - THM</title><link>/posts/thm-pre-security/</link><pubDate>Wed, 07 Jul 2021 00:16:11 +0200</pubDate><guid>/posts/thm-pre-security/</guid><description>
+TryHackMe's Hard level machine.</description></item><item><title>Hack Your Way To Learn - THM</title><link>/posts/thm-pre-security/</link><pubDate>Wed, 07 Jul 2021 00:16:11 +0200</pubDate><guid>/posts/thm-pre-security/</guid><description>
 &lt;img src="/posts/thm-pre-security/cover.png"/>
 TryHackMe's new learning path.</description></item><item><title>StuxCTF - Write Up</title><link>/posts/stuxctf/</link><pubDate>Tue, 06 Jul 2021 12:52:17 +0200</pubDate><guid>/posts/stuxctf/</guid><description>
 &lt;img src="/posts/stuxctf/cover.png"/>
@@ -14,9 +14,9 @@ TryHackMe's medium level machine.</description></item><item><title>Jack of All T
 &lt;img src="/posts/jack-of-all-trades/cover.jpeg"/>
 TryHackMe's easy level machine.</description></item><item><title>Library - Write Up</title><link>/posts/library/</link><pubDate>Sun, 04 Jul 2021 14:07:30 +0200</pubDate><guid>/posts/library/</guid><description>
 &lt;img src="/posts/library/cover.jpeg"/>
-TryHackMe's easy level machine.</description></item><item><title>Thompson - Write Up</title><link>/posts/thompson/</link><pubDate>Sun, 04 Jul 2021 13:39:34 +0200</pubDate><guid>/posts/thompson/</guid><description>
+TryHackMe's easy level machine.</description></item><item><title>Thompson - Write Up - Español</title><link>/posts/thompson/</link><pubDate>Sun, 04 Jul 2021 13:39:34 +0200</pubDate><guid>/posts/thompson/</guid><description>
 &lt;img src="/posts/thompson/cover.png"/>
-TryHackMe's easy level machine.</description></item><item><title>Cat Pictures - Write Up</title><link>/posts/cat-pictures/</link><pubDate>Sat, 03 Jul 2021 16:56:05 +0200</pubDate><guid>/posts/cat-pictures/</guid><description>
+Máquina de nivel fácil en TryHackMe.</description></item><item><title>Cat Pictures - Write Up</title><link>/posts/cat-pictures/</link><pubDate>Sat, 03 Jul 2021 16:56:05 +0200</pubDate><guid>/posts/cat-pictures/</guid><description>
 &lt;img src="/posts/cat-pictures/cover.jpeg"/>
 TryHackMe's easy level machine.</description></item><item><title>Brooklyn Nine Nine - Write Up</title><link>/posts/brooklynninenine/</link><pubDate>Sat, 03 Jul 2021 16:53:59 +0200</pubDate><guid>/posts/brooklynninenine/</guid><description>
 &lt;img src="/posts/brooklynninenine/cover.jpeg"/>
