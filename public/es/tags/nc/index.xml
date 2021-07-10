@@ -28,7 +28,45 @@
         
         
         
-          Maquina de nivel medio en TryHackMe.
+          Máquina de nivel medio en TryHackMe.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Develpy - Write Up</title>
+      <link>/es/posts/develpy/</link>
+      <pubDate>Sun, 04 Jul 2021 17:29:57 +0200</pubDate>
+      
+      <guid>/es/posts/develpy/</guid>
+      <description>
+        
+          &lt;img src=&#34;/es/posts/develpy/cover.png&#34;/&gt;
+          
+        
+        
+        
+          TryHackMe&#39;s medium level machine.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Cat Pictures - Write Up - Español</title>
+      <link>/es/posts/cat-pictures/</link>
+      <pubDate>Sat, 03 Jul 2021 16:56:05 +0200</pubDate>
+      
+      <guid>/es/posts/cat-pictures/</guid>
+      <description>
+        
+          &lt;img src=&#34;/es/posts/cat-pictures/cover.jpeg&#34;/&gt;
+          
+        
+        
+        
+          Máquina de nivel fácil en TryHackMe.
           
         
         </description>

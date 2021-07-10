@@ -17,10 +17,15 @@ description : "Maquina de nivel medio en TryHackMe."
 
 | Link | Nivel | Creador |
 |------|-------|---------|
-| [Here](https://tryhackme.com/room/)  | Medio  |  [user](https://tryhackme.com/p/)  |
+| [Aquí](https://tryhackme.com/room/)  | Medio  |  [user](https://tryhackme.com/p/)  |
 
 ## Reconocimiento
 ## Acceso inicial - Usuario
+
+
+¡Y hemos rooteado la máquina!
+
+Eso es todo de mi parte, ¡espero que lo encuentre útil!
 -->
 
 ## Reconn

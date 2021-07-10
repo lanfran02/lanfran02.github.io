@@ -10,10 +10,29 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Lanfran02</copyright>
-    <lastBuildDate>Tue, 06 Jul 2021 12:52:17 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 07 Jul 2021 00:16:11 +0200</lastBuildDate>
     
 	<atom:link href="/es/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hackea Tu Forma De Aprender - THM</title>
+      <link>/es/posts/thm-pre-security/</link>
+      <pubDate>Wed, 07 Jul 2021 00:16:11 +0200</pubDate>
+      
+      <guid>/es/posts/thm-pre-security/</guid>
+      <description>
+        
+          &lt;img src=&#34;/es/posts/thm-pre-security/cover.png&#34;/&gt;
+          
+        
+        
+        
+          Nuevo curso de TryHackMe.
+          
+        
+        </description>
+    </item>
     
     <item>
       <title>StuxCTF - Write Up</title>
@@ -28,7 +47,64 @@
         
         
         
-          Maquina de nivel medio en TryHackMe.
+          Máquina de nivel medio en TryHackMe.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Develpy - Write Up</title>
+      <link>/es/posts/develpy/</link>
+      <pubDate>Sun, 04 Jul 2021 17:29:57 +0200</pubDate>
+      
+      <guid>/es/posts/develpy/</guid>
+      <description>
+        
+          &lt;img src=&#34;/es/posts/develpy/cover.png&#34;/&gt;
+          
+        
+        
+        
+          TryHackMe&#39;s medium level machine.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Cat Pictures - Write Up - Español</title>
+      <link>/es/posts/cat-pictures/</link>
+      <pubDate>Sat, 03 Jul 2021 16:56:05 +0200</pubDate>
+      
+      <guid>/es/posts/cat-pictures/</guid>
+      <description>
+        
+          &lt;img src=&#34;/es/posts/cat-pictures/cover.jpeg&#34;/&gt;
+          
+        
+        
+        
+          Máquina de nivel fácil en TryHackMe.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Brooklyn Nine Nine - Write Up - Español</title>
+      <link>/es/posts/brooklynninenine/</link>
+      <pubDate>Sat, 03 Jul 2021 16:53:59 +0200</pubDate>
+      
+      <guid>/es/posts/brooklynninenine/</guid>
+      <description>
+        
+          &lt;img src=&#34;/es/posts/brooklynninenine/cover.jpeg&#34;/&gt;
+          
+        
+        
+        
+          Máquina de nivel fácil en TryHackMe.
           
         
         </description>

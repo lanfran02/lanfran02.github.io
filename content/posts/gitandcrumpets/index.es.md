@@ -71,7 +71,7 @@ Desafortunadamente, no podemos obtener una shell reversa directamente. Pero pode
 
 ![User](user.png)
 
-Luego de agregar esa parte al webhook, clonamos el repositorio a nuestra maquina local y realizamos un nuevo commit.
+Luego de agregar esa parte al webhook, clonamos el repositorio a nuestra máquina local y realizamos un nuevo commit.
 
 ```bash
 git clone http://[REDACTADO].git-and-crumpets.thm/scones/cant-touch-this.git

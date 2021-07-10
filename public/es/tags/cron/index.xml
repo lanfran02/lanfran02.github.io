@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cron on Lanfran02 - Blog</title>
+    
+    
+    
+    <link>/es/tags/cron/</link>
+    <description>Recent content in cron on Lanfran02 - Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Lanfran02</copyright>
+    <lastBuildDate>Sun, 04 Jul 2021 17:29:57 +0200</lastBuildDate>
+    
+	<atom:link href="/es/tags/cron/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Develpy - Write Up</title>
+      <link>/es/posts/develpy/</link>
+      <pubDate>Sun, 04 Jul 2021 17:29:57 +0200</pubDate>
+      
+      <guid>/es/posts/develpy/</guid>
+      <description>
+        
+          &lt;img src=&#34;/es/posts/develpy/cover.png&#34;/&gt;
+          
+        
+        
+        
+          TryHackMe&#39;s medium level machine.
+          
+        
+        </description>
+    </item>
+    
+  </channel>
+</rss>
