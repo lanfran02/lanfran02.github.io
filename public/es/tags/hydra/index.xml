@@ -10,10 +10,48 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Lanfran02</copyright>
-    <lastBuildDate>Sat, 03 Jul 2021 16:53:59 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 09 Jul 2021 10:52:31 +0200</lastBuildDate>
     
 	<atom:link href="/es/tags/hydra/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Internal - Write Up - Español</title>
+      <link>/es/posts/internal/</link>
+      <pubDate>Fri, 09 Jul 2021 10:52:31 +0200</pubDate>
+      
+      <guid>/es/posts/internal/</guid>
+      <description>
+        
+          &lt;img src=&#34;/es/posts/internal/cover.jpeg&#34;/&gt;
+          
+        
+        
+        
+          Maquina de nivel difícil en TryHackMe.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Library - Write Up - Español</title>
+      <link>/es/posts/library/</link>
+      <pubDate>Sun, 04 Jul 2021 14:07:30 +0200</pubDate>
+      
+      <guid>/es/posts/library/</guid>
+      <description>
+        
+          &lt;img src=&#34;/es/posts/library/cover.jpeg&#34;/&gt;
+          
+        
+        
+        
+          Maquina de nivel fácil en TryHackMe.
+          
+        
+        </description>
+    </item>
     
     <item>
       <title>Brooklyn Nine Nine - Write Up - Español</title>

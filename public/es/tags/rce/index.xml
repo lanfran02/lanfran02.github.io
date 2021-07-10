@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RCE on Lanfran02 - Blog</title>
+    
+    
+    
+    <link>/es/tags/rce/</link>
+    <description>Recent content in RCE on Lanfran02 - Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Lanfran02</copyright>
+    <lastBuildDate>Sun, 04 Jul 2021 14:31:31 +0200</lastBuildDate>
+    
+	<atom:link href="/es/tags/rce/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Jack of All Trades - Write Up - Español</title>
+      <link>/es/posts/jack-of-all-trades/</link>
+      <pubDate>Sun, 04 Jul 2021 14:31:31 +0200</pubDate>
+      
+      <guid>/es/posts/jack-of-all-trades/</guid>
+      <description>
+        
+          &lt;img src=&#34;/es/posts/jack-of-all-trades/cover.jpeg&#34;/&gt;
+          
+        
+        
+        
+          Máquina de nivel fácil en TryHackMe.
+          
+        
+        </description>
+    </item>
+    
+  </channel>
+</rss>

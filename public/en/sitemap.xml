@@ -3,8 +3,48 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/tags/burpsuite/</loc>
+    <lastmod>2021-07-10T17:40:55+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/tags/burpsuite/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/tags/burpsuite/"
+                />
+  </url>
+  
+  <url>
     <loc>/posts/cold_vvars/</loc>
     <lastmod>2021-07-10T17:40:55+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/posts/cold_vvars/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/posts/cold_vvars/"
+                />
+  </url>
+  
+  <url>
+    <loc>/tags/gobuster/</loc>
+    <lastmod>2021-07-10T17:40:55+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/tags/gobuster/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/tags/gobuster/"
+                />
   </url>
   
   <url>
@@ -19,6 +59,21 @@
                 rel="alternate"
                 hreflang="en"
                 href="/"
+                />
+  </url>
+  
+  <url>
+    <loc>/tags/nc/</loc>
+    <lastmod>2021-07-10T17:40:55+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/tags/nc/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/tags/nc/"
                 />
   </url>
   
@@ -38,6 +93,21 @@
   </url>
   
   <url>
+    <loc>/tags/samba/</loc>
+    <lastmod>2021-07-10T17:40:55+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/tags/samba/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/tags/samba/"
+                />
+  </url>
+  
+  <url>
     <loc>/tags/</loc>
     <lastmod>2021-07-10T17:40:55+02:00</lastmod>
     <xhtml:link
@@ -49,6 +119,21 @@
                 rel="alternate"
                 hreflang="en"
                 href="/tags/"
+                />
+  </url>
+  
+  <url>
+    <loc>/tags/tmux/</loc>
+    <lastmod>2021-07-10T17:40:55+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/tags/tmux/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/tags/tmux/"
                 />
   </url>
   
@@ -68,13 +153,168 @@
   </url>
   
   <url>
+    <loc>/tags/vim/</loc>
+    <lastmod>2021-07-10T17:40:55+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/tags/vim/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/tags/vim/"
+                />
+  </url>
+  
+  <url>
+    <loc>/tags/xpath/</loc>
+    <lastmod>2021-07-10T17:40:55+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/tags/xpath/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/tags/xpath/"
+                />
+  </url>
+  
+  <url>
     <loc>/posts/blueprint/</loc>
     <lastmod>2021-07-09T12:14:38+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/posts/blueprint/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/posts/blueprint/"
+                />
+  </url>
+  
+  <url>
+    <loc>/tags/kiwi/</loc>
+    <lastmod>2021-07-09T12:14:38+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/tags/kiwi/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/tags/kiwi/"
+                />
+  </url>
+  
+  <url>
+    <loc>/tags/metasploit/</loc>
+    <lastmod>2021-07-09T12:14:38+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/tags/metasploit/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/tags/metasploit/"
+                />
+  </url>
+  
+  <url>
+    <loc>/tags/oscommerce/</loc>
+    <lastmod>2021-07-09T12:14:38+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/tags/oscommerce/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/tags/oscommerce/"
+                />
+  </url>
+  
+  <url>
+    <loc>/tags/docker/</loc>
+    <lastmod>2021-07-09T10:52:31+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/tags/docker/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/tags/docker/"
+                />
+  </url>
+  
+  <url>
+    <loc>/tags/hydra/</loc>
+    <lastmod>2021-07-09T10:52:31+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/tags/hydra/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/tags/hydra/"
+                />
   </url>
   
   <url>
     <loc>/posts/internal/</loc>
     <lastmod>2021-07-09T10:52:31+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/posts/internal/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/posts/internal/"
+                />
+  </url>
+  
+  <url>
+    <loc>/tags/jenkins/</loc>
+    <lastmod>2021-07-09T10:52:31+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/tags/jenkins/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/tags/jenkins/"
+                />
+  </url>
+  
+  <url>
+    <loc>/tags/wpscan/</loc>
+    <lastmod>2021-07-09T10:52:31+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/tags/wpscan/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/tags/wpscan/"
+                />
   </url>
   
   <url>
@@ -104,21 +344,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="/tags/crypto/"
-                />
-  </url>
-  
-  <url>
-    <loc>/tags/nc/</loc>
-    <lastmod>2021-07-06T12:52:17+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="/es/tags/nc/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/tags/nc/"
                 />
   </url>
   
@@ -215,21 +440,61 @@
   <url>
     <loc>/posts/jack-of-all-trades/</loc>
     <lastmod>2021-07-04T14:31:31+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/posts/jack-of-all-trades/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/posts/jack-of-all-trades/"
+                />
   </url>
   
   <url>
     <loc>/tags/rce/</loc>
     <lastmod>2021-07-04T14:31:31+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/tags/rce/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/tags/rce/"
+                />
   </url>
   
   <url>
     <loc>/tags/steghide/</loc>
     <lastmod>2021-07-04T14:31:31+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/tags/steghide/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/tags/steghide/"
+                />
   </url>
   
   <url>
     <loc>/tags/stego/</loc>
     <lastmod>2021-07-04T14:31:31+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/tags/stego/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/tags/stego/"
+                />
   </url>
   
   <url>
@@ -248,38 +513,63 @@
   </url>
   
   <url>
-    <loc>/tags/hydra/</loc>
+    <loc>/posts/library/</loc>
     <lastmod>2021-07-04T14:07:30+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="/es/tags/hydra/"
+                href="/es/posts/library/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/tags/hydra/"
+                href="/posts/library/"
                 />
-  </url>
-  
-  <url>
-    <loc>/posts/library/</loc>
-    <lastmod>2021-07-04T14:07:30+02:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/path/</loc>
     <lastmod>2021-07-04T14:07:30+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/tags/path/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/tags/path/"
+                />
   </url>
   
   <url>
     <loc>/tags/java/</loc>
     <lastmod>2021-07-04T13:39:34+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/tags/java/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/tags/java/"
+                />
   </url>
   
   <url>
     <loc>/tags/misconfigured/</loc>
     <lastmod>2021-07-04T13:39:34+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/tags/misconfigured/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/tags/misconfigured/"
+                />
   </url>
   
   <url>
@@ -290,11 +580,31 @@
   <url>
     <loc>/posts/thompson/</loc>
     <lastmod>2021-07-04T13:39:34+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/posts/thompson/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/posts/thompson/"
+                />
   </url>
   
   <url>
     <loc>/tags/tomcat/</loc>
     <lastmod>2021-07-04T13:39:34+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/tags/tomcat/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/tags/tomcat/"
+                />
   </url>
   
   <url>
@@ -309,21 +619,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="/posts/cat-pictures/"
-                />
-  </url>
-  
-  <url>
-    <loc>/tags/docker/</loc>
-    <lastmod>2021-07-03T16:56:05+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="/es/tags/docker/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/tags/docker/"
                 />
   </url>
   

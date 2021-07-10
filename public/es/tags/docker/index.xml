@@ -10,10 +10,29 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Lanfran02</copyright>
-    <lastBuildDate>Sat, 03 Jul 2021 16:56:05 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 09 Jul 2021 10:52:31 +0200</lastBuildDate>
     
 	<atom:link href="/es/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Internal - Write Up - Español</title>
+      <link>/es/posts/internal/</link>
+      <pubDate>Fri, 09 Jul 2021 10:52:31 +0200</pubDate>
+      
+      <guid>/es/posts/internal/</guid>
+      <description>
+        
+          &lt;img src=&#34;/es/posts/internal/cover.jpeg&#34;/&gt;
+          
+        
+        
+        
+          Maquina de nivel difícil en TryHackMe.
+          
+        
+        </description>
+    </item>
     
     <item>
       <title>Cat Pictures - Write Up - Español</title>

@@ -16,6 +16,106 @@
     
     
     <item>
+      <title>Burpsuite</title>
+      <link>/tags/burpsuite/</link>
+      <pubDate>Sat, 10 Jul 2021 17:40:55 +0200</pubDate>
+      
+      <guid>/tags/burpsuite/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>gobuster</title>
+      <link>/tags/gobuster/</link>
+      <pubDate>Sat, 10 Jul 2021 17:40:55 +0200</pubDate>
+      
+      <guid>/tags/gobuster/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>nc</title>
+      <link>/tags/nc/</link>
+      <pubDate>Sat, 10 Jul 2021 17:40:55 +0200</pubDate>
+      
+      <guid>/tags/nc/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>samba</title>
+      <link>/tags/samba/</link>
+      <pubDate>Sat, 10 Jul 2021 17:40:55 +0200</pubDate>
+      
+      <guid>/tags/samba/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>tmux</title>
+      <link>/tags/tmux/</link>
+      <pubDate>Sat, 10 Jul 2021 17:40:55 +0200</pubDate>
+      
+      <guid>/tags/tmux/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
       <title>TryHackMe</title>
       <link>/tags/tryhackme/</link>
       <pubDate>Sat, 10 Jul 2021 17:40:55 +0200</pubDate>
@@ -36,11 +136,11 @@
     </item>
     
     <item>
-      <title>crypto</title>
-      <link>/tags/crypto/</link>
-      <pubDate>Tue, 06 Jul 2021 12:52:17 +0200</pubDate>
+      <title>vim</title>
+      <link>/tags/vim/</link>
+      <pubDate>Sat, 10 Jul 2021 17:40:55 +0200</pubDate>
       
-      <guid>/tags/crypto/</guid>
+      <guid>/tags/vim/</guid>
       <description>
         
           
@@ -56,11 +156,171 @@
     </item>
     
     <item>
-      <title>nc</title>
-      <link>/tags/nc/</link>
+      <title>XPATH</title>
+      <link>/tags/xpath/</link>
+      <pubDate>Sat, 10 Jul 2021 17:40:55 +0200</pubDate>
+      
+      <guid>/tags/xpath/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>kiwi</title>
+      <link>/tags/kiwi/</link>
+      <pubDate>Fri, 09 Jul 2021 12:14:38 +0200</pubDate>
+      
+      <guid>/tags/kiwi/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>metasploit</title>
+      <link>/tags/metasploit/</link>
+      <pubDate>Fri, 09 Jul 2021 12:14:38 +0200</pubDate>
+      
+      <guid>/tags/metasploit/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>osCommerce</title>
+      <link>/tags/oscommerce/</link>
+      <pubDate>Fri, 09 Jul 2021 12:14:38 +0200</pubDate>
+      
+      <guid>/tags/oscommerce/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>/tags/docker/</link>
+      <pubDate>Fri, 09 Jul 2021 10:52:31 +0200</pubDate>
+      
+      <guid>/tags/docker/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>hydra</title>
+      <link>/tags/hydra/</link>
+      <pubDate>Fri, 09 Jul 2021 10:52:31 +0200</pubDate>
+      
+      <guid>/tags/hydra/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>jenkins</title>
+      <link>/tags/jenkins/</link>
+      <pubDate>Fri, 09 Jul 2021 10:52:31 +0200</pubDate>
+      
+      <guid>/tags/jenkins/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>WPScan</title>
+      <link>/tags/wpscan/</link>
+      <pubDate>Fri, 09 Jul 2021 10:52:31 +0200</pubDate>
+      
+      <guid>/tags/wpscan/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>crypto</title>
+      <link>/tags/crypto/</link>
       <pubDate>Tue, 06 Jul 2021 12:52:17 +0200</pubDate>
       
-      <guid>/tags/nc/</guid>
+      <guid>/tags/crypto/</guid>
       <description>
         
           
@@ -236,26 +496,6 @@
     </item>
     
     <item>
-      <title>hydra</title>
-      <link>/tags/hydra/</link>
-      <pubDate>Sun, 04 Jul 2021 14:07:30 +0200</pubDate>
-      
-      <guid>/tags/hydra/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          
-          
-        
-        </description>
-    </item>
-    
-    <item>
       <title>PATH</title>
       <link>/tags/path/</link>
       <pubDate>Sun, 04 Jul 2021 14:07:30 +0200</pubDate>
@@ -341,26 +581,6 @@
       <pubDate>Sun, 04 Jul 2021 13:39:34 +0200</pubDate>
       
       <guid>/tags/tomcat/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>docker</title>
-      <link>/tags/docker/</link>
-      <pubDate>Sat, 03 Jul 2021 16:56:05 +0200</pubDate>
-      
-      <guid>/tags/docker/</guid>
       <description>
         
           

@@ -16,7 +16,7 @@
     
     
     <item>
-      <title>StuxCTF - Write Up</title>
+      <title>StuxCTF - Write Up - Español</title>
       <link>/es/posts/stuxctf/</link>
       <pubDate>Tue, 06 Jul 2021 12:52:17 +0200</pubDate>
       
@@ -29,6 +29,25 @@
         
         
           Máquina de nivel medio en TryHackMe.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Library - Write Up - Español</title>
+      <link>/es/posts/library/</link>
+      <pubDate>Sun, 04 Jul 2021 14:07:30 +0200</pubDate>
+      
+      <guid>/es/posts/library/</guid>
+      <description>
+        
+          &lt;img src=&#34;/es/posts/library/cover.jpeg&#34;/&gt;
+          
+        
+        
+        
+          Maquina de nivel fácil en TryHackMe.
           
         
         </description>

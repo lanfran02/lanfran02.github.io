@@ -3,7 +3,7 @@
   <head>
     
       <title>
-        Thompson - Write Up ::
+        Thompson - Write Up - Español ::
         Lanfran02 - Blog — Where write-ups are made.
       </title>
     
@@ -11,7 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="Link Level Creator     Here Easy stuxnet    Reconn As always, let&amp;rsquo;s run nmap to see what ports are open.
+  content="Link Nivel Creador     Aquí Fácil stuxnet    Reconocimiento Como siempre, ejecutemos nmap para ver qué puertos están abiertos.
 ╰─ lanfran@parrot ❯ map 10.10.128.244 ─╯ [sudo] password for lanfran: Starting Nmap 7.91 ( https://nmap.org ) at 2021-07-04 13:43 CEST Nmap scan report for 10.10.128.244 Host is up (0.10s latency). Not shown: 997 closed ports PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 7."
 />
 <meta
@@ -48,13 +48,13 @@
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="/posts/thompson/cover.png"/>
-<meta name="twitter:title" content="Thompson - Write Up"/>
-<meta name="twitter:description" content="TryHackMe&#39;s easy level machine."/>
+<meta name="twitter:title" content="Thompson - Write Up - Español"/>
+<meta name="twitter:description" content="Máquina de nivel fácil en TryHackMe."/>
 
 
 
-<meta property="og:title" content="Thompson - Write Up" />
-<meta property="og:description" content="TryHackMe&#39;s easy level machine." />
+<meta property="og:title" content="Thompson - Write Up - Español" />
+<meta property="og:description" content="Máquina de nivel fácil en TryHackMe." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/thompson/" />
 <meta property="og:image" content="/posts/thompson/cover.png"/>
@@ -209,7 +209,7 @@ if (!doNotTrack) {
   
 
   <div class="post">
-    <h1 class="post-title">Thompson - Write Up</h1>
+    <h1 class="post-title">Thompson - Write Up - Español</h1>
     <div class="post-meta">
       
         <span class="post-date">
@@ -253,7 +253,7 @@ if (!doNotTrack) {
     
       <figure class="post-cover">
         
-          <img src="/posts/thompson/cover.png" alt="Thompson - Write Up" />
+          <img src="/posts/thompson/cover.png" alt="Thompson - Write Up - Español" />
         
 
         
@@ -266,8 +266,8 @@ if (!doNotTrack) {
         <h2>Table of Contents</h2>
         <aside class="table-of-contents"><nav id="TableOfContents">
   <ul>
-    <li><a href="#reconn">Reconn</a></li>
-    <li><a href="#foothold---user">Foothold - User</a></li>
+    <li><a href="#reconocimiento">Reconocimiento</a></li>
+    <li><a href="#acceso-inicial---usuario">Acceso inicial - Usuario</a></li>
     <li><a href="#root">Root</a></li>
   </ul>
 </nav></aside>
@@ -277,20 +277,20 @@ if (!doNotTrack) {
 <thead>
 <tr>
 <th>Link</th>
-<th>Level</th>
-<th>Creator</th>
+<th>Nivel</th>
+<th>Creador</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="https://tryhackme.com/room/bsidesgtthompson">Here</a></td>
-<td>Easy</td>
+<td><a href="https://tryhackme.com/room/bsidesgtthompson">Aquí</a></td>
+<td>Fácil</td>
 <td><a href="https://tryhackme.com/p/stuxnet">stuxnet</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="reconn">Reconn</h2>
-<p>As always, let&rsquo;s run <code>nmap</code> to see what ports are open.</p>
+<h2 id="reconocimiento">Reconocimiento</h2>
+<p>Como siempre, ejecutemos <code>nmap</code> para ver qué puertos están abiertos.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">╰─ lanfran@parrot ❯ map 10.10.128.244                                                                                              ─╯
 <span style="color:#f92672">[</span>sudo<span style="color:#f92672">]</span> password <span style="color:#66d9ef">for</span> lanfran: 
 Starting Nmap 7.91 <span style="color:#f92672">(</span> https://nmap.org <span style="color:#f92672">)</span> at 2021-07-04 13:43 CEST
@@ -313,7 +313,7 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap <span style="color:#66d9ef">done</span>: <span style="color:#ae81ff">1</span> IP address <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> host up<span style="color:#f92672">)</span> scanned in 35.03 seconds
 </code></pre></div><p>As the name and cover picture of the room indicate, the machine is running an Apache Tomcat server on port 8080.</p>
-<h2 id="foothold---user">Foothold - User</h2>
+<h2 id="acceso-inicial---usuario">Acceso inicial - Usuario</h2>
 <p>We get the default Tomcat page, and also we can go to <code>Manager App</code> tab.</p>
 <p>Maybe if we try with the defaults credentials for Tomcat??
 <em>tomcat:s3cret</em></p>
@@ -383,8 +383,8 @@ cat /root/root.txt &gt; test.txt
 </code></pre></div><p>After a minute, we get the root flag in test.txt</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">tomcat@ubuntu:/home/jack$ cat test.txt            
 d<span style="color:#f92672">[</span>REDACTED<span style="color:#f92672">]</span>a
-</code></pre></div><p>And we &ldquo;rooted&rdquo; the machine!</p>
-<p>That&rsquo;s all from my side, hope you find this helpful!</p>
+</code></pre></div><p>¡Y hemos &ldquo;rooteado&rdquo; la máquina!</p>
+<p>Eso es todo de mi parte, ¡espero que lo encuentre útil!</p>
 
     </div>
     

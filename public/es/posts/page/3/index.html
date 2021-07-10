@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    
+      <title>
+        Posts ::
+        Lanfran02 - Blog — Hackeando tu forma de aprender.
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content=""
+/>
+<meta
+  name="keywords"
+  content="CTF, Writeup, Hacking"
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/es/posts/" />
+
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css" />
+
+<link rel="stylesheet" href="/style.css" />
+
+
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="/img/apple-touch-icon-144-precomposed.png"
+/>
+<link rel="shortcut icon" href="/img/favicon.png" />
+
+
+<link href="/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Posts"/>
+<meta name="twitter:description" content=""/>
+
+
+
+<meta property="og:title" content="Posts" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/es/posts/" />
+<meta property="og:updated_time" content="2021-07-10T17:40:55+02:00" /><meta property="og:site_name" content="Lanfran02 - Blog" />
+
+
+
+<link rel="alternate" type="application/rss+xml" href="/es/posts/index.xml" title="Lanfran02 - Blog" />
+ 
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-3T7DYCWC0W', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+ 
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-3T7DYCWC0W', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="/es/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >Lanfran02</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/es/about">Acerca de mí</a></li>
+        
+      
+        
+          <li><a href="/">English</a></li>
+        
+      
+      
+        <ul class="menu__sub-inner">
+          <li class="menu__sub-inner-more-trigger">
+            Write Ups
+            <span class="menu__sub-inner-more-trigger-icon"
+              ><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span
+            >
+          </li>
+          <ul class="menu__sub-inner-more hidden">
+            
+              
+                <li><a href="/es/tags/hackthebox/">HTB</a></li>
+              
+            
+              
+                <li><a href="/es/tags/tryhackme/">THM</a></li>
+              
+            
+          </ul>
+        </ul>
+      
+      
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/es/about">Acerca de mí</a></li>
+      
+    
+      
+        <li><a href="/">English</a></li>
+      
+    
+      
+        <li><a href="/es/tags/hackthebox/">HTB</a></li>
+      
+    
+      
+        <li><a href="/es/tags/tryhackme/">THM</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  <div class="posts">
+    
+      <div class="post on-list">
+        <h1 class="post-title"><a href="/es/posts/cold_vvars/">Cold VVars - Write Up - Español</a></h1>
+        <div class="post-meta">
+          
+            <span class="post-date">
+              2021-07-10
+            </span>
+
+            
+          
+          
+            <span class="post-author"
+              >— Escrito por Lanfran02</span
+            >
+
+
+          
+            <span class="post-read-time"
+              >— 7 mins lectura</span
+            >
+          
+        </div>
+
+        
+          <span class="post-tags">
+            
+              <a href="/tags/gobuster/">#gobuster</a>&nbsp;
+            
+              <a href="/tags/xpath/">#XPATH</a>&nbsp;
+            
+              <a href="/tags/burpsuite/">#Burpsuite</a>&nbsp;
+            
+              <a href="/tags/samba/">#samba</a>&nbsp;
+            
+              <a href="/tags/nc/">#nc</a>&nbsp;
+            
+              <a href="/tags/vim/">#vim</a>&nbsp;
+            
+              <a href="/tags/tmux/">#tmux</a>&nbsp;
+            
+              <a href="/tags/tryhackme/">#TryHackMe</a>&nbsp;
+            
+          </span>
+        
+
+        
+          <figure class="post-cover">
+         
+            <img src="/es/posts/cold_vvars/cover.jpeg" alt="Cold VVars - Write Up - Español" />
+          
+
+            
+          </figure>
+        
+
+        <div class="post-content">
+          
+            Máquina de nivel medio en TryHackMe.
+            
+        </div>
+        
+          <div>
+            <a class="read-more button" href="/es/posts/cold_vvars/"
+              >Continuar leyendo →</a
+            >
+          </div>
+        
+      </div>
+    
+      <div class="post on-list">
+        <h1 class="post-title"><a href="/es/posts/blueprint/">Blueprint - Write Up - Español</a></h1>
+        <div class="post-meta">
+          
+            <span class="post-date">
+              2021-07-09
+            </span>
+
+            
+          
+          
+            <span class="post-author"
+              >— Escrito por Lanfran02</span
+            >
+
+
+          
+            <span class="post-read-time"
+              >— 5 mins lectura</span
+            >
+          
+        </div>
+
+        
+          <span class="post-tags">
+            
+              <a href="/tags/oscommerce/">#osCommerce</a>&nbsp;
+            
+              <a href="/tags/nc/">#nc</a>&nbsp;
+            
+              <a href="/tags/metasploit/">#metasploit</a>&nbsp;
+            
+              <a href="/tags/kiwi/">#kiwi</a>&nbsp;
+            
+              <a href="/tags/tryhackme/">#TryHackMe</a>&nbsp;
+            
+          </span>
+        
+
+        
+          <figure class="post-cover">
+         
+            <img src="/es/posts/blueprint/cover.jpeg" alt="Blueprint - Write Up - Español" />
+          
+
+            
+          </figure>
+        
+
+        <div class="post-content">
+          
+            Maquina de nivel fácil en TryHackMe.
+            
+        </div>
+        
+          <div>
+            <a class="read-more button" href="/es/posts/blueprint/"
+              >Continuar leyendo →</a
+            >
+          </div>
+        
+      </div>
+    
+      <div class="post on-list">
+        <h1 class="post-title"><a href="/es/posts/internal/">Internal - Write Up - Español</a></h1>
+        <div class="post-meta">
+          
+            <span class="post-date">
+              2021-07-09
+            </span>
+
+            
+          
+          
+            <span class="post-author"
+              >— Escrito por Lanfran02</span
+            >
+
+
+          
+            <span class="post-read-time"
+              >— 8 mins lectura</span
+            >
+          
+        </div>
+
+        
+          <span class="post-tags">
+            
+              <a href="/tags/gobuster/">#gobuster</a>&nbsp;
+            
+              <a href="/tags/wpscan/">#WPScan</a>&nbsp;
+            
+              <a href="/tags/nc/">#nc</a>&nbsp;
+            
+              <a href="/tags/jenkins/">#jenkins</a>&nbsp;
+            
+              <a href="/tags/docker/">#docker</a>&nbsp;
+            
+              <a href="/tags/hydra/">#hydra</a>&nbsp;
+            
+              <a href="/tags/tryhackme/">#TryHackMe</a>&nbsp;
+            
+          </span>
+        
+
+        
+          <figure class="post-cover">
+         
+            <img src="/es/posts/internal/cover.jpeg" alt="Internal - Write Up - Español" />
+          
+
+            
+          </figure>
+        
+
+        <div class="post-content">
+          
+            Maquina de nivel difícil en TryHackMe.
+            
+        </div>
+        
+          <div>
+            <a class="read-more button" href="/es/posts/internal/"
+              >Continuar leyendo →</a
+            >
+          </div>
+        
+      </div>
+    
+      <div class="post on-list">
+        <h1 class="post-title"><a href="/es/posts/thm-pre-security/">Hackea Tu Forma De Aprender - THM</a></h1>
+        <div class="post-meta">
+          
+            <span class="post-date">
+              2021-07-07
+            </span>
+
+            
+          
+          
+            <span class="post-author"
+              >— Escrito por Lanfran02</span
+            >
+
+
+          
+            <span class="post-read-time"
+              >— 2 mins lectura</span
+            >
+          
+        </div>
+
+        
+          <span class="post-tags">
+            
+              <a href="/tags/tryhackme/">#TryHackMe</a>&nbsp;
+            
+          </span>
+        
+
+        
+          <figure class="post-cover">
+         
+            <img src="/es/posts/thm-pre-security/cover.png" alt="Hackea Tu Forma De Aprender - THM" />
+          
+
+            
+          </figure>
+        
+
+        <div class="post-content">
+          
+            Nuevo curso de TryHackMe.
+            
+        </div>
+        
+          <div>
+            <a class="read-more button" href="/es/posts/thm-pre-security/"
+              >Continuar leyendo →</a
+            >
+          </div>
+        
+      </div>
+    
+      <div class="post on-list">
+        <h1 class="post-title"><a href="/es/posts/stuxctf/">StuxCTF - Write Up - Español</a></h1>
+        <div class="post-meta">
+          
+            <span class="post-date">
+              2021-07-06
+            </span>
+
+            
+          
+          
+            <span class="post-author"
+              >— Escrito por Lanfran02</span
+            >
+
+
+          
+            <span class="post-read-time"
+              >— 6 mins lectura</span
+            >
+          
+        </div>
+
+        
+          <span class="post-tags">
+            
+              <a href="/tags/nc/">#nc</a>&nbsp;
+            
+              <a href="/tags/unserialize/">#unserialize</a>&nbsp;
+            
+              <a href="/tags/crypto/">#crypto</a>&nbsp;
+            
+              <a href="/tags/sudo/">#sudo</a>&nbsp;
+            
+              <a href="/tags/tryhackme/">#TryHackMe</a>&nbsp;
+            
+          </span>
+        
+
+        
+          <figure class="post-cover">
+         
+            <img src="/es/posts/stuxctf/cover.png" alt="StuxCTF - Write Up - Español" />
+          
+
+            
+          </figure>
+        
+
+        <div class="post-content">
+          
+            Máquina de nivel medio en TryHackMe.
+            
+        </div>
+        
+          <div>
+            <a class="read-more button" href="/es/posts/stuxctf/"
+              >Continuar leyendo →</a
+            >
+          </div>
+        
+      </div>
+    
+      <div class="post on-list">
+        <h1 class="post-title"><a href="/es/posts/develpy/">Develpy - Write Up - Español</a></h1>
+        <div class="post-meta">
+          
+            <span class="post-date">
+              2021-07-04
+            </span>
+
+            
+          
+          
+            <span class="post-author"
+              >— Escrito por Lanfran02</span
+            >
+
+
+          
+            <span class="post-read-time"
+              >— 5 mins lectura</span
+            >
+          
+        </div>
+
+        
+          <span class="post-tags">
+            
+              <a href="/tags/nc/">#nc</a>&nbsp;
+            
+              <a href="/tags/python/">#python</a>&nbsp;
+            
+              <a href="/tags/cron/">#cron</a>&nbsp;
+            
+              <a href="/tags/tryhackme/">#TryHackMe</a>&nbsp;
+            
+          </span>
+        
+
+        
+          <figure class="post-cover">
+         
+            <img src="/es/posts/develpy/cover.png" alt="Develpy - Write Up - Español" />
+          
+
+            
+          </figure>
+        
+
+        <div class="post-content">
+          
+            TryHackMe&rsquo;s medium level machine.
+            
+        </div>
+        
+          <div>
+            <a class="read-more button" href="/es/posts/develpy/"
+              >Continuar leyendo →</a
+            >
+          </div>
+        
+      </div>
+    
+      <div class="post on-list">
+        <h1 class="post-title"><a href="/es/posts/jack-of-all-trades/">Jack of All Trades - Write Up - Español</a></h1>
+        <div class="post-meta">
+          
+            <span class="post-date">
+              2021-07-04
+            </span>
+
+            
+          
+          
+            <span class="post-author"
+              >— Escrito por Lanfran02</span
+            >
+
+
+          
+            <span class="post-read-time"
+              >— 6 mins lectura</span
+            >
+          
+        </div>
+
+        
+          <span class="post-tags">
+            
+              <a href="/tags/strings/">#strings</a>&nbsp;
+            
+              <a href="/tags/stego/">#stego</a>&nbsp;
+            
+              <a href="/tags/rce/">#RCE</a>&nbsp;
+            
+              <a href="/tags/steghide/">#steghide</a>&nbsp;
+            
+              <a href="/tags/tryhackme/">#TryHackMe</a>&nbsp;
+            
+          </span>
+        
+
+        
+          <figure class="post-cover">
+         
+            <img src="/es/posts/jack-of-all-trades/cover.jpeg" alt="Jack of All Trades - Write Up - Español" />
+          
+
+            
+          </figure>
+        
+
+        <div class="post-content">
+          
+            Máquina de nivel fácil en TryHackMe.
+            
+        </div>
+        
+          <div>
+            <a class="read-more button" href="/es/posts/jack-of-all-trades/"
+              >Continuar leyendo →</a
+            >
+          </div>
+        
+      </div>
+    
+      <div class="post on-list">
+        <h1 class="post-title"><a href="/es/posts/library/">Library - Write Up - Español</a></h1>
+        <div class="post-meta">
+          
+            <span class="post-date">
+              2021-07-04
+            </span>
+
+            
+          
+          
+            <span class="post-author"
+              >— Escrito por Lanfran02</span
+            >
+
+
+          
+            <span class="post-read-time"
+              >— 3 mins lectura</span
+            >
+          
+        </div>
+
+        
+          <span class="post-tags">
+            
+              <a href="/tags/hydra/">#hydra</a>&nbsp;
+            
+              <a href="/tags/python/">#python</a>&nbsp;
+            
+              <a href="/tags/path/">#PATH</a>&nbsp;
+            
+              <a href="/tags/sudo/">#sudo</a>&nbsp;
+            
+              <a href="/tags/tryhackme/">#TryHackMe</a>&nbsp;
+            
+          </span>
+        
+
+        
+          <figure class="post-cover">
+         
+            <img src="/es/posts/library/cover.jpeg" alt="Library - Write Up - Español" />
+          
+
+            
+          </figure>
+        
+
+        <div class="post-content">
+          
+            Maquina de nivel fácil en TryHackMe.
+            
+        </div>
+        
+          <div>
+            <a class="read-more button" href="/es/posts/library/"
+              >Continuar leyendo →</a
+            >
+          </div>
+        
+      </div>
+    
+      <div class="post on-list">
+        <h1 class="post-title"><a href="/es/posts/thompson/">Thompson - Write Up - Español</a></h1>
+        <div class="post-meta">
+          
+            <span class="post-date">
+              2021-07-04
+            </span>
+
+            
+          
+          
+            <span class="post-author"
+              >— Escrito por Lanfran02</span
+            >
+
+
+          
+            <span class="post-read-time"
+              >— 3 mins lectura</span
+            >
+          
+        </div>
+
+        
+          <span class="post-tags">
+            
+              <a href="/tags/tomcat/">#tomcat</a>&nbsp;
+            
+              <a href="/tags/misconfigured/">#misconfigured</a>&nbsp;
+            
+              <a href="/tags/metasploit/">#metasploit</a>&nbsp;
+            
+              <a href="/tags/java/">#java</a>&nbsp;
+            
+              <a href="/tags/tryhackme/">#TryHackMe</a>&nbsp;
+            
+          </span>
+        
+
+        
+          <figure class="post-cover">
+         
+            <img src="/es/posts/thompson/cover.png" alt="Thompson - Write Up - Español" />
+          
+
+            
+          </figure>
+        
+
+        <div class="post-content">
+          
+            Máquina de nivel fácil en TryHackMe.
+            
+        </div>
+        
+          <div>
+            <a class="read-more button" href="/es/posts/thompson/"
+              >Continuar leyendo →</a
+            >
+          </div>
+        
+      </div>
+    
+      <div class="post on-list">
+        <h1 class="post-title"><a href="/es/posts/cat-pictures/">Cat Pictures - Write Up - Español</a></h1>
+        <div class="post-meta">
+          
+            <span class="post-date">
+              2021-07-03
+            </span>
+
+            
+          
+          
+            <span class="post-author"
+              >— Escrito por Lanfran02</span
+            >
+
+
+          
+            <span class="post-read-time"
+              >— 6 mins lectura</span
+            >
+          
+        </div>
+
+        
+          <span class="post-tags">
+            
+              <a href="/tags/nc/">#nc</a>&nbsp;
+            
+              <a href="/tags/strings/">#strings</a>&nbsp;
+            
+              <a href="/tags/knock/">#knock</a>&nbsp;
+            
+              <a href="/tags/docker/">#docker</a>&nbsp;
+            
+              <a href="/tags/tryhackme/">#TryHackMe</a>&nbsp;
+            
+          </span>
+        
+
+        
+          <figure class="post-cover">
+         
+            <img src="/es/posts/cat-pictures/cover.jpeg" alt="Cat Pictures - Write Up - Español" />
+          
+
+            
+          </figure>
+        
+
+        <div class="post-content">
+          
+            Máquina de nivel fácil en TryHackMe.
+            
+        </div>
+        
+          <div>
+            <a class="read-more button" href="/es/posts/cat-pictures/"
+              >Continuar leyendo →</a
+            >
+          </div>
+        
+      </div>
+    
+      <div class="post on-list">
+        <h1 class="post-title"><a href="/es/posts/brooklynninenine/">Brooklyn Nine Nine - Write Up - Español</a></h1>
+        <div class="post-meta">
+          
+            <span class="post-date">
+              2021-07-03
+            </span>
+
+            
+          
+          
+            <span class="post-author"
+              >— Escrito por Lanfran02</span
+            >
+
+
+          
+            <span class="post-read-time"
+              >— 3 mins lectura</span
+            >
+          
+        </div>
+
+        
+          <span class="post-tags">
+            
+              <a href="/tags/hydra/">#hydra</a>&nbsp;
+            
+              <a href="/tags/ftp/">#FTP</a>&nbsp;
+            
+              <a href="/tags/sudo/">#sudo</a>&nbsp;
+            
+              <a href="/tags/less/">#less</a>&nbsp;
+            
+              <a href="/tags/tryhackme/">#TryHackMe</a>&nbsp;
+            
+          </span>
+        
+
+        
+          <figure class="post-cover">
+         
+            <img src="/es/posts/brooklynninenine/cover.jpeg" alt="Brooklyn Nine Nine - Write Up - Español" />
+          
+
+            
+          </figure>
+        
+
+        <div class="post-content">
+          
+            Máquina de nivel fácil en TryHackMe.
+            
+        </div>
+        
+          <div>
+            <a class="read-more button" href="/es/posts/brooklynninenine/"
+              >Continuar leyendo →</a
+            >
+          </div>
+        
+      </div>
+    
+      <div class="post on-list">
+        <h1 class="post-title"><a href="/es/posts/gitandcrumpets/">Git and Crumpets - Write Up - Español</a></h1>
+        <div class="post-meta">
+          
+            <span class="post-date">
+              2021-07-03
+            </span>
+
+            
+          
+          
+            <span class="post-author"
+              >— Escrito por Lanfran02</span
+            >
+
+
+          
+            <span class="post-read-time"
+              >— 4 mins lectura</span
+            >
+          
+        </div>
+
+        
+          <span class="post-tags">
+            
+              <a href="/tags/gittools/">#gittools</a>&nbsp;
+            
+              <a href="/tags/git/">#git</a>&nbsp;
+            
+              <a href="/tags/gitea/">#gitea</a>&nbsp;
+            
+              <a href="/tags/ssh/">#ssh</a>&nbsp;
+            
+              <a href="/tags/tryhackme/">#TryHackMe</a>&nbsp;
+            
+          </span>
+        
+
+        
+          <figure class="post-cover">
+         
+            <img src="/es/posts/gitandcrumpets/cover.png" alt="Git and Crumpets - Write Up - Español" />
+          
+
+            
+          </figure>
+        
+
+        <div class="post-content">
+          
+            Máquina de nivel medio en TryHackMe.
+            
+        </div>
+        
+          <div>
+            <a class="read-more button" href="/es/posts/gitandcrumpets/"
+              >Continuar leyendo →</a
+            >
+          </div>
+        
+      </div>
+    
+    <div class="pagination">
+  <div class="pagination__buttons">
+    
+      <span class="button previous">
+        <a href="/es/posts/page/2/">
+          <span class="button__icon">←</span>
+          <span class="button__text">Posts recientes</span>
+        </a>
+      </span>
+    
+    
+  </div>
+</div>
+
+  </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">Lanfran02</div>
+      
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-3T7DYCWC0W', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    
+  </body>
+</html>

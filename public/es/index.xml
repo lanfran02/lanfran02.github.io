@@ -10,10 +10,67 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Lanfran02</copyright>
-    <lastBuildDate>Wed, 07 Jul 2021 00:16:11 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 10 Jul 2021 17:40:55 +0200</lastBuildDate>
     
 	<atom:link href="/es/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Cold VVars - Write Up - Español</title>
+      <link>/es/posts/cold_vvars/</link>
+      <pubDate>Sat, 10 Jul 2021 17:40:55 +0200</pubDate>
+      
+      <guid>/es/posts/cold_vvars/</guid>
+      <description>
+        
+          &lt;img src=&#34;/es/posts/cold_vvars/cover.jpeg&#34;/&gt;
+          
+        
+        
+        
+          Máquina de nivel medio en TryHackMe.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Blueprint - Write Up - Español</title>
+      <link>/es/posts/blueprint/</link>
+      <pubDate>Fri, 09 Jul 2021 12:14:38 +0200</pubDate>
+      
+      <guid>/es/posts/blueprint/</guid>
+      <description>
+        
+          &lt;img src=&#34;/es/posts/blueprint/cover.jpeg&#34;/&gt;
+          
+        
+        
+        
+          Maquina de nivel fácil en TryHackMe.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Internal - Write Up - Español</title>
+      <link>/es/posts/internal/</link>
+      <pubDate>Fri, 09 Jul 2021 10:52:31 +0200</pubDate>
+      
+      <guid>/es/posts/internal/</guid>
+      <description>
+        
+          &lt;img src=&#34;/es/posts/internal/cover.jpeg&#34;/&gt;
+          
+        
+        
+        
+          Maquina de nivel difícil en TryHackMe.
+          
+        
+        </description>
+    </item>
     
     <item>
       <title>Hackea Tu Forma De Aprender - THM</title>
@@ -35,7 +92,7 @@
     </item>
     
     <item>
-      <title>StuxCTF - Write Up</title>
+      <title>StuxCTF - Write Up - Español</title>
       <link>/es/posts/stuxctf/</link>
       <pubDate>Tue, 06 Jul 2021 12:52:17 +0200</pubDate>
       
@@ -54,7 +111,7 @@
     </item>
     
     <item>
-      <title>Develpy - Write Up</title>
+      <title>Develpy - Write Up - Español</title>
       <link>/es/posts/develpy/</link>
       <pubDate>Sun, 04 Jul 2021 17:29:57 +0200</pubDate>
       
@@ -67,6 +124,63 @@
         
         
           TryHackMe&#39;s medium level machine.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Jack of All Trades - Write Up - Español</title>
+      <link>/es/posts/jack-of-all-trades/</link>
+      <pubDate>Sun, 04 Jul 2021 14:31:31 +0200</pubDate>
+      
+      <guid>/es/posts/jack-of-all-trades/</guid>
+      <description>
+        
+          &lt;img src=&#34;/es/posts/jack-of-all-trades/cover.jpeg&#34;/&gt;
+          
+        
+        
+        
+          Máquina de nivel fácil en TryHackMe.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Library - Write Up - Español</title>
+      <link>/es/posts/library/</link>
+      <pubDate>Sun, 04 Jul 2021 14:07:30 +0200</pubDate>
+      
+      <guid>/es/posts/library/</guid>
+      <description>
+        
+          &lt;img src=&#34;/es/posts/library/cover.jpeg&#34;/&gt;
+          
+        
+        
+        
+          Maquina de nivel fácil en TryHackMe.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Thompson - Write Up - Español</title>
+      <link>/es/posts/thompson/</link>
+      <pubDate>Sun, 04 Jul 2021 13:39:34 +0200</pubDate>
+      
+      <guid>/es/posts/thompson/</guid>
+      <description>
+        
+          &lt;img src=&#34;/es/posts/thompson/cover.png&#34;/&gt;
+          
+        
+        
+        
+          Máquina de nivel fácil en TryHackMe.
           
         
         </description>
