@@ -4,7 +4,7 @@
   
   <url>
     <loc>/es/tags/burpsuite/</loc>
-    <lastmod>2021-07-10T17:40:55+02:00</lastmod>
+    <lastmod>2021-07-12T12:39:34+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -14,6 +14,141 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/tags/burpsuite/"
+                />
+  </url>
+  
+  <url>
+    <loc>/es/</loc>
+    <lastmod>2021-07-12T12:39:34+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/"
+                />
+  </url>
+  
+  <url>
+    <loc>/es/posts/</loc>
+    <lastmod>2021-07-12T12:39:34+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/posts/"
+                />
+  </url>
+  
+  <url>
+    <loc>/es/tags/python/</loc>
+    <lastmod>2021-07-12T12:39:34+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/tags/python/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/tags/python/"
+                />
+  </url>
+  
+  <url>
+    <loc>/es/tags/ssti/</loc>
+    <lastmod>2021-07-12T12:39:34+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/tags/ssti/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/tags/ssti/"
+                />
+  </url>
+  
+  <url>
+    <loc>/es/tags/sudo/</loc>
+    <lastmod>2021-07-12T12:39:34+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/tags/sudo/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/tags/sudo/"
+                />
+  </url>
+  
+  <url>
+    <loc>/es/tags/</loc>
+    <lastmod>2021-07-12T12:39:34+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/tags/"
+                />
+  </url>
+  
+  <url>
+    <loc>/es/tags/tryhackme/</loc>
+    <lastmod>2021-07-12T12:39:34+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/tags/tryhackme/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/tags/tryhackme/"
+                />
+  </url>
+  
+  <url>
+    <loc>/es/posts/vulnnet-dotpy/</loc>
+    <lastmod>2021-07-12T12:39:34+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/posts/vulnnet-dotpy/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/posts/vulnnet-dotpy/"
+                />
+  </url>
+  
+  <url>
+    <loc>/es/tags/77/</loc>
+    <lastmod>2021-07-12T12:39:34+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/tags/77/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/tags/77/"
                 />
   </url>
   
@@ -48,21 +183,6 @@
   </url>
   
   <url>
-    <loc>/es/</loc>
-    <lastmod>2021-07-10T17:40:55+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="/es/"
-                />
-  </url>
-  
-  <url>
     <loc>/es/tags/nc/</loc>
     <lastmod>2021-07-10T17:40:55+02:00</lastmod>
     <xhtml:link
@@ -74,21 +194,6 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/tags/nc/"
-                />
-  </url>
-  
-  <url>
-    <loc>/es/posts/</loc>
-    <lastmod>2021-07-10T17:40:55+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="/es/posts/"
                 />
   </url>
   
@@ -108,21 +213,6 @@
   </url>
   
   <url>
-    <loc>/es/tags/</loc>
-    <lastmod>2021-07-10T17:40:55+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="/es/tags/"
-                />
-  </url>
-  
-  <url>
     <loc>/es/tags/tmux/</loc>
     <lastmod>2021-07-10T17:40:55+02:00</lastmod>
     <xhtml:link
@@ -134,21 +224,6 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/tags/tmux/"
-                />
-  </url>
-  
-  <url>
-    <loc>/es/tags/tryhackme/</loc>
-    <lastmod>2021-07-10T17:40:55+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/tags/tryhackme/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="/es/tags/tryhackme/"
                 />
   </url>
   
@@ -363,21 +438,6 @@
   </url>
   
   <url>
-    <loc>/es/tags/sudo/</loc>
-    <lastmod>2021-07-06T12:52:17+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/tags/sudo/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="/es/tags/sudo/"
-                />
-  </url>
-  
-  <url>
     <loc>/es/tags/unserialize/</loc>
     <lastmod>2021-07-06T12:52:17+02:00</lastmod>
     <xhtml:link
@@ -419,21 +479,6 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/posts/develpy/"
-                />
-  </url>
-  
-  <url>
-    <loc>/es/tags/python/</loc>
-    <lastmod>2021-07-04T17:29:57+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/tags/python/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="/es/tags/python/"
                 />
   </url>
   

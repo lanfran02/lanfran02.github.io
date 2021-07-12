@@ -44,3 +44,7 @@ Eso es todo de mi parte, ¡espero que lo encuentre útil!
 
 ```bash
 ```
+
+And we rooted the machine!
+
+That's all from my side, hope you find this helpful!
