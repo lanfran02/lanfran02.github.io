@@ -10,7 +10,7 @@ tags : ["SSTI","Python","{{7*7}}","Burpsuite","sudo","TryHackMe"]
 
 | Link | Nivel | Creador |
 |------|-------|---------|
-| [Aquí](https://tryhackme.com/room/vulnnetdotpy)  | Medio  |  [TheCyb3rW0lf](https://tryhackme.com/p/TheCyb3rW0lf)  |
+| [Aquí](https://tryhackme.com/room/vulnnetdotpy)  | Medio |  [TheCyb3rW0lf](https://tryhackme.com/p/TheCyb3rW0lf)  |
 
 
 ## Reconocimiento
@@ -105,7 +105,7 @@ uid=1000(system-adm) gid=1000(system-adm) groups=1000(system-adm),24(cdrom)
 w$whoami
 system-adm
 $ cat /home/system-adm/user.txt
-THM{[REDACTED]}
+THM{[REDACTADO]}
 $
 ```
 
@@ -143,7 +143,7 @@ uid=0(root) gid=0(root) groups=0(root)
 root@vulnnet-dotpy:/home/system-adm# whoami
 root
 root@vulnnet-dotpy:/home/system-adm# cat /root/root.txt 
-THM{[REDACTED]}
+THM{[REDACTADO]}
 root@vulnnet-dotpy:/home/system-adm# 
 ```
 
