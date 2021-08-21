@@ -65,12 +65,6 @@ Service Info: Host:  uranium; OS: Linux; CPE: cpe:/o:linux:linux_kernel
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 # Nmap done at Sat Aug 21 13:43:46 2021 -- 1 IP address (1 host up) scanned in 30.56 seconds
 ```
-So, we have an `smtp` server runnin, a `web` server and a `ssh` service running.
-
-But the creator give us a twitter account, so let's recon it too!
-
-Reading the twitter, we get some information...
-
 Entonces, tenemos un servidor `smtp` en ejecución, un servidor` web` y un servicio `ssh` en ejecución.
 
 Pero el creador nos dio una cuenta de Twitter, ¡así que vamos a investigarla también!
