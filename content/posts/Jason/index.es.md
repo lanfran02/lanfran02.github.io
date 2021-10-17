@@ -1,11 +1,11 @@
 ---
-title : "Jason - Write Up"
+title : "Jason - Write Up - Español"
 date : 2021-10-12T20:02:42+02:00
 author : "Lanfran02"
 cover : "cover.png"
 useRelativeCover : true
 description : "Máquina de nivel fácil en TryHackMe."
-tags : ["NodeJS","Deserialization","sudo","nc","TryHackMe"]
+tags : ["NodeJS","unserialize","sudo","nc","TryHackMe"]
 ---
 
 | Link | Nivel | Creador |
