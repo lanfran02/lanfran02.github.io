@@ -102,7 +102,7 @@ We have a login page for `Codiad`, a web based IDE! And we also know that the ve
 
 ## Foothold - User
 
-So, after googling something easy as `Codiad 2.8.4 exploit`, I found a public exploit to get RCE with an authenticated user! [Here's the link to the exploit]()
+So, after googling something easy as `Codiad 2.8.4 exploit`, I found a public exploit to get RCE with an authenticated user! [Here's the link to the exploit](https://www.exploit-db.com/exploits/49705)
 
 So far so good, let's run the exploit!
 

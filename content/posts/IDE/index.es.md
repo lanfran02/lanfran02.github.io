@@ -102,7 +102,7 @@ Después de investigar un poco, el puerto `80` solo tiene un servidor web apache
 
 ## Acceso inicial - Usuario
 
-Entonces, después de buscar en Google algo fácil como `Codiad 2.8.4 exploit`, encontré un exploit público para obtener RCE con un usuario autenticado. [Aquí está el enlace al exploit]()
+Entonces, después de buscar en Google algo fácil como `Codiad 2.8.4 exploit`, encontré un exploit público para obtener RCE con un usuario autenticado. [Aquí está el enlace al exploit](https://www.exploit-db.com/exploits/49705)
 
 Hasta ahora todo bien, ¡ejecutemos el exploit!
 
