@@ -1,5 +1,5 @@
 ---
-title : "Zeno - Write Up - Español"
+title : "Lockdown - Write Up - Español"
 date : 2021-10-23T13:13:28+02:00
 author : "Lanfran02"
 cover : "cover.jpeg"
