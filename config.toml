@@ -3,6 +3,7 @@ languageCode = "en-us"
 theme = "hello-friend"
 paginate = 5
 googleAnalytics = "G-3T7DYCWC0W"
+disqusShortname = 'https-lanfran02-github-io'
 
 [params]
   # dir name of your blog content (default is `content/posts`).
