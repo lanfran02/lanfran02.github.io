@@ -3,8 +3,7 @@
 <title>
 Ekoparty 2021 - Write Up - Español ::
 Lanfran02 - Blog — Hackeando tu forma de aprender.
-</title>
-<meta charset=utf-8>
+</title><meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=description content="Forense Trivia     Funsys Discord   Locked Call me   Match Alternative   Auth Modified   Internal     Introducción ¡Hey! ¡Bienvenid@!
 En esta ocasión vengo a traerles cómo se resolvieron algunos CTFs de la conferencia, desafíos creados por Null Life &amp;amp; GitHub Security Lab.
@@ -34,11 +33,10 @@ En esta ocasión vengo a traerles cómo se resolvieron algunos CTFs de la confer
 <meta property="article:modified_time" content="2021-11-06T17:43:02+01:00"><meta property="og:site_name" content="Lanfran02 - Blog">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9309562477773018" crossorigin=anonymous></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3T7DYCWC0W"></script>
-<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-3T7DYCWC0W',{anonymize_ip:!1})}</script>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','G-3T7DYCWC0W','auto'),ga('send','pageview'))</script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-3T7DYCWC0W",{anonymize_ip:!1})}</script>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","G-3T7DYCWC0W","auto"),ga("send","pageview"))</script>
 <script async src=https://www.google-analytics.com/analytics.js></script>
-</head>
-<body class=dark-theme>
+</head><body class=dark-theme>
 <div class=container>
 <header class=header>
 <span class=header__inner>
@@ -51,45 +49,28 @@ En esta ocasión vengo a traerles cómo se resolvieron algunos CTFs de la confer
 <span class=header__right>
 <nav class=menu>
 <ul class="menu__inner menu__inner--desktop">
-<li><a href=/es/about>Acerca de mí</a></li>
-<li><a href=/>English</a></li>
-<ul class=menu__sub-inner>
+<li><a href=/es/about>Acerca de mí</a></li><li><a href=/>English</a></li><ul class=menu__sub-inner>
 <li class=menu__sub-inner-more-trigger>
 Write Ups
 <span class=menu__sub-inner-more-trigger-icon><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg>
 </span>
-</li>
-<ul class="menu__sub-inner-more hidden">
-<li><a href=/es/tags/hackthebox/>HTB</a></li>
-<li><a href=/es/tags/tryhackme/>THM</a></li>
-</ul>
-</ul>
-</ul>
-<ul class="menu__inner menu__inner--mobile">
-<li><a href=/es/about>Acerca de mí</a></li>
-<li><a href=/>English</a></li>
-<li><a href=/es/tags/hackthebox/>HTB</a></li>
-<li><a href=/es/tags/tryhackme/>THM</a></li>
-</ul>
-</nav>
-<span class=menu-trigger><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+</li><ul class="menu__sub-inner-more hidden">
+<li><a href=/es/tags/hackthebox/>HTB</a></li><li><a href=/es/tags/tryhackme/>THM</a></li></ul></ul></ul><ul class="menu__inner menu__inner--mobile">
+<li><a href=/es/about>Acerca de mí</a></li><li><a href=/>English</a></li><li><a href=/es/tags/hackthebox/>HTB</a></li><li><a href=/es/tags/tryhackme/>THM</a></li></ul></nav><span class=menu-trigger><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
 </span>
 <span class=theme-toggle><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 41c10.4934.0 19-8.5066 19-19C41 11.5066 32.4934 3 22 3 11.5066 3 3 11.5066 3 22s8.5066 19 19 19zM7 22C7 13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22z"/></svg>
 </span>
 </span>
 </span>
-</header>
-<div class=content>
+</header><div class=content>
 <div class=post>
-<h1 class=post-title>Ekoparty 2021 - Write Up - Español</h1>
-<div class=post-meta>
+<h1 class=post-title>Ekoparty 2021 - Write Up - Español</h1><div class=post-meta>
 <span class=post-date>
 2021-11-06
 </span>
 <span class=post-author>— Escrito por Lanfran02</span>
 <span class=post-read-time>— 7 mins lectura</span>
-</div>
-<span class=post-tags>
+</div><span class=post-tags>
 <a href=/tags/ekoparty/>#Ekoparty</a>&nbsp;
 <a href=/tags/hackademy/>#Hackademy</a>&nbsp;
 <a href=/tags/advanced-ctf/>#Advanced-CTF</a>&nbsp;
@@ -97,148 +78,85 @@ Write Ups
 </span>
 <figure class=post-cover>
 <img src=/es/posts/eko-2021/cover.jpeg alt="Ekoparty 2021 - Write Up - Español">
-</figure>
-<div class=post-content>
+</figure><div class=post-content>
 <table>
 <thead>
 <tr>
-<th>Forense</th>
-<th>Trivia</th>
-</tr>
-</thead>
-<tbody>
+<th>Forense</th><th>Trivia</th></tr></thead><tbody>
 <tr>
-<td><a href=#funsys>Funsys</a></td>
-<td><a href=#discord>Discord</a></td>
-</tr>
-<tr>
-<td><a href=#locked>Locked</a></td>
-<td><a href=#call-me>Call me</a></td>
-</tr>
-<tr>
-<td><a href=#match>Match</a></td>
-<td><a href=#alternative>Alternative</a></td>
-</tr>
-<tr>
-<td><a href=#auth>Auth</a></td>
-<td><a href=#modified>Modified</a></td>
-</tr>
-<tr>
-<td><a href=#internal>Internal</a></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h1 id=introducción>Introducción</h1>
-<p>¡Hey! ¡Bienvenid@!</p>
-<p>En esta ocasión vengo a traerles cómo se resolvieron algunos CTFs de la conferencia, desafíos creados por Null Life & GitHub Security Lab.</p>
-<p>¡Estos desafíos fueron interesantes e incluso llegué al puesto 20! Por suerte pude completar algunos de ellos ya que soy alumno de la <a href=https://hackademy.ekoparty.org/>Hackademy</a>, la academia para aprender Ciberseguridad de la <a href=https://ekoparty.org/>Ekoparty</a>!</p>
-<p>¡Comencemos con los desafíos!</p>
-<p>¿También quieres compartir cómo completaste los desafíos? ¡Haz click <a href=#the-end>aquí</a>!</p>
-<h1 id=forense>Forense</h1>
-<h2 id=funsys>Funsys</h2>
-<p>Comenzando con este nuevo desafío forense: Veamos qué tipo de archivo tenemos&mldr;</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ file funsys 
-funsys: Linux rev 1.0 ext2 filesystem data <span style=color:#f92672>(</span>mounted or unclean<span style=color:#f92672>)</span>, UUID<span style=color:#f92672>=</span>78f7e6f8-f21f-4553-95e4-1ac094918c51 <span style=color:#f92672>(</span>large files<span style=color:#f92672>)</span>
-</code></pre></div><p>¡Excelente! Tenemos un filesystem, ¡así que montémoslo para ver qué hay dentro!</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ sudo mount funsys mnt/
-
-╰─ lanfran@parrot ❯ ls -la mnt/
-total <span style=color:#ae81ff>2072</span>
-drwxr-xr-x <span style=color:#ae81ff>4</span> root    root       <span style=color:#ae81ff>1024</span> lis  <span style=color:#ae81ff>5</span> 17:21 .
-drwxr-xr-x <span style=color:#ae81ff>1</span> lanfran lanfran      <span style=color:#ae81ff>18</span> lis  <span style=color:#ae81ff>8</span> 08:14 ..
--rw-r--r-- <span style=color:#ae81ff>1</span> root    root         <span style=color:#ae81ff>17</span> paź <span style=color:#ae81ff>31</span> 02:33 .k
-drwx------ <span style=color:#ae81ff>2</span> root    root      <span style=color:#ae81ff>12288</span> paź <span style=color:#ae81ff>31</span> 02:33 lost+found
--rw-r--r-- <span style=color:#ae81ff>1</span> root    root    <span style=color:#ae81ff>2097152</span> paź <span style=color:#ae81ff>31</span> 02:33 .RhYSrEm8d
-
-╰─ lanfran@parrot ❯ cat .k 
-1TxYs0r4ZRre0r3U
-
-╰─ lanfran@parrot ❯ file .RhYSrEm8 
-.RhYSrEm8: data
-</code></pre></div><p>Un archivo con un nombre raro, <code>.RhYSrEm8d</code>, que tiene algunos &ldquo;datos&rdquo; y otro archivo, <code>.k</code> con texto plano dentro.</p>
-<p>Entonces, si ejecutamos <code>binwalk</code> podemos extraer los datos del archivo &ldquo;<code>.RhYSrEm8d</code>&rdquo;.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ sudo binwalk -e .RhYSrEm8 
-
-╰─ lanfran@parrot ❯ ls -laR
-.:
-total <span style=color:#ae81ff>2072</span>
-drwxr-xr-x <span style=color:#ae81ff>4</span> root    root       <span style=color:#ae81ff>1024</span> lis  <span style=color:#ae81ff>8</span> 08:18 .
-drwxr-xr-x <span style=color:#ae81ff>1</span> lanfran lanfran      <span style=color:#ae81ff>18</span> lis  <span style=color:#ae81ff>8</span> 08:14 ..
--rw-r--r-- <span style=color:#ae81ff>1</span> root    root         <span style=color:#ae81ff>17</span> paź <span style=color:#ae81ff>31</span> 02:33 .k
-drwx------ <span style=color:#ae81ff>2</span> root    root      <span style=color:#ae81ff>12288</span> paź <span style=color:#ae81ff>31</span> 02:33 lost+found
--rw-r--r-- <span style=color:#ae81ff>1</span> root    root    <span style=color:#ae81ff>2097152</span> paź <span style=color:#ae81ff>31</span> 02:33 .RhYSrEm8
-drwxr-xr-x <span style=color:#ae81ff>2</span> root    root       <span style=color:#ae81ff>1024</span> lis  <span style=color:#ae81ff>8</span> 08:18 _.RhYSrEm8.extracted
-ls: cannot open directory <span style=color:#e6db74>&#39;./lost+found&#39;</span>: Permission denied
-
-./_.RhYSrEm8.extracted:
-total <span style=color:#ae81ff>1875</span>
-drwxr-xr-x <span style=color:#ae81ff>2</span> root root    <span style=color:#ae81ff>1024</span> lis  <span style=color:#ae81ff>8</span> 08:18 .
-drwxr-xr-x <span style=color:#ae81ff>4</span> root root    <span style=color:#ae81ff>1024</span> lis  <span style=color:#ae81ff>8</span> 08:18 ..
--rw-r--r-- <span style=color:#ae81ff>1</span> root root <span style=color:#ae81ff>1908736</span> lis  <span style=color:#ae81ff>8</span> 08:18 5200.zip
-</code></pre></div><p>Ahora tenemos un archivo <code>.zip</code> y dentro un archivo que solicita una contraseña para leerlo&mldr;</p>
-<p><img src=password.png alt=password></p>
-<p>¡Usar la contraseña del archivo <code>.k</code> es la solución! ¡No necesitas crackearlo!</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ cat f.t 
-EKO<span style=color:#f92672>{</span>th1s_1s_1ncr3d1bl3<span style=color:#f92672>}</span>
-</code></pre></div><p>¡Finalizado!</p>
-<h2 id=locked>Locked</h2>
-<p>Para este desafío, necesitamos encontrar la dirección IP y la máscara con la mayoría de los paquetes descartados(DROP), para esto usamos una palabra clave simple con <code>grep</code>. Usamos <code>K DROP</code> para filtrar los resultados, y en la lista encontramos la bandera:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ cat locked.log | grep <span style=color:#e6db74>&#34;K DROP&#34;</span> 
-<span style=color:#f92672>[</span>...<span style=color:#f92672>]</span>
-<span style=color:#ae81ff>40690</span> 3147K DROP       all  --  !lo    *       34.192.0.0/12        0.0.0.0/0           
-<span style=color:#ae81ff>14829</span> 1166K DROP       all  --  !lo    *       34.208.0.0/12        0.0.0.0/0           
-<span style=color:#ae81ff>87870</span> 6751K DROP       all  --  !lo    *       34.210.0.0/12        0.0.0.0/0            &lt;-- La flag!
-<span style=color:#ae81ff>15610</span> 1230K DROP       all  --  !lo    *       34.240.0.0/13        0.0.0.0/0
-<span style=color:#f92672>[</span>...<span style=color:#f92672>]</span>
-</code></pre></div><p><code>EKO{34.210.0.0/12}</code></p>
-<h2 id=match>Match</h2>
-<p>Teníamos 2 archivos, <code>eko.local-access.log</code> y <code>eko.local-error.log</code>, si usamos <code>grep</code> con el registro de acceso para las peticiones con <code>respuesta HTTP 200</code> podemos encontrar solo 3 archivos:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ cat eko.local-access.log | grep <span style=color:#e6db74>&#34;HTTP/1.1\&#34; 200&#34;</span>                                                               
-10.0.3.1 - - <span style=color:#f92672>[</span>10/Oct/2021:04:32:31 +0000<span style=color:#f92672>]</span> <span style=color:#e6db74>&#34;HEAD / HTTP/1.1&#34;</span> <span style=color:#ae81ff>200</span> <span style=color:#ae81ff>258</span> <span style=color:#e6db74>&#34;-&#34;</span> <span style=color:#e6db74>&#34;Mozilla/5.00 (Nikto/2.1.6) (Evasions:None) (Test:Port Check)&#34;</span>
-10.0.3.1 - - <span style=color:#f92672>[</span>10/Oct/2021:04:32:31 +0000<span style=color:#f92672>]</span> <span style=color:#e6db74>&#34;GET / HTTP/1.1&#34;</span> <span style=color:#ae81ff>200</span> <span style=color:#ae81ff>339</span> <span style=color:#e6db74>&#34;-&#34;</span> <span style=color:#e6db74>&#34;Mozilla/5.00 (Nikto/2.1.6) (Evasions:None) (Test:getinfo)&#34;</span>
-10.0.3.1 - - <span style=color:#f92672>[</span>10/Oct/2021:04:32:31 +0000<span style=color:#f92672>]</span> <span style=color:#e6db74>&#34;GET / HTTP/1.1&#34;</span> <span style=color:#ae81ff>200</span> <span style=color:#ae81ff>339</span> <span style=color:#e6db74>&#34;-&#34;</span> <span style=color:#e6db74>&#34;Mozilla/5.00 (Nikto/2.1.6) (Evasions:None) (Test:map_codes)&#34;</span>
-10.0.3.1 - - <span style=color:#f92672>[</span>10/Oct/2021:04:33:03 +0000<span style=color:#f92672>]</span> <span style=color:#e6db74>&#34;GET /config.php HTTP/1.1&#34;</span> <span style=color:#ae81ff>200</span> <span style=color:#ae81ff>296</span> <span style=color:#e6db74>&#34;-&#34;</span> <span style=color:#e6db74>&#34;Mozilla/5.00 (Nikto/2.1.6) (Evasions:None) (Test:000997)&#34;</span>
-10.0.3.1 - - <span style=color:#f92672>[</span>10/Oct/2021:04:33:03 +0000<span style=color:#f92672>]</span> <span style=color:#e6db74>&#34;GET /config.php.bak HTTP/1.1&#34;</span> <span style=color:#ae81ff>200</span> <span style=color:#ae81ff>7411</span> <span style=color:#e6db74>&#34;-&#34;</span> <span style=color:#e6db74>&#34;Mozilla/5.00 (Nikto/2.1.6) (Evasions:None) (Test:006638)&#34;</span>
-</code></pre></div><p><code>EKO{config.php.bak}</code> era la flag.</p>
-<h2 id=auth>Auth</h2>
-<p>Nuevamente para este desafío usamos otro filtro :)</p>
-<p>Podemos empezar a filtrar la solicitud por las conexiones aceptadas con la contraseña correcta, luego de eso eliminamos las IPs duplicadas y limpiamos para obtener solo la IP, tenemos un archivo con 231 IPs, bastantes&mldr;</p>
-<p>Pero&mldr; La última IP es diferente del resto y parece una IP <code>1337 (Leet)</code>. <em>(Esta es una referencia al &ldquo;lenguaje&rdquo; <a href="https://www.urbandictionary.com/define.php?term=1337%20h4x0r">h4x0r</a>)</em></p>
-<p>¡¡Y esa es la bandera !!</p>
-<p><code>EKO{80.13.31.7}</code></p>
-<p>Este es el comando bash completo para obtener la lista de direcciones IP:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>─ lanfran@parrot ❯ cat auth.log | grep <span style=color:#e6db74>&#34;Accepted&#34;</span> | grep -E -o <span style=color:#e6db74>&#34;([0-9]{1,3}[\.]){3}[0-9]{1,3}&#34;</span> | sort | uniq
-80.10.50.1
-80.10.50.10
-80.10.50.100
-80.10.50.101
-<span style=color:#f92672>[</span>...<span style=color:#f92672>]</span>
-80.10.50.96
-80.10.50.97
-80.10.50.98
-80.10.50.99
-80.13.31.7 			&lt;--- La ultima es la flag!
-</code></pre></div><h2 id=internal>Internal</h2>
-<p>Tenemos un archivo <code>.pcap</code>, vamos a abrirlo con <code>wirehark</code>.</p>
-<p>Podemos seguir la secuencia <code>TCP</code> y podemos ver una solicitud de un archivo <code>.zip</code>.</p>
-<p><img src=tcp.png alt=tcp></p>
-<p>Podemos exportarlo con wirehark <em>(Si no sabe cómo: vaya a Archivo> Exportar objetos &mldr;> HTTP)</em></p>
-<p>Este zip tiene un archivo <code>.log</code> dentro, pero está protegido con contraseña, por lo que podemos conseguirla con <code>fcrackzip</code>.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ fcrackzip -D -v -p /usr/share/wordlists/rockyou.txt -u exported.zip                                            ─╯
-found file <span style=color:#e6db74>&#39;.log&#39;</span>, <span style=color:#f92672>(</span>size cp/uc     54/    42, flags 9, chk a839<span style=color:#f92672>)</span>
-
-
-PASSWORD FOUND!!!!: pw <span style=color:#f92672>==</span> <span style=color:#ae81ff>2222</span>
-</code></pre></div><p>Después de descifrar la contraseña, podemos exportar el archivo, que tiene una &ldquo;clave&rdquo; y un nombre de usuario.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ cat .log                                                                                                       ─╯
-Hi Arno0x0x, your key is 4lzUySyIu9OEPv6E
-</code></pre></div><p>Buscando en Google el nombre de usuario &ldquo;Arno0x0x&rdquo;, encontramos este repositorio: <a href=https://github.com/Arno0x/DNSExfiltrator>DNS Exfiltrator</a>. Una herramienta para transferir (exfiltrar) un archivo a través de un canal encubierto de solicitud de DNS.</p>
-<p>Y tenemos algunas solicitudes de DNS en el archivo <code>.pcacp</code>, aquí están:</p>
-<p><code>init.MZWGCZZOOR4HI7BR.base64.ctf.ekoparty.org</code></p>
-<p><code>0.h2x6Nstk5-xLWxkTIQVtXjm0WEDjbsY3b3ikP9aJcS8rdrDjQsp1-mlYMf4NNO7.dXMpSHmfQNrEhDHc9hPKC9c_ByTPE1R1IbC725RfqAZ32eggtHRc_KXVFLMC7iz.U4R3WRJnnXxRJ-FqvW1ZGRZ1HE-9apLYZUqnjAqsnFAMH5me0b4AdA7fBzgG2-F.uHWHh1s6cifvnE.ctf.ekoparty.org</code></p>
-<p>Entonces, editando un poco el script de Arno0x0x, creé un decodificador para obtener la bandera con la información que tenemos.</p>
-<div class=collapsable-code>
+<td><a href=#funsys>Funsys</a></td><td><a href=#discord>Discord</a></td></tr><tr>
+<td><a href=#locked>Locked</a></td><td><a href=#call-me>Call me</a></td></tr><tr>
+<td><a href=#match>Match</a></td><td><a href=#alternative>Alternative</a></td></tr><tr>
+<td><a href=#auth>Auth</a></td><td><a href=#modified>Modified</a></td></tr><tr>
+<td><a href=#internal>Internal</a></td><td></td></tr></tbody></table><h1 id=introducción>Introducción</h1><p>¡Hey! ¡Bienvenid@!</p><p>En esta ocasión vengo a traerles cómo se resolvieron algunos CTFs de la conferencia, desafíos creados por Null Life & GitHub Security Lab.</p><p>¡Estos desafíos fueron interesantes e incluso llegué al puesto 20! Por suerte pude completar algunos de ellos ya que soy alumno de la <a href=https://hackademy.ekoparty.org/>Hackademy</a>, la academia para aprender Ciberseguridad de la <a href=https://ekoparty.org/>Ekoparty</a>!</p><p>¡Comencemos con los desafíos!</p><p>¿También quieres compartir cómo completaste los desafíos? ¡Haz click <a href=#the-end>aquí</a>!</p><h1 id=forense>Forense</h1><h2 id=funsys>Funsys</h2><p>Comenzando con este nuevo desafío forense: Veamos qué tipo de archivo tenemos&mldr;</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>╰─ lanfran@parrot ❯ file funsys 
+</span></span><span style=display:flex><span>funsys: Linux rev 1.0 ext2 filesystem data <span style=color:#f92672>(</span>mounted or unclean<span style=color:#f92672>)</span>, UUID<span style=color:#f92672>=</span>78f7e6f8-f21f-4553-95e4-1ac094918c51 <span style=color:#f92672>(</span>large files<span style=color:#f92672>)</span>
+</span></span></code></pre></div><p>¡Excelente! Tenemos un filesystem, ¡así que montémoslo para ver qué hay dentro!</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>╰─ lanfran@parrot ❯ sudo mount funsys mnt/
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>╰─ lanfran@parrot ❯ ls -la mnt/
+</span></span><span style=display:flex><span>total <span style=color:#ae81ff>2072</span>
+</span></span><span style=display:flex><span>drwxr-xr-x <span style=color:#ae81ff>4</span> root    root       <span style=color:#ae81ff>1024</span> lis  <span style=color:#ae81ff>5</span> 17:21 .
+</span></span><span style=display:flex><span>drwxr-xr-x <span style=color:#ae81ff>1</span> lanfran lanfran      <span style=color:#ae81ff>18</span> lis  <span style=color:#ae81ff>8</span> 08:14 ..
+</span></span><span style=display:flex><span>-rw-r--r-- <span style=color:#ae81ff>1</span> root    root         <span style=color:#ae81ff>17</span> paź <span style=color:#ae81ff>31</span> 02:33 .k
+</span></span><span style=display:flex><span>drwx------ <span style=color:#ae81ff>2</span> root    root      <span style=color:#ae81ff>12288</span> paź <span style=color:#ae81ff>31</span> 02:33 lost+found
+</span></span><span style=display:flex><span>-rw-r--r-- <span style=color:#ae81ff>1</span> root    root    <span style=color:#ae81ff>2097152</span> paź <span style=color:#ae81ff>31</span> 02:33 .RhYSrEm8d
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>╰─ lanfran@parrot ❯ cat .k 
+</span></span><span style=display:flex><span>1TxYs0r4ZRre0r3U
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>╰─ lanfran@parrot ❯ file .RhYSrEm8 
+</span></span><span style=display:flex><span>.RhYSrEm8: data
+</span></span></code></pre></div><p>Un archivo con un nombre raro, <code>.RhYSrEm8d</code>, que tiene algunos &ldquo;datos&rdquo; y otro archivo, <code>.k</code> con texto plano dentro.</p><p>Entonces, si ejecutamos <code>binwalk</code> podemos extraer los datos del archivo &ldquo;<code>.RhYSrEm8d</code>&rdquo;.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>╰─ lanfran@parrot ❯ sudo binwalk -e .RhYSrEm8 
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>╰─ lanfran@parrot ❯ ls -laR
+</span></span><span style=display:flex><span>.:
+</span></span><span style=display:flex><span>total <span style=color:#ae81ff>2072</span>
+</span></span><span style=display:flex><span>drwxr-xr-x <span style=color:#ae81ff>4</span> root    root       <span style=color:#ae81ff>1024</span> lis  <span style=color:#ae81ff>8</span> 08:18 .
+</span></span><span style=display:flex><span>drwxr-xr-x <span style=color:#ae81ff>1</span> lanfran lanfran      <span style=color:#ae81ff>18</span> lis  <span style=color:#ae81ff>8</span> 08:14 ..
+</span></span><span style=display:flex><span>-rw-r--r-- <span style=color:#ae81ff>1</span> root    root         <span style=color:#ae81ff>17</span> paź <span style=color:#ae81ff>31</span> 02:33 .k
+</span></span><span style=display:flex><span>drwx------ <span style=color:#ae81ff>2</span> root    root      <span style=color:#ae81ff>12288</span> paź <span style=color:#ae81ff>31</span> 02:33 lost+found
+</span></span><span style=display:flex><span>-rw-r--r-- <span style=color:#ae81ff>1</span> root    root    <span style=color:#ae81ff>2097152</span> paź <span style=color:#ae81ff>31</span> 02:33 .RhYSrEm8
+</span></span><span style=display:flex><span>drwxr-xr-x <span style=color:#ae81ff>2</span> root    root       <span style=color:#ae81ff>1024</span> lis  <span style=color:#ae81ff>8</span> 08:18 _.RhYSrEm8.extracted
+</span></span><span style=display:flex><span>ls: cannot open directory <span style=color:#e6db74>&#39;./lost+found&#39;</span>: Permission denied
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>./_.RhYSrEm8.extracted:
+</span></span><span style=display:flex><span>total <span style=color:#ae81ff>1875</span>
+</span></span><span style=display:flex><span>drwxr-xr-x <span style=color:#ae81ff>2</span> root root    <span style=color:#ae81ff>1024</span> lis  <span style=color:#ae81ff>8</span> 08:18 .
+</span></span><span style=display:flex><span>drwxr-xr-x <span style=color:#ae81ff>4</span> root root    <span style=color:#ae81ff>1024</span> lis  <span style=color:#ae81ff>8</span> 08:18 ..
+</span></span><span style=display:flex><span>-rw-r--r-- <span style=color:#ae81ff>1</span> root root <span style=color:#ae81ff>1908736</span> lis  <span style=color:#ae81ff>8</span> 08:18 5200.zip
+</span></span></code></pre></div><p>Ahora tenemos un archivo <code>.zip</code> y dentro un archivo que solicita una contraseña para leerlo&mldr;</p><p><img src=password.png alt=password></p><p>¡Usar la contraseña del archivo <code>.k</code> es la solución! ¡No necesitas crackearlo!</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>╰─ lanfran@parrot ❯ cat f.t 
+</span></span><span style=display:flex><span>EKO<span style=color:#f92672>{</span>th1s_1s_1ncr3d1bl3<span style=color:#f92672>}</span>
+</span></span></code></pre></div><p>¡Finalizado!</p><h2 id=locked>Locked</h2><p>Para este desafío, necesitamos encontrar la dirección IP y la máscara con la mayoría de los paquetes descartados(DROP), para esto usamos una palabra clave simple con <code>grep</code>. Usamos <code>K DROP</code> para filtrar los resultados, y en la lista encontramos la bandera:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>╰─ lanfran@parrot ❯ cat locked.log | grep <span style=color:#e6db74>&#34;K DROP&#34;</span> 
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>...<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>40690</span> 3147K DROP       all  --  !lo    *       34.192.0.0/12        0.0.0.0/0           
+</span></span><span style=display:flex><span><span style=color:#ae81ff>14829</span> 1166K DROP       all  --  !lo    *       34.208.0.0/12        0.0.0.0/0           
+</span></span><span style=display:flex><span><span style=color:#ae81ff>87870</span> 6751K DROP       all  --  !lo    *       34.210.0.0/12        0.0.0.0/0            &lt;-- La flag!
+</span></span><span style=display:flex><span><span style=color:#ae81ff>15610</span> 1230K DROP       all  --  !lo    *       34.240.0.0/13        0.0.0.0/0
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>...<span style=color:#f92672>]</span>
+</span></span></code></pre></div><p><code>EKO{34.210.0.0/12}</code></p><h2 id=match>Match</h2><p>Teníamos 2 archivos, <code>eko.local-access.log</code> y <code>eko.local-error.log</code>, si usamos <code>grep</code> con el registro de acceso para las peticiones con <code>respuesta HTTP 200</code> podemos encontrar solo 3 archivos:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>╰─ lanfran@parrot ❯ cat eko.local-access.log | grep <span style=color:#e6db74>&#34;HTTP/1.1\&#34; 200&#34;</span>                                                               
+</span></span><span style=display:flex><span>10.0.3.1 - - <span style=color:#f92672>[</span>10/Oct/2021:04:32:31 +0000<span style=color:#f92672>]</span> <span style=color:#e6db74>&#34;HEAD / HTTP/1.1&#34;</span> <span style=color:#ae81ff>200</span> <span style=color:#ae81ff>258</span> <span style=color:#e6db74>&#34;-&#34;</span> <span style=color:#e6db74>&#34;Mozilla/5.00 (Nikto/2.1.6) (Evasions:None) (Test:Port Check)&#34;</span>
+</span></span><span style=display:flex><span>10.0.3.1 - - <span style=color:#f92672>[</span>10/Oct/2021:04:32:31 +0000<span style=color:#f92672>]</span> <span style=color:#e6db74>&#34;GET / HTTP/1.1&#34;</span> <span style=color:#ae81ff>200</span> <span style=color:#ae81ff>339</span> <span style=color:#e6db74>&#34;-&#34;</span> <span style=color:#e6db74>&#34;Mozilla/5.00 (Nikto/2.1.6) (Evasions:None) (Test:getinfo)&#34;</span>
+</span></span><span style=display:flex><span>10.0.3.1 - - <span style=color:#f92672>[</span>10/Oct/2021:04:32:31 +0000<span style=color:#f92672>]</span> <span style=color:#e6db74>&#34;GET / HTTP/1.1&#34;</span> <span style=color:#ae81ff>200</span> <span style=color:#ae81ff>339</span> <span style=color:#e6db74>&#34;-&#34;</span> <span style=color:#e6db74>&#34;Mozilla/5.00 (Nikto/2.1.6) (Evasions:None) (Test:map_codes)&#34;</span>
+</span></span><span style=display:flex><span>10.0.3.1 - - <span style=color:#f92672>[</span>10/Oct/2021:04:33:03 +0000<span style=color:#f92672>]</span> <span style=color:#e6db74>&#34;GET /config.php HTTP/1.1&#34;</span> <span style=color:#ae81ff>200</span> <span style=color:#ae81ff>296</span> <span style=color:#e6db74>&#34;-&#34;</span> <span style=color:#e6db74>&#34;Mozilla/5.00 (Nikto/2.1.6) (Evasions:None) (Test:000997)&#34;</span>
+</span></span><span style=display:flex><span>10.0.3.1 - - <span style=color:#f92672>[</span>10/Oct/2021:04:33:03 +0000<span style=color:#f92672>]</span> <span style=color:#e6db74>&#34;GET /config.php.bak HTTP/1.1&#34;</span> <span style=color:#ae81ff>200</span> <span style=color:#ae81ff>7411</span> <span style=color:#e6db74>&#34;-&#34;</span> <span style=color:#e6db74>&#34;Mozilla/5.00 (Nikto/2.1.6) (Evasions:None) (Test:006638)&#34;</span>
+</span></span></code></pre></div><p><code>EKO{config.php.bak}</code> era la flag.</p><h2 id=auth>Auth</h2><p>Nuevamente para este desafío usamos otro filtro :)</p><p>Podemos empezar a filtrar la solicitud por las conexiones aceptadas con la contraseña correcta, luego de eso eliminamos las IPs duplicadas y limpiamos para obtener solo la IP, tenemos un archivo con 231 IPs, bastantes&mldr;</p><p>Pero&mldr; La última IP es diferente del resto y parece una IP <code>1337 (Leet)</code>. <em>(Esta es una referencia al &ldquo;lenguaje&rdquo; <a href="https://www.urbandictionary.com/define.php?term=1337%20h4x0r">h4x0r</a>)</em></p><p>¡¡Y esa es la bandera !!</p><p><code>EKO{80.13.31.7}</code></p><p>Este es el comando bash completo para obtener la lista de direcciones IP:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>─ lanfran@parrot ❯ cat auth.log | grep <span style=color:#e6db74>&#34;Accepted&#34;</span> | grep -E -o <span style=color:#e6db74>&#34;([0-9]{1,3}[\.]){3}[0-9]{1,3}&#34;</span> | sort | uniq
+</span></span><span style=display:flex><span>80.10.50.1
+</span></span><span style=display:flex><span>80.10.50.10
+</span></span><span style=display:flex><span>80.10.50.100
+</span></span><span style=display:flex><span>80.10.50.101
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>...<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>80.10.50.96
+</span></span><span style=display:flex><span>80.10.50.97
+</span></span><span style=display:flex><span>80.10.50.98
+</span></span><span style=display:flex><span>80.10.50.99
+</span></span><span style=display:flex><span>80.13.31.7 			&lt;--- La ultima es la flag!
+</span></span></code></pre></div><h2 id=internal>Internal</h2><p>Tenemos un archivo <code>.pcap</code>, vamos a abrirlo con <code>wirehark</code>.</p><p>Podemos seguir la secuencia <code>TCP</code> y podemos ver una solicitud de un archivo <code>.zip</code>.</p><p><img src=tcp.png alt=tcp></p><p>Podemos exportarlo con wirehark <em>(Si no sabe cómo: vaya a Archivo> Exportar objetos &mldr;> HTTP)</em></p><p>Este zip tiene un archivo <code>.log</code> dentro, pero está protegido con contraseña, por lo que podemos conseguirla con <code>fcrackzip</code>.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>╰─ lanfran@parrot ❯ fcrackzip -D -v -p /usr/share/wordlists/rockyou.txt -u exported.zip                                            ─╯
+</span></span><span style=display:flex><span>found file <span style=color:#e6db74>&#39;.log&#39;</span>, <span style=color:#f92672>(</span>size cp/uc     54/    42, flags 9, chk a839<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>PASSWORD FOUND!!!!: pw <span style=color:#f92672>==</span> <span style=color:#ae81ff>2222</span>
+</span></span></code></pre></div><p>Después de descifrar la contraseña, podemos exportar el archivo, que tiene una &ldquo;clave&rdquo; y un nombre de usuario.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>╰─ lanfran@parrot ❯ cat .log                                                                                                       ─╯
+</span></span><span style=display:flex><span>Hi Arno0x0x, your key is 4lzUySyIu9OEPv6E
+</span></span></code></pre></div><p>Buscando en Google el nombre de usuario &ldquo;Arno0x0x&rdquo;, encontramos este repositorio: <a href=https://github.com/Arno0x/DNSExfiltrator>DNS Exfiltrator</a>. Una herramienta para transferir (exfiltrar) un archivo a través de un canal encubierto de solicitud de DNS.</p><p>Y tenemos algunas solicitudes de DNS en el archivo <code>.pcacp</code>, aquí están:</p><p><code>init.MZWGCZZOOR4HI7BR.base64.ctf.ekoparty.org</code></p><p><code>0.h2x6Nstk5-xLWxkTIQVtXjm0WEDjbsY3b3ikP9aJcS8rdrDjQsp1-mlYMf4NNO7.dXMpSHmfQNrEhDHc9hPKC9c_ByTPE1R1IbC725RfqAZ32eggtHRc_KXVFLMC7iz.U4R3WRJnnXxRJ-FqvW1ZGRZ1HE-9apLYZUqnjAqsnFAMH5me0b4AdA7fBzgG2-F.uHWHh1s6cifvnE.ctf.ekoparty.org</code></p><p>Entonces, editando un poco el script de Arno0x0x, creé un decodificador para obtener la bandera con la información que tenemos.</p><div class=collapsable-code>
 <input id=1 type=checkbox checked>
 <label for=1>
 <span class=collapsable-code__language>python</span>
@@ -324,66 +242,40 @@ if chunkIndex == nbChunks:
 			print(&#34;[&#43;] Output file [{}] saved successfully&#34;.format(outputFileName))
 	except IOError:
 		print(&#34;[!] Could not write file [{}]&#34;.format(outputFileName))
-</code></pre>
-</div>
-<p>Con este código en <code>python2</code> podemos obtener la bandera:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>╰─ lanfran@parrot ❯ python2 decode.py                                                                                              
-<span style=color:#f92672>[</span>+<span style=color:#f92672>]</span> Decrypting using password <span style=color:#f92672>[</span>4lzUySyIu9OEPv6E<span style=color:#f92672>]</span> and saving to output file <span style=color:#f92672>[</span>Extracted.zip<span style=color:#f92672>]</span>
-<span style=color:#f92672>[</span>+<span style=color:#f92672>]</span> Output file <span style=color:#f92672>[</span>Extracted.zip<span style=color:#f92672>]</span> saved successfully
-
-╰─ lanfran@parrot ❯ cat flag.txt                                                                                                  
-EKO<span style=color:#f92672>{</span>Are_you_filtering_DNS_over_UDP?<span style=color:#f92672>}</span>
-</code></pre></div><h1 id=trivia>Trivia</h1>
-<h2 id=alternative>Alternative</h2>
-<p>En este desafío, necesitábamos usar el nombre DNS alternativo para la ekoparty, podemos obtenerlo viendo el Certificado y en los campos, buscar el SAN <em>&ldquo;Certificate Subject Alternative Name&rdquo;</em>(Nombre alternativo del sujeto(?)).</p>
-<p><img src=alternative.png alt=alternative></p>
-<p>La flag es: <code>EKO{noc.eko.party}</code></p>
-<h2 id=discord>Discord</h2>
-<p>Este desafío fue muy divertido xD</p>
-<p>Mucha gente comenzó a usar <code>/flag</code> en el canal &ldquo;ctf-advanced&rdquo; del servidor de Discord de Ekoparty (incluso yo lo usé &mldr; 🤡) pero no funcionó.
+</code></pre></div><p>Con este código en <code>python2</code> podemos obtener la bandera:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>╰─ lanfran@parrot ❯ python2 decode.py                                                                                              
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>+<span style=color:#f92672>]</span> Decrypting using password <span style=color:#f92672>[</span>4lzUySyIu9OEPv6E<span style=color:#f92672>]</span> and saving to output file <span style=color:#f92672>[</span>Extracted.zip<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>+<span style=color:#f92672>]</span> Output file <span style=color:#f92672>[</span>Extracted.zip<span style=color:#f92672>]</span> saved successfully
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>╰─ lanfran@parrot ❯ cat flag.txt                                                                                                  
+</span></span><span style=display:flex><span>EKO<span style=color:#f92672>{</span>Are_you_filtering_DNS_over_UDP?<span style=color:#f92672>}</span>
+</span></span></code></pre></div><h1 id=trivia>Trivia</h1><h2 id=alternative>Alternative</h2><p>En este desafío, necesitábamos usar el nombre DNS alternativo para la ekoparty, podemos obtenerlo viendo el Certificado y en los campos, buscar el SAN <em>&ldquo;Certificate Subject Alternative Name&rdquo;</em>(Nombre alternativo del sujeto(?)).</p><p><img src=alternative.png alt=alternative></p><p>La flag es: <code>EKO{noc.eko.party}</code></p><h2 id=discord>Discord</h2><p>Este desafío fue muy divertido xD</p><p>Mucha gente comenzó a usar <code>/flag</code> en el canal &ldquo;ctf-advanced&rdquo; del servidor de Discord de Ekoparty (incluso yo lo usé &mldr; 🤡) pero no funcionó.
 <img src=discord_troll.png alt=discord_troll>
-*tos* <em>Trolleados</em> *tos*&mldr;</p>
-<p>La bandera estaba realmente en la descripción del canal.</p>
-<p><img src=discord.png alt=discord></p>
-<h2 id=modified>Modified</h2>
-<p>Esta vez necesitamos obtener la última fecha de modificación para la página &ldquo;aboutus&rdquo;, para esto podemos usar el <code>sitemap.xml</code>. Se encuentra aquí <a href=https://ekoparty.org/sitemap.xml>https://ekoparty.org/sitemap.xml</a></p>
-<p>Yendo a esa dirección, podemos obtener la última fecha de modificación de la página <a href=http://eko.party/aboutus>http://eko.party/aboutus</a>, que es <code>2019-12-22</code>. Entonces la bandera es: <code>EKO {2019-12-22}</code></p>
-<h2 id=call-me>Call me</h2>
-<p>Para este desafío necesitábamos conseguir un número de teléfono antiguo de la Ekoparty, utilicé una dork de Google muy <em>mala</em> pero efectiva: <code>" +54 "inurl: ekoparty</code>. Intentando con algunos de los números que google me dió, encontré la bandera.</p>
-<h1 id=the-end>The End</h1>
-<p>Esos son algunos de los CTF que pude completar, si tiene otro o quiere compartir conmigo cómo completaste otro desafío, puede contactarme a través de <a href=https://t.me/lanfran02>Telegram</a>, <a href=https://twitter.com/lanfran02>Twitter</a>, <a href=https://www.linkedin.com/in/joaquin-lanfranconi/>Linkedin</a> o incluso crear un <a href=https://github.com/lanfran02/lanfran02.github.io/pulls>Pull Request</a> para esta página. (¡Obviamente vas a ser referido y en las secciones de créditos!)</p>
-</div>
-<div class=pagination>
+*tos* <em>Trolleados</em> *tos*&mldr;</p><p>La bandera estaba realmente en la descripción del canal.</p><p><img src=discord.png alt=discord></p><h2 id=modified>Modified</h2><p>Esta vez necesitamos obtener la última fecha de modificación para la página &ldquo;aboutus&rdquo;, para esto podemos usar el <code>sitemap.xml</code>. Se encuentra aquí <a href=https://ekoparty.org/sitemap.xml>https://ekoparty.org/sitemap.xml</a></p><p>Yendo a esa dirección, podemos obtener la última fecha de modificación de la página <a href=http://eko.party/aboutus>http://eko.party/aboutus</a>, que es <code>2019-12-22</code>. Entonces la bandera es: <code>EKO {2019-12-22}</code></p><h2 id=call-me>Call me</h2><p>Para este desafío necesitábamos conseguir un número de teléfono antiguo de la Ekoparty, utilicé una dork de Google muy <em>mala</em> pero efectiva: <code>" +54 "inurl: ekoparty</code>. Intentando con algunos de los números que google me dió, encontré la bandera.</p><h1 id=the-end>The End</h1><p>Esos son algunos de los CTF que pude completar, si tiene otro o quiere compartir conmigo cómo completaste otro desafío, puede contactarme a través de <a href=https://t.me/lanfran02>Telegram</a>, <a href=https://twitter.com/lanfran02>Twitter</a>, <a href=https://www.linkedin.com/in/joaquin-lanfranconi/>Linkedin</a> o incluso crear un <a href=https://github.com/lanfran02/lanfran02.github.io/pulls>Pull Request</a> para esta página. (¡Obviamente vas a ser referido y en las secciones de créditos!)</p></div><div class=pagination>
 <div class=pagination__title>
 <span class=pagination__title-h>Leer otros posts</span>
 <hr>
-</div>
-<div class=pagination__buttons>
+</div><div class=pagination__buttons>
+<span class="button previous">
+<a href=/es/posts/ohmywebserver/>
+<span class=button__icon>←</span>
+<span class=button__text>Oh My WebServer - Write Up - Español</span>
+</a>
+</span>
 <span class="button next">
 <a href=/es/posts/palsforlife/>
 <span class=button__text>Pals For Life - Write Up - Español</span>
 <span class=button__icon>→</span>
 </a>
 </span>
-</div>
-</div>
-<div id=hyvor-talk-view></div>
-<script type=text/javascript>var HYVOR_TALK_WEBSITE=5554,HYVOR_TALK_CONFIG={url:!1,id:!1}</script>
+</div></div><div id=hyvor-talk-view></div><script type=text/javascript>var HYVOR_TALK_WEBSITE=5554,HYVOR_TALK_CONFIG={url:!1,id:!1}</script>
 <script async type=text/javascript src=//talk.hyvor.com/web-api/embed.js></script>
-</div>
-</div>
-<footer class=footer>
+</div></div><footer class=footer>
 <div class=footer__inner>
-<div class="copyright copyright--user"><a href=https://www.linkedin.com/in/joaquin-lanfranconi/>Lanfran02</a></div>
-</div>
-</footer>
-<script src=/assets/main.js></script>
+<div class="copyright copyright--user"><a href=https://www.linkedin.com/in/joaquin-lanfranconi/>Lanfran02</a></div></div></footer><script src=/assets/main.js></script>
 <script src=/assets/prism.js></script><script src=/assets/medium-zoom/medium-zoom.min.js></script>
-<script>const images=Array.from(document.querySelectorAll(".post-content img"));images.forEach(a=>{mediumZoom(a,{margin:0,scrollOffset:40,container:null,template:null,background:"#292a2d"})})</script>
+<script>const images=Array.from(document.querySelectorAll(".post-content img"));images.forEach(e=>{mediumZoom(e,{margin:0,scrollOffset:40,container:null,template:null,background:"#292a2d"})})</script>
 <script type=module src=/assets/ionicons/ionicons.esm.js></script>
 <script nomodule src=/assets/ionicons/ionicons.js></script>
-</div>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3T7DYCWC0W"></script>
-<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-3T7DYCWC0W',{anonymize_ip:!1})}</script>
-</body>
-</html>
+</div><script async src="https://www.googletagmanager.com/gtag/js?id=G-3T7DYCWC0W"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-3T7DYCWC0W",{anonymize_ip:!1})}</script>
+</body></html>
