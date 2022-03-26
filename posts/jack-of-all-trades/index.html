@@ -1,93 +1,18 @@
-<!doctype html><html lang=en>
-<head>
-<title>
-Jack of All Trades - Write Up ::
-Lanfran02 - Blog — Where write-ups are made.
-</title><meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content="Link Level Creator     Here Easy MuirlandOracle    Reconn As usual, using nmap we get the open ports of the machine.
+<!doctype html><html lang=en><head><title>Jack of All Trades - Write Up ::
+Lanfran02 - Blog — Where write-ups are made.</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Link Level Creator     Here Easy MuirlandOracle    Reconn As usual, using nmap we get the open ports of the machine.
 But, we get something quite unusual.
-╰─ lanfran@parrot ❯ map 10.10.22.246 ─╯ [sudo] password for lanfran: Starting Nmap 7.91 ( https://nmap.org ) at 2021-07-04 14:32 CEST Nmap scan report for 10.10.22.246 Host is up (0.058s latency). Not shown: 998 closed ports PORT STATE SERVICE VERSION 22/tcp open http Apache httpd 2.">
-<meta name=keywords content="CTF,Writeup,Hacking">
-<meta name=robots content="noodp">
-<link rel=canonical href=/posts/jack-of-all-trades/>
-<link rel=stylesheet href=/assets/style.css>
-<link rel=stylesheet href=/style.css>
-<link rel=apple-touch-icon-precomposed sizes=144x144 href=/img/apple-touch-icon-144-precomposed.png>
-<link rel="shortcut icon" href=/img/favicon.png>
-<link href=/assets/fonts/Inter-Italic.woff2 rel=preload type=font/woff2 as=font crossorigin>
-<link href=/assets/fonts/Inter-Regular.woff2 rel=preload type=font/woff2 as=font crossorigin>
-<link href=/assets/fonts/Inter-Medium.woff2 rel=preload type=font/woff2 as=font crossorigin>
-<link href=/assets/fonts/Inter-MediumItalic.woff2 rel=preload type=font/woff2 as=font crossorigin>
-<link href=/assets/fonts/Inter-Bold.woff2 rel=preload type=font/woff2 as=font crossorigin>
-<link href=/assets/fonts/Inter-BoldItalic.woff2 rel=preload type=font/woff2 as=font crossorigin>
-<meta name=twitter:card content="summary_large_image">
-<meta name=twitter:image content="/posts/jack-of-all-trades/cover.jpeg">
-<meta name=twitter:title content="Jack of All Trades - Write Up">
-<meta name=twitter:description content="TryHackMe's easy level machine.">
-<meta property="og:title" content="Jack of All Trades - Write Up">
-<meta property="og:description" content="TryHackMe's easy level machine.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="/posts/jack-of-all-trades/"><meta property="og:image" content="/posts/jack-of-all-trades/cover.jpeg"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2021-07-04T14:31:31+02:00">
-<meta property="article:modified_time" content="2021-07-04T14:31:31+02:00"><meta property="og:site_name" content="Lanfran02 - Blog">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9309562477773018" crossorigin=anonymous></script>
+╰─ lanfran@parrot ❯ map 10.10.22.246 ─╯ [sudo] password for lanfran: Starting Nmap 7.91 ( https://nmap.org ) at 2021-07-04 14:32 CEST Nmap scan report for 10.10.22.246 Host is up (0.058s latency). Not shown: 998 closed ports PORT STATE SERVICE VERSION 22/tcp open http Apache httpd 2."><meta name=keywords content="CTF,Writeup,Hacking"><meta name=robots content="noodp"><link rel=canonical href=/posts/jack-of-all-trades/><link rel=stylesheet href=/assets/style.css><link rel=stylesheet href=/style.css><link rel=apple-touch-icon-precomposed sizes=144x144 href=/img/apple-touch-icon-144-precomposed.png><link rel="shortcut icon" href=/img/favicon.png><link href=/assets/fonts/Inter-Italic.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=/assets/fonts/Inter-Regular.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=/assets/fonts/Inter-Medium.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=/assets/fonts/Inter-MediumItalic.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=/assets/fonts/Inter-Bold.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=/assets/fonts/Inter-BoldItalic.woff2 rel=preload type=font/woff2 as=font crossorigin><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="/posts/jack-of-all-trades/cover.jpeg"><meta name=twitter:title content="Jack of All Trades - Write Up"><meta name=twitter:description content="TryHackMe's easy level machine."><meta property="og:title" content="Jack of All Trades - Write Up"><meta property="og:description" content="TryHackMe's easy level machine."><meta property="og:type" content="article"><meta property="og:url" content="/posts/jack-of-all-trades/"><meta property="og:image" content="/posts/jack-of-all-trades/cover.jpeg"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-07-04T14:31:31+02:00"><meta property="article:modified_time" content="2021-07-04T14:31:31+02:00"><meta property="og:site_name" content="Lanfran02 - Blog"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9309562477773018" crossorigin=anonymous></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3T7DYCWC0W"></script>
-<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-3T7DYCWC0W",{anonymize_ip:!1})}</script>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","G-3T7DYCWC0W","auto"),ga("send","pageview"))</script>
-<script async src=https://www.google-analytics.com/analytics.js></script>
-</head><body class=dark-theme>
-<div class=container>
-<header class=header>
-<span class=header__inner>
-<a href=/ class=logo style=text-decoration:none>
-<span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg>
-</span>
-<span class=logo__text>Lanfran02</span>
-<span class=logo__cursor></span>
-</a>
-<span class=header__right>
-<nav class=menu>
-<ul class="menu__inner menu__inner--desktop">
-<li><a href=/about>About</a></li><li><a href=/es/>Español</a></li><ul class=menu__sub-inner>
-<li class=menu__sub-inner-more-trigger>
-Write Ups
-<span class=menu__sub-inner-more-trigger-icon><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg>
-</span>
-</li><ul class="menu__sub-inner-more hidden">
-<li><a href=/tags/hackthebox/>HTB</a></li><li><a href=/tags/tryhackme/>THM</a></li></ul></ul></ul><ul class="menu__inner menu__inner--mobile">
-<li><a href=/about>About</a></li><li><a href=/es/>Español</a></li><li><a href=/tags/hackthebox/>HTB</a></li><li><a href=/tags/tryhackme/>THM</a></li></ul></nav><span class=menu-trigger><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
-</span>
-<span class=theme-toggle><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 41c10.4934.0 19-8.5066 19-19C41 11.5066 32.4934 3 22 3 11.5066 3 3 11.5066 3 22s8.5066 19 19 19zM7 22C7 13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22z"/></svg>
-</span>
-</span>
-</span>
-</header><div class=content>
-<div class=post>
-<h1 class=post-title>Jack of All Trades - Write Up</h1><div class=post-meta>
-<span class=post-date>
-2021-07-04
-</span>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-3T7DYCWC0W",{anonymize_ip:!1})}</script><script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","G-3T7DYCWC0W","auto"),ga("send","pageview"))</script><script async src=https://www.google-analytics.com/analytics.js></script></head><body class=dark-theme><div class=container><header class=header><span class=header__inner><a href=/ class=logo style=text-decoration:none><span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg></span><span class=logo__text>Lanfran02</span>
+<span class=logo__cursor></span></a>
+<span class=header__right><nav class=menu><ul class="menu__inner menu__inner--desktop"><li><a href=/about>About</a></li><li><a href=/es/>Español</a></li><ul class=menu__sub-inner><li class=menu__sub-inner-more-trigger>Write Ups
+<span class=menu__sub-inner-more-trigger-icon><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg></span></li><ul class="menu__sub-inner-more hidden"><li><a href=/tags/hackthebox/>HTB</a></li><li><a href=/tags/tryhackme/>THM</a></li></ul></ul></ul><ul class="menu__inner menu__inner--mobile"><li><a href=/about>About</a></li><li><a href=/es/>Español</a></li><li><a href=/tags/hackthebox/>HTB</a></li><li><a href=/tags/tryhackme/>THM</a></li></ul></nav><span class=menu-trigger><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></span><span class=theme-toggle><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 41c10.4934.0 19-8.5066 19-19C41 11.5066 32.4934 3 22 3 11.5066 3 3 11.5066 3 22s8.5066 19 19 19zM7 22C7 13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22z"/></svg></span></span></span></header><div class=content><div class=post><h1 class=post-title>Jack of All Trades - Write Up</h1><div class=post-meta><span class=post-date>2021-07-04</span>
 <span class=post-author>— Written by Lanfran02</span>
-<span class=post-read-time>— 6 min read</span>
-</div><span class=post-tags>
-<a href=/tags/strings/>#strings</a>&nbsp;
+<span class=post-read-time>— 6 min read</span></div><span class=post-tags><a href=/tags/strings/>#strings</a>&nbsp;
 <a href=/tags/stego/>#stego</a>&nbsp;
 <a href=/tags/rce/>#RCE</a>&nbsp;
 <a href=/tags/steghide/>#steghide</a>&nbsp;
-<a href=/tags/tryhackme/>#TryHackMe</a>&nbsp;
-</span>
-<figure class=post-cover>
-<img src=/posts/jack-of-all-trades/cover.jpeg alt="Jack of All Trades - Write Up">
-</figure><div class=post-content>
-<h2>Table of Contents</h2><aside class=table-of-contents><nav id=TableOfContents>
-<ul>
-<li><a href=#reconn>Reconn</a></li><li><a href=#foothold---user>Foothold - User</a></li><li><a href=#root>Root</a></li></ul></nav></aside><table>
-<thead>
-<tr>
-<th>Link</th><th>Level</th><th>Creator</th></tr></thead><tbody>
-<tr>
-<td><a href=https://tryhackme.com/room/jackofalltrades>Here</a></td><td>Easy</td><td><a href=https://tryhackme.com/p/MuirlandOracle>MuirlandOracle</a></td></tr></tbody></table><h2 id=reconn>Reconn</h2><p>As usual, using <code>nmap</code> we get the open ports of the machine.</p><p>But, we get something quite unusual.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>╰─ lanfran@parrot ❯ map 10.10.22.246                                                                                               ─╯
+<a href=/tags/tryhackme/>#TryHackMe</a>&nbsp;</span><figure class=post-cover><img src=/posts/jack-of-all-trades/cover.jpeg alt="Jack of All Trades - Write Up"></figure><div class=post-content><h2>Table of Contents</h2><aside class=table-of-contents><nav id=TableOfContents><ul><li><a href=#reconn>Reconn</a></li><li><a href=#foothold---user>Foothold - User</a></li><li><a href=#root>Root</a></li></ul></nav></aside><table><thead><tr><th>Link</th><th>Level</th><th>Creator</th></tr></thead><tbody><tr><td><a href=https://tryhackme.com/room/jackofalltrades>Here</a></td><td>Easy</td><td><a href=https://tryhackme.com/p/MuirlandOracle>MuirlandOracle</a></td></tr></tbody></table><h2 id=reconn>Reconn</h2><p>As usual, using <code>nmap</code> we get the open ports of the machine.</p><p>But, we get something quite unusual.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>╰─ lanfran@parrot ❯ map 10.10.22.246                                                                                               ─╯
 </span></span><span style=display:flex><span><span style=color:#f92672>[</span>sudo<span style=color:#f92672>]</span> password <span style=color:#66d9ef>for</span> lanfran: 
 </span></span><span style=display:flex><span>Starting Nmap 7.91 <span style=color:#f92672>(</span> https://nmap.org <span style=color:#f92672>)</span> at 2021-07-04 14:32 CEST
 </span></span><span style=display:flex><span>Nmap scan report <span style=color:#66d9ef>for</span> 10.10.22.246
@@ -135,13 +60,9 @@ And the <code>web port it's the 22</code>.</p><p>It&rsquo;s a good way to minf*c
 </span></span><span style=display:flex><span>		&lt;/main&gt;
 </span></span><span style=display:flex><span>	&lt;/body&gt;
 </span></span><span style=display:flex><span>&lt;/html&gt;
-</span></span></code></pre></div><p>We have some nice info here:</p><ul>
-<li>We get an encoded text here.</li><li>We found a new endpoint <code>recovery.php</code>.</li></ul><ol>
-<li>
-<p>We need to decode the text, so we are going to use <a href=https://gchq.github.io/CyberChef/>cyberchef</a> !
+</span></span></code></pre></div><p>We have some nice info here:</p><ul><li>We get an encoded text here.</li><li>We found a new endpoint <code>recovery.php</code>.</li></ul><ol><li><p>We need to decode the text, so we are going to use <a href=https://gchq.github.io/CyberChef/>cyberchef</a> !
 To decode it we need to use <code>Base64</code></p><p>And we get a message:
-<code>Remember to wish Johny Graves well with his crypto jobhunting! His encoding systems are amazing! Also gotta remember your password: [REDACTED]</code></p><p>Good! We have a password. Let&rsquo;s save it for later.</p></li><li>
-<p>Using curl to navigate, we get also a encoded text hidden in the source code</p></li></ol><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>╰─ lanfran@parrot ❯ curl http://10.10.22.246:22/recovery.php                                                                                                                  ─╯
+<code>Remember to wish Johny Graves well with his crypto jobhunting! His encoding systems are amazing! Also gotta remember your password: [REDACTED]</code></p><p>Good! We have a password. Let&rsquo;s save it for later.</p></li><li><p>Using curl to navigate, we get also a encoded text hidden in the source code</p></li></ol><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>╰─ lanfran@parrot ❯ curl http://10.10.22.246:22/recovery.php                                                                                                                  ─╯
 </span></span><span style=display:flex><span>		
 </span></span><span style=display:flex><span>&lt;!DOCTYPE html&gt;
 </span></span><span style=display:flex><span>&lt;html&gt;
@@ -214,32 +135,11 @@ To decode it we need to use <code>Base64</code></p><p>And we get a message:
 </span></span><span style=display:flex><span>4.Move the body from the garage, maybe my old buddy Bill from the force can help me hide her?
 </span></span><span style=display:flex><span>5.Remember to finish that contract <span style=color:#66d9ef>for</span> Lisa.
 </span></span><span style=display:flex><span>6.Delete this: securi-tay2020_<span style=color:#f92672>{[</span>REDACTED<span style=color:#f92672>]}</span>
-</span></span></code></pre></div><p>And we &ldquo;rooted&rdquo; the machine!</p><p>That&rsquo;s all from my side, hope you find this helpful!</p></div><div class=pagination>
-<div class=pagination__title>
-<span class=pagination__title-h>Read other posts</span>
-<hr>
-</div><div class=pagination__buttons>
-<span class="button previous">
-<a href=/posts/develpy/>
-<span class=button__icon>←</span>
-<span class=button__text>Develpy - Write Up</span>
-</a>
-</span>
-<span class="button next">
-<a href=/posts/library/>
-<span class=button__text>Library - Write Up</span>
-<span class=button__icon>→</span>
-</a>
-</span>
-</div></div><div id=hyvor-talk-view></div><script type=text/javascript>var HYVOR_TALK_WEBSITE=5554,HYVOR_TALK_CONFIG={url:!1,id:!1}</script>
-<script async type=text/javascript src=//talk.hyvor.com/web-api/embed.js></script>
-</div></div><footer class=footer>
-<div class=footer__inner>
-<div class="copyright copyright--user"><a href=https://www.linkedin.com/in/joaquin-lanfranconi/>Lanfran02</a></div></div></footer><script src=/assets/main.js></script>
+</span></span></code></pre></div><p>And we &ldquo;rooted&rdquo; the machine!</p><p>That&rsquo;s all from my side, hope you find this helpful!</p></div><div class=pagination><div class=pagination__title><span class=pagination__title-h>Read other posts</span><hr></div><div class=pagination__buttons><span class="button previous"><a href=/posts/develpy/><span class=button__icon>←</span>
+<span class=button__text>Develpy - Write Up</span></a></span>
+<span class="button next"><a href=/posts/library/><span class=button__text>Library - Write Up</span>
+<span class=button__icon>→</span></a></span></div></div><div id=hyvor-talk-view></div><script type=text/javascript>var HYVOR_TALK_WEBSITE=5554,HYVOR_TALK_CONFIG={url:!1,id:!1}</script><script async type=text/javascript src=//talk.hyvor.com/web-api/embed.js></script></div></div><footer class=footer><div class=footer__inner><div class="copyright copyright--user"><a href=https://www.linkedin.com/in/joaquin-lanfranconi/>Lanfran02</a></div></div></footer><script src=/assets/main.js></script>
 <script src=/assets/prism.js></script><script src=/assets/medium-zoom/medium-zoom.min.js></script>
-<script>const images=Array.from(document.querySelectorAll(".post-content img"));images.forEach(e=>{mediumZoom(e,{margin:0,scrollOffset:40,container:null,template:null,background:"#292a2d"})})</script>
-<script type=module src=/assets/ionicons/ionicons.esm.js></script>
-<script nomodule src=/assets/ionicons/ionicons.js></script>
-</div><script async src="https://www.googletagmanager.com/gtag/js?id=G-3T7DYCWC0W"></script>
-<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-3T7DYCWC0W",{anonymize_ip:!1})}</script>
-</body></html>
+<script>const images=Array.from(document.querySelectorAll(".post-content img"));images.forEach(e=>{mediumZoom(e,{margin:0,scrollOffset:40,container:null,template:null,background:"#292a2d"})})</script><script type=module src=/assets/ionicons/ionicons.esm.js></script>
+<script nomodule src=/assets/ionicons/ionicons.js></script></div><script async src="https://www.googletagmanager.com/gtag/js?id=G-3T7DYCWC0W"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-3T7DYCWC0W",{anonymize_ip:!1})}</script></body></html>

